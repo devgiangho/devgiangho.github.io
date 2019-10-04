@@ -1,0 +1,20 @@
+- name: Dev & Life
+  color: "#007acc"
+  icon: ./assets/images/developer.svg
+  featured: true
+- name: JavaScript
+  color: "#007acc"
+  icon: ./assets/images/js.svg
+  featured: true
+- name: .NET
+  color: "#007acc"
+  icon: ./assets/images/net.png
+  featured: true
+- name: VueJS
+  color: "#007acc"
+  icon: ./assets/images/vue.svg
+  featured: true
+- name: Demo
+  color: "#007acc"
+  icon: ./assets/images/logo.png
+  featured: true

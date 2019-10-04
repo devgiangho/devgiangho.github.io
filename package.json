@@ -1,0 +1,29 @@
+{
+  "name": "gatsby-blog-devgiangho",
+  "description": "Theme for the Gatsby Nehalem theme",
+  "author": {
+    "name": "Kiên Đinh",
+    "email": "kienmatu1@gmail.com",
+    "url": "https://devgiangho.github.io"
+  },
+  "private": true,
+  "version": "1.0.0",
+  "main": "n/a",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "deploy:github": "npm run build && node ./scripts/deploy-github"
+  },
+  "dependencies": {
+    "gatsby": "^2.13.55",
+    "gatsby-theme-devgiangho": "./gatsby-theme-devgiangho",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
