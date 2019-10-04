@@ -1,6 +1,7 @@
 var path=require('path');
 module.exports = {
   //__experimentalThemes: [`gatsby-theme-devgiangho`],
+  pathPrefix: "devgiangho.github.io",
   siteMetadata: {
     title: `Dev Giang Hồ - Blog for Devs`,
     siteUrl: `https://devgiangho.github.io`,
