@@ -1,124 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 08 Oct 2019 14:28:33 GMT</lastBuildDate><item><title><![CDATA[JS thần công quyển 2 - làm việc với array phần 1]]></title><description><![CDATA[Javascript có 7 kiểu dữ liệu và Array là 1 kiểu con của kiểu Object, rất hay gặp phải.]]></description><link>https://devgiangho.github.iojs-than-cong-phan-2-lam-viec-voi-array-trong-javascript</link><guid isPermaLink="false">https://devgiangho.github.iojs-than-cong-phan-2-lam-viec-voi-array-trong-javascript</guid><pubDate>Wed, 09 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lúc đi làm tại hạ làm việc với mảng nhiều vô kể, mà với mớ công pháp backend của kẻ này thì cũng phải tốn thời gian đọc tài liệu rồi mới xử lý được 1 số task, mất thời gian. Vậy nên tại hạ viết ra đây cho các đạo hữu tham khảo.
-Ở bài này mình mở ngay tab console của chrome ra code ví dụ luôn nghen.&lt;/p&gt;
-&lt;h2 id=&quot;tạo-thêm-xóa-phần-tử-của-mảng&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1o-th%C3%AAm-x%C3%B3a-ph%E1%BA%A7n-t%E1%BB%AD-c%E1%BB%A7a-m%E1%BA%A3ng&quot; aria-label=&quot;tạo thêm xóa phần tử của mảng permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tạo, thêm, xóa phần tử của mảng&lt;/h2&gt;
-&lt;p&gt;Để khai báo 1 mảng ta có thể làm như sau:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; myArray &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token comment&quot;&gt;// mảng trống&lt;/span&gt;
-myArray &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Kiên Đinh&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//In ra số phần tử của mảng&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Lấy ở vị trí nào đó&lt;/span&gt;
-console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Kết quả là: &lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// [1, 2, 3, 4, &quot;Kiên Đinh&quot;]&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// 5&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Kiên Đinh&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 540px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/c5f1e88a22ba1a944e4bd870a8d808c9/22492/javascript-array-1.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 60.92592592592593%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABZklEQVQoz52Si26DMAxF+f+/miZNtCul0B/Yow+gEAiPhCTAnZOWdpo0qW0kK05iH65tvNVqBd/3EcdbLJdL2HOwjvDy+oZ1GCEI1gjDEJvN5hIXu7iFv6C7iOIDOr8jimJ6X8BL0xTH5IiyZKiqEkII5FzgkHfIigb73Q6cc3RdB601hmFwu1LK+cbo672980TboTgyglZgBChZhYLnSPJPsm8wzjAYglDiOI4u0e6zP5/n3TPGIEszUteg4T0YU+gYKfr6gDjsIdsW85qm6br/53tWblEUBCqRpiecTjkq8geSP9LbSF+ek+4xp5AxBk4KpTCQksrrJMaaw1DvdN+fg6mcu4A3hcw1v6USpZSoye8J9rusO4EGTSMoWTqYnab167p2wEdgZ6DSNJCK1FUOoLWi8duJTg+ruwAVkiRBlmVUOnPKat5AUB8fhTmgoh7a/lmz/9JtTc8BtbHO6Ep8BvDXfgBNnqJMFmaysgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;Khai bao và gán giá trị trong array&quot;
-        title=&quot;Khai bao và gán giá trị trong array&quot;
-        src=&quot;/static/c5f1e88a22ba1a944e4bd870a8d808c9/22492/javascript-array-1.png&quot;
-        srcset=&quot;/static/c5f1e88a22ba1a944e4bd870a8d808c9/135ae/javascript-array-1.png 300w,
-/static/c5f1e88a22ba1a944e4bd870a8d808c9/22492/javascript-array-1.png 540w&quot;
-        sizes=&quot;(max-width: 540px) 100vw, 540px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&quot;push-và-pop-shift-và-unshift&quot;&gt;&lt;a href=&quot;#push-v%C3%A0-pop-shift-v%C3%A0-unshift&quot; aria-label=&quot;push và pop shift và unshift permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;push và pop, shift và unshift&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;push&lt;/strong&gt; sẽ thêm phần tử mới vào cuối mảng đó
-&lt;strong&gt;pop&lt;/strong&gt; thì ngược lại, sẽ lấy ra phần tử cuối cùng của mảng đó
-Nếu làm việc ở đầu mảng thì sẽ dùng &lt;strong&gt;shift&lt;/strong&gt; để lấy ra phần tử đầu tiên và &lt;strong&gt;unshift&lt;/strong&gt; để thêm vào giá trị mới ở vị trí đầu tiên&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;ABC&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Trả về số phần tử của myArray : 6&lt;/span&gt;
-myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Trả về phần tử cuối cùng của mảng đó: &apos;ABC&apos;, và remove luôn khỏi mảng&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 550px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/c4d137f6b41c59293a035a692aae99ea/2cf63/javascript-array-2png.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 57.63636363636363%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAA7DAAAOwwHHb6hkAAABSklEQVQoz52S226DMBBE+f8vqirFaUIaoN/BAzE3E8LNGE/HTlK16UMullbyGnY0Z7TBev2BJPnCZrPFlvW5j/H2LhDuIuz3EcJwhyROsFoJRFHMPoQQa//ueiEE4jj2szH7IMsy1HUNpRT6YUB5HJDKFlnZIk1T/951HbTWWJYF8zz7uzGz73+/j+PoBA8oigJFWaJ31Sh+1NDT6IUm/jRNEwUWlrlbQde5gRF932PsOz9s8f9Yax+qIJcSVaWQywoyJ3pVY26PrBaG7nTTwNCxHyDaXUFFxLpu6MwQ1cLoGYZODR0b5jMT26E87LA6HNBQ1IXvgvZ4V8xXkI9E7k4nnFg+x0uG9iryAOYfQZnnPsMiV5CSGRbMUNXQdKy5Rs+InR0ydKUa7pPLia4Wi8Xtlt8187ygQ1pusa7IT2T3I3i7a5fLuV4434Yiow2RNkMzAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;push pop shift unshift trong array&quot;
-        title=&quot;push pop shift unshift trong array&quot;
-        src=&quot;/static/c4d137f6b41c59293a035a692aae99ea/2cf63/javascript-array-2png.png&quot;
-        srcset=&quot;/static/c4d137f6b41c59293a035a692aae99ea/135ae/javascript-array-2png.png 300w,
-/static/c4d137f6b41c59293a035a692aae99ea/2cf63/javascript-array-2png.png 550w&quot;
-        sizes=&quot;(max-width: 550px) 100vw, 550px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&quot;chạy-vòng-lặp-iteration&quot;&gt;&lt;a href=&quot;#ch%E1%BA%A1y-v%C3%B2ng-l%E1%BA%B7p-iteration&quot; aria-label=&quot;chạy vòng lặp iteration permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chạy vòng lặp (Iteration)&lt;/h3&gt;
-&lt;p&gt;Js có nhiều cách để duyệt hết phần tử của mảng
-ta có thể dùng vòng for, hoặc forEach như hầu hết các ngôn ngữ khác:&lt;/p&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;//Vòng lặp bình thường&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;i&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;length&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myArray&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;//forEach . ở đây mình dùng arrow function luôn&lt;/span&gt;
-myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token comment&quot;&gt;// Nếu viết theo kiểu đúng callback như hồi xưa sẽ như này:&lt;/span&gt;
-myArray&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;element&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-	console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;element&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Kết quả 3 đoạn code trên đều giống nhau, tuy nhiên nếu quen dùng arrow function thì dùng cách 2 vẫn phê nhất :3
-&lt;span
-      class=&quot;gatsby-resp-image-wrapper&quot;
-      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 524px;&quot;
-    &gt;
-      &lt;a
-    class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/static/fec372b30b62d8bc8c71600475cb2a30/606d7/javascript-array-3.png&quot;
-    style=&quot;display: block&quot;
-    target=&quot;_blank&quot;
-    rel=&quot;noopener&quot;
-  &gt;
-    &lt;span
-    class=&quot;gatsby-resp-image-background-image&quot;
-    style=&quot;padding-bottom: 80.91603053435115%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABT0lEQVQ4y6WU226DMBBE/f//WCGREBzABJubbzBdLw1Nqz40gDSSsb2jteeAKMsSeZ6jbVukcXm7oW4UPrIcpaxQVRXPPx4PXC4XNE3Dc9frFVJKrnudF0VRsGFavN8rdFQoG42soI2yRZZlvLHrOkzTBGstK42TnHM/5sU8zehrDdtb9HqGpkKjO4xDD6UaqKaGnSeEELEsy651XX+8PyXSQvCBTAyMMdy6Ugotdaq15kIg6X+PiHGBJ8MQNnnvWWkcY2TDdyRCWODswl1s3WzPu0a7YSRD79bd5Hk/hw3TZRszUlIjH3MzPWHovUNdV6SaEfg6cGr3qKFnaJ9gSnknkAdicoSdBkTq+p07FSnJYRgYkYRNAlgp4lFbSjkcCIWwcS7+ydS64ljKzm3Y/Kb+YMoL5nmD+Cwyeygp4deUzxgLR59d+luM4zeHZ/QJzTLnwaVtObkAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
-  &gt;&lt;/span&gt;
-  &lt;img
-        class=&quot;gatsby-resp-image-image&quot;
-        alt=&quot;for và foreach trong array&quot;
-        title=&quot;for và foreach trong array&quot;
-        src=&quot;/static/fec372b30b62d8bc8c71600475cb2a30/606d7/javascript-array-3.png&quot;
-        srcset=&quot;/static/fec372b30b62d8bc8c71600475cb2a30/135ae/javascript-array-3.png 300w,
-/static/fec372b30b62d8bc8c71600475cb2a30/606d7/javascript-array-3.png 524w&quot;
-        sizes=&quot;(max-width: 524px) 100vw, 524px&quot;
-        loading=&quot;lazy&quot;
-      /&gt;
-  &lt;/a&gt;
-    &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Giới thiệu series video tự học ASP .NET CORE MVC]]></title><description><![CDATA[NET Core là 1 công nghệ mới và rất nhiều tính năng hay ho, rất được quan tâm và nhiều doanh nghiệp đã áp dụng vào, anh em nhà dotNET nên học.]]></description><link>https://devgiangho.github.ioseries-video-tu-hoc-net-core-mvc</link><guid isPermaLink="false">https://devgiangho.github.ioseries-video-tu-hoc-net-core-mvc</guid><pubDate>Tue, 08 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;asp-net-core--mvc&quot;&gt;&lt;a href=&quot;#asp-net-core--mvc&quot; aria-label=&quot;asp net core  mvc permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ASP NET CORE &amp;#x26; MVC&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 09 Oct 2019 01:21:07 GMT</lastBuildDate><item><title><![CDATA[JS thần công quyển 2 - Destructuring trong Javascript]]></title><description><![CDATA[Javascript (ES6) có 1 thứ hay ho là destructuring, làm việc với object trong js thì nó như là 1 kỹ thuật vô cùng thú vị và hay ho.]]></description><link>https://devgiangho.github.iojs-than-cong-phan-2-destructuring-trong-javascript</link><guid isPermaLink="false">https://devgiangho.github.iojs-than-cong-phan-2-destructuring-trong-javascript</guid><pubDate>Wed, 09 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Với kiểu dữ liệu Object thì JS cũng có thể gán nhiều biến được bằng cách&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;myObject &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Kien Dinh&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+myObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Kiên Kute&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myObject&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// Kết quả:&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// {id: 1, name: &quot;Kiên Kute&quot;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nếu muốn lấy 1 giá trị nào của object đó ra thì sao?&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; name &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; myObject&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Destructuring cho ta 1 câu cú ngon hơn:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; myObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;//Lấy cả 2:&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; name&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; myObject&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Hay phết đúng không?&lt;/p&gt;
+&lt;h2 id=&quot;thế-destructuring-là-gì-&quot;&gt;&lt;a href=&quot;#th%E1%BA%BF-destructuring-l%C3%A0-g%C3%AC-&quot; aria-label=&quot;thế destructuring là gì  permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thế DESTRUCTURING LÀ GÌ ?&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[Giới thiệu series video tự học ASP .NET CORE MVC]]></title><description><![CDATA[NET Core là 1 công nghệ mới và rất nhiều tính năng hay ho, rất được quan tâm và nhiều doanh nghiệp đã áp dụng vào, anh em nhà dotNET nên học.]]></description><link>https://devgiangho.github.ioseries-video-tu-hoc-net-core-mvc</link><guid isPermaLink="false">https://devgiangho.github.ioseries-video-tu-hoc-net-core-mvc</guid><pubDate>Tue, 08 Oct 2019 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;asp-net-core--mvc&quot;&gt;&lt;a href=&quot;#asp-net-core--mvc&quot; aria-label=&quot;asp net core  mvc permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ASP NET CORE &amp;#x26; MVC&lt;/h2&gt;
 &lt;p&gt;ASP.NET Core là một công nghệ khá là mới. Một framework mã nguồn mở, hiệu suất cao và đa nền tảng dùng để xây dựng các ứng dụng hiện đại có kết nối với Internet và dựa trên mô hình đám mây. ASP.NET Core được phát triển bởi tập đoàn Microsoft và cộng đồng lập trình viên. ASP.NET Core cũng là một framework kiểu module có khả năng thực thi trên framework .NET, Windows và .NET Core đa nền tảng.&lt;/p&gt;
 &lt;p&gt;Và không thể không nói đến .NET Core MVC , vẫn sử dụng mô hình MVC như MVC5 nhưng có thể chạy cross plat form và hỗ trợ sẵn nhiều tính năng hay ho như là Dependency Injection.&lt;/p&gt;
 &lt;p&gt;Hi vọng qua loạt video tự học .NET Core MVC này sẽ giúp cho các bạn hiểu hơn và có thể làm việc được với NET Core MVC&lt;/p&gt;
@@ -147,7 +40,7 @@ Còn Frontend thì là phần hiển thị nội dung cho người dùng, chính
 &lt;p&gt;Tôi cũng xuất phát như những dev backend bình thường khác, học C# và Java để làm app, và web , sau đó kết hợp đôi chút HTML và CSS để đổ dữ liệu ra, nếu lên trình 1 chút thì sẽ dùng JQuery vào thế là đã đủ. Nhưng nếu đi làm, nhất là những bạn chưa làm với frontend, thứ hai là làm mảng outsourcing web, thì thế là chưa đủ, nên ta cần 1 số sau đây:&lt;/p&gt;
 &lt;h3 id=&quot;debugging&quot;&gt;&lt;a href=&quot;#debugging&quot; aria-label=&quot;debugging permalink&quot; class=&quot;anchor&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Debugging&lt;/h3&gt;
 &lt;p&gt;Đầu tiên là về gỡ lỗi - debug rồi, cái mà làm có khi còn nhiều hơn cả thời gian code.
-Để debug hồi còn cùi bắp ngồi làm đồ án viết đôi chút AJAX, thì tôi xài &lt;strong&gt;alert()&lt;/strong&gt; để đổ cái mình cần ra.
+Để debug (gỡ lỗi) hồi còn cùi bắp ngồi làm đồ án viết đôi chút AJAX, thì tôi xài &lt;strong&gt;alert()&lt;/strong&gt; để đổ cái mình cần ra.
 Nhưng hiện tại có 1 cách hiệu quả hơn đó là gõ &lt;strong&gt;debugger;&lt;/strong&gt; vào chỗ cần debug, khi mở F12 thì trình duyệt chạy đến đó nó sẽ dừng lại.
 &lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
