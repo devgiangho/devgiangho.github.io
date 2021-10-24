@@ -1,0 +1,474 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.01877a06b072953c14c7.css" id="gatsby-global-css">code[class*=language-],pre[class*=language-]{color:#f8f8f2;background:none;text-shadow:0 1px rgba(0,0,0,.3);font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto;border-radius:.3em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 2.32.13"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='UA-149502908-1',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-149502908-1', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><title data-react-helmet="true">Cách tạo 1 blog bằng gatsbyjs và deploy lên github - Dev Giang Hồ - Blog for Devs</title><meta data-react-helmet="true" name="description" content="Gatsbyjs là 1 static site generator có thể được sử dụng để xây dựng trang blog, portfolio, trang thương mại điện tử, Static PWA (Progressive Web App)..."/><meta data-react-helmet="true" name="og:title" content="Cách tạo 1 blog bằng gatsbyjs và deploy lên github - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="og:type" content="website"/><meta data-react-helmet="true" name="og:description" content="Gatsbyjs là 1 static site generator có thể được sử dụng để xây dựng trang blog, portfolio, trang thương mại điện tử, Static PWA (Progressive Web App)..."/><meta data-react-helmet="true" name="og:url" content="https://devgiangho.github.io/cach-tao-1-blog-bang-gatsbyjs-va-deploy-len-github"/><meta data-react-helmet="true" name="twitter:label1" content="Written by"/><meta data-react-helmet="true" name="twitter:data1" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:title" content="Cách tạo 1 blog bằng gatsbyjs và deploy lên github - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="twitter:description" content="Gatsbyjs là 1 static site generator có thể được sử dụng để xây dựng trang blog, portfolio, trang thương mại điện tử, Static PWA (Progressive Web App)..."/><meta data-react-helmet="true" name="keywords" content="JavaScript, .NET, Java, Vuejs, PHP, Vạn Vật, JavaScript"/><meta data-react-helmet="true" name="article:published_time" content="2021-10-21T00:00:00.000Z"/><meta data-react-helmet="true" name="article:modified_time" content="2021-10-21T00:00:00.000Z"/><meta data-react-helmet="true" name="twitter:label2" content="Filed under"/><meta data-react-helmet="true" name="twitter:data2" content="JavaScript"/><meta data-react-helmet="true" name="og:image" content="https://devgiangho.github.io//static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg"/><meta data-react-helmet="true" name="twitter:image" content="https://devgiangho.github.io//static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg"/><script data-react-helmet="true" type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Article",
+          "author": {
+            "@type": "Person",
+            "name": "Kiên Đinh"
+          },
+          "keywords": "JavaScript",
+          "headline": "Cách tạo 1 blog bằng gatsbyjs và deploy lên github - Dev Giang Hồ - Blog for Devs",
+          "url": "https://devgiangho.github.io/cach-tao-1-blog-bang-gatsbyjs-va-deploy-len-github",
+          "datePublished": "2021-10-21T00:00:00.000Z",
+          "datePublished": "2021-10-21T00:00:00.000Z",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://devgiangho.github.io//static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg",
+            "width": "1000",
+            "height": "520"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dev Giang Hồ - Blog for Devs"
+          },
+          "description": "Gatsbyjs là 1 static site generator có thể được sử dụng để xây dựng trang blog, portfolio, trang thương mại điện tử, Static PWA (Progressive Web App)...",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devgiangho.github.io"
+          }
+        }
+      </script><style data-styled="jNsfeh iGdNRI vCLwZ eIwTUr hTYzC dCxZWG efhgqU bdSkhH ifSYmn ivDzQh ivWLzp hvUygX jkxUfZ dMfbld isYlRR itkrKE ibZMud deztSj ebZUAf iFBHxj kYeQpM jxWiCW gnOoOq lhHUGK bvoseI gNWVOH iveBqt iedZkm fEekLx dbMCyG cFCms fZxKfj kdYUOw efGKlB cNuvLd zgZgv dbihZy hbladY dZFYkr egXSzF ikTPdH" data-styled-version="4.4.1">
+/* sc-component-id: sc-global-2089182736 */
+html{line-height:1.15;-webkit-text-size-adjust:100%;} body{margin:0;} main{display:block;} h1{font-size:2em;margin:0.67em 0;} hr{box-sizing:content-box;height:0;overflow:visible;} pre{font-family:monospace,monospace;font-size:1em;} a{background-color:transparent;} abbr[title]{border-bottom:none;-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;} b,strong{font-weight:bolder;} code,kbd,samp{font-family:monospace,monospace;font-size:1em;} small{font-size:80%;} sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;} sub{bottom:-0.25em;} sup{top:-0.5em;} img{border-style:none;} button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;} button,input{overflow:visible;} button,select{text-transform:none;} button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;} button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;} button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;} fieldset{padding:0.35em 0.75em 0.625em;} legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;} progress{vertical-align:baseline;} textarea{overflow:auto;} [type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0;} [type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;} [type="search"]{-webkit-appearance:textfield;outline-offset:-2px;} [type="search"]::-webkit-search-decoration{-webkit-appearance:none;} ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;} details{display:block;} summary{display:list-item;} template{display:none;} [hidden]{display:none;} html{box-sizing:border-box;background-color:#fafafa;} body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;line-height:1.9em;} *{box-sizing:border-box;} h1,h2,h3,h4,h5,h6{outline:none;} a{color:#000;-webkit-text-decoration:none;text-decoration:none;} .gatsby-highlight{max-width:100% !important;} .gatsby-highlight-code-line{background-color:#353631;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:0.75em;}
+/* sc-component-id: style__NavContainer-sc-a4rhze-0 */
+.jNsfeh{z-index:1000;background-color:#20232a;position:-webkit-sticky;position:sticky;top:0;box-shadow:0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.07);}
+/* sc-component-id: style__Nav-sc-a4rhze-1 */
+.iGdNRI{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;} @media (max-width:1300px){.iGdNRI{padding:0 20px;}}
+/* sc-component-id: style__NavWrapper-sc-a4rhze-2 */
+.hTYzC{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:100%;height:70px;white-space:nowrap;} @media (max-width:576px){.hTYzC{width:90%;}}
+/* sc-component-id: style__NavMenu-sc-a4rhze-3 */
+.dCxZWG{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;} @media (max-width:576px){.dCxZWG{width:80%;overflow-x:auto;overflow-y:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);}}.efhgqU{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;}
+/* sc-component-id: style__NavMenuItem-sc-a4rhze-4 */
+.bdSkhH{cursor:pointer;display:inline-block;border:0;background:transparent;outline:none;-webkit-text-decoration:none;text-decoration:none;}
+/* sc-component-id: style__NavLink-sc-a4rhze-5 */
+.ifSYmn{color:#fff;opacity:.8;padding:16px;-webkit-transition:opacity .5s;transition:opacity .5s;} .ifSYmn:hover{opacity:1;}
+/* sc-component-id: style__SearchContainer-sc-a4rhze-6 */
+.ivDzQh{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;position:relative;}
+/* sc-component-id: style__ToggleSearchButton-sc-a4rhze-7 */
+.ivWLzp{cursor:pointer;color:#fff;opacity:.8;background:none;outline:none;border:0;-webkit-transition:opacity .5s;transition:opacity .5s;} .ivWLzp:hover{opacity:1;}
+/* sc-component-id: logo__LogoImage-sc-1lpuih4-0 */
+.eIwTUr{max-height:30px;width:30px;margin-right:45px;} @media (max-width:576px){.eIwTUr{margin-right:15px;}}
+/* sc-component-id: logo__HomeLink-sc-1lpuih4-1 */
+.vCLwZ{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;height:30px;}
+/* sc-component-id: style__StyledFooter-sc-pds1jw-0 */
+.cNuvLd{max-width:100%;padding:10px 0;z-index:700;position:relative;font-size:.9em;margin-top:50px;}
+/* sc-component-id: style__FooterContainer-sc-pds1jw-1 */
+.zgZgv{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;text-align:right;line-height:1.1em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;} @media (max-width:1300px){.zgZgv{padding:0 20px;}}
+/* sc-component-id: style__Copyright-sc-pds1jw-2 */
+.egXSzF{margin:0;}
+/* sc-component-id: style__DesignBy-sc-pds1jw-3 */
+.ikTPdH{margin:0;opacity:.8;font-size:.8em;} .ikTPdH a{font-weight:bold;-webkit-text-decoration:none;text-decoration:none;color:#000;} .ikTPdH a:hover{-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: style__StyledNav-sc-pds1jw-4 */
+.dbihZy ul{list-style-type:none;margin:0;padding:0;} .dbihZy li{display:inline-block;margin-right:25px;} .dbihZy li:last-child{margin-right:0;}
+/* sc-component-id: style__FooterMenuItem-sc-pds1jw-5 */
+.dZFYkr{color:#000;-webkit-text-decoration:none;text-decoration:none;}
+/* sc-component-id: style__FooterMenuLink-sc-pds1jw-6 */
+.hbladY{color:#000;-webkit-text-decoration:none;text-decoration:none;}
+/* sc-component-id: toc__StyledNav-sc-8z5f7g-0 */
+.itkrKE .toc-list{list-style-type:none;margin:0;padding:0;} .itkrKE .toc-list .toc-list{padding-left:17px;padding-top:10px;} .itkrKE .toc-list-item{line-height:1.2em;padding-bottom:10px;} .itkrKE .toc-list-item:last-child{padding-bottom:0;} .itkrKE .toc-link{color:#808080;-webkit-text-decoration:none;text-decoration:none;} .itkrKE .is-active-link{color:#404040;font-weight:700;}
+/* sc-component-id: reading-progress__ReadingProgressBar-sc-18odsaw-0 */
+.hvUygX{position:-webkit-sticky;position:sticky;height:5px;top:70px;background-color:#007acc;z-index:500;}
+/* sc-component-id: social-channel-list__StyledSocialChannels-sc-75j5fa-0 */
+.kdYUOw{list-style-type:none;margin:0;padding:0;}
+/* sc-component-id: social-channel-list__StyledSocialChannel-sc-75j5fa-1 */
+.efGKlB{display:inline-block;margin:0 10px;font-size:1.6em;opacity:.7;-webkit-transition:opacity .5s;transition:opacity .5s;} .efGKlB:hover{opacity:1;}
+/* sc-component-id: avatar__StyledAvatar-sc-r1tgs7-0 */
+.dbMCyG{max-width:55px;border-radius:100%;}
+/* sc-component-id: bio__StyledBio-sc-e8utc-0 */
+.fEekLx{margin:auto;text-align:center;width:100%;}
+/* sc-component-id: bio__AuthorDescription-sc-e8utc-1 */
+.fZxKfj{margin:10px 0 13px;} .fZxKfj a{color:#000;-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: bio__AuthorName-sc-e8utc-2 */
+.cFCms{margin:10px;}
+/* sc-component-id: post__PostContainer-sc-1tpszwu-0 */
+.jkxUfZ{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:0 !important;} @media (max-width:1300px){.jkxUfZ{padding:0 20px;}}
+/* sc-component-id: post__LeftSidebar-sc-1tpszwu-1 */
+.dMfbld{min-width:255px;max-width:225px;-webkit-transition:opacity .5s;transition:opacity .5s;} @media (max-width:1300px){.dMfbld{position:fixed;display:none;z-index:1000;background-color:#fff;width:100% !important;max-width:100%;padding:0 20px;margin-top:-5px;height:calc(100vh - 70px);}}
+/* sc-component-id: post__PostContent-sc-1tpszwu-2 */
+.deztSj{margin-top:-5px;border-right:1px #e5eff5 solid;border-left:1px #e5eff5 solid;background-color:#fff;box-shadow:0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.1);z-index:10;width:1035px;max-width:100%;} .deztSj li > a,.deztSj p > a{color:#0054aa;border-bottom:2px #0054aa solid;} .deztSj pre{margin:30px 0;} .deztSj blockquote{border-left:4px #a4cbb8 solid;background-color:#fafafa;margin:30px 0;padding:5px 20px;border-radius:.3em;} .deztSj h3::before,.deztSj h4::before,.deztSj h5::before,.deztSj h6::before{display:block;content:" ";height:90px;margin-top:-90px;visibility:hidden;} .deztSj h2{border-top:1px solid #ececec;margin-top:44px;padding-top:40px;line-height:1.2;} .deztSj code[class*="language-text"]{padding:5px;} .deztSj p > img{max-width:100%;border-radius:.3em;margin:30px 0;} .deztSj hr{border-top:1px solid #ececec;border-bottom:0;margin-top:44px;margin-bottom:40px;} .deztSj .gatsby-resp-image-link{margin:30px 0;max-width:100%;} .deztSj .gatsby-resp-image-link .gatsby-resp-image-image{border-radius:.3em;}
+/* sc-component-id: post__TocWrapper-sc-1tpszwu-3 */
+.isYlRR{position:-webkit-sticky;position:sticky;top:70px;padding:40px 30px 40px 0;}
+/* sc-component-id: post__PostHeader-sc-1tpszwu-4 */
+.ebZUAf{padding:40px;} @media (max-width:576px){.ebZUAf{padding:20px;}}
+/* sc-component-id: post__FeaturedImage-sc-1tpszwu-5 */
+.jxWiCW{border-radius:0;} @media (max-width:1300px){.jxWiCW{margin-left:-1px;margin-right:-1px;}}
+/* sc-component-id: post__StyledPost-sc-1tpszwu-6 */
+.gnOoOq{padding:40px;} @media (max-width:576px){.gnOoOq{padding:20px;}}
+/* sc-component-id: post__PostMeta-sc-1tpszwu-7 */
+.iFBHxj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;opacity:.8;font-size:.9em;}
+/* sc-component-id: post__PostTitle-sc-1tpszwu-8 */
+.kYeQpM{margin:0;padding:0;}
+/* sc-component-id: post__PostFooter-sc-1tpszwu-9 */
+.lhHUGK{background-color:#fafafa;font-size:.8em;color:#666;padding:40px;line-height:1em;} .lhHUGK p{margin:5px 0;}
+/* sc-component-id: post__FooterTagLink-sc-1tpszwu-10 */
+.bvoseI{color:#000 !important;-webkit-text-decoration:none;text-decoration:none;border-bottom:0 !important;}
+/* sc-component-id: post__PostAddition-sc-1tpszwu-11 */
+.gNWVOH{background-color:#fff;border-top:1px #e5eff5 solid;border-bottom:1px #e5eff5 solid;z-index:700;position:relative;padding:40px;}
+/* sc-component-id: post__PostAdditionContent-sc-1tpszwu-12 */
+.iveBqt{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;} @media (max-width:1300px){.iveBqt{padding:0 20px;}}
+/* sc-component-id: post__BioWrapper-sc-1tpszwu-13 */
+.iedZkm{width:50%;margin:auto;} @media (max-width:576px){.iedZkm{width:100%;}}
+/* sc-component-id: post__ToggleTocButton-sc-1tpszwu-14 */
+.ibZMud{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-top:1em;position:fixed;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;right:20px;bottom:20px;border-radius:100%;box-shadow:0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.1);border:0;z-index:5000;width:50px;height:50px;background-color:#20232a;color:#fff;outline:none;} @media (min-width:1300px){.ibZMud{display:none;}}</style><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="icon" href="/favicon-32x32.png?v=2437168b31f2509b64411266c5ea7d43" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#a4cbb8"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=2437168b31f2509b64411266c5ea7d43"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=2437168b31f2509b64411266c5ea7d43"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-a188c44b8f90382f425e.js"/><link as="script" rel="preload" href="/framework-cd3e1e804d552fa282ef.js"/><link as="script" rel="preload" href="/app-6952b99c0f3a2d91ac70.js"/><link as="script" rel="preload" href="/styles-7d4153d260c0197f0043.js"/><link as="script" rel="preload" href="/1bfc9850-3de49fcd9cce71919e67.js"/><link as="script" rel="preload" href="/commons-a6fba9f291032f4ecf85.js"/><link as="script" rel="preload" href="/component---node-modules-gatsby-theme-dgh-src-templates-post-tsx-c2c09527986edda32b85.js"/><link as="fetch" rel="preload" href="/page-data\cach-tao-1-blog-bang-gatsbyjs-va-deploy-len-github\page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1116962356.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1994268275.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2206391224.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2275848304.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/545095672.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data\app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="style__NavContainer-sc-a4rhze-0 jNsfeh"><div class="common__Container-sc-8vkiv5-0 style__Nav-sc-a4rhze-1 iGdNRI"><a class="logo__HomeLink-sc-1lpuih4-1 vCLwZ" href="/"><div class="logo__LogoImage-sc-1lpuih4-0 eIwTUr gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:30px;height:30px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEy0lEQVQ4yx2U6VOTVxTG35l2UIsyEKy1ts50ClpasBCUJSDIEoSAUAg6zERAQBJAlhIqBFpCErJBYiSQkASykB3fJICJZl8IYVP2JDhFRGtttV+d/gW90/vpfnnOOc/5nXOgF+F9l8O5tOjf2tgK7gbDwdB+KPzy94PXr47eHL1+9/btX3+++/fjxx4iKa8QU3vnrkqnmZCIxieFoukpaHd7x+fxri6vhPaCQPPq5eGboyOgef/u73/ef3j75o/trZ0P7z80NrTkozG365v4YiFPOCGSTgvEIujZ2rrL6VxeCmxvbi35A5sbm7s7Oy/29w8PDsKh8G9kWlkZFigvp2alpGY2EVoFEjFfKJTIpOMiIQQKtlgsPp8PJFeq1Q67w2a1e9xej9djc9ixt3CRkacjP0NERZ05derznGtFDwUC2YxCpVbLlDPQU8sTrV47tzDvcrmsNqt/cdHv9wcCgZXl5Y3nz2GD8XppZezprxGxX0ZHn4k8iahrbNY+0is16hm1Cnq2vm4wGp0Oh8/r83g8dofD7XaDQCbT3Prqmh6e/YU8dCEh+eRJRAzii2PHozKycpQ6DQzDFosZCodCwPPa6urayupKILC0uAjqBx+Tad40t0AeplfXNfyIREVHnwXi48ejklPThVOSWXiWMTICuVxu2GAwW8x2u81qfeL1eJZ8/vDunlgqU6o0+HsdOUUlF79HxiDORcec+eTTE4XFpZOy6cnpqfYuIkTo6KrHt9bUNxJJvzLYo4wRDmWYPi2Vsx/wAMl+CjW/pDwuISUhMRURezb+u8Su+70jYw94gnGhRAyRGcwBGq2lmwjPzwPDUrlcNDUFwwYGh9tHpdYRWgtLK8uwNTV1DfHxSRQGk8MfE0gmGRzOIJ0ODXNH+2lUDp8PZstgMiqUKpVa89RmZfN42Nv16LKqHHRZZi66CFN+OS1XqdNKZxQK5cyYUMDgjkJMLneIybS7nKHdPdDhAQq1nzz0cELQ0v5zHb41r7j8Slb+FVQevq0TcwML2Gp0WtgA62b1CpUSegTDdBbbaJgP7u7p9Dr6yAiLy+GM8evvEopuVKFLq76Ju1R5q4ZEoQ7SaICt8f83Nzen0mggCpURcSJWJlduPN94wB8fpNLBANLZrA5iT1Y+JiX9GrqkQiaX05jsPvKQRC612+wLCwtms9lms0HfXrh07qs4t8v76uClTKG410VksNn6R3qQv7axuYnQQRlmsjncIRartrmlk9grVciFYrFWqwchoIhjCAzmp52tnUWvd0at7Oi534hvmxCJhlksKoMhEIt7B8mg7SQKBddEiEtAXvgBmZiSmZZVgMotgiIiovt6B8EOmkymYQ4HW3unGeAnDXR09xJJ/d19fW3dxE4SqZ7QVn4Th0zLTUpGAXFSCioRmQXFxJzlcnhHh4dGk4nMYBRX3Cy+Ud3Q2n63vRPX2FyNq6vC1aZnF6Rk5CDTrl5CZgP9FVRBejY6Ox8DpadfVWu0VqvN6XJSmMzM3KIkZDZgiy6rLMXWXK+oBpxy8kqAb9IAueomLjXjWmpGHroCm11YAuHxbcG9II8/YTZbFh4/5o3zW9q7ULnoNFRBxtXCuIvJ58/HE3v6wGEARwbg3NrcXl9dd3s8ArHkP0fWZksT3WxMAAAAAElFTkSuQmCC" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/nehalist-gatsby.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/nehalist-gatsby.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/nehalist-gatsby.png 2x" /><img loading="lazy" width="30" height="30" srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/nehalist-gatsby.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/nehalist-gatsby.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/nehalist-gatsby.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/91664/nehalist-gatsby.png" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></a><div class="style__NavWrapper-sc-a4rhze-2 hTYzC"><ul class="style__NavMenu-sc-a4rhze-3 dCxZWG"><li class="style__NavMenuItem-sc-a4rhze-4 bdSkhH"><a class="style__NavLink-sc-a4rhze-5 ifSYmn" href="/">Home</a></li><li class="style__NavMenuItem-sc-a4rhze-4 bdSkhH"><a class="style__NavLink-sc-a4rhze-5 ifSYmn" href="/about-me">About me</a></li></ul><div class="style__SearchContainer-sc-a4rhze-6 ivDzQh"><ul class="style__NavMenu-sc-a4rhze-3 efhgqU"><li class="style__NavMenuItem-sc-a4rhze-4 bdSkhH"><button role="button" aria-label="Toggle search" class="style__ToggleSearchButton-sc-a4rhze-7 ivWLzp"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button></li></ul></div></div></div></div><main><div style="width:0%" color="#007acc" class="reading-progress__ReadingProgressBar-sc-18odsaw-0 hvUygX"></div><div class="common__Container-sc-8vkiv5-0 post__PostContainer-sc-1tpszwu-0 jkxUfZ"><div class="post__LeftSidebar-sc-1tpszwu-1 dMfbld"><div class="post__TocWrapper-sc-1tpszwu-3 isYlRR"><nav class="toc__StyledNav-sc-8z5f7g-0 itkrKE toc"></nav></div></div><button role="button" aria-label="Toggle table of contents" class="post__ToggleTocButton-sc-1tpszwu-14 ibZMud"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button><div class="post__PostContent-sc-1tpszwu-2 deztSj"><article class="post"><header class="post__PostHeader-sc-1tpszwu-4 ebZUAf"><section class="post__PostMeta-sc-1tpszwu-7 iFBHxj"><a href="/tag/javascript">JavaScript</a><time dateTime="2021-10-21T00:00:00.000Z">21 October, 2021</time></section><h1 class="post__PostTitle-sc-1tpszwu-8 kYeQpM">Cách tạo 1 blog bằng gatsbyjs và deploy lên github</h1></header><div class="post__FeaturedImage-sc-1tpszwu-5 jxWiCW gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:56.5%"></div><img aria-hidden="true" src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAABAv/EABUBAQEAAAAAAAAAAAAAAAAAAAAD/9oADAMBAAIQAxAAAAEWM5tEcyP/xAAbEAACAQUAAAAAAAAAAAAAAAABAgMAEBESE//aAAgBAQABBQJIzrwNGFs3/8QAFhEAAwAAAAAAAAAAAAAAAAAAAAES/9oACAEDAQE/AbZbP//EABYRAQEBAAAAAAAAAAAAAAAAAAASAf/aAAgBAgEBPwGEY//EABgQAAIDAAAAAAAAAAAAAAAAAAACICIx/9oACAEBAAY/AmqbH//EABwQAQACAQUAAAAAAAAAAAAAAAEAESEQUXGh0f/aAAgBAQABPyEBIXe4UZHXsDhSckFqtf/aAAwDAQACAAMAAAAQxA//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ECv/xAAWEQADAAAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8Qgq//xAAeEAEAAgIBBQAAAAAAAAAAAAABESEAMVEQQWGhwf/aAAgBAQABPxCC2qhrx9rjHhI9wVGHRwjFPvDMRDut9f/Z" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/27222a83a2437f71a98bc5d25a044818/8850c/index.jpg 200w,
+/static/27222a83a2437f71a98bc5d25a044818/da113/index.jpg 400w,
+/static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg 800w,
+/static/27222a83a2437f71a98bc5d25a044818/c26c2/index.jpg 1200w,
+/static/27222a83a2437f71a98bc5d25a044818/356ef/index.jpg 1280w" sizes="(max-width: 800px) 100vw, 800px" /><img loading="lazy" sizes="(max-width: 800px) 100vw, 800px" srcset="/static/27222a83a2437f71a98bc5d25a044818/8850c/index.jpg 200w,
+/static/27222a83a2437f71a98bc5d25a044818/da113/index.jpg 400w,
+/static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg 800w,
+/static/27222a83a2437f71a98bc5d25a044818/c26c2/index.jpg 1200w,
+/static/27222a83a2437f71a98bc5d25a044818/356ef/index.jpg 1280w" src="/static/27222a83a2437f71a98bc5d25a044818/f2cbb/index.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><section class="post__StyledPost-sc-1tpszwu-6 gnOoOq post"><h3 id="lời-mở-đầu" style="position:relative;"><a href="#l%E1%BB%9Di-m%E1%BB%9F-%C4%91%E1%BA%A7u" aria-label="lời mở đầu permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lời mở đầu</h3>
+<p>Hiện nay có rất nhiều công cụ dùng để tạo blog, phổ biến nhất trong số đó chính là các nền tảng như google blogger và wordpress, tuy nhiên 2 nền tảng này code khá rối rắm, anh em developer các framework khác nếu muốn tùy biến thì sẽ rất là cực, chưa kể nó còn chậm nữa.</p>
+<p>Sau nguyên niên kỷ Nodejs, với sự bùng nổ của JAM-Stack(Javascript - API - Mockup), static site generator ra đời, chúng tỏ ra rất hiệu quả và cũng đang dần được sử dụng cực kì phổ biến trong ngành công nghệ web.</p>
+<h2 id="static-site-generator" style="position:relative;"><a href="#static-site-generator" aria-label="static site generator permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static site generator</h2>
+<h3 id="static-site-generator-là-gì" style="position:relative;"><a href="#static-site-generator-l%C3%A0-g%C3%AC" aria-label="static site generator là gì permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Static site generator là gì?</h3>
+<p>Static site generator (gọi tắt là SSG) là một công cụ giúp build thành trang web tĩnh (HTML, CSS, JS) ngay lúc build-time mà không cần sử dụng server cho run-time để xử lý động. Do đó việc tải trang web sẽ trở nên cực kì nhanh vì không cần xử lý các request động mà chỉ trả về các static data có sẵn.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 800px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e4f8a448f8384376944d5ca4b20cd4a9/5a190/static-site-generator-vs-dynamic-content-management.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsTAAALEwEAmpwYAAACnklEQVQoz22O609ScRjHz3/Ru141N1O8gOIlWW2u1Wrmsqa1spv36QuDvKQZGkznxJNAOg5BlGVtucIy6IiXTI5cPIcDmKbgFbRpGEGUoiicfpBvan1fPPs+l8++D8TAJQyLjKkWpFZcPnG77Hxz9Rlu5Tl+Fag59zhnm9hZ3Mrsxpthz+McrynJKM9nvhfQLQ+TCQRiEAjDJE0e7zylhI/1wxno/VS14AgKZ6hhuqqVqW5jqWFQmQPtLLBStdHftSbpOsMIIYWSCCSekJzEFageqzAro8iu05M96RZFgll6a0FzaeZ1lKkrb6r3ovFZLClJnpBkokI6iYDIfTiRkLBwWbtFcwHvoenELdaBPPJ5vKFz3GmDZ0cPYG3I9Nhjy8eDejgf6345PMCcQOh/4BSTFPyQgkuH7daiKWUM0ZVpfZJmltNJKcskTydliSSSpVfkkD1xn2TZqgfFgqajEzKwTTM9hA4ZRNEGcQImzhuVs3RItLYjDhPRtMKYsY5YTBirFcZphbRxMS0yBO3hsfABQKKMYkjkMrHfyHPZ5QUtDTe4NeX8hsLG2mJ+fSnvTklTXUFj7XVu9dW7Vde41UX8emAK+fW57DJO/yMAQhRFBXcCvu8ev9dHupZ7nWZ0ZbrfqlcumV+tWOfda5Q/sLvlpwLBoH8nsBk2275fezsBAELBUERUCDR9blvlHNps/9C9YKyzaziLg0bfFzD3Brasq/Pgans3MDJF7AX3wpGhUDgZKBSpQ+6FVvsob3aINzciXtaLl3Q4gEOU1eUYdkyDg0n36pVBuXPTE0H+hjGPQzGnb5jRVNlQmZN4uoQbfqyA+Zrn25rXDYzlq6P0hWje6woj/yRP/lxXbdjebsz2uWaA6Vv/vOjfD6H+p987aOnddRtRkAAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="so sánh static site generator và cms"
+        title="so sánh static site generator và cms"
+        src="/static/e4f8a448f8384376944d5ca4b20cd4a9/5a190/static-site-generator-vs-dynamic-content-management.png"
+        srcset="/static/e4f8a448f8384376944d5ca4b20cd4a9/5a46d/static-site-generator-vs-dynamic-content-management.png 300w,
+/static/e4f8a448f8384376944d5ca4b20cd4a9/0a47e/static-site-generator-vs-dynamic-content-management.png 600w,
+/static/e4f8a448f8384376944d5ca4b20cd4a9/5a190/static-site-generator-vs-dynamic-content-management.png 800w"
+        sizes="(max-width: 800px) 100vw, 800px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h4 id="một-số-ưu-điểm-của-static-site-generator" style="position:relative;"><a href="#m%E1%BB%99t-s%E1%BB%91-%C6%B0u-%C4%91i%E1%BB%83m-c%E1%BB%A7a-static-site-generator" aria-label="một số ưu điểm của static site generator permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Một số ưu điểm của static site generator:</h4>
+<ul>
+<li>Tiết kiệm: Đây là 1 lý do lớn mà người ta sử dụng em này, chi phí rất rẻ, thậm chí github page lại cung cấp dịch vụ miễn phí cho những trang web tĩnh như SSG. Amazon S3, Netlify cũng là 1 lựa chọn tiết kiệm cho những trang web dùng SSG.</li>
+<li>Nhanh: Như đã đề cập, việc không cần sử dụng database hay SSR (server side rendering) khiến tốc độ load của những trang này cực nhanh (như blog này chẳng hạn).</li>
+<li>Tốt cho SEO, với tốc độ load thần sầu, SEO sẽ là 1 điểm cộng cho SSG.</li>
+<li>Live reloading: Các công cụ xây dựng SSG hỗ trợ việc cập nhật thay đổi khi bạn sửa đổi nội dung, việc này cực kì hữu ích cho quá trình develop.</li>
+<li>Không cần các trình soạn thảo đặc biệt hay hiểu biết về HTML, do SSG sử dụng markdown hoặc thậm chí plain text để soạn nội dung.</li>
+<li>Không cần DB, dễ dàng backup, như đã nói do data được soạn bằng markdown nên việc này là một điểm cộng.</li>
+</ul>
+<h4 id="nhược-điểm-của-ssg-cần-cân-nhắc" style="position:relative;"><a href="#nh%C6%B0%E1%BB%A3c-%C4%91i%E1%BB%83m-c%E1%BB%A7a-ssg-c%E1%BA%A7n-c%C3%A2n-nh%E1%BA%AFc" aria-label="nhược điểm của ssg cần cân nhắc permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nhược điểm của SSG cần cân nhắc:</h4>
+<ul>
+<li>Không có được sự tương tác như các web động, đương nhiên vì nó là web tĩnh.</li>
+<li>Quản lý file: Thời gian build tỉ lệ thuận với số lượng bài viết, khi số lượng bài viết tăng nhiều, việc quản lý file sẽ trở nên khó khăn hơn.</li>
+<li>Cần có kĩ năng để build (tất nhiên hầu hết những anh em đọc bài này có thể bỏ qua).</li>
+</ul>
+<h3 id="về-gatsbyjs" style="position:relative;"><a href="#v%E1%BB%81-gatsbyjs" aria-label="về gatsbyjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Về Gatsbyjs</h3>
+<p>Có thể kể đến các SSG nổi tiếng như Jekyll, Nextjs, Hugo, nhân vật chính của bài viết này là Gatsbyjs.
+Gatsbyjs là một framework khá nổi tiếng với <a href="https://github.com/gatsbyjs/gatsby">hơn 50k stars trên Github</a>, được xây dựng dựa trên React và Graphql.</p>
+<h4 id="điểm-mạnh-của-gatsbyjs" style="position:relative;"><a href="#%C4%91i%E1%BB%83m-m%E1%BA%A1nh-c%E1%BB%A7a-gatsbyjs" aria-label="điểm mạnh của gatsbyjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Điểm mạnh của Gatsbyjs</h4>
+<ul>
+<li>Gatsbyjs có thể được sử dụng để xây dựng trang blog, portfolio, trang thương mại điện tử, Static PWA (Progressive Web Apps),...</li>
+<li>Gatsbyjs hỗ trợ nhiều plugins giúp bạn xây dựng và deploy trang web một cách nhanh chóng mà không cần phải triển khai database, cài đặt server.</li>
+<li>Gatsbyjs có thể load dữ liệu từ nhiều nơi như: các file dạng Markdown, các CMS (Contentful, Wordpress), REST hay GraphQL API,...</li>
+<li>Gatsby tỏ ra cực kì hữu ích và được rất nhiều anh lớn sử dụng:</li>
+</ul>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/2cf9749957aa9cab11ea7d2d5f4f004d/9e3ea/gatsby-usage-traffic.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABZklEQVQoz4WS/UvCQBjH9///JUFBEEU/FZaUGpIZZEUWmHq2F6dxc/e227e7c5qLzY59OBjPffZ9np23iCgmkymCwMdsNgMhBHEcQykFIQS01nArN4/O92NqPM5ScMbcYc75dmfmnd2tMDeVOTL8t2yVl3KBVKj6IiszhITia5QgGK8qCacpMqXhUZHDTzRkZpNol6hM7r792AxxcTDC1dEYDUNpP/zEzckEPFXwEqExT/U2SRVWOOwvcH/po38duN2mWlEJuhSO5FtCZy6hRrjSSKXeIwSeWhGaxxOHTWvbU7KM7WibsFZYtPzanaNzTtA2DNqRuQUagmUQ/BcnpIVQZtXpNjN8vpvj9nSK1hkBeacu4a5Q7goJ1YiZtr+0doYv3bWw1/Dd8KU5txE5RCG0rUYmIVfrg3UzHHQi91eHDwsz/Nylk7yMEzIjXNroqurKFJjrRD4o3noxlhEz7a4T/cXW/gAssFCEByl7RgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="gatsby usage traffic"
+        title="gatsby usage traffic"
+        src="/static/2cf9749957aa9cab11ea7d2d5f4f004d/c1b63/gatsby-usage-traffic.png"
+        srcset="/static/2cf9749957aa9cab11ea7d2d5f4f004d/5a46d/gatsby-usage-traffic.png 300w,
+/static/2cf9749957aa9cab11ea7d2d5f4f004d/0a47e/gatsby-usage-traffic.png 600w,
+/static/2cf9749957aa9cab11ea7d2d5f4f004d/c1b63/gatsby-usage-traffic.png 1200w,
+/static/2cf9749957aa9cab11ea7d2d5f4f004d/9e3ea/gatsby-usage-traffic.png 1503w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h2 id="cách-tạo-blog-bằng-gatsbyjs" style="position:relative;"><a href="#c%C3%A1ch-t%E1%BA%A1o-blog-b%E1%BA%B1ng-gatsbyjs" aria-label="cách tạo blog bằng gatsbyjs permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cách tạo blog bằng gatsbyjs</h2>
+<h3 id="cài-đặt-gatsby" style="position:relative;"><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-gatsby" aria-label="cài đặt gatsby permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài đặt Gatsby</h3>
+<ul>
+<li>Đầu tiên ta phải cài đặt Nodejs (dĩ nhiên rồi)</li>
+<li>
+<p>Tiếp theo cài đặt Gatsby CLI</p>
+<ul>
+<li>
+<p>Nếu bạn dùng npm</p>
+<blockquote>
+<p>npm install -g gatsby-cli</p>
+</blockquote>
+</li>
+<li>
+<p>Nếu bạn dùng yarn:</p>
+<blockquote>
+<p>yarn global add gatsby-cli</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>Ở đây ta có 2 hướng tiếp cận, 1 là chúng ta dùng lệnh <strong>gatsby new</strong> để tạo 1 project mới và rỗng, chúng ta sẽ phải code hết các phần còn lại để web hoạt động, gatsby-cli chỉ khởi tạo những thành phần cơ bản mà thôi.</p>
+<h4 id="dùng-gatsby-starter-theme" style="position:relative;"><a href="#d%C3%B9ng-gatsby-starter-theme" aria-label="dùng gatsby starter theme permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dùng gatsby starter theme</h4>
+<p>Đơn giản hơn chúng ta có cách khác là sử dụng các starter (hay starter theme) của Gatsbyjs.
+Bạn có thể tìm các starter theme ở trang chủ gatsby hoặc ở <a href="https://jamstackthemes.dev/#ssg=gatsby">jamstack theme</a>.
+Ở đây mình chọn 1 starter mẫu là <a href="https://github.com/nehalist/gatsby-starter-nehalem">Nehalem starter</a>.</p>
+<p>Tạo project mới bằng starter này:</p>
+<blockquote>
+<p>gatsby new gatsby-demo <a href="https://github.com/nehalist/gatsby-starter-nehalem">https://github.com/nehalist/gatsby-starter-nehalem</a></p>
+</blockquote>
+<blockquote>
+<p>cd gatsby-demo</p>
+</blockquote>
+<blockquote>
+<p>yarn</p>
+</blockquote>
+<blockquote>
+<p>gatsby develop</p>
+</blockquote>
+<p>Bây giờ bạn có thể mở localhost:8000 để xem thành quả.
+Đây chỉ là starter theme, có những chỗ config và giao diện bạn hoàn toàn có thể sửa lại theo ý mình.</p>
+<h3 id="bắt-đầu-viết-bài" style="position:relative;"><a href="#b%E1%BA%AFt-%C4%91%E1%BA%A7u-vi%E1%BA%BFt-b%C3%A0i" aria-label="bắt đầu viết bài permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bắt đầu viết bài</h3>
+<p>Tùy vào từng starter theme sẽ có cách lưu bài viết vào các thư mục khác nhau, ở đây bài viết được lưu ở /content/posts.
+Bạn chỉ việc tạo thư mục con hoặc file markdown trong thư mục này, ví dụ ở đây mình tạo 1 bài viết mới bằng cách tạo 1 thư mục mới và file index.md phía trong nó. Copy phần frontmatter của bài viết example vào file này và chỉnh sửa theo ý bạn.
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/8062590946c231876c82ffee3e557598/c4451/tao-bai-viet-moi.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABaElEQVQoz5WSSVLDMBBFfRIISTxJtiVL8iArdpykKKDYsOII3P8Gn5ZMBrKgisUrTeXu/387qt0rCtGACYu0HLDNKiRMIs4l1nFBq0AmdLjLC42s8PsaCa+xSSustgxPMb8QueMH7HiCe/mEff+CaHco9UANenDZoyCkcRDK0r0/N8hLg9gXZQopX0g8dI708IbOzcQETkoqKpaT4pQvamJaW1Lveof2MKNqbHhL2ULiydVypvtI2Wco3VJnjYcNCxZubWzJekNNjnbEsBthJgczkuJuCEjrUDtyRY143SIy7QytNOqmx+NNwTObTKJrJuyHGfuZnAz+4x0pdaiMRUURiX4K8TDRIWq7A3QhoMYJTJqgap0UF3w2vOqQcxNIPT927/dZYUihPYXsJMlPSkVTFsHmeV1C11fCpE3I94q5vEeKLLNG0yAUVveWN3n4fc4fLIX+Jqr0DlJ2aO1EeZW/BuL3/y34DQwTFkSOERKhAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="tao bai viet moi gatsby"
+        title="tao bai viet moi gatsby"
+        src="/static/8062590946c231876c82ffee3e557598/c1b63/tao-bai-viet-moi.png"
+        srcset="/static/8062590946c231876c82ffee3e557598/5a46d/tao-bai-viet-moi.png 300w,
+/static/8062590946c231876c82ffee3e557598/0a47e/tao-bai-viet-moi.png 600w,
+/static/8062590946c231876c82ffee3e557598/c1b63/tao-bai-viet-moi.png 1200w,
+/static/8062590946c231876c82ffee3e557598/c4451/tao-bai-viet-moi.png 1450w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Nhấn save, Gatsby CLI sẽ tự động cập nhật bài viết mới lên localhost cho bạn.</p>
+<h3 id="tự-động-quy-trình-tạo-bài-viết-mới" style="position:relative;"><a href="#t%E1%BB%B1-%C4%91%E1%BB%99ng-quy-tr%C3%ACnh-t%E1%BA%A1o-b%C3%A0i-vi%E1%BA%BFt-m%E1%BB%9Bi" aria-label="tự động quy trình tạo bài viết mới permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tự động quy trình tạo bài viết mới</h3>
+<p>Đến đây bạn có thể sẽ thấy khoai khoai, gì mà tạo bài viết mới mà lằng nhằng dữ dzậy. Phải tạo folder mới, tạo file markdown, chỉnh sửa thông tin phù hợp, đặc biệt là phần path, bạn phải gõ tay slug cho phần đường dẫn này, vì path chuẩn SEO phải là dạng tieng-viet-khong-dau, thế này thì lại sinh ra bệnh xương khớp mất.</p>
+<p>Cái khó ló cái khôn, mình đã viết ra 1 CLI (command-line interface) cho vụ này có tên là gatsby-tool-cli.</p>
+<p>Các bạn cần cài đặt gatsby-tool-cli bằng command:</p>
+<blockquote>
+<p>yarn global add gatsby-tool-cli</p>
+</blockquote>
+<p>Hoặc npm</p>
+<blockquote>
+<p>npm i gatsby-tool-cli -g</p>
+</blockquote>
+<p>Khi cài xong, chúng ta chỉ cần gõ <strong>gtc-new</strong>, vào lần chạy đầu tiên, nó sẽ tạo file config có tên là gatsby-tool-cli.json như sau:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/160edcfa19be60d732f9deeae0c6bfe6/4f1dd/gatsby-tool-cli-config.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 40%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABJ0AAASdAHeZh94AAABTUlEQVQoz2WS63KCMBCFeRQvKEiukARCkGK1VafT6fu/zekmVi3jj2+yA+Hs2bNkTfhAJS22VY28VNjsFNUa60IkStmg0BaFsMgLdaOM7yWWOcNyMycLb1ccLz/wh08Iu4dsBghCmlgHKDeg7SYYqoXtoH0P1fbgpkMpHEo+J7PDFe2wp8seBTco2B+x5uSMLkn60KiOxD3qEAU9mG5JwL6Qmf4I5uhDprH4N8Iir1IEygzg2qMiQaY8FLnfUZMdNakohnjeSYJNO6FuPHQbsNryJPQUlBinC47nbxxOX6hdjKGHqGlk3dHZpmaC4NTwJkj5cFVTJi1WxVxwTYLCBvj9KREFkzPpyG1Hy7PPiIiHQy4a2G7E+sWhggvvGKYzGjfSuLQkE6BpedrS4hr3mqGyI5ZbNhv34ZB+jThizDESty5qn874nCn3cHbnF710+FhLw7ycAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="gatsby tool cli config"
+        title="gatsby tool cli config"
+        src="/static/160edcfa19be60d732f9deeae0c6bfe6/c1b63/gatsby-tool-cli-config.png"
+        srcset="/static/160edcfa19be60d732f9deeae0c6bfe6/5a46d/gatsby-tool-cli-config.png 300w,
+/static/160edcfa19be60d732f9deeae0c6bfe6/0a47e/gatsby-tool-cli-config.png 600w,
+/static/160edcfa19be60d732f9deeae0c6bfe6/c1b63/gatsby-tool-cli-config.png 1200w,
+/static/160edcfa19be60d732f9deeae0c6bfe6/4f1dd/gatsby-tool-cli-config.png 1567w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<p>Chúng ta cần chỉnh sửa thuộc tính postFolder cho phù hợp với project gatsby của mình, ở đây config mặc định là content/posts, trùng với project structure nên mình không cần sửa.</p>
+<p>Để tạo bài viết mới, vẫn là lệnh <strong>gtc-new</strong>, nhập tiêu đề và tag, nó sẽ tự động tạo folder và slug phù hợp với folder của tiêu đề bạn nhập.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/14185c805080687f2b2a551e0a313085/3f8aa/gatsby-tool-cli-usage.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 47%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABkUlEQVQoz1WS63KjMAyFeZJuc+Nu8B1sIKbJbqaZ/bHv/zSnsmnS7I9vhDXiWD5SpvxvdHJAxTSOZZc4VX1iXzAciJprVNzgVMY8R16Ln0j1sWZ3ahKZW24I17+Yr3dwFyD8CjFuUfoP9GYBEw5SL+iVp/MEHrETeu3BpEPLHcrWoGQWmfJ3jH5Bp8bnrQ9OMTYyFU/Cw7gJ458zdJihZg85ebTSomgU1ehExu0Fg9FohcbbrsCvQ/nkbV9ilzfp5quacfMB4XKGPc+oe4OiVt9iW4xkwgb0JMaGAXlPSb6Rd5L87KlDgYIZOHq2U4Qd0ZGfef3T1UMsCXIT0HYCdlmSyKHo/iPakDwi0SIJGBqgodzwFHwlk3ZFayR5aHEoGd6P9QtVmpy05NsQEsZ9gOsZ2q20HT4NrCMfWx47JUFBHVZSomoldscmCT1WIPJOuTNtwO3zH2z4hFzv6IcVjC5pyNeWj2jIz4ePGZMTlBjhwgUFPf1VMH7vcwZGP3W0HlzRuuhpWx+1dcdEFByek/4CMB0YsDWj0lEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="gatsby tool cli usage"
+        title="gatsby tool cli usage"
+        src="/static/14185c805080687f2b2a551e0a313085/c1b63/gatsby-tool-cli-usage.png"
+        srcset="/static/14185c805080687f2b2a551e0a313085/5a46d/gatsby-tool-cli-usage.png 300w,
+/static/14185c805080687f2b2a551e0a313085/0a47e/gatsby-tool-cli-usage.png 600w,
+/static/14185c805080687f2b2a551e0a313085/c1b63/gatsby-tool-cli-usage.png 1200w,
+/static/14185c805080687f2b2a551e0a313085/3f8aa/gatsby-tool-cli-usage.png 1337w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+      />
+  </a>
+    </span></p>
+<h3 id="deploy-lên-github" style="position:relative;"><a href="#deploy-l%C3%AAn-github" aria-label="deploy lên github permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy lên github</h3>
+<p>Bây giờ việc còn lại chính là deploy lên server, chúng ta có 2 lựa chọn free chính là netlify và github pages. Ở đây sự lựa chọn của mình là github.</p>
+<p>Đầu tiên bạn cần có 1 tài khoản github, sau đó tạo 1 repository (<strong>Public</strong>) trống, trùng tên với account github của bạn thêm đuôi github.io (username.github.io).</p>
+<p>Ví dụ account blog này của mình là devgiangho, thì repository sẽ là <a href="https://github.com/devgiangho/devgiangho.github.io">https://github.com/devgiangho/devgiangho.github.io</a>;</p>
+<p>Chúng ta quay lại với project mẫu ban đầu, gatsby-demo đã tạo ở trên.
+Để deploy được lên github chúng ta cần package <strong>gh-pages</strong>.</p>
+<blockquote>
+<p>yarn add gh-pages --dev</p>
+</blockquote>
+<p>Tạo 1 script mới ở đường dẫn <strong>deploy/github.js</strong>.</p>
+<p>Nội dung file github.js:</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token keyword">const</span> ghpages <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"gh-pages"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Pushing...."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ghpages<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>
+  <span class="token string">"public"</span><span class="token punctuation">,</span> <span class="token comment">// chính là thư mục được build thành web static</span>
+  <span class="token punctuation">{</span>
+    branch<span class="token operator">:</span> <span class="token string">"master"</span><span class="token punctuation">,</span>
+    repo<span class="token operator">:</span> <span class="token string">"https://github.com/devgiangho/devgiangho.github.io.git"</span><span class="token punctuation">,</span> <span class="token comment">// đổi thành link repo của bạn</span>
+    add<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">(</span><span class="token parameter">error</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Error: "</span> <span class="token operator">+</span> error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Deploy completed to GIT."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Vào package.json, trong phần scripts thêm lệnh deploy:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"gatsby build"</span><span class="token punctuation">,</span>
+    <span class="token property">"develop"</span><span class="token operator">:</span> <span class="token string">"gatsby develop"</span><span class="token punctuation">,</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"npm run develop"</span><span class="token punctuation">,</span>
+    <span class="token property">"serve"</span><span class="token operator">:</span> <span class="token string">"gatsby serve"</span><span class="token punctuation">,</span>
+    <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"npm run build &amp;&amp; node ./deploy/github"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>Bây giờ bạn chỉ việc chạy <strong>yarn deploy</strong> hoặc <strong>npm deploy</strong> là có thể publish lên github rồi !</p>
+<h2 id="kết-luận" style="position:relative;"><a href="#k%E1%BA%BFt-lu%E1%BA%ADn" aria-label="kết luận permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kết luận</h2>
+<p>Hy vọng sau bài viết này bạn có thể tự tạo được 1 blog cho riêng mình bằng 1 cách rất là <strong>"dev"</strong>.
+Happy writing !</p></section><footer class="post__PostFooter-sc-1tpszwu-9 lhHUGK"><p>Published under <span><a class="post__FooterTagLink-sc-1tpszwu-10 bvoseI" href="/tag/javascript">JavaScript</a></span> on <time dateTime="2021-10-21T00:00:00.000Z">21 October, 2021</time>.</p></footer></article></div></div><section class="post__PostAddition-sc-1tpszwu-11 gNWVOH"><div class="common__Container-sc-8vkiv5-0 post__PostAdditionContent-sc-1tpszwu-12 iveBqt"><div class="post__BioWrapper-sc-1tpszwu-13 iedZkm"><section class="bio__StyledBio-sc-e8utc-0 fEekLx"><div class="avatar__StyledAvatar-sc-r1tgs7-0 dbMCyG gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:55px;height:55px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEy0lEQVQ4yx2U6VOTVxTG35l2UIsyEKy1ts50ClpasBCUJSDIEoSAUAg6zERAQBJAlhIqBFpCErJBYiSQkASykB3fJICJZl8IYVP2JDhFRGtttV+d/gW90/vpfnnOOc/5nXOgF+F9l8O5tOjf2tgK7gbDwdB+KPzy94PXr47eHL1+9/btX3+++/fjxx4iKa8QU3vnrkqnmZCIxieFoukpaHd7x+fxri6vhPaCQPPq5eGboyOgef/u73/ef3j75o/trZ0P7z80NrTkozG365v4YiFPOCGSTgvEIujZ2rrL6VxeCmxvbi35A5sbm7s7Oy/29w8PDsKh8G9kWlkZFigvp2alpGY2EVoFEjFfKJTIpOMiIQQKtlgsPp8PJFeq1Q67w2a1e9xej9djc9ixt3CRkacjP0NERZ05derznGtFDwUC2YxCpVbLlDPQU8sTrV47tzDvcrmsNqt/cdHv9wcCgZXl5Y3nz2GD8XppZezprxGxX0ZHn4k8iahrbNY+0is16hm1Cnq2vm4wGp0Oh8/r83g8dofD7XaDQCbT3Prqmh6e/YU8dCEh+eRJRAzii2PHozKycpQ6DQzDFosZCodCwPPa6urayupKILC0uAjqBx+Tad40t0AeplfXNfyIREVHnwXi48ejklPThVOSWXiWMTICuVxu2GAwW8x2u81qfeL1eJZ8/vDunlgqU6o0+HsdOUUlF79HxiDORcec+eTTE4XFpZOy6cnpqfYuIkTo6KrHt9bUNxJJvzLYo4wRDmWYPi2Vsx/wAMl+CjW/pDwuISUhMRURezb+u8Su+70jYw94gnGhRAyRGcwBGq2lmwjPzwPDUrlcNDUFwwYGh9tHpdYRWgtLK8uwNTV1DfHxSRQGk8MfE0gmGRzOIJ0ODXNH+2lUDp8PZstgMiqUKpVa89RmZfN42Nv16LKqHHRZZi66CFN+OS1XqdNKZxQK5cyYUMDgjkJMLneIybS7nKHdPdDhAQq1nzz0cELQ0v5zHb41r7j8Slb+FVQevq0TcwML2Gp0WtgA62b1CpUSegTDdBbbaJgP7u7p9Dr6yAiLy+GM8evvEopuVKFLq76Ju1R5q4ZEoQ7SaICt8f83Nzen0mggCpURcSJWJlduPN94wB8fpNLBANLZrA5iT1Y+JiX9GrqkQiaX05jsPvKQRC612+wLCwtms9lms0HfXrh07qs4t8v76uClTKG410VksNn6R3qQv7axuYnQQRlmsjncIRartrmlk9grVciFYrFWqwchoIhjCAzmp52tnUWvd0at7Oi534hvmxCJhlksKoMhEIt7B8mg7SQKBddEiEtAXvgBmZiSmZZVgMotgiIiovt6B8EOmkymYQ4HW3unGeAnDXR09xJJ/d19fW3dxE4SqZ7QVn4Th0zLTUpGAXFSCioRmQXFxJzlcnhHh4dGk4nMYBRX3Cy+Ud3Q2n63vRPX2FyNq6vC1aZnF6Rk5CDTrl5CZgP9FVRBejY6Ox8DpadfVWu0VqvN6XJSmMzM3KIkZDZgiy6rLMXWXK+oBpxy8kqAb9IAueomLjXjWmpGHroCm11YAuHxbcG9II8/YTZbFh4/5o3zW9q7ULnoNFRBxtXCuIvJ58/HE3v6wGEARwbg3NrcXl9dd3s8ArHkP0fWZksT3WxMAAAAAElFTkSuQmCC" alt="Kiên Đinh" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/nehalist-gatsby.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/nehalist-gatsby.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/nehalist-gatsby.png 2x" /><img loading="lazy" width="55" height="55" srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/nehalist-gatsby.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/nehalist-gatsby.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/nehalist-gatsby.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/nehalist-gatsby.png" alt="Kiên Đinh" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h3 class="bio__AuthorName-sc-e8utc-2 cFCms">Kiên Đinh</h3><p class="bio__AuthorDescription-sc-e8utc-1 fZxKfj">Bần đạo là <strong>Kiên Đinh</strong>, một Developer. 
+        Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-75j5fa-0 kdYUOw"><li class="social-channel-list__StyledSocialChannel-sc-75j5fa-1 efGKlB"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-75j5fa-1 efGKlB"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-75j5fa-1 efGKlB"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-75j5fa-1 efGKlB"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-pds1jw-0 cNuvLd"><div class="common__Container-sc-8vkiv5-0 style__FooterContainer-sc-pds1jw-1 zgZgv"><nav class="style__StyledNav-sc-pds1jw-4 dbihZy"><ul><li><a class="style__FooterMenuLink-sc-pds1jw-6 hbladY" href="/about-me">About me</a></li><li><a href="/sitemap.xml" rel="noopener noreferrer" class="style__FooterMenuItem-sc-pds1jw-5 dZFYkr">Sitemap</a></li></ul></nav><div><p class="style__Copyright-sc-pds1jw-2 egXSzF"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2021</p><p class="style__DesignBy-sc-pds1jw-3 ikTPdH"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/cach-tao-1-blog-bang-gatsbyjs-va-deploy-len-github";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-6345fe6c192448f369b8.js"],"app":["/app-6952b99c0f3a2d91ac70.js"],"component---node-modules-gatsby-theme-dgh-src-pages-404-tsx":["/component---node-modules-gatsby-theme-dgh-src-pages-404-tsx-26b9d77a367889c13584.js"],"component---node-modules-gatsby-theme-dgh-src-pages-archive-tsx":["/component---node-modules-gatsby-theme-dgh-src-pages-archive-tsx-0bde43d5b5ced67e68f3.js"],"component---node-modules-gatsby-theme-dgh-src-pages-tags-tsx":["/component---node-modules-gatsby-theme-dgh-src-pages-tags-tsx-a850b6295cdd4bbd25e6.js"],"component---node-modules-gatsby-theme-dgh-src-templates-page-tsx":["/component---node-modules-gatsby-theme-dgh-src-templates-page-tsx-691b7bf891b5d461e575.js"],"component---node-modules-gatsby-theme-dgh-src-templates-post-tsx":["/component---node-modules-gatsby-theme-dgh-src-templates-post-tsx-c2c09527986edda32b85.js"],"component---node-modules-gatsby-theme-dgh-src-templates-posts-tsx":["/component---node-modules-gatsby-theme-dgh-src-templates-posts-tsx-bb84259eb3982dd39ae2.js"],"component---node-modules-gatsby-theme-dgh-src-templates-tag-tsx":["/component---node-modules-gatsby-theme-dgh-src-templates-tag-tsx-fe65828a883e6c008e13.js"]};/*]]>*/</script><script src="/polyfill-6345fe6c192448f369b8.js" nomodule=""></script><script src="/component---node-modules-gatsby-theme-dgh-src-templates-post-tsx-c2c09527986edda32b85.js" async=""></script><script src="/commons-a6fba9f291032f4ecf85.js" async=""></script><script src="/1bfc9850-3de49fcd9cce71919e67.js" async=""></script><script src="/styles-7d4153d260c0197f0043.js" async=""></script><script src="/app-6952b99c0f3a2d91ac70.js" async=""></script><script src="/framework-cd3e1e804d552fa282ef.js" async=""></script><script src="/webpack-runtime-a188c44b8f90382f425e.js" async=""></script></body></html>
