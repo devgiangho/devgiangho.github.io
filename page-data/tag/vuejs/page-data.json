@@ -1,1 +1,5 @@
-{"componentChunkName":"component---node-modules-gatsby-theme-dgh-src-templates-tag-tsx","path":"/tag/vuejs","result":{"data":{"tag":{"name":"VueJS","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"VueJS"}},"staticQueryHashes":["1994268275","2275848304","545095672"]}
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tag/vuejs",
+    "result": {"data":{"tag":{"name":"VueJS","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"VueJS"}},
+    "staticQueryHashes": ["2275848304","3082461530","545095672"]}

@@ -1,1 +1,5 @@
-{"componentChunkName":"component---node-modules-gatsby-theme-dgh-src-templates-tag-tsx","path":"/tag/dev-and-life","result":{"data":{"tag":{"name":"Dev & Life","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"Dev & Life"}},"staticQueryHashes":["1994268275","2275848304","545095672"]}
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tag/dev-and-life",
+    "result": {"data":{"tag":{"name":"Dev & Life","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"Dev & Life"}},
+    "staticQueryHashes": ["2275848304","3082461530","545095672"]}
