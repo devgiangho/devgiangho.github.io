@@ -1,0 +1,1178 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.82c5661ed401e926c9ab.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#8292a2}.token.punctuation{color:#f8f8f2}.token.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 4.0.1"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='UA-149502908-1',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-149502908-1', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><title data-react-helmet="true">Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript - Dev Giang Hồ - Blog for Devs</title><meta data-react-helmet="true" name="description" content="Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại."/><meta data-react-helmet="true" name="og:title" content="Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="og:type" content="website"/><meta data-react-helmet="true" name="og:description" content="Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại."/><meta data-react-helmet="true" name="og:url" content="https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript"/><meta data-react-helmet="true" name="twitter:label1" content="Written by"/><meta data-react-helmet="true" name="twitter:data1" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:title" content="Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="twitter:description" content="Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại."/><meta data-react-helmet="true" name="keywords" content="JavaScript, .NET, Java, Vuejs, PHP, Vạn Vật, Nodejs, Boilerplate, Typescript, Express, Prisma, Docker, Postgres"/><meta data-react-helmet="true" name="article:published_time" content="2022-03-10T00:00:00.000Z"/><meta data-react-helmet="true" name="article:modified_time" content="2022-03-10T00:00:00.000Z"/><meta data-react-helmet="true" name="twitter:label2" content="Filed under"/><meta data-react-helmet="true" name="twitter:data2" content="Nodejs"/><meta data-react-helmet="true" name="og:image" content="https://devgiangho.github.io//static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png"/><meta data-react-helmet="true" name="twitter:image" content="https://devgiangho.github.io//static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png"/><script data-react-helmet="true" type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Article",
+          "author": {
+            "@type": "Person",
+            "name": "Kiên Đinh"
+          },
+          "keywords": "Nodejs, Boilerplate, Typescript, Express, Prisma, Docker, Postgres",
+          "headline": "Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript - Dev Giang Hồ - Blog for Devs",
+          "url": "https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript",
+          "datePublished": "2022-03-10T00:00:00.000Z",
+          "datePublished": "2022-03-10T00:00:00.000Z",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://devgiangho.github.io//static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png",
+            "width": "1000",
+            "height": "520"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dev Giang Hồ - Blog for Devs"
+          },
+          "description": "Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devgiangho.github.io"
+          }
+        }
+      </script><style data-styled="" data-styled-version="5.3.3">html{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
+body{margin:0;}/*!sc*/
+main{display:block;}/*!sc*/
+h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+hr{box-sizing:content-box;height:0;overflow:visible;}/*!sc*/
+pre{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+a{background-color:transparent;}/*!sc*/
+abbr[title]{border-bottom:none;-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}/*!sc*/
+b,strong{font-weight:bolder;}/*!sc*/
+code,kbd,samp{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+small{font-size:80%;}/*!sc*/
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}/*!sc*/
+sub{bottom:-0.25em;}/*!sc*/
+sup{top:-0.5em;}/*!sc*/
+img{border-style:none;}/*!sc*/
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}/*!sc*/
+button,input{overflow:visible;}/*!sc*/
+button,select{text-transform:none;}/*!sc*/
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}/*!sc*/
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}/*!sc*/
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}/*!sc*/
+fieldset{padding:0.35em 0.75em 0.625em;}/*!sc*/
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}/*!sc*/
+progress{vertical-align:baseline;}/*!sc*/
+textarea{overflow:auto;}/*!sc*/
+[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0;}/*!sc*/
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}/*!sc*/
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}/*!sc*/
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}/*!sc*/
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}/*!sc*/
+details{display:block;}/*!sc*/
+summary{display:list-item;}/*!sc*/
+template{display:none;}/*!sc*/
+[hidden]{display:none;}/*!sc*/
+html{box-sizing:border-box;background-color:#fafafa;}/*!sc*/
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;line-height:1.9em;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+h1,h2,h3,h4,h5,h6{outline:none;}/*!sc*/
+a{color:#000;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gatsby-highlight{max-width:100% !important;}/*!sc*/
+.gatsby-highlight-code-line{background-color:#353631;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:0.75em;}/*!sc*/
+data-styled.g2[id="sc-global-cfzRDe1"]{content:"sc-global-cfzRDe1,"}/*!sc*/
+.hhzXsP{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;}/*!sc*/
+@media (max-width:1300px){.hhzXsP{padding:0 20px;}}/*!sc*/
+data-styled.g3[id="common__Container-sc-yvdkhc-0"]{content:"hhzXsP,"}/*!sc*/
+.eBjOxQ{z-index:1000;background-color:#20232a;position:-webkit-sticky;position:sticky;top:0;box-shadow:0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.07);}/*!sc*/
+data-styled.g5[id="style__NavContainer-sc-jhe81k-0"]{content:"eBjOxQ,"}/*!sc*/
+.hRmTxB{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;}/*!sc*/
+data-styled.g6[id="style__Nav-sc-jhe81k-1"]{content:"hRmTxB,"}/*!sc*/
+.kkNwJo{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:100%;height:70px;white-space:nowrap;}/*!sc*/
+@media (max-width:576px){.kkNwJo{width:90%;}}/*!sc*/
+data-styled.g7[id="style__NavWrapper-sc-jhe81k-2"]{content:"kkNwJo,"}/*!sc*/
+.cPsfUr{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;}/*!sc*/
+@media (max-width:576px){.cPsfUr{width:80%;overflow-x:auto;overflow-y:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);}}/*!sc*/
+.jPyOnZ{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;}/*!sc*/
+data-styled.g8[id="style__NavMenu-sc-jhe81k-3"]{content:"cPsfUr,jPyOnZ,"}/*!sc*/
+.fPrbPq{cursor:pointer;display:inline-block;border:0;background:transparent;outline:none;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g9[id="style__NavMenuItem-sc-jhe81k-4"]{content:"fPrbPq,"}/*!sc*/
+.bdMJer{color:#fff;opacity:.8;padding:16px;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.bdMJer:hover{opacity:1;}/*!sc*/
+data-styled.g10[id="style__NavLink-sc-jhe81k-5"]{content:"bdMJer,"}/*!sc*/
+.dSpRmA{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;position:relative;}/*!sc*/
+data-styled.g11[id="style__SearchContainer-sc-jhe81k-6"]{content:"dSpRmA,"}/*!sc*/
+.cbBsOC{cursor:pointer;color:#fff;opacity:.8;background:none;outline:none;border:0;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.cbBsOC:hover{opacity:1;}/*!sc*/
+data-styled.g12[id="style__ToggleSearchButton-sc-jhe81k-7"]{content:"cbBsOC,"}/*!sc*/
+.jIujQe{max-height:30px;width:30px;margin-right:45px;}/*!sc*/
+@media (max-width:576px){.jIujQe{margin-right:15px;}}/*!sc*/
+data-styled.g20[id="logo__LogoImage-sc-1ta2zdq-0"]{content:"jIujQe,"}/*!sc*/
+.dYGSok{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;height:30px;}/*!sc*/
+data-styled.g21[id="logo__HomeLink-sc-1ta2zdq-1"]{content:"dYGSok,"}/*!sc*/
+.hNmZFn{max-width:100%;padding:10px 0;z-index:700;position:relative;font-size:.9em;margin-top:50px;}/*!sc*/
+data-styled.g27[id="style__StyledFooter-sc-1bbyksd-0"]{content:"hNmZFn,"}/*!sc*/
+.kRFmqs{text-align:right;line-height:1.1em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+data-styled.g28[id="style__FooterContainer-sc-1bbyksd-1"]{content:"kRFmqs,"}/*!sc*/
+.eFaQjI{margin:0;}/*!sc*/
+data-styled.g29[id="style__Copyright-sc-1bbyksd-2"]{content:"eFaQjI,"}/*!sc*/
+.hFClol{margin:0;opacity:.8;font-size:.8em;}/*!sc*/
+.hFClol a{font-weight:bold;-webkit-text-decoration:none;text-decoration:none;color:#000;}/*!sc*/
+.hFClol a:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g30[id="style__DesignBy-sc-1bbyksd-3"]{content:"hFClol,"}/*!sc*/
+.hCiwIZ ul{list-style-type:none;margin:0;padding:0;}/*!sc*/
+.hCiwIZ li{display:inline-block;margin-right:25px;}/*!sc*/
+.hCiwIZ li:last-child{margin-right:0;}/*!sc*/
+data-styled.g31[id="style__StyledNav-sc-1bbyksd-4"]{content:"hCiwIZ,"}/*!sc*/
+.RdnGO{color:#000;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g33[id="style__FooterMenuLink-sc-1bbyksd-6"]{content:"RdnGO,"}/*!sc*/
+.fZaPhp .toc-list{list-style-type:none;margin:0;padding:0;}/*!sc*/
+.fZaPhp .toc-list .toc-list{padding-left:17px;padding-top:10px;}/*!sc*/
+.fZaPhp .toc-list-item{line-height:1.2em;padding-bottom:10px;}/*!sc*/
+.fZaPhp .toc-list-item:last-child{padding-bottom:0;}/*!sc*/
+.fZaPhp .toc-link{color:#808080;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.fZaPhp .is-active-link{color:#404040;font-weight:700;}/*!sc*/
+data-styled.g46[id="toc__StyledNav-sc-1rcn1mg-0"]{content:"fZaPhp,"}/*!sc*/
+.bGzPfA{position:-webkit-sticky;position:sticky;height:5px;top:70px;background-color:#a4cbb8;z-index:500;}/*!sc*/
+data-styled.g47[id="reading-progress__ReadingProgressBar-sc-1h92jbi-0"]{content:"bGzPfA,"}/*!sc*/
+.eWZpEr{list-style-type:none;margin:0;padding:0;}/*!sc*/
+data-styled.g48[id="social-channel-list__StyledSocialChannels-sc-hb4cd6-0"]{content:"eWZpEr,"}/*!sc*/
+.dIYGZM{display:inline-block;margin:0 10px;font-size:1.6em;opacity:.7;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.dIYGZM:hover{opacity:1;}/*!sc*/
+data-styled.g49[id="social-channel-list__StyledSocialChannel-sc-hb4cd6-1"]{content:"dIYGZM,"}/*!sc*/
+.fYracG{max-width:55px;border-radius:100%;}/*!sc*/
+data-styled.g50[id="avatar__StyledAvatar-sc-1b55w7o-0"]{content:"fYracG,"}/*!sc*/
+.buiIfq{margin:auto;text-align:center;width:100%;}/*!sc*/
+data-styled.g51[id="bio__StyledBio-sc-cy4lz8-0"]{content:"buiIfq,"}/*!sc*/
+.iEPaOA{margin:10px 0 13px;}/*!sc*/
+.iEPaOA a{color:#000;-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g52[id="bio__AuthorDescription-sc-cy4lz8-1"]{content:"iEPaOA,"}/*!sc*/
+.HeSmV{margin:10px;}/*!sc*/
+data-styled.g53[id="bio__AuthorName-sc-cy4lz8-2"]{content:"HeSmV,"}/*!sc*/
+.gRnocR{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:0 !important;}/*!sc*/
+data-styled.g54[id="post__PostContainer-sc-14ootra-0"]{content:"gRnocR,"}/*!sc*/
+.hEpQVI{min-width:255px;max-width:225px;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+@media (max-width:1300px){.hEpQVI{position:fixed;display:none;z-index:1000;background-color:#fff;width:100% !important;max-width:100%;padding:0 20px;margin-top:-5px;height:calc(100vh - 70px);}}/*!sc*/
+data-styled.g55[id="post__LeftSidebar-sc-14ootra-1"]{content:"hEpQVI,"}/*!sc*/
+.lmZNGN{margin-top:-5px;border-right:1px #e5eff5 solid;border-left:1px #e5eff5 solid;background-color:#fff;box-shadow:0 0 3px rgba(0,0,0,0.03),0 3px 46px rgba(0,0,0,0.1);z-index:10;width:1035px;max-width:100%;}/*!sc*/
+.lmZNGN li > a,.lmZNGN p > a{color:#0054aa;border-bottom:2px #0054aa solid;overflow-wrap:break-word;}/*!sc*/
+.lmZNGN pre{margin:30px 0;}/*!sc*/
+.lmZNGN blockquote{border-left:4px #a4cbb8 solid;background-color:#fafafa;margin:30px 0;padding:5px 20px;border-radius:0.3em;}/*!sc*/
+.lmZNGN h3::before,.lmZNGN h4::before,.lmZNGN h5::before,.lmZNGN h6::before{display:block;content:" ";visibility:hidden;}/*!sc*/
+.lmZNGN h2{border-top:1px solid #ececec;margin-top:44px;padding-top:40px;line-height:1.2;}/*!sc*/
+.lmZNGN code[class*="language-text"]{padding:5px;}/*!sc*/
+.lmZNGN p > img{max-width:100%;border-radius:0.3em;margin:30px 0;}/*!sc*/
+.lmZNGN hr{border-top:1px solid #ececec;border-bottom:0;margin-top:44px;margin-bottom:40px;}/*!sc*/
+.lmZNGN .gatsby-resp-image-link{margin:30px 0;max-width:100%;}/*!sc*/
+.lmZNGN .gatsby-resp-image-link .gatsby-resp-image-image{border-radius:0.3em;}/*!sc*/
+data-styled.g56[id="post__PostContent-sc-14ootra-2"]{content:"lmZNGN,"}/*!sc*/
+.iHFeMU{position:-webkit-sticky;position:sticky;top:70px;padding:40px 30px 40px 0;}/*!sc*/
+data-styled.g57[id="post__TocWrapper-sc-14ootra-3"]{content:"iHFeMU,"}/*!sc*/
+.eovFiO{padding:40px;}/*!sc*/
+@media (max-width:576px){.eovFiO{padding:20px;}}/*!sc*/
+data-styled.g58[id="post__PostHeader-sc-14ootra-4"]{content:"eovFiO,"}/*!sc*/
+.gtCJo{border-radius:0;}/*!sc*/
+@media (max-width:1300px){.gtCJo{margin-left:-1px;margin-right:-1px;}}/*!sc*/
+data-styled.g59[id="post__FeaturedImage-sc-14ootra-5"]{content:"gtCJo,"}/*!sc*/
+.gjEQdA{padding:40px;}/*!sc*/
+@media (max-width:576px){.gjEQdA{padding:20px;}}/*!sc*/
+data-styled.g60[id="post__StyledPost-sc-14ootra-6"]{content:"gjEQdA,"}/*!sc*/
+.ijuirw{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;opacity:0.8;font-size:0.9em;}/*!sc*/
+data-styled.g61[id="post__PostMeta-sc-14ootra-7"]{content:"ijuirw,"}/*!sc*/
+.jpqqca{margin:0;padding:0;line-height:1.2;}/*!sc*/
+data-styled.g62[id="post__PostTitle-sc-14ootra-8"]{content:"jpqqca,"}/*!sc*/
+.kvgTmP{background-color:#fafafa;font-size:0.8em;color:#666;padding:40px;line-height:1em;}/*!sc*/
+.kvgTmP p{margin:5px 0;}/*!sc*/
+data-styled.g63[id="post__PostFooter-sc-14ootra-9"]{content:"kvgTmP,"}/*!sc*/
+.gdsQai{color:#000 !important;-webkit-text-decoration:none;text-decoration:none;border-bottom:0 !important;}/*!sc*/
+data-styled.g64[id="post__FooterTagLink-sc-14ootra-10"]{content:"gdsQai,"}/*!sc*/
+.ddTKRo{background-color:#fff;border-top:1px #e5eff5 solid;border-bottom:1px #e5eff5 solid;z-index:700;position:relative;padding:40px;}/*!sc*/
+data-styled.g65[id="post__PostAddition-sc-14ootra-11"]{content:"ddTKRo,"}/*!sc*/
+.jxyEbH{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}/*!sc*/
+data-styled.g66[id="post__PostAdditionContent-sc-14ootra-12"]{content:"jxyEbH,"}/*!sc*/
+.dMBYdG{width:50%;margin:auto;}/*!sc*/
+@media (max-width:576px){.dMBYdG{width:100%;}}/*!sc*/
+data-styled.g67[id="post__BioWrapper-sc-14ootra-13"]{content:"dMBYdG,"}/*!sc*/
+.Bwnup{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-top:1em;position:fixed;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;right:20px;bottom:20px;border-radius:100%;box-shadow:0 0 3px rgba(0,0,0,0.03),0 3px 46px rgba(0,0,0,0.1);border:0;z-index:5000;width:50px;height:50px;background-color:#20232a;color:#fff;outline:none;}/*!sc*/
+@media (min-width:1300px){.Bwnup{display:none;}}/*!sc*/
+data-styled.g68[id="post__ToggleTocButton-sc-14ootra-14"]{content:"Bwnup,"}/*!sc*/
+</style><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=7e55704418c2d530fda33cc8a39a3395" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#a4cbb8"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=7e55704418c2d530fda33cc8a39a3395"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-ce3c3087af5b051171f2.js"/><link as="script" rel="preload" href="/framework-38de9ebdaf5cd0003079.js"/><link as="script" rel="preload" href="/app-9f1147f8c466dd96f926.js"/><link as="script" rel="preload" href="/1bfc9850-f1b2044ff811313c5a48.js"/><link as="script" rel="preload" href="/commons-ff8672169835332c8244.js"/><link as="script" rel="preload" href="/component---src-templates-post-tsx-6b59bd73f7bebe17c310.js"/><link as="fetch" rel="preload" href="/page-data/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1116962356.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2275848304.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3082461530.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3089453468.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/545095672.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="style__NavContainer-sc-jhe81k-0 eBjOxQ"><div class="common__Container-sc-yvdkhc-0 style__Nav-sc-jhe81k-1 hhzXsP hRmTxB"><a class="logo__HomeLink-sc-1ta2zdq-1 dYGSok" href="/"><div class="logo__LogoImage-sc-1ta2zdq-0 jIujQe gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:30px;height:30px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ANXT1Lq4ucG/wMzKzNHP0dPR0tTS09nX2N3b3N7c3eLg4OPh4vLw8HJxd0BDSVxfY6Glo5KYlpGVlJaamQDPzc6+vL3Fw8TS0NHZ19jb2dre3Nzi4ODl4uTn5ebg3t/NzM7m5eZhYGdBRElbXmKQl5SNlJKWm5qTl5YAyMbHurm5w8HCzcvMwcDCy8rLz87O1dTU2tjY09LTe32BS0tSYWBnMzI6MDI4YmZok5iXkJSUmJybkZaUAMG/wLKysr6+vsXDxKCiori3uLa1t7y7vby9vLa4t1JVWgsLFAsKEg4OFg0NFT0/RY6Tk5yfnqGiopygnwC0srOkpqStr666urq1trXAv7/AwMDCwsLEw8PKycmpqqtGSlATFBwSExkQEBYLDBJdYWSkqKago6KfoqEAyMfHqqurubi4vr2+vLy8t7i4u7u7urq6rKytx8XGpqmnc31+JSgvDAwSERIXBwgONzo9oKWjqampsrKxANPS0rq5ucbFxcbExcTCwsG/v8XDxMTCwqysrqytr32Cg1NdYC4xORAQGBESFwgIDi8yNpSZmKepp4SIiAC6urupqqqxsrG3t7a1tbO9vLzBvsDTz9CXm5ygoaNlamw9RUgmKTEREhoQERYDBAlDR0qVnJqVmplrbnEAZmxuXmVoV15hcXd6hIeJhIiKf4KDmpudh4yNlpqZeH+AQUhNIygwKCsyEhMYJCcrbnR1iI+MjZORlJiXAH2EhXmBgWdwcamurre4uJudnZaZmampqoSKi3aAgF1maENKUEtSV1ddYCQkLH+EhYqQj5OYlYSKinyDgwCCi4l4gYCKkJDT0dKqrKueoKGhoqO0trWHjY1SW15ES1E9REs4PkRFSU0zNT6gpaSbn56eoJ+PlJOEi4kAhYuLfoWFt7q50s/QrKyteX+AeH1+jpKTZ2tvXWVoQEdNNDpBNDlAZWltSUxSnKCfo6WkqaqppaemnqGgAKipqYOGh6uqrtHP0KWmpYOIiIaLioqPkF5jZkVMUURKUSAjLVBVV3d/gHyBgZ+ioaurq6urq62traGjowB/gIQGCROcnaDKycqMkJF8gIOTmJeDh4ZscXI6QUkwNj9ESE6cnZ2BhYd2fX6YnZu3trevr6+xsbG2trYAIiUtGhsju7q929jZnJ6eam5xhIeHpqimhouKXGFkYmZsf4KFh4qLfoaGXGRnbXF1m56dlJeXpKSmr6+vAAYHEklJT87Mzr+9vZ+ioGxydGFlaZKWloKGhoCEhJOXl3V8fXaAgHd/f1piZiMoMSUqMSswODU6Qjk+RQAGBhB2dXzi4OCsrKyCiopSXF9ka25xd3lscHVxd3hwdnZpcHFtd3deZmlNVFoxNT4sLzkrMDgsMDkrMToAEREYi4qN3Nraq6ysfYSER05UR0xTYGhrY2ttWmFkU1pdUVpcNjtCMDc9MTU8LTE7MTU+NDlCNjtEO0FJADY2PKKjpLW1trm6uX+FhTg+RSwxOz1ES0RLUEpSV0ZOUzQ5QD1ASIWHind5fVFUWjI3PzI3QEROUjtDSABlZWnR0NGNkJKxsbKvsLCNkZBna245PkQ1OUI3PEMjJi8dHSRxcnbT0tPb2drRz9DMy83Hxce7vLyTl5hH1mZLeDDpeAAAAABJRU5ErkJggg==" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/logo.png 2x" /><img loading="lazy" width="30" height="30" srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/logo.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></a><div class="style__NavWrapper-sc-jhe81k-2 kkNwJo"><ul class="style__NavMenu-sc-jhe81k-3 cPsfUr"><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><a class="style__NavLink-sc-jhe81k-5 bdMJer" href="/">Home</a></li><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><a class="style__NavLink-sc-jhe81k-5 bdMJer" href="/about-me">About me</a></li></ul><div class="style__SearchContainer-sc-jhe81k-6 dSpRmA"><ul class="style__NavMenu-sc-jhe81k-3 jPyOnZ"><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><button role="button" aria-label="Toggle search" class="style__ToggleSearchButton-sc-jhe81k-7 cbBsOC"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button></li></ul></div></div></div></div><main><div style="width:0%" class="reading-progress__ReadingProgressBar-sc-1h92jbi-0 bGzPfA"></div><div class="common__Container-sc-yvdkhc-0 post__PostContainer-sc-14ootra-0 hhzXsP gRnocR"><div class="post__LeftSidebar-sc-14ootra-1 hEpQVI"><div class="post__TocWrapper-sc-14ootra-3 iHFeMU"><nav class="toc__StyledNav-sc-1rcn1mg-0 fZaPhp toc"></nav></div></div><button role="button" aria-label="Toggle table of contents" class="post__ToggleTocButton-sc-14ootra-14 Bwnup"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button><div class="post__PostContent-sc-14ootra-2 lmZNGN"><article class="post"><header class="post__PostHeader-sc-14ootra-4 eovFiO"><section class="post__PostMeta-sc-14ootra-7 ijuirw"><a href="/tag/nodejs">Nodejs</a><time dateTime="2022-03-10T00:00:00.000Z">10 March, 2022</time></section><h1 class="post__PostTitle-sc-14ootra-8 jpqqca">Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript</h1></header><div class="post__FeaturedImage-sc-14ootra-5 gtCJo gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:60%"></div><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAIAAADtbgqsAAAACXBIWXMAAAsTAAALEwEAmpwYAAABh0lEQVQoz4WRTUsCQRjH/UDRrW4do0unDn2AvkDktUvQLahOVnSoiKICxS7RpReyF8oyLVk11zfStDW33dnR0d2Z55nQhSBq7XcZGOY385//45M/iRRpWPk8TBnnBQuxu4MoOcg/8blL75gElEOBlM9/55u5HVhKCkQH5PojW4qyJ427F/WTR9Yz49vqxG5uci9vC/ho4ci2MREkNQr/yChxcFkZDqSnQsX5s6rOuPoJkVfnusLzhgD0iP3N/nN95e59J06OX0wOqDF8s3jZdGpUeP7Zhdh1s6NQJwVI3IRptTi3Gp4NhDdCpwjCU7YFy+iXBSOhfFw8aSfMYVLKh2R2bHpt1L+1sHkk0Vtuc5rVb+6roWg1mNCOOqIlpRQASibnXzy4jac8C3PbyhvRrH5dMmMlM9YtH6DRaLCmpeYKZc0gzc4/hRFb09sVG8AGtAEIpW/1um4autkyabufjL2RcSmuGtqlRlSL5WgnZlg1h3yPs9/L3bQSbRQCu3BADsB7Vf2WvwBAq5ySdj5nKQAAAABJRU5ErkJggg==" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/b6a6328b68b15b23ccb59561960eaa13/dc47e/nodejs-express-posgres-prisma-boilerplate.png 200w,
+/static/b6a6328b68b15b23ccb59561960eaa13/9f2d5/nodejs-express-posgres-prisma-boilerplate.png 400w,
+/static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png 800w,
+/static/b6a6328b68b15b23ccb59561960eaa13/02d1c/nodejs-express-posgres-prisma-boilerplate.png 1000w" sizes="(max-width: 800px) 100vw, 800px" /><img loading="lazy" sizes="(max-width: 800px) 100vw, 800px" srcset="/static/b6a6328b68b15b23ccb59561960eaa13/dc47e/nodejs-express-posgres-prisma-boilerplate.png 200w,
+/static/b6a6328b68b15b23ccb59561960eaa13/9f2d5/nodejs-express-posgres-prisma-boilerplate.png 400w,
+/static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png 800w,
+/static/b6a6328b68b15b23ccb59561960eaa13/02d1c/nodejs-express-posgres-prisma-boilerplate.png 1000w" src="/static/b6a6328b68b15b23ccb59561960eaa13/90823/nodejs-express-posgres-prisma-boilerplate.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><section class="post__StyledPost-sc-14ootra-6 gjEQdA post"><h2 id="lời-mở-đầu" style="position:relative;"><a href="#l%E1%BB%9Di-m%E1%BB%9F-%C4%91%E1%BA%A7u" aria-label="lời mở đầu permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lời mở đầu</h2>
+<p>Thế giới của lập trình viên web đang hết sức quen thuộc với những "containerized application", hay nói cách khác bây giờ đang là thời đại của microservice, và vì thế mỗi service chúng ta có thể chọn dùng dotNET, java, hay Nodejs tuỳ vào mục đích và nhu cầu của từng service.</p>
+<p>Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 Nodejs REST API để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại.</p>
+<p>Template này mình sẽ sử dụng Express làm backend framework, thêm vào đó sẽ sử dụng Prisma làm ORM để thao tác với dữ liệu PostgresQL, code bằng Typescript, dùng docker để deploy. Ok, let's get started.</p>
+<h2 id="bắt-tay-vào-dựng-nodejs-service" style="position:relative;"><a href="#b%E1%BA%AFt-tay-v%C3%A0o-d%E1%BB%B1ng-nodejs-service" aria-label="bắt tay vào dựng nodejs service permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bắt tay vào dựng Nodejs Service</h2>
+<h3 id="setup-project" style="position:relative;"><a href="#setup-project" aria-label="setup project permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup project</h3>
+<p>Tạo folder có tên "express-prisma-typescript-boilerplate", dùng vscode mở nó lên, [mấy pha tạo folder hay file này mình thấy dùng windows hơi bất tiện, nếu dùng linux thì vài dòng bash là xong rồi].</p>
+<p>Đầu tiên mình có vài config cần thêm vào, đó chính là prettier config để format code theo đúng chuẩn, tránh trường hợp conflict code giữa anh em trong team.</p>
+<p>Trong folder <strong>"express-prisma-typescript-boilerplate"</strong>, tạo file .prettierrc.json, folder .vscode, trong đó tạo settings.json</p>
+<p>Cấu trúc như sau:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">├── .vscode
+│   └── settings.json
+└── .prettierrc.json</code></pre></div>
+<p>Sửa nội dung file settings.json để dùng prettier làm trình formatter mặc định:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"editor.defaultFormatter"</span><span class="token operator">:</span> <span class="token string">"esbenp.prettier-vscode"</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>File .prettierrc.json (Đây là những thứ mình config, các bạn có thể tìm docs và config theo ý mình ở <a href="https://prettier.io/">https://prettier.io/</a>)</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"trailingComma"</span><span class="token operator">:</span> <span class="token string">"all"</span><span class="token punctuation">,</span>
+  <span class="token property">"tabWidth"</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token property">"semi"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"singleQuote"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="khởi-tạo-nodejs-project" style="position:relative;"><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-nodejs-project" aria-label="khởi tạo nodejs project permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Khởi tạo Nodejs project</h3>
+<p>Tất nhiên rồi, trước khi chúng ta có thể code, thì phải khởi tạo package.json để config info cho project cũng như cho phép chúng ta cài đặt các dependencies. Ở đây mình dùng npm, ai xài yarn có thể chạy lệnh tương tự.</p>
+<p>Trong vsCode, mở terminal bằng tổ hợp <strong>Ctrl</strong> + <strong>~</strong>
+Chạy command:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> init</code></pre></div>
+<p>Terminal sẽ nhảy yêu cầu nhập thông tin, ta điền các thông tin phù hợp, các field khác có thể bỏ qua, tuy nhiên hãy để main là "src/index.ts". Đây là file của mình sau khi nhập xong:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"express-prisma-typescript-boilerplate"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"src/index.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"kienmatu"</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"git+https://github.com/kienmatu/express-prisma-typescript-boilerplate.git"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="cài-typescript" style="position:relative;"><a href="#c%C3%A0i-typescript" aria-label="cài typescript permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài Typescript</h3>
+<p>Chạy lệnh sau để cài dependency typescript cho project:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i typescript</code></pre></div>
+<p>Chạy xong thì bạn sẽ thấy typescript được thêm vào package.json:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">//...</span>
+<span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^4.6.2"</span>
+  <span class="token punctuation">}</span></code></pre></div>
+<h3 id="khởi-tạo-tsconfigjson" style="position:relative;"><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-tsconfigjson" aria-label="khởi tạo tsconfigjson permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Khởi tạo tsconfig.json</h3>
+<p>Chạy command sau để khởi tạo tsconfig.json:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx tsc --init</code></pre></div>
+<p>(Ở đây mình dùng thêm npx bởi vì chúng ta cài typescript cục bộ, nếu muốn bỏ cái npx mà dùng trực tiếp tsc, bạn cần thêm <strong>-g</strong> vào command trước đó: <strong>npm i -g typescript</strong>)</p>
+<p>Chạy xong lệnh trên thì chúng ta đã có file tsconfig.json với hầu hết config đều được comment lại, chúng ta để ý option sau:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token comment">// "outDir": "./",</span></code></pre></div>
+<p>Bỏ comment option này và sửa nó thành:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"./dist"</span><span class="token punctuation">,</span></code></pre></div>
+<p><strong>dist</strong> ở đây là thư mục chứa các file đã được biên dịch sang Javascript, Nodejs sẽ chạy code ở thư mục này. Hiển nhiên rồi, chúng ta code Typescript và sẽ phải biên dịch nó qua JS.</p>
+<p>Nếu bạn ghét rườm rà và thích sự tinh gọn, hãy xoá hết các dòng comment trong đó, chúng ta sẽ có file tsconfig như sau:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"compilerOptions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"target"</span><span class="token operator">:</span> <span class="token string">"es2019"</span><span class="token punctuation">,</span>
+    <span class="token property">"module"</span><span class="token operator">:</span> <span class="token string">"commonjs"</span><span class="token punctuation">,</span>
+    <span class="token property">"outDir"</span><span class="token operator">:</span> <span class="token string">"dist"</span><span class="token punctuation">,</span>
+    <span class="token property">"strict"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"esModuleInterop"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"skipLibCheck"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"forceConsistentCasingInFileNames"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="cài-thêm-các-thư-viện" style="position:relative;"><a href="#c%C3%A0i-th%C3%AAm-c%C3%A1c-th%C6%B0-vi%E1%BB%87n" aria-label="cài thêm các thư viện permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài thêm các thư viện</h3>
+<p>Command:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i cross-env dotenv express rimraf</code></pre></div>
+<p>Thông tin về các package trên:</p>
+<ul>
+<li><strong>cross-env</strong>: Support cross platform.</li>
+<li><strong>dot-env</strong>: Giúp chúng ta có thể config environment variable trong file .env và đưa vào process.env và file ts.</li>
+<li><strong>express</strong>: Là backend framework như mình đề cập trước đó, hỗ trợ tạo REST API (GET, PUT, POST, PATCH, DELETE).</li>
+<li><strong>rimraf</strong>: Thư viện hỗ trợ rm -rf cross-platform để xoá các file trong mục dist khi build lại app. (anh em windows mà xoá file thì đúng là cực hình, dùng em này tiện hehe)</li>
+</ul>
+<p>Các package phía trên hầu hết hỗ trợ Typescript, cho nên chúng ta có thể dùng trực tiếp luôn, tuy nhiên có thể 1 số package chúng ta cài vào sẽ không support Typescript, vậy nên chúng ta phải cài thêm:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i @types/express @types/node</code></pre></div>
+<h3 id="development-tool-dependencies" style="position:relative;"><a href="#development-tool-dependencies" aria-label="development tool dependencies permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Development tool dependencies</h3>
+<p>Yeah, với việc phát triển 1 app nodejs bằng typescript thì chúng ta sẽ cần 1 vài thư viện khác. <strong>nodemon</strong> để theo dõi (watch) thay đổi trong lúc code và preview, còn <strong>concurrently</strong> để support việc chạy nhiều command cùng 1 lúc.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> i --save-dev concurrently nodemon</code></pre></div>
+<p>Lệnh trên chúng ta thêm tag --save-dev, tức là những package trên chỉ xuất hiện trong devDependencies, với mục đích phục vụ cho quá trình development, không ảnh hưởng tới code production.</p>
+<h3 id="npm-scripts" style="position:relative;"><a href="#npm-scripts" aria-label="npm scripts permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>NPM Scripts</h3>
+<p>Okay, xong phần dependencies thì chúng ta cũng sẽ cần setup các script cho dự án.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"rimraf dist &amp;&amp; tsc"</span><span class="token punctuation">,</span>
+  <span class="token property">"predev"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+  <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\""</span><span class="token punctuation">,</span>
+  <span class="token property">"prestart"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+  <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=production node dist/index.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>Yoo, hãy điểm qua 1 lượt các command trên xem chúng sẽ làm gì nào:</p>
+<ul>
+<li>
+<p><strong>build</strong> sẽ được gọi lại ở vài command khác. Mục đích chính của command này là compile (đóng gói/ biên dịch) app của chúng ta.
+Lệnh rimraf sẽ xoá hết các file của bản build cũ trong thư mục <strong>dist</strong> (ở trên chúng ta config thư mục này trong file tsconfig.json).</p>
+</li>
+<li>
+<p><strong>predev</strong> sẽ gọi qua command build để clean lại thư mục dist, compile lại project bằng lệnh tsc. Lệnh này sẽ tự động được gọi trước khi command "dev" được gọi (npm run serve / yarn server trên localhost).</p>
+</li>
+<li>
+<p><strong>dev</strong> dùng package cross-env để thiết lập NODE_ENV thành development. Bên cạnh đó sử dụng tsc --watch (TypeScript Compiler in “watch mode”), chế độ này sẽ build lại mỗi khi ta sửa code, output trong thư mục dist sẽ được compile lại, nodemon sẽ reload dist/index.js.</p>
+</li>
+<li>
+<p><strong>prestart</strong> giống với predev, chuẩn bị output cho production.</p>
+</li>
+<li>
+<p><strong>start</strong> lệnh này chạy app lên giống dev, nhưng không có theo dõi thay đổi, môi trường là production.</p>
+</li>
+<li>
+<p><strong>test</strong> Chạy unit test, alright, mình nghĩ mình sẽ làm riêng 1 bài về nó sau nếu có thời gian, còn hiện tại có thể bỏ qua.</p>
+</li>
+</ul>
+<p>Yooo, cài xong khá nhiều thứ rồi nhỉ, đây là file package.json của chúng ta sau khi cài mấy thứ trên. Về cơ bản sau khi cài những thứ trên chúng ta có thể bắt đầu code được rồi.</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"express-prisma-typescript-boilerplate"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"src/index.ts"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"rimraf dist &amp;&amp; tsc"</span><span class="token punctuation">,</span>
+    <span class="token property">"predev"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=development concurrently \"tsc --watch\" \"nodemon -q dist/index.js\""</span><span class="token punctuation">,</span>
+    <span class="token property">"prestart"</span><span class="token operator">:</span> <span class="token string">"npm run build"</span><span class="token punctuation">,</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=production node dist/index.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"kienmatu"</span><span class="token punctuation">,</span>
+  <span class="token property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span><span class="token punctuation">,</span>
+  <span class="token property">"repository"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"git"</span><span class="token punctuation">,</span>
+    <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"git+https://github.com/kienmatu/express-prisma-typescript-boilerplate.git"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@types/express"</span><span class="token operator">:</span> <span class="token string">"^4.17.13"</span><span class="token punctuation">,</span>
+    <span class="token property">"@types/node"</span><span class="token operator">:</span> <span class="token string">"^17.0.21"</span><span class="token punctuation">,</span>
+    <span class="token property">"cross-env"</span><span class="token operator">:</span> <span class="token string">"^7.0.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"dotenv"</span><span class="token operator">:</span> <span class="token string">"^16.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"express"</span><span class="token operator">:</span> <span class="token string">"^4.17.3"</span><span class="token punctuation">,</span>
+    <span class="token property">"rimraf"</span><span class="token operator">:</span> <span class="token string">"^3.0.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"typescript"</span><span class="token operator">:</span> <span class="token string">"^4.6.2"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"concurrently"</span><span class="token operator">:</span> <span class="token string">"^7.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"nodemon"</span><span class="token operator">:</span> <span class="token string">"^2.0.15"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<h3 id="indexts" style="position:relative;"><a href="#indexts" aria-label="indexts permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>index.ts</h3>
+<p>Giờ chúng ta tạo 1 file bên trong /src có tên là <strong>index.ts</strong>, file này đóng vai trò là cửa ngõ của app, giống như program.cs trong dotnet vậy. (Lúc nãy chúng ta đã config nó trong package.json).</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"xin chào các bạn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Okay, hãy chạy thử nào</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell"><span class="token function">npm</span> run dev</code></pre></div>
+<p>Output:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 713px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABJ0AAASdAHeZh94AAAAtUlEQVQoz6WOWRKDIBBEOUcWoyKCrCJlkvtfrFNDqRXJR5Ly48HAdPcMG1yANBbSejRCQhmHqu2grIPUFnJ5p8cTcb7jfGs2LnWLa8N3MBtiNtsx5kAaoKzP+CnBjRO0D/AxYUxzrqlnQkTd9bsBBKMGBQmlweUA3iuIwWQxTaTt6F4N1bIJ/dOGJazXdgvMoTlQ48YFTlX9sUEJhbzXjA4ylqyCb5Q69o/4F1hp3Nft8cCjvAAKmN8bpBs09gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Console output"
+        title="Console output"
+        src="/static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png"
+        srcset="/static/d4dccbbf4358d72b1b8e97526989e2e7/5a46d/hello-world.png 300w,
+/static/d4dccbbf4358d72b1b8e97526989e2e7/0a47e/hello-world.png 600w,
+/static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png 713w"
+        sizes="(max-width: 713px) 100vw, 713px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3 id="cài-đặt-express" style="position:relative;"><a href="#c%C3%A0i-%C4%91%E1%BA%B7t-express" aria-label="cài đặt express permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài đặt Express</h3>
+<p>Sửa lại file index.ts như sau để test thử express:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> express<span class="token punctuation">,</span> <span class="token punctuation">{</span> Express<span class="token punctuation">,</span> Request<span class="token punctuation">,</span> Response <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> dotenv <span class="token keyword">from</span> <span class="token string">"dotenv"</span><span class="token punctuation">;</span>
+
+dotenv<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token constant">PORT</span> <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app<span class="token operator">:</span> Express <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>req<span class="token operator">:</span> Request<span class="token punctuation">,</span> res<span class="token operator">:</span> Response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>Nhiệt liệt chào mừng quý vị đại coder!&lt;/h1>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Running on </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token constant">PORT</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> ⚡</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<ul>
+<li>
+<p>dotenv.config() sẽ lấy config từ file .env vào process.env</p>
+</li>
+<li>
+<p>PORT ở đây là cổng của app, tạo file .env ngang hàng với src để config, còn code sẽ mặc định port 3000 nếu không thấy config:</p>
+<div class="gatsby-highlight" data-language="env"><pre class="language-env"><code class="language-env">PORT=3000</code></pre></div>
+</li>
+<li>
+<p>app là 1 instance của Express, chúng ta sử dụng middleware express.json() để parse json từ request để app có thể đọc được.</p>
+</li>
+<li>
+<p>app.get() là phương thức đăng ký REST method cho 1 route nào đó, ở đây chúng ta đăng ký cho đường dẫn index và trả về <code class="language-text">"&lt;h1>Nhiệt liệt chào mừng quý vị đại coder!&lt;/h1>"</code></p>
+</li>
+<li>
+<p>app.listen(): Listen request từ client theo 1 cổng đã được config trước đó.</p>
+</li>
+</ul>
+<p>Chạy lần nữa lệnh <strong>npm run dev</strong>, rồi mở trình duyệt vào <a href="http://localhost:3000">http://localhost:3000</a>, bạn sẽ thấy điều kỳ diệu :D
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 798px; "
+    >
+      <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABdklEQVQoz5WSTY7TQBCFfQKOwdnmFixYchZWrGfBHWCFhkVkFMVxMu7/7uq2P1Q9xErYIFp6sqrc/d7TqxqqCNZajDH928+2sf3B/bnVzjnmecY5D1uFNeGXmSaFQUQwi+mEenFd1we01h6gvRAC1+uVGAOTFX5Oie+HhdkVBiU6Ho/EGHflcfzFOI5cLpfeU+c3aK0w1oF4nj5b3n9aePfhlY/PkaGU0hVTSh3BB1zwhBi7SEqx93POlJyJIVBr7W7ZGj/mxtcX4cu3xMtcGdR2CJHaWr9YciFLQWpF89VItK/kNjgWZ0hSSJJJ+k8aKQmvNgMrg/eexRhKkV25SqXVNwEl7Ll5j0+RmCMpp06YRVhCY7YFGytt3Rg0j8PhwPl87plZY5imqQ9Jg9e+RnI6nfpUg1mQFB+mX6XQWu0GBlXvq2AXLpcZZx3q+m0YBh883ru9TjHsK3W/WsqjsQw93P89nehxN2/ku8O/Vf+F+zf3hL8BstEHUckDmxoAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Index request of expressjs"
+        title="Index request of expressjs"
+        src="/static/88c9e75a7dedb9288be286c21308a46d/898f6/home-page.png"
+        srcset="/static/88c9e75a7dedb9288be286c21308a46d/5a46d/home-page.png 300w,
+/static/88c9e75a7dedb9288be286c21308a46d/0a47e/home-page.png 600w,
+/static/88c9e75a7dedb9288be286c21308a46d/898f6/home-page.png 798w"
+        sizes="(max-width: 798px) 100vw, 798px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+    </span></p>
+<p>Đây là file dist/index.js, là output của file main.ts được compile theo chuẩn es5 như trong tsconfig.</p>
+<div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> __importDefault <span class="token operator">=</span>
+  <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>__importDefault<span class="token punctuation">)</span> <span class="token operator">||</span>
+  <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">mod</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> mod <span class="token operator">&amp;&amp;</span> mod<span class="token punctuation">.</span>__esModule <span class="token operator">?</span> mod <span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">default</span><span class="token operator">:</span> mod <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>exports<span class="token punctuation">,</span> <span class="token string">"__esModule"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> value<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> express_1 <span class="token operator">=</span> <span class="token function">__importDefault</span><span class="token punctuation">(</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"express"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> dotenv_1 <span class="token operator">=</span> <span class="token function">__importDefault</span><span class="token punctuation">(</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"dotenv"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dotenv_1<span class="token punctuation">.</span>default<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> <span class="token constant">PORT</span> <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token punctuation">;</span>
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> express_1<span class="token punctuation">.</span>default<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express_1<span class="token punctuation">.</span>default<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"&lt;h1>Nhiệt liệt chào mừng quý vị đại coder!&lt;/h1>"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"Running on "</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">,</span> <span class="token string">" \u26A1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Lưu ý: Các bạn có thể đổi target es5 thành chuẩn khác, nhớ check trước availability bằng link này <a href="https://kangax.github.io/compat-table/es5/">https://kangax.github.io/compat-table/es5/</a> để chọn chuẩn ECMAScript phù hợp.</p>
+<h3 id="thêm-controllers" style="position:relative;"><a href="#th%C3%AAm-controllers" aria-label="thêm controllers permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thêm Controllers</h3>
+<p>MVC là 1 mô hình rất phổ biến để cấu trúc 1 web app, được apply ở nhiều framework như Spring, dotNET core..., 1 thành phần chính của nó là Controller. Chúng ta có thể để logic xử lý request ở trong này, vì sử dụng typescript nên chúng ta sẽ áp dụng vài thứ về OOP.</p>
+<p>Tạo tiếp những class sau:
+src/controllers/abstractions/base-controller.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">BaseController</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> router<span class="token operator">:</span> express<span class="token punctuation">.</span>Router<span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token function">initializeRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>src/controllers/hero-controller.ts</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BaseController <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./abstractions/base-controller"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HeroController</span> <span class="token keyword">extends</span> <span class="token class-name">BaseController</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> path <span class="token operator">=</span> <span class="token string">"/heroes"</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">initializeRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getAllHero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>addHero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Bạn có thể thêm put, patch, delete sau.</span>
+  <span class="token punctuation">}</span>
+  <span class="token function-variable function">getAllHero</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token function-variable function">addHero</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>body<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Tạo thêm 1 file src/app.ts</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BaseController <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./controllers/abstractions/base-controller"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> app<span class="token operator">:</span> express<span class="token punctuation">.</span>Application<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> port<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>controllers<span class="token operator">:</span> BaseController<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeMiddlewares</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeControllers</span><span class="token punctuation">(</span>controllers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initializeMiddlewares</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initializeControllers</span><span class="token punctuation">(</span>controllers<span class="token operator">:</span> BaseController<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      response<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Application is running"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    controllers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>controller<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> controller<span class="token punctuation">.</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">listen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">App listening on the port </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre></div>
+<p>Quay lại index.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> dotenv <span class="token keyword">from</span> <span class="token string">"dotenv"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./app"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> HeroController <span class="token keyword">from</span> <span class="token string">"./controllers/hero-controller"</span><span class="token punctuation">;</span>
+
+dotenv<span class="token punctuation">.</span><span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> port <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">PORT</span> <span class="token operator">||</span> <span class="token number">3000</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">App</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token keyword">new</span> <span class="token class-name">HeroController</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
+<p>Okay, chạy app lên bằng lệnh npm run dev hoặc yarn dev, test thử method post:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 915px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABfElEQVQoz4VS7YrcMAzMu5b+6b++VikcFAp9krsn6HFJIF+WZcmyPUXOLrfdW1rDJLZsz1gaDcyMdV2RUkKMESEEbNuGfd8RjgPHBb72v5/xOxQZVRk/nxlfngI+fz/w/GYYfHOcJ1AkUAiYpgnTPGGcJrzNI+Z57vD4OI6d9BRntMz49ZLw9Qfh07cDL6NhUFXsdCBIAnGGr3MtUNqRJKDUilIKaq3IOaO1hut4n1VIyj0yuJqnxklB8n6kH2+tE1zRo3ex2hpYCxayLj64sppBVWAxgGPCEhJE7bxQ2weS9kHIxc9MBv+wCJIkiNcnMraQoJp7mr5/Rb2Z/4VeDoNZNyUiifSnPxq3NRMRBCZEZURJSJqwUsa4KrZ4ZjQQEV5ff/dW8Zbx9ri2iMd8f1kWcCQkOh4Kimp/XWsVg0/o0lum2l0WUWjO3VXr9c0oZqhmD41x6IX0YkqBWYasKyIxpo177H8luHXfyU7CUmDlXLRaO/7l7D3RPeEf4xpZV0W3fwQAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Test hero post request"
+        title="Test hero post request"
+        src="/static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png"
+        srcset="/static/67dd471623190849b6d080bffdf04250/5a46d/test-hero-request-post.png 300w,
+/static/67dd471623190849b6d080bffdf04250/0a47e/test-hero-request-post.png 600w,
+/static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png 915w"
+        sizes="(max-width: 915px) 100vw, 915px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3 id="khởi-tạo-database-bằng-docker" style="position:relative;"><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-database-b%E1%BA%B1ng-docker" aria-label="khởi tạo database bằng docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Khởi tạo database bằng docker</h3>
+<p>Bây giờ chúng ta đã có 1 web api, tuy nhiên vẫn sẽ cần database để lưu/truy xuất thông tin. DB mình chọn là Postgresql, và sử dụng prisma làm ORM.</p>
+<p>Tạo file docker-compose.yml ngang hàng với src:</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> postgres_db_container
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> POSTGRES_DB=$<span class="token punctuation">{</span>POSTGRES_DB<span class="token punctuation">:</span><span class="token punctuation">-</span>postgres<span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> POSTGRES_USER=$<span class="token punctuation">{</span>POSTGRES_USER<span class="token punctuation">:</span><span class="token punctuation">-</span>postgres<span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> POSTGRES_PASSWORD=$<span class="token punctuation">{</span>POSTGRES_PASSWORD<span class="token punctuation">:</span><span class="token punctuation">-</span>password1<span class="token punctuation">}</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"5432:5432"</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped</code></pre></div>
+<p>Ở đây mình đặt các value mặc định, các bạn có thể thay đổi.</p>
+<p>Okay, mở command chạy lệnh sau để compose và khởi chạy postgres trên docker.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker-compose up -d postgres</code></pre></div>
+<p>Khi chạy xong chúng ta chạy lệnh sau để kiểm tra xem container đã chạy chưa (hoặc bạn có thể mở docker desktop lên xem):</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">docker <span class="token function">ps</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>CONTAINER ID</th>
+<th>IMAGE</th>
+<th>COMMAND</th>
+<th>CREATED</th>
+<th>STATUS</th>
+<th>PORTS</th>
+<th>NAMES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a9a1a82d5dd1</td>
+<td>postgres</td>
+<td>"docker-entrypoint.s…"</td>
+<td>10 seconds ago</td>
+<td>Up 9 seconds</td>
+<td>0.0.0.0:5432->5432/tcp</td>
+<td>postgres_db_container</td>
+</tr>
+</tbody>
+</table>
+<p>Đã có DB, bây giờ chúng ta sẽ cài đặt prisma và prisma client để làm ORM.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> prisma @prisma/client</code></pre></div>
+<p>Cài xong prisma chúng ta sẽ có thể khởi tạo schema prisma.</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">npx prisma init</code></pre></div>
+<p>1 file mới sẽ xuất hiện dưới đường dẫn prisma/schema.prisma:</p>
+<div class="gatsby-highlight" data-language="psl"><pre class="language-psl"><code class="language-psl"><span class="token operator">/</span><span class="token operator">/</span> This is your Prisma schema <span class="token builtin builtin-function">file</span><span class="token punctuation">,</span>
+<span class="token operator">/</span><span class="token operator">/</span> learn more about it in the docs<span class="token operator">:</span> https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>pris<span class="token operator">.</span>ly<span class="token operator">/</span>d<span class="token operator">/</span>prisma<span class="token operator">-</span>schema
+
+generator client <span class="token punctuation">{</span>
+  provider <span class="token operator">=</span> <span class="token string">"prisma-client-js"</span>
+<span class="token punctuation">}</span>
+
+datasource db <span class="token punctuation">{</span>
+  provider <span class="token operator">=</span> <span class="token string">"postgresql"</span>
+  url      <span class="token operator">=</span> <span class="token function">env</span><span class="token punctuation">(</span><span class="token string">"DATABASE_URL"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Lệnh init trên cũng sẽ thêm 1 config vào file .env:</p>
+<div class="gatsby-highlight" data-language="env"><pre class="language-env"><code class="language-env">PORT=3000
+
+# This was inserted by `prisma init`:
+
+# Environment variables declared in this file are automatically made available to Prisma.
+
+# See the documentation for more detail: https://pris.ly/d/prisma-schema#accessing-environment-variables-from-the-schema
+
+# Prisma supports the native connection string format for PostgreSQL, MySQL, SQLite, SQL Server, MongoDB (Preview) and CockroachDB (Preview).
+
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+DATABASE_URL=&quot;postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public&quot;
+</code></pre></div>
+<p>Chúng ta cần sửa lại DATABASE_URL theo như config postgresdb của file docker compose phía trên, xoá đi các comment:</p>
+<div class="gatsby-highlight" data-language="env"><pre class="language-env"><code class="language-env">DB_HOST=localhost
+DB_PORT=5432
+DB_SCHEMA=public
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=password1
+POSTGRES_DB=hero_db
+
+# See the documentation for all the connection string options: https://pris.ly/d/connection-strings
+
+DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${DB_HOST}:${DB_PORT}/${POSTGRES_DB}?schema=${DB_SCHEMA}&amp;sslmode=prefer
+</code></pre></div>
+<ul>
+<li><strong><span style="color:#ffc107">Lưu ý to bự</span></strong>: DB_HOST hiện tại là localhost, tuy nhiên ở bước sau chúng ta sẽ cần sửa lại DB_HOST cho trùng với ID của service trong docker-compose (postgres) trong trường hợp chúng ta cần deploy docker container.</li>
+</ul>
+<p>Hiện tại đã có DB, việc chúng ta cần làm là khởi tạo 1 DB mới theo file schema bằng lệnh migrate, hoặc sẽ tạo schema từ DB có sẵn, trong trường hợp này chúng ta sẽ tạo DB từ schema.</p>
+<p>Sửa lại file schema, thêm vào model:</p>
+<div class="gatsby-highlight" data-language="psl"><pre class="language-psl"><code class="language-psl"><span class="token operator">/</span><span class="token operator">/</span> This is your Prisma schema <span class="token builtin builtin-function">file</span><span class="token punctuation">,</span>
+<span class="token operator">/</span><span class="token operator">/</span> learn more about it in the docs<span class="token operator">:</span> https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>pris<span class="token operator">.</span>ly<span class="token operator">/</span>d<span class="token operator">/</span>prisma<span class="token operator">-</span>schema
+
+generator client <span class="token punctuation">{</span>
+  provider <span class="token operator">=</span> <span class="token string">"prisma-client-js"</span>
+<span class="token punctuation">}</span>
+
+datasource db <span class="token punctuation">{</span>
+  provider <span class="token operator">=</span> <span class="token string">"postgresql"</span>
+  url      <span class="token operator">=</span> <span class="token function">env</span><span class="token punctuation">(</span><span class="token string">"DATABASE_URL"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+model Hero <span class="token punctuation">{</span>
+  id            Int      @id @<span class="token keyword">default</span><span class="token punctuation">(</span><span class="token function">autoincrement</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  createdAt     DateTime @<span class="token keyword">default</span><span class="token punctuation">(</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  updatedAt     DateTime @updatedAt
+  name          String   @db<span class="token operator">.</span><span class="token function">VarChar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+  origin        String<span class="token operator">?</span>  @db<span class="token operator">.</span><span class="token function">VarChar</span><span class="token punctuation">(</span><span class="token number">255</span><span class="token punctuation">)</span>
+  description   String<span class="token operator">?</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Migrate database:</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">npx prisma migrate dev --name init</code></pre></div>
+<p>Lệnh trên sẽ làm 2 việc:</p>
+<ul>
+<li>Tạo file migration sql theo schema</li>
+<li>Migrate db theo file migration</li>
+<li>Output:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1032px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABMElEQVQoz42SaXKDMAyFc42kFIyNLW/Zmsn9j/Y6T2AgmXbaHw8sIX9oO3TGQsoZIVdMMcOGCJ8KfMzquz2eGJxHbycw9i8dPoZRQU7Soqg2RTCh9I9eFGymoOIP3m2yFOgTsymYYkJIBaleEOtFoQTxXG9fqNe72rzza4Z8EECglLlsltvawCyZCeM+R7deJPRdCmSQ5LpcnstsLWjnl7ektSVh6TV/To6WbH1U4P3xRL3ckOoVJp3RjRO6fkQ37PSfoRx7g5O1MDnDlgwTI7ogODqHE2Xdev6pzKZTb7ah2JxhUoLLBb6eVWPKGEQwBIErBb0PWhb7uVebtvWi32egF9hJ4ELSnkyS1TdYD7ME87ytyiuUa8Ppr3tIw+2a3QbCJZ9924D2Q2p3aLc9/AY7whuMTH/XogAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="prisma-init-migration"
+        title="prisma-init-migration"
+        src="/static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png"
+        srcset="/static/38153b3aca1d67d287122dd304bc9699/5a46d/prisma-init-migration.png 300w,
+/static/38153b3aca1d67d287122dd304bc9699/0a47e/prisma-init-migration.png 600w,
+/static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png 1032w"
+        sizes="(max-width: 1032px) 100vw, 1032px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></li>
+</ul>
+<p>Lúc này nếu bạn dùng trình quản lý db nào đó, chẳng hạn như dbeaver và connect vào thì sẽ thấy db đã xuất hiện:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 572px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 112.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABJ0AAASdAHeZh94AAACqElEQVQ4y51V2XabMBTk/z+rfWyah8ZtbGMWLYCQMPtizDI9kpemDrHT6hwdxEWaO5q7YGVliaZp0LUt+r7H8XhEXdfoug5t2+JwOOAy5nm+Pt+u3w6rKEvkeY6yLKGkRJbnKIoSWZahqirs93vkeWEcJEli9mqHel3XjTmnHU/ThGEYYPmxgooFIiEQCwEqU7zuXMRRAKUUpJSI49g4C8MQIhIGTIgIeZaDMQalEsRSQsYCFg0FwiAwG/WBRIPkFZ7dANvNGjwIDCvNOM8yvEZ7RHSLPbfBkhQ00k4icEbhximsUJy8p2lqvGpW+zQFi2Jja8/aai37wwF1d0DbaI1b1F1nbEnVIExzCP8nLJsr7GwbhBAQSuH7HjzPg+95CMPAMNSg4zgajcZxOK3H0TxHbdP6TYDcPcFSQsL1iNGiqmqj10W3/ng0ILeRfD9m6B1q/QWWz10EzgqUUmRpavQqisJE8q8j51T5cAJg22dYGBqQKMDLjoB4nrnGEshSzt3mJmUBLP1S9TNSugJjFEEkrqD3gJYSXKeddTLM6LoGREg4m19o2vYhwyWb0IBnKyYAY61AfBuEh8a2dLWPrqszQeexdca7AryWgMu4yU0dHJ2LlwDdMry8t02D9XoNxvkfhvrTVAkI7iAQ0iSurlMNqpvHPcBj35u9V4ZXwNSFcp7hUl3H0lSNLrnPXPtGw8kAjokN6XzHxvEN0DAcTcl9FJS3U3eb94Bqjb3zBMIj01HuRXTp2wLDDaT9DTs/AGcM84MoPwSc9jZi+xu2LoHrOJBSmU262/wTw2me0UcrhNSB7+6Q5YX5FWj99NT6fBrwUim99xWcM1DG0R/6u9F8yDAbAG4/Y/XyA75PTMf5n+ZwYtgoMPcFT6sNCPFRLyTx3U54A/gbaOD0EXaEb04AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="postgres-db-dbeaver"
+        title="postgres-db-dbeaver"
+        src="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png"
+        srcset="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/5a46d/postgres-db-dbeaver.png 300w,
+/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png 572w"
+        sizes="(max-width: 572px) 100vw, 572px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3 id="crud-cùng-prisma" style="position:relative;"><a href="#crud-c%C3%B9ng-prisma" aria-label="crud cùng prisma permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CRUD cùng Prisma</h3>
+<p>Cài xong prisma, bây giờ chúng ta đã có đủ nguyên liệu cần thiết cho món chính là xào xáo dữ liệu.</p>
+<p>Sửa lại file base-controller.ts để thêm prisma vào:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> PrismaClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@prisma/client"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">BaseController</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> router<span class="token operator">:</span> express<span class="token punctuation">.</span>Router<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> prisma<span class="token operator">:</span> PrismaClient<span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>prisma <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PrismaClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router <span class="token operator">=</span> express<span class="token punctuation">.</span><span class="token function">Router</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token function">initializeRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Sửa lại 2 method getAllHero, addHero trong hero-controller.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token function-variable function">getAllHero</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> heroes <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prisma<span class="token punctuation">.</span>hero<span class="token punctuation">.</span><span class="token function">findMany</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>heroes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token function-variable function">addHero</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span> response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> reqBody <span class="token operator">=</span> request<span class="token punctuation">.</span>body<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> hero <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prisma<span class="token punctuation">.</span>hero<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    data<span class="token operator">:</span> <span class="token punctuation">{</span>
+      name<span class="token operator">:</span> reqBody<span class="token punctuation">.</span>name<span class="token punctuation">,</span>
+      origin<span class="token operator">:</span> reqBody<span class="token punctuation">.</span>origin<span class="token punctuation">,</span>
+      description<span class="token operator">:</span> reqBody<span class="token punctuation">.</span>description<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>hero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>Mở terminal chạy npm run dev, dùng postman test thử:
+Thêm hero:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/9a4042c2f1d86464eeb649bf2925fdfa/4a00e/create-hero-api.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABRElEQVQoz5WRSW4cMQxFdeMscy4vcpIscgIDBpyUqjVwklTfIHtwuw3DiIAHURRFUp+p1opSClpr2LYN+76jE6H3/gF6OF9h6iiN8OOp4uevhkREoEhAkbS2it4KOjVQJzBzQCyYc37Bwp+Xgd/PhqRmkVBE4LaqQJkxhKCqMNXwsS58t4YZkme3MUBbxpYrKht0LIhN6AW3RQdIDKwjIHnf5eIbYyKN4cYAs4BY0UjA/lAGOhs66x2GSoLSOeKutnPqGrKkU96Qt+2mnw+I+SzBGvbpW8daUFPYNNgwDGdOlH7+QRJVtN4hrptraAb3iWgEH8fxwFcKHhGf5lpRgf6+Iu81Wq9kaGz43+UFk4/dNWw5418uyJVxaoJcJfY9UJSuUcx9p4vtvv3uHEPxKc81b19a64B3fSPuH3yP93PFO2/sDQ4cDOB+idl4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="create-hero-api"
+        title="create-hero-api"
+        src="/static/9a4042c2f1d86464eeb649bf2925fdfa/c1b63/create-hero-api.png"
+        srcset="/static/9a4042c2f1d86464eeb649bf2925fdfa/5a46d/create-hero-api.png 300w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/0a47e/create-hero-api.png 600w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/c1b63/create-hero-api.png 1200w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/4a00e/create-hero-api.png 1406w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span>
+Get tất cả:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dcfb03999e24bde1ab7813d8ad1a8090/d4b10/get-all-hero-api.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 58.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABJ0AAASdAHeZh94AAABhElEQVQoz5VTW07EMAzsrbkIZ+EASNyAHw7AD2zTJs7DcZIOsrNddj/4wNLIqetMPNNmISJs2wbNtVZD7/2G1trD+h5aizEiBI/3z4LXjx0L+R0lZwQirOuKfd8RUzSkmJDSL0opNzAz8nXdpeL5LePpJWOJwYOCR+8DY0xIb2i9zea7ac84jgNNGh5jQHLEUpkhIlPSVRaO2aJ1PeAkUehzVkWRUEWsX1pDSBWbj1guX19wziGEAB+CSZ4SI1rlB7LbdOrfGHOAPr1M3JGKYJHW54StYfSOMQ5r1LpuUp6T0IC/4xhDCRvGcSC7FeQ2OGJQrvCpokrHf0IPXHQaJeQQsF42rCEjFjFPKIuR75FvNYWufZwHK86aKjLCPtSLYUXN0gaqWnHNLPP9PdSSx+cxCbkqs07owUSgImZuzGKb/i1ZCVVy2Rzct8PFF2QWm7bUZj5q5jNrrQ2wDMsKndAIASz6yc9fIWU2spMw8R3K9JMSw+2Ey0agmJFysRujV1Yvwg8O66sLO0bIUwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="get-all-hero-api"
+        title="get-all-hero-api"
+        src="/static/dcfb03999e24bde1ab7813d8ad1a8090/c1b63/get-all-hero-api.png"
+        srcset="/static/dcfb03999e24bde1ab7813d8ad1a8090/5a46d/get-all-hero-api.png 300w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/0a47e/get-all-hero-api.png 600w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/c1b63/get-all-hero-api.png 1200w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/d4b10/get-all-hero-api.png 1394w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Bonus, express có support router param để follow đúng best practices của REST API, implement luôn nhé.
+hero-controller.ts</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts">  <span class="token keyword">public</span> <span class="token function">initializeRoutes</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getAllHero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>path<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>addHero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>router<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>path <span class="token operator">+</span> <span class="token string">"/:heroId"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>getHeroById<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Bạn có thể thêm put, patch, delete sau.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">getHeroById</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>
+    request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span>
+    response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">,</span>
+  <span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> hero <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>prisma<span class="token punctuation">.</span>hero<span class="token punctuation">.</span><span class="token function">findUnique</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      where<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> Number<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>params<span class="token punctuation">.</span>heroId<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>hero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>Test thử:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/238e60c94a80db3861961cc79c345f9f/f1c64/get-hero-by-id-api.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 44.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABKElEQVQoz5VRS05DMQzMhTkO5+ASnIENG7aU0veJ49j5DbJLqlepLBhpZDuKxh47qCooRuScccMYeIQxhnPmhhgjVASogqqMsK4b1nXFsiy4XC6eM7MzpXTLHzExI9OOjxPh6WXH8yshpH1DZoaIuEDiBNbstU1tDiy32HtHaw2jXydtrWOMDq0db58d7ydFyJlBRBgHWxOq5c7iJOfsja3BjUXAtCPs6+J7oJSuJPJpjLWUOyFjrRWcGSwZWhSlKnKp+N4ELBXBxShC8rQpPoHtqNfqkx8F/8Rvs9D6QCsF6fyFjQSRCygX7/ZfmPVQWkNVRTx/47wQtmSiipXEhbekHonV3y2fTWc9aUcKdrXrYgdqs4s1lNogpUHLNVqtMx55+GO1Wf4B/lG/25gLAwcAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="get-hero-by-id-api"
+        title="get-hero-by-id-api"
+        src="/static/238e60c94a80db3861961cc79c345f9f/c1b63/get-hero-by-id-api.png"
+        srcset="/static/238e60c94a80db3861961cc79c345f9f/5a46d/get-hero-by-id-api.png 300w,
+/static/238e60c94a80db3861961cc79c345f9f/0a47e/get-hero-by-id-api.png 600w,
+/static/238e60c94a80db3861961cc79c345f9f/c1b63/get-hero-by-id-api.png 1200w,
+/static/238e60c94a80db3861961cc79c345f9f/f1c64/get-hero-by-id-api.png 1390w"
+        sizes="(max-width: 1200px) 100vw, 1200px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3 id="error-handling" style="position:relative;"><a href="#error-handling" aria-label="error handling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error Handling</h3>
+<p>1 phần cực kì thiết yếu trong app chính là error handling, chúng ta sẽ áp dụng 1 middleware để xử lý vụ này.</p>
+<p>src/exceptions/http-exception.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">class</span> <span class="token class-name">HttpException</span> <span class="token keyword">extends</span> <span class="token class-name">Error</span> <span class="token punctuation">{</span>
+  status<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  message<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>status<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> message<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>status <span class="token operator">=</span> status<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>message <span class="token operator">=</span> message<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>src/middlewares/error.middleware.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> <span class="token punctuation">{</span> NextFunction<span class="token punctuation">,</span> Request<span class="token punctuation">,</span> Response <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> HttpException <span class="token keyword">from</span> <span class="token string">"../exceptions/http-exception"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span> <span class="token function">errorMiddleware</span><span class="token punctuation">(</span>
+  error<span class="token operator">:</span> HttpException<span class="token punctuation">,</span>
+  request<span class="token operator">:</span> Request<span class="token punctuation">,</span>
+  response<span class="token operator">:</span> Response<span class="token punctuation">,</span>
+  next<span class="token operator">:</span> NextFunction
+<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> status <span class="token operator">=</span> error<span class="token punctuation">.</span>status <span class="token operator">||</span> <span class="token number">500</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> message <span class="token operator">=</span> error<span class="token punctuation">.</span>message <span class="token operator">||</span> <span class="token string">"Something went wrong"</span><span class="token punctuation">;</span>
+  response<span class="token punctuation">.</span><span class="token function">status</span><span class="token punctuation">(</span>status<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    status<span class="token punctuation">,</span>
+    message<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>src/app.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> express <span class="token keyword">from</span> <span class="token string">"express"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> BaseController <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"./controllers/abstractions/base-controller"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> errorMiddleware <span class="token keyword">from</span> <span class="token string">"./middlewares/error.middleware"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> app<span class="token operator">:</span> express<span class="token punctuation">.</span>Application<span class="token punctuation">;</span>
+  <span class="token keyword">public</span> port<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+
+  <span class="token function">constructor</span><span class="token punctuation">(</span>controllers<span class="token operator">:</span> BaseController<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> port<span class="token operator">:</span> <span class="token builtin">number</span> <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>port <span class="token operator">=</span> port<span class="token punctuation">;</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeMiddlewares</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeControllers</span><span class="token punctuation">(</span>controllers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">initializeErrorHandling</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initializeMiddlewares</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initializeErrorHandling</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>errorMiddleware<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">private</span> <span class="token function">initializeControllers</span><span class="token punctuation">(</span>controllers<span class="token operator">:</span> BaseController<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>request<span class="token punctuation">,</span> response<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      response<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">"Application is running"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    controllers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>controller<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">"/"</span><span class="token punctuation">,</span> controller<span class="token punctuation">.</span>router<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token function">listen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>port<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">App listening on the port </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>port<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre></div>
+<p>Lưu ý: Vì express chạy các middleware theo chain từ đầu đến cuối, bạn phải gọi hàm initializeErrorHandling sau cùng.</p>
+<p>Config xong cho các exception, bây giờ chúng ta áp dụng cho hero controller, khi get hero by id nhưng không tìm thấy sẽ trả về 1 exception tên là HeroNotFoundException.</p>
+<p>src/exceptions/hero-not-found-exception.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token keyword">import</span> HttpException <span class="token keyword">from</span> <span class="token string">"./http-exception"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">HeroNotFoundException</span> <span class="token keyword">extends</span> <span class="token class-name">HttpException</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Hero with id </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> not found</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> HeroNotFoundException<span class="token punctuation">;</span></code></pre></div>
+<p>hero-controller.ts:</p>
+<div class="gatsby-highlight" data-language="ts"><pre class="language-ts"><code class="language-ts"><span class="token comment">//...</span>
+<span class="token function-variable function">getHeroById</span> <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>
+  request<span class="token operator">:</span> express<span class="token punctuation">.</span>Request<span class="token punctuation">,</span>
+  response<span class="token operator">:</span> express<span class="token punctuation">.</span>Response<span class="token punctuation">,</span>
+  next<span class="token operator">:</span> express<span class="token punctuation">.</span>NextFunction
+<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> heroId <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span>params<span class="token punctuation">.</span>heroId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>prisma<span class="token punctuation">.</span>hero
+    <span class="token punctuation">.</span><span class="token function">findUnique</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      where<span class="token operator">:</span> <span class="token punctuation">{</span>
+        id<span class="token operator">:</span> heroId<span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>hero<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>hero<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span>hero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token function">next</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">HeroNotFoundException</span><span class="token punctuation">(</span>heroId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre></div>
+<p>Test thử với 1 id bất kỳ không có trong db:
+<span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1015px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 48.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABZUlEQVQoz42RSZITMRBFdcG+BQfiBM0FWPQNWLNgyYZtDy4bl1yDpBw0fCJlF7ahiUARv6SScvh6cuu6Yp7nrpQS/ndY7Dh6ZBUAGZAT0BTOCi3Lgm22QEoEIoKI/FNrCAjLhDef8Pg14eOXE749M9zofU+2YofDoWvYD/DeI4QAu4EpxninEBOqEn7sCR8+Bzx8WvD0XeGCP4LNDQuICbkUJGWICnLOUNXesLX217Vvd0ppUCG4+XTq7v6MarX262+FfhdsAKXU3ddS+z4zIaWI3TDAiTCY+exQGJrPjkop3d1WyP4TJQSO8MuEaZ0RKCKQYvAJu58LVDPc8PrSH8Q4TdPUOxs/42TObZYUUWtFqaWrtoqGdtlrIMkQLb25my5JytwZGjtzZvzsNfta+F2GV0wN5cLbaSnIBn48IoaAhQSsBWSSs6557V3ZMLdmwtnH+GyH1VTv1ZPs/PZxbhpsjM3hL50LCwKbbUW8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="hero-not-found"
+        title="hero-not-found"
+        src="/static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png"
+        srcset="/static/ea2b0ef8467e681fa4a43c163ca7fd30/5a46d/hero-not-found.png 300w,
+/static/ea2b0ef8467e681fa4a43c163ca7fd30/0a47e/hero-not-found.png 600w,
+/static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png 1015w"
+        sizes="(max-width: 1015px) 100vw, 1015px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<h3 id="deploy-app-với-docker" style="position:relative;"><a href="#deploy-app-v%E1%BB%9Bi-docker" aria-label="deploy app với docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy app với Docker</h3>
+<p>Phần code đã xong, hiện tại chúng ta có thể viết Dockerfile để build được app trên docker.
+Đầu tiên chúng ta phải đảm bảo rằng mỗi khi app chạy lên, chúng ta sẽ migrate database để đảm bảo db luôn khớp với schema (code first).</p>
+<p>package.json:</p>
+<div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">//..</span>
+    <span class="token property">"deploy"</span><span class="token operator">:</span> <span class="token string">"npx prisma migrate deploy &amp;&amp; npm run start"</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
+<p>Command deploy sẽ chạy prisma migrate để apply các migration còn thiếu vào db, sau đó mới chạy app bằng lệnh start (production), ở đây mình chuyển qua xài yarn cho tiện, vì nó có flag --pure-lockfile, nôm na sẽ cài dependencies theo file lock, tránh trường hợp lib bị update gây crash app.</p>
+<p>./Dockerfile:</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml">FROM node<span class="token punctuation">:</span>16<span class="token punctuation">-</span>alpine3.14
+
+EXPOSE 3000
+
+ARG NODE_ENV
+ENV NODE_ENV $NODE_ENV
+
+RUN mkdir /app
+WORKDIR /app
+ADD package.json yarn.lock .env /app/
+ADD . /app
+RUN yarn <span class="token punctuation">-</span><span class="token punctuation">-</span>pure<span class="token punctuation">-</span>lockfile
+
+CMD <span class="token punctuation">[</span><span class="token string">"yarn"</span><span class="token punctuation">,</span> <span class="token string">"deploy"</span><span class="token punctuation">]</span></code></pre></div>
+<p>Sửa lại file docker-compose.yml:</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> postgres_db_container
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> POSTGRES_DB=$<span class="token punctuation">{</span>POSTGRES_DB<span class="token punctuation">:</span><span class="token punctuation">-</span>postgres<span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> POSTGRES_USER=$<span class="token punctuation">{</span>POSTGRES_USER<span class="token punctuation">:</span><span class="token punctuation">-</span>postgres<span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> POSTGRES_PASSWORD=$<span class="token punctuation">{</span>POSTGRES_PASSWORD<span class="token punctuation">:</span><span class="token punctuation">-</span>password1<span class="token punctuation">}</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"5432:5432"</span>
+    <span class="token key atrule">restart</span><span class="token punctuation">:</span> unless<span class="token punctuation">-</span>stopped
+  <span class="token key atrule">api</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> boiler_api_container
+    <span class="token key atrule">build</span><span class="token punctuation">:</span> .
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"3000:3000"</span>
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> postgres</code></pre></div>
+<p>Sửa DB_HOST trong file .env, như đã nói trước đó, phải sửa host cho trùng với id của service trong docker compose khi mình build bằng docker:</p>
+<div class="gatsby-highlight" data-language="txt"><pre class="language-txt"><code class="language-txt">DB_HOST=postgres</code></pre></div>
+<p>Sửa 1 tí schema prisma <code class="language-text">binaryTargets</code> để nó support linux:</p>
+<div class="gatsby-highlight" data-language="psl"><pre class="language-psl"><code class="language-psl">generator client <span class="token punctuation">{</span>
+  provider <span class="token operator">=</span> <span class="token string">"prisma-client-js"</span>
+  binaryTargets <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"native"</span><span class="token punctuation">,</span> <span class="token string">"linux-musl"</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre></div>
+<p>Okay giờ chúng ta có thể chạy lệnh docker để compose:</p>
+<div class="gatsby-highlight" data-language="shell"><pre class="language-shell"><code class="language-shell">docker-compose up -d</code></pre></div>
+<h3 id="thêm-file-gitignore" style="position:relative;"><a href="#th%C3%AAm-file-gitignore" aria-label="thêm file gitignore permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thêm file .gitignore:</h3>
+<div class="gatsby-highlight" data-language="git"><pre class="language-git"><code class="language-git">node_modules
+.env
+dist</code></pre></div>
+<h2 id="tổng-kết" style="position:relative;"><a href="#t%E1%BB%95ng-k%E1%BA%BFt" aria-label="tổng kết permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tổng kết</h2>
+<p>Còn khá là nhiều thứ chúng ta có thể thêm vào app này, chẳng hạn như request model validation, testing, CI/CD, tuy nhiên mình muốn giữ cho boilerplate này thật đơn giản, các bạn có thể implement thêm tính năng nào các bạn cần.</p>
+<p>Hy vọng qua tut này các bạn có thể tự dựng được 1 project nodejs sử dụng express và prisma, typescript.</p></section><footer class="post__PostFooter-sc-14ootra-9 kvgTmP"><p>Published under <span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/nodejs">Nodejs</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/boilerplate">Boilerplate</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/typescript">Typescript</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/express">Express</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/prisma">Prisma</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/docker">Docker</a>, </span><span><a class="post__FooterTagLink-sc-14ootra-10 gdsQai" href="/tag/postgres">Postgres</a></span> on<!-- --> <time dateTime="2022-03-10T00:00:00.000Z">10 March, 2022</time>.</p></footer></article></div></div><section class="post__PostAddition-sc-14ootra-11 ddTKRo"><div class="common__Container-sc-yvdkhc-0 post__PostAdditionContent-sc-14ootra-12 hhzXsP jxyEbH"><div class="post__BioWrapper-sc-14ootra-13 dMBYdG"><section class="bio__StyledBio-sc-cy4lz8-0 buiIfq"><div class="avatar__StyledAvatar-sc-1b55w7o-0 fYracG gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:55px;height:55px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ANXT1Lq4ucG/wMzKzNHP0dPR0tTS09nX2N3b3N7c3eLg4OPh4vLw8HJxd0BDSVxfY6Glo5KYlpGVlJaamQDPzc6+vL3Fw8TS0NHZ19jb2dre3Nzi4ODl4uTn5ebg3t/NzM7m5eZhYGdBRElbXmKQl5SNlJKWm5qTl5YAyMbHurm5w8HCzcvMwcDCy8rLz87O1dTU2tjY09LTe32BS0tSYWBnMzI6MDI4YmZok5iXkJSUmJybkZaUAMG/wLKysr6+vsXDxKCiori3uLa1t7y7vby9vLa4t1JVWgsLFAsKEg4OFg0NFT0/RY6Tk5yfnqGiopygnwC0srOkpqStr666urq1trXAv7/AwMDCwsLEw8PKycmpqqtGSlATFBwSExkQEBYLDBJdYWSkqKago6KfoqEAyMfHqqurubi4vr2+vLy8t7i4u7u7urq6rKytx8XGpqmnc31+JSgvDAwSERIXBwgONzo9oKWjqampsrKxANPS0rq5ucbFxcbExcTCwsG/v8XDxMTCwqysrqytr32Cg1NdYC4xORAQGBESFwgIDi8yNpSZmKepp4SIiAC6urupqqqxsrG3t7a1tbO9vLzBvsDTz9CXm5ygoaNlamw9RUgmKTEREhoQERYDBAlDR0qVnJqVmplrbnEAZmxuXmVoV15hcXd6hIeJhIiKf4KDmpudh4yNlpqZeH+AQUhNIygwKCsyEhMYJCcrbnR1iI+MjZORlJiXAH2EhXmBgWdwcamurre4uJudnZaZmampqoSKi3aAgF1maENKUEtSV1ddYCQkLH+EhYqQj5OYlYSKinyDgwCCi4l4gYCKkJDT0dKqrKueoKGhoqO0trWHjY1SW15ES1E9REs4PkRFSU0zNT6gpaSbn56eoJ+PlJOEi4kAhYuLfoWFt7q50s/QrKyteX+AeH1+jpKTZ2tvXWVoQEdNNDpBNDlAZWltSUxSnKCfo6WkqaqppaemnqGgAKipqYOGh6uqrtHP0KWmpYOIiIaLioqPkF5jZkVMUURKUSAjLVBVV3d/gHyBgZ+ioaurq6urq62traGjowB/gIQGCROcnaDKycqMkJF8gIOTmJeDh4ZscXI6QUkwNj9ESE6cnZ2BhYd2fX6YnZu3trevr6+xsbG2trYAIiUtGhsju7q929jZnJ6eam5xhIeHpqimhouKXGFkYmZsf4KFh4qLfoaGXGRnbXF1m56dlJeXpKSmr6+vAAYHEklJT87Mzr+9vZ+ioGxydGFlaZKWloKGhoCEhJOXl3V8fXaAgHd/f1piZiMoMSUqMSswODU6Qjk+RQAGBhB2dXzi4OCsrKyCiopSXF9ka25xd3lscHVxd3hwdnZpcHFtd3deZmlNVFoxNT4sLzkrMDgsMDkrMToAEREYi4qN3Nraq6ysfYSER05UR0xTYGhrY2ttWmFkU1pdUVpcNjtCMDc9MTU8LTE7MTU+NDlCNjtEO0FJADY2PKKjpLW1trm6uX+FhTg+RSwxOz1ES0RLUEpSV0ZOUzQ5QD1ASIWHind5fVFUWjI3PzI3QEROUjtDSABlZWnR0NGNkJKxsbKvsLCNkZBna245PkQ1OUI3PEMjJi8dHSRxcnbT0tPb2drRz9DMy83Hxce7vLyTl5hH1mZLeDDpeAAAAABJRU5ErkJggg==" alt="Kiên Đinh" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/logo.png 2x" /><img loading="lazy" width="55" height="55" srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/logo.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png" alt="Kiên Đinh" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h3 class="bio__AuthorName-sc-cy4lz8-2 HeSmV">Kiên Đinh</h3><p class="bio__AuthorDescription-sc-cy4lz8-1 iEPaOA">Bần đạo là <strong>Kiên Đinh</strong>, một Developer. 
+        Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2022</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b7c3d2ab5981229e622a.js"],"app":["/app-9f1147f8c466dd96f926.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-3bcb1cd46a4e4bb7ef1b.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-4dde0c472af6b2f3fecc.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-0e76fc85c0334e981508.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-eb861791826a3eecf648.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-6b59bd73f7bebe17c310.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-78ca9942dfeb0bdd785a.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-12420ebcfcfdb3c38af0.js"]};/*]]>*/</script><script src="/polyfill-b7c3d2ab5981229e622a.js" nomodule=""></script><script src="/component---src-templates-post-tsx-6b59bd73f7bebe17c310.js" async=""></script><script src="/commons-ff8672169835332c8244.js" async=""></script><script src="/1bfc9850-f1b2044ff811313c5a48.js" async=""></script><script src="/app-9f1147f8c466dd96f926.js" async=""></script><script src="/framework-38de9ebdaf5cd0003079.js" async=""></script><script src="/webpack-runtime-ce3c3087af5b051171f2.js" async=""></script></body></html>
