@@ -1,4 +1,475 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 13 Mar 2022 04:46:03 GMT</lastBuildDate><item><title><![CDATA[Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript]]></title><description><![CDATA[Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại.]]></description><link>https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript</link><guid isPermaLink="false">https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript</guid><pubDate>Thu, 10 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;lời-mở-đầu&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#l%E1%BB%9Di-m%E1%BB%9F-%C4%91%E1%BA%A7u&quot; aria-label=&quot;lời mở đầu permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Lời mở đầu&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 28 Mar 2022 03:16:38 GMT</lastBuildDate><item><title><![CDATA[Dựng Golang microservice boilerplate theo clean architecture]]></title><description><![CDATA[Một ngày đẹp trời nọ mình học xong 1 course cơ bản về Go trên udemy, rồi cũng nghiên cứu cách để áp dụng vào thực tế, dựng luôn 1 app sử dụng em nó, tuy nhiên mình vẫn luôn đau đầu với việc suy nghĩ nên áp dụng cấu trúc nào để dễ bề code, maintain, tránh việc bị kẻ maintain chửi như làng Vũ Đại. Dĩ nhiên mình không thể bê tư duy MVC cũng như nhiều thứ từ dotNET qua Go được.]]></description><link>https://devgiangho.github.io/dung-golang-microservice-boilerplate-theo-clean-architecture</link><guid isPermaLink="false">https://devgiangho.github.io/dung-golang-microservice-boilerplate-theo-clean-architecture</guid><pubDate>Sun, 27 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;chuyện-về-việc-học&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#chuy%E1%BB%87n-v%E1%BB%81-vi%E1%BB%87c-h%E1%BB%8Dc&quot; aria-label=&quot;chuyện về việc học permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Chuyện về việc học&lt;/h2&gt;
+&lt;p&gt;Như các bạn đã biết, mình trước giờ chủ yếu code &lt;strong&gt;đột NÉT&lt;/strong&gt;, nhưng lại có thêm vài mối tình ngoài em nó, chẳng hạn PHP, Nodejs... Rồi tình cờ mình nghe tới Golang. Golang xuất thế vào Obama đệ nhị nguyên niên (2009), là con út của gia tộc Google. Golang sở hữu nhiều thiên tư kinh hãi thế tục. Chẳng hạn như performance nhanh đến thần sầu, memory footprint chấp Nodejs 3 lần, quản lý bất đồng bộ xuất sắc với Goroutine, bên cạnh đó Go cũng rất dễ học và rất dễ tiếp cận.&lt;/p&gt;
+&lt;p&gt;Một ngày đẹp trời nọ mình học xong 1 course cơ bản về Go trên udemy, rồi cũng nghiên cứu cách để áp dụng vào thực tế, dựng luôn 1 app sử dụng em nó, tuy nhiên mình vẫn luôn đau đầu với việc suy nghĩ nên áp dụng cấu trúc nào để dễ bề code, maintain, tránh việc bị kẻ maintain chửi như làng Vũ Đại. Dĩ nhiên mình không thể bê tư duy MVC cũng như nhiều thứ từ dotNET qua Go được.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d53f0e83f41017a247798f6dc4ce2842/b17f8/udemy-golang-certificate.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAdmqYDD/xAAWEAEBAQAAAAAAAAAAAAAAAAARASD/2gAIAQEAAQUCSuf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAXEAADAQAAAAAAAAAAAAAAAAAAIDFB/9oACAEBAAY/AtIv/8QAGhABAAMAAwAAAAAAAAAAAAAAAQARIRAxkf/aAAgBAQABPyHZigku/sOoLbnP/9oADAMBAAIAAwAAABDQD//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EAB0QAQADAAEFAAAAAAAAAAAAAAEAETEQIUFRYYH/2gAIAQEAAT8Q6Xqy7PkHil9CX0I+FuIJAHe94J//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;udemy-golang-certificate.jpg&quot;
+        title=&quot;udemy-golang-certificate.jpg&quot;
+        src=&quot;/static/d53f0e83f41017a247798f6dc4ce2842/e5166/udemy-golang-certificate.jpg&quot;
+        srcset=&quot;/static/d53f0e83f41017a247798f6dc4ce2842/f93b5/udemy-golang-certificate.jpg 300w,
+/static/d53f0e83f41017a247798f6dc4ce2842/b4294/udemy-golang-certificate.jpg 600w,
+/static/d53f0e83f41017a247798f6dc4ce2842/e5166/udemy-golang-certificate.jpg 1200w,
+/static/d53f0e83f41017a247798f6dc4ce2842/b17f8/udemy-golang-certificate.jpg 1600w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Mình không nghĩ sẽ áp dụng cấu trúc MVC như trong bài viết &lt;a href=&quot;/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript&quot;&gt;Tạo REST API với Nodejs và Typescript&lt;/a&gt;, vì Golang thường thường sẽ có thể phải áp dụng cả gRPC để giao tiếp giữa các service với nhau, rồi REST để giao tiếp với client, nếu áp gRPC song song REST, vậy mình sẽ sắp xếp cấu trúc Controller như thế nào ? Để business logic ở tầng nào mới được ?&lt;/p&gt;
+&lt;h2 id=&quot;clean-architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#clean-architecture&quot; aria-label=&quot;clean architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Clean Architecture&lt;/h2&gt;
+&lt;p&gt;Gần đây mình có bật trạng thái open to work trên Linkedin, và mình cũng có mong muốn là công việc mới sẽ được dùng Go. Thế là thầy của mình có comment rằng nếu làm Go thì em nghiên cứu clean architecture nhé, nó sinh ra là dành cho Go.
+Okay, thế mình bắt tay vào nghiên cứu clean architect luôn mà tạm thời gác lại những mặt hàng Hexagonal Architecture, Onion Architecture...&lt;/p&gt;
+&lt;h4 id=&quot;sơ-bộ-về-clean-architecture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#s%C6%A1-b%E1%BB%99-v%E1%BB%81-clean-architecture&quot; aria-label=&quot;sơ bộ về clean architecture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Sơ bộ về Clean architecture&lt;/h4&gt;
+&lt;p&gt;Clean architecture là 1 triết lý (philosophy) trong thiết kế phần mềm được Robert C. Martin phát minh và đăng tải trên blog của ổng, blog &lt;a href=&quot;http://cleancoder.com/products&quot;&gt;Uncle Bob&lt;/a&gt;. Ông có viết luôn 1 cuốn sách về Clean Architecture, tuy nhiên trong bài viết này chỉ giới hạn những thứ mình tìm hiểu được trong thời gian vừa qua, còn cả 1 bầu trời kiến thức về em nó nữa mà cần chúng ta tìm hiểu tiếp.&lt;/p&gt;
+&lt;p&gt;Clean architecture được phát triển từ clean code, mà clean code lại follow &lt;strong&gt;SOLID&lt;/strong&gt; principles, chắc hẳn các bạn đã nghe qua:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;S&lt;/strong&gt;ingle responsibility principle&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;O&lt;/strong&gt;pen/closed principle&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L&lt;/strong&gt;iskov substitution principle&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;I&lt;/strong&gt;nterface segregation principle&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;ependency inversion principle&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Clean architect:
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 772px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/07b2e4403c83a8b377ad14ab3589044c/cc5e0/CleanArchitecture.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 73.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHSaTk1EGv/xAAZEAADAQEBAAAAAAAAAAAAAAAAAQIhEDH/2gAIAQEAAQUCdCfKwnCfP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABUQAQEAAAAAAAAAAAAAAAAAACAh/9oACAEBAAY/Aov/xAAbEAADAAIDAAAAAAAAAAAAAAAAAREhQTGB0f/aAAgBAQABPyFj8C9qlvCZlqvRsbY1yP/aAAwDAQACAAMAAAAQ/M//xAAYEQACAwAAAAAAAAAAAAAAAAAAASGhsf/aAAgBAwEBPxDaHB//xAAXEQADAQAAAAAAAAAAAAAAAAAQESFh/9oACAECAQE/EK8H/8QAGxABAAMAAwEAAAAAAAAAAAAAAQARITFRYUH/2gAIAQEAAT8QaQeBye2VnQaJ9I5ICBvkXmBOzYQli4A8HsWxK28z/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Clean Architecture Diagram&quot;
+        title=&quot;Clean Architecture Diagram&quot;
+        src=&quot;/static/07b2e4403c83a8b377ad14ab3589044c/cc5e0/CleanArchitecture.jpg&quot;
+        srcset=&quot;/static/07b2e4403c83a8b377ad14ab3589044c/f93b5/CleanArchitecture.jpg 300w,
+/static/07b2e4403c83a8b377ad14ab3589044c/b4294/CleanArchitecture.jpg 600w,
+/static/07b2e4403c83a8b377ad14ab3589044c/cc5e0/CleanArchitecture.jpg 772w&quot;
+        sizes=&quot;(max-width: 772px) 100vw, 772px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Dựa vào hình trên chúng ta có thể thấy mô hình này được chia làm 4 layer chính (không bắt buộc chỉ có 4):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Entities layer&lt;/li&gt;
+&lt;li&gt;Use cases layer&lt;/li&gt;
+&lt;li&gt;Interface Adapters layer&lt;/li&gt;
+&lt;li&gt;Frameworks &amp;#x26; Drivers layers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Theo thứ tự từ trong ra ngoài, tầng càng ở phía trong thì càng ít thay đổi và không bị phụ thuộc vào layer phía ngoài và ngược lại. Các layer bên ngoài dễ sửa đổi hơn và sẽ phụ thuộc vào các layer bên trong.&lt;/p&gt;
+&lt;h2 id=&quot;triển-khai-clean-architect-với-golang&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tri%E1%BB%83n-khai-clean-architect-v%E1%BB%9Bi-golang&quot; aria-label=&quot;triển khai clean architect với golang permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Triển khai clean architect với Golang&lt;/h2&gt;
+&lt;p&gt;Bắt đầu triển khai 1 microsevice dùng để tạo các Todo item cho người dùng, hỗ trợ xác thực bằng JWT token.&lt;/p&gt;
+&lt;p&gt;Sử dụng các công nghệ sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Echo framework&lt;/li&gt;
+&lt;li&gt;Postgresql + GORM&lt;/li&gt;
+&lt;li&gt;Testify cho unit testing&lt;/li&gt;
+&lt;li&gt;Logrus để log, UUID...&lt;/li&gt;
+&lt;li&gt;Docker để build và support integration tests&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Project structure:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b5835a150487da6fbd9bb589c6a5b437/248b0/folder-structure.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 70.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAABJ0AAASdAHeZh94AAACDUlEQVQ4y32U2XKcMBBF+Ygk9gyr0C6B2AfGdvkhFZcr//9BN9XyQJw4zsMthJbTfbsFyeX6CB8GrA9PsE0Akxq1NL+lTJyT2mC8bHDdgLwWSKsaGaMnR1rW+HrK8OWUIim5xHp9xOvrTzw9f8e0bBimFeOueUM/XkD7aqHQ+RZD270p9Ai2ARcKOeMoaoGkEgpcG0zbFg+lJUNG0d/rNse4hNUWRlloZWCUAa8F8ts6QSMw5wLdZY4Hv50z3GfFB5HFmks4beG1g1UmQs+3oJQIKamVRS0F1m1EJXRcJMApLw/RO0Un2TbAdwO0byCth7QO2reolX4DlmRZClyvM4TxyCr2KZBqNC4rqJHaNXHufWkikLLKK4Zl7mCa8AG2AwlGsqFHO85xL9f2sLrXPhHGIS0qrEuDcVlwLqp/ZpgxDi51rKHTLo4JWDB+wGKGBDwVFeq2RztMnwIpO7o23vqoisu4l/RHhnRV7vMSqeswbw/gyuAuzT8ACUB7yW6/rGj6EW0/woc+Nim/ZZpQhIIJDNMVYZz+22W6YlJbaOqusbEx9CXt9zcCs7LCfcFQdgtc6HCXFgdkB+9AITWCsvDKQAoVy7B3eO94wtoFmdDw0xij/W33sCxUVDNM6OYFQ7Q9wPgWyjWx67SecBdwfXrGj5cXuLZ7U+iPMdXI3H4aZO2Yu4FITKgYmCz/AqYDj5Yy25y+AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;folder-structure.png&quot;
+        title=&quot;folder-structure.png&quot;
+        src=&quot;/static/b5835a150487da6fbd9bb589c6a5b437/c1b63/folder-structure.png&quot;
+        srcset=&quot;/static/b5835a150487da6fbd9bb589c6a5b437/5a46d/folder-structure.png 300w,
+/static/b5835a150487da6fbd9bb589c6a5b437/0a47e/folder-structure.png 600w,
+/static/b5835a150487da6fbd9bb589c6a5b437/c1b63/folder-structure.png 1200w,
+/static/b5835a150487da6fbd9bb589c6a5b437/248b0/folder-structure.png 1316w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Ở đây các tầng như Entities, Usecases, Interface Adapter đều phụ thuộc vào domain chính là Entities, nên mình chia ra thành các module theo Entity là Auth và Todos, nằm trong folder internal.&lt;/p&gt;
+&lt;p&gt;Thêm vào đó, những component như Usecase, Handler, Repository không tạo mỗi struct, mà nên implement theo Interface (D trong SOLID).&lt;/p&gt;
+&lt;h3 id=&quot;entities-layer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#entities-layer&quot; aria-label=&quot;entities layer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Entities Layer&lt;/h3&gt;
+&lt;p&gt;internal/auth/models/user.go:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; models
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;golang.org/x/crypto/bcrypt&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; User &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Id       &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`gorm:&quot;primary_key&quot;`&lt;/span&gt;
+	Username &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+	Password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+	Limit    &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;HashPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	hashedPassword&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; bcrypt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GenerateFromPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bcrypt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DefaultCost&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; err
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Password &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;hashedPassword&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ComparePassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; bcrypt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;CompareHashAndPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;u&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;internal/todos/models/todo.go:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; models
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;time&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Todo &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Id        &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`gorm:&quot;primary_key&quot;`&lt;/span&gt;
+	Content   &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+	CreatedAt time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Time
+	CreatedBy &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+	User      User &lt;span class=&quot;token string&quot;&gt;`gorm:&quot;foreignKey:CreatedBy&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tầng entity chứa các enterprise logic nhất và ít thay đổi nhất, chẳng hạn như logic mã hoá password trong model user.&lt;/p&gt;
+&lt;h3 id=&quot;usecases-layer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#usecases-layer&quot; aria-label=&quot;usecases layer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Usecases layer&lt;/h3&gt;
+&lt;p&gt;auth/usecase.go&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; auth
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;context&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/models&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; UseCase &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;SignUp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; limit &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;SignIn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;ParseToken&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; accessToken &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Implement trong internal/auth/usecase/usecase.go:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; usecase
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;context&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;strings&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;time&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/auth&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/models&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/golang-jwt/jwt&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/google/uuid&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; AuthClaims &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StandardClaims
+	Username &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;username&quot;`&lt;/span&gt;
+	UserId   &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;userId&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; authUseCase &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	userRepo       auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UserRepository
+	hashSalt       &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;
+	signingKey     &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;byte&lt;/span&gt;
+	expireDuration time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Duration
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;NewAuthUseCase&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	userRepo auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UserRepository&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	hashSalt &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	signingKey &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	tokenTTL &lt;span class=&quot;token builtin&quot;&gt;int64&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UseCase &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;authUseCase&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		userRepo&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;       userRepo&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		hashSalt&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;       hashSalt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		signingKey&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;     signingKey&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		expireDuration&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Second &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Duration&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;tokenTTL&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;authUseCase&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;SignUp&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; limit &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	fmtusername &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; strings&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ToLower&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;username&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	euser&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;userRepo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GetUserByUsername&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fmtusername&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; euser &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ErrUserExisted
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	user &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		Id&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;       uuid&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		Username&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; fmtusername&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		Password&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; password&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		Limit&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;    limit&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;HashPassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;userRepo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;CreateUser&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;userRepo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GetUserByUsername&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;authUseCase&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;SignIn&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	user&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;userRepo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GetUserByUsername&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; user &lt;span class=&quot;token operator&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ErrUserNotFound
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ComparePassword&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;password&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ErrWrongPassword
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	claims &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; AuthClaims&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		Username&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Username&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		UserId&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;   user&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Id&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		StandardClaims&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StandardClaims&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			IssuedAt&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;  time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Unix&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+			Issuer&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;&quot;go-todos&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+			ExpiresAt&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;expireDuration&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Unix&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	token &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;NewWithClaims&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SigningMethodHS256&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; claims&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SignedString&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;signingKey&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;a &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;authUseCase&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;ParseToken&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; accessToken &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	token&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;ParseWithClaims&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;accessToken&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;AuthClaims&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;token &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Token&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ok &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Method&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;jwt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SigningMethodHMAC&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;!&lt;/span&gt;ok &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; fmt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Errorf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;unexpected signing method: %v&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Header&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;alg&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; a&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;signingKey&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; claims&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ok &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Claims&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;AuthClaims&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; ok &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; token&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Valid &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; claims&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;UserId&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; auth&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ErrInvalidAccessToken
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ở đây ta thấy được lợi thế của Dependency Inversion trong SOLID. Chúng ta có thể implement 1 usecase khác, sử dụng repository khác tuy nhiên vẫn implement usecase interface và không thay đổi logic chính của app.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;span style=&quot;color:#ffc107&quot;&gt;Note&lt;/span&gt;&lt;/strong&gt;:
+Khi mình chuyển từ ngôn ngữ khác qua Go, mình đã tìm hiểu về naming convention standard làm sao cho không bị conflict giữa interface và struct, mình có thử theo cách thêm prefix I vào trước interface như C#, tuy nhiên trong Go làm như vậy hơi lạ lạ, khi chúng ta muốn gọi Interface thì phải gõ chữ I, và editor sẽ suggest hàng tá interface. Nên mình áp dụng 1 cách khác, tên của Interface và struct implement nó sẽ trùng nhau, tuy nhiên struct đó sẽ không được export ra ngoài (Non-Capitalized).
+&lt;ul&gt;
+&lt;li&gt;Old way:
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;type IUseCase interface&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;type UseCase struct&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;New way:
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;type UseCase interface&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;type useCase struct&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;interface-adapters-layer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#interface-adapters-layer&quot; aria-label=&quot;interface adapters layer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Interface Adapters layer&lt;/h3&gt;
+&lt;p&gt;Như diagram phía trên, app của chúng ta sẽ có handler tương tự như controller để expose api.&lt;/p&gt;
+&lt;p&gt;cmd/api/main.go:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; main
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;log&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/config&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/db&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/server&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/sirupsen/logrus&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+	log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Starting api server&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Initialize config&lt;/span&gt;
+	cfg &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;NewConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	db &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GetPostgresInstance&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	s &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;NewServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; logrus&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;config/config.go:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; main
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;log&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/config&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/db&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/server&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/sirupsen/logrus&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+
+	log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Println&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Starting api server&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Initialize config&lt;/span&gt;
+	cfg &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;NewConfig&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	db &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GetPostgresInstance&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	s &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;NewServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; logrus&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ngoài ra thì tầng này còn có phức tạp hơn: &lt;code class=&quot;language-text&quot;&gt;handler&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;middleware&lt;/code&gt; (bao gồm middleware cho từng module, middle dùng chung cho tất cả...) và &lt;code class=&quot;language-text&quot;&gt;presenter&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Handler&lt;/strong&gt; nằm trong folder &lt;code class=&quot;language-text&quot;&gt;delivery/http&lt;/code&gt; chịu trách nhiệm xử lý HTTP request sử dụng Usecase để xử lý logic business. Okay quay trở lại vấn đề ban đầu, bây giờ nếu mình muốn sử dụng thêm gRPC để giao tiếp giữa các service, mình chỉ cần thêm component vào &lt;code class=&quot;language-text&quot;&gt;delivery/grpc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Presenter&lt;/strong&gt; Ở đây sẽ chịu trách nhiệm cho việc dữ liệu được hiển thị ra ngoài từ response của handler, chẳng hạn như response của việc login/register sẽ không thể nào show ra password được, do đó ở &lt;code class=&quot;language-text&quot;&gt;presenter&lt;/code&gt; của module &lt;code class=&quot;language-text&quot;&gt;auth&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; presenter
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; SignUpInput &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Username &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;username&quot;`&lt;/span&gt;
+	Password &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;password&quot;`&lt;/span&gt;
+	Limit    &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;`json:&quot;limit&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; SignUpResponse &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Id       &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;id&quot;`&lt;/span&gt;
+	Username &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;username&quot;`&lt;/span&gt;
+	Limit    &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;`json:&quot;limit&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;frameworks--dbs-layer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#frameworks--dbs-layer&quot; aria-label=&quot;frameworks  dbs layer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Frameworks &amp;#x26; DBs Layer&lt;/h3&gt;
+&lt;p&gt;Theo bác Bob quý mến, thì layer này chính là layer ngoài cùng, và mọi chi tiết của app đều nằm tại đây:
+Chúng ta có interface Repository và struct repository sử dụng em nó.&lt;/p&gt;
+&lt;p&gt;Ví dụ như UserRepository:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; auth
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;context&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/internal/models&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; CtxUserKey &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;userId&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; UserRepository &lt;span class=&quot;token keyword&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;CreateUser&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; user &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;GetUserByUsername&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; username &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token function&quot;&gt;GetUserById&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; userId &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;User&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Về phần framework, chúng ta sử dụng echo framework, là 1 framework được sử dụng phổ biến trong cộng đồng Go. Có 1 vài component được chia ra để dễ bề quản lý hơn như &lt;code class=&quot;language-text&quot;&gt;middleware manager&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;routes&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;server&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;handler&lt;/code&gt; (handler này để gom các handler và route lại cho server)...&lt;/p&gt;
+&lt;p&gt;Trong server:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;package&lt;/span&gt; server
+
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;context&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;kienmatu/go-todos/config&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;net/http&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;os&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;os/signal&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;syscall&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;time&quot;&lt;/span&gt;
+
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/labstack/echo/v4&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;github.com/sirupsen/logrus&quot;&lt;/span&gt;
+	&lt;span class=&quot;token string&quot;&gt;&quot;gorm.io/gorm&quot;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Server &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	echo   &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;echo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Echo
+	cfg    &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Configuration
+	db     &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;gorm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DB
+	logger &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;logrus&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Logger
+	ready  &lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;bool&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;NewServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;cfg &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;config&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Configuration&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; db &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;gorm&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;DB&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; logger &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;logrus&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Logger&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ready &lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;Server &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;Server&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;echo&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;New&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cfg&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; cfg&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; db&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; logger&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; logger&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; ready&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ready&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;Server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;error&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	server &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Server&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		Addr&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;token string&quot;&gt;&quot;:&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Port&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		WriteTimeout&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Second&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		ReadTimeout&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Second&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;go&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;logger&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Logf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;logrus&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;InfoLevel&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Server is listening on PORT: %s&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;cfg&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Port&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;echo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;StartServer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;server&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;logger&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalln&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Error starting Server: &quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;MapHandlers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;echo&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; err
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ready &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ready &lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+	quit &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;chan&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Signal&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	signal&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Notify&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;quit&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Interrupt&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; syscall&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;SIGTERM&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token operator&quot;&gt;&amp;lt;-&lt;/span&gt;quit
+
+	ctx&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; shutdown &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WithTimeout&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;context&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Background&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Second&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;defer&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;shutdown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;logger&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalln&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Server Exited Properly&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; s&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;echo&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Server&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Shutdown&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ctx&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;tổng-kết&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#t%E1%BB%95ng-k%E1%BA%BFt&quot; aria-label=&quot;tổng kết permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổng kết&lt;/h2&gt;
+&lt;p&gt;Các bạn có thể vào repo của mình &lt;a href=&quot;https://github.com/kienmatu/togo&quot;&gt;Golang todo clean architecture&lt;/a&gt; và đọc readme để xem hướng dẫn chạy thử và xem.&lt;/p&gt;
+&lt;p&gt;Yeah mục đích cuối cùng của việc áp dụng các design principle cũng là hỗ trợ việc code và maintain thuận lợi hơn, các bạn có thể custom lại cho phù hợp nhất với dự án. Cấu trúc này hoàn toàn có thể áp dụng sang cho các ngôn ngữ lập trình và framework khác chứ không bị gói gọn trong Go.&lt;/p&gt;
+&lt;p&gt;Code của mình được tham khảo dựa trên &lt;a href=&quot;https://github.com/AleksK1NG/Go-Clean-Architecture-REST-API&quot;&gt;repo này&lt;/a&gt;, đa tạ tác giả ❤️❤️&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tạo REST API trên Nodejs với Express và Prisma sử dụng Typescript]]></title><description><![CDATA[Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 em REST API trên nodejs để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại.]]></description><link>https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript</link><guid isPermaLink="false">https://devgiangho.github.io/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript</guid><pubDate>Thu, 10 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;lời-mở-đầu&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#l%E1%BB%9Di-m%E1%BB%9F-%C4%91%E1%BA%A7u&quot; aria-label=&quot;lời mở đầu permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Lời mở đầu&lt;/h2&gt;
 &lt;p&gt;Thế giới của lập trình viên web đang hết sức quen thuộc với những &quot;containerized application&quot;, hay nói cách khác bây giờ đang là thời đại của microservice, và vì thế mỗi service chúng ta có thể chọn dùng dotNET, java, hay Nodejs tuỳ vào mục đích và nhu cầu của từng service.&lt;/p&gt;
 &lt;p&gt;Ngoại trừ vợ chính dotNET, mình thi thoảng chơi vợ 2 PHP, hôm nay công việc yêu cầu build 1 Nodejs REST API để làm việc với vài thư viện web3, nên mình build luôn 1 boilerplate Nodejs đơn giản để sẵn sau này đỡ phải dựng lại.&lt;/p&gt;
 &lt;p&gt;Template này mình sẽ sử dụng Express làm backend framework, thêm vào đó sẽ sử dụng Prisma làm ORM để thao tác với dữ liệu PostgresQL, code bằng Typescript, dùng docker để deploy. Ok, let&apos;s get started.&lt;/p&gt;
@@ -405,30 +876,39 @@ app&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;docker-compose up -d postgres&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Khi chạy xong chúng ta chạy lệnh sau để kiểm tra xem container đã chạy chưa (hoặc bạn có thể mở docker desktop lên xem):&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;docker &lt;span class=&quot;token function&quot;&gt;ps&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;CONTAINER ID&lt;/th&gt;
-&lt;th&gt;IMAGE&lt;/th&gt;
-&lt;th&gt;COMMAND&lt;/th&gt;
-&lt;th&gt;CREATED&lt;/th&gt;
-&lt;th&gt;STATUS&lt;/th&gt;
-&lt;th&gt;PORTS&lt;/th&gt;
-&lt;th&gt;NAMES&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;a9a1a82d5dd1&lt;/td&gt;
-&lt;td&gt;postgres&lt;/td&gt;
-&lt;td&gt;&quot;docker-entrypoint.s…&quot;&lt;/td&gt;
-&lt;td&gt;10 seconds ago&lt;/td&gt;
-&lt;td&gt;Up 9 seconds&lt;/td&gt;
-&lt;td&gt;0.0.0.0:5432-&gt;5432/tcp&lt;/td&gt;
-&lt;td&gt;postgres_db_container&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;!-- | CONTAINER ID | IMAGE    | COMMAND                | CREATED        | STATUS       | PORTS                  | NAMES                 |
+| ------------ | -------- | ---------------------- | -------------- | ------------ | ---------------------- | --------------------- |
+| a9a1a82d5dd1 | postgres | &quot;docker-entrypoint.s…&quot; | 10 seconds ago | Up 9 seconds | 0.0.0.0:5432-&gt;5432/tcp | postgres_db_container | --&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1159px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABJ0AAASdAHeZh94AAAAx0lEQVQY01VQXQ+DIAzk///C7cXEBzdmzATlw1bxlmvispFAuXJ3bXHLskBFsW2b7VqrRRHBdf/dv7lSiuGLy+iGYcD9dsO6rig5fx+tkCpyzkg5mwHv+75bJG6tQVVMyzyxq7Vgfr9xtAaas+o8z+i6zoxf3uPxfGKJEd57HMeBcRwRYgSXyIa+703P5VJKiDH+jcPuKDzPEyFEq8w3dsEJQgjfsckVVfPgRI4HSReZmB2TwBwjzXNKJqbJNE0QUctf/00d8QcneYNXD7yStAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Docker Ps&quot;
+        title=&quot;Docker Ps&quot;
+        src=&quot;/static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png&quot;
+        srcset=&quot;/static/498345d5fca52a238b859c84268d6693/5a46d/docker-ps.png 300w,
+/static/498345d5fca52a238b859c84268d6693/0a47e/docker-ps.png 600w,
+/static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png 1159w&quot;
+        sizes=&quot;(max-width: 1159px) 100vw, 1159px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Đã có DB, bây giờ chúng ta sẽ cài đặt prisma và prisma client để làm ORM.&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; prisma @prisma/client&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Cài xong prisma chúng ta sẽ có thể khởi tạo schema prisma.&lt;/p&gt;
