@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tag/ubuntu",
+    "result": {"data":{"tag":null,"posts":{"edges":[{"node":{"id":"aa4bd0e5-a72d-515e-9b22-308c4a869afc","frontmatter":{"title":"Quên Mac hay Windows đi, chân ái là đây - Hướng dẫn thiết lập Ubuntu cho developer","path":"/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev","tags":["Ubuntu"],"excerpt":"Lorem ipsum...","created":"2022-08-04T00:00:00.000Z","createdPretty":"04 August, 2022","featuredImage":null}}}]}},"pageContext":{"tag":"Ubuntu"}},
+    "staticQueryHashes": ["2275848304","3082461530","545095672"]}
