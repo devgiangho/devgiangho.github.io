@@ -268,7 +268,7 @@ data-styled.g56[id="post__ToggleTocButton-sc-14ootra-14"]{content:"Bwnup,"}/*!sc
 /static/0a687c2d67b2a04bea977ddc2af3ef1c/da113/ubuntu-vs-windows.jpg 400w,
 /static/0a687c2d67b2a04bea977ddc2af3ef1c/f2cbb/ubuntu-vs-windows.jpg 800w" src="/static/0a687c2d67b2a04bea977ddc2af3ef1c/f2cbb/ubuntu-vs-windows.jpg" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><section class="post__StyledPost-sc-14ootra-6 gjEQdA post"><p>Cái tiêu đề nghe nổ quá phải không? Nhưng không đâu, bạn hãy đọc hết bài viết này đi.</p>
 <h2 id="về-công-việc-mới" style="position:relative;"><a href="#v%E1%BB%81-c%C3%B4ng-vi%E1%BB%87c-m%E1%BB%9Bi" aria-label="về công việc mới permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Về công việc mới</h2>
-<p>Chuyện là gần đây mình vừa mới lựa chọn bỏ vị trí <strong>.NET developer</strong> để làm một <strong>Backend developer.</strong> Sự khác biệt về ngôn ngữ là chắc chắn vì dự án ở công ty mới sử dụng Golang - 1 con chuột chũi mới nổi thay vì C# và Visual studio quen thuộc. Bên cạnh đó, thiết bị làm việc cũng không phải là Mac mà là máy tính chạy Ubuntu - 1 distro Linux phổ biến, lý do chính là bởi vì cao tầng muốn phổ biến văn hóa devops cho nên Ubuntu được chạy từ server của hệ thống cho tới máy của developer.</p>
+<p>Chuyện là gần đây mình vừa mới lựa chọn bỏ vị trí <strong>.NET developer</strong> để làm một <strong>Backend developer.</strong> Sự khác biệt về ngôn ngữ là chắc chắn, vì dự án ở công ty mới sử dụng Golang - 1 con chuột chũi mới nổi thay vì C# và Visual studio quen thuộc. Bên cạnh đó, thiết bị làm việc cũng không phải là Mac mà là máy tính chạy Ubuntu - 1 distro Linux phổ biến, lý do chính là bởi vì cao tầng muốn phổ biến văn hóa devops cho nên Ubuntu được chạy từ server của hệ thống cho tới máy của developer.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 703px; "
@@ -628,6 +628,41 @@ systemctl status touchegg.service</code></pre></div>
       />
   </a>
     </span></p>
+<p>Sau đó cài thêm Touche để tiện cài phím tắt: <a href="https://github.com/JoseExposito/touche">https://github.com/JoseExposito/touche</a></p>
+<p>Nếu các bạn dùng Fusuma thì có thể tham khảo config của mình:</p>
+<div class="gatsby-highlight" data-language="yml"><pre class="language-yml"><code class="language-yml"><span class="token key atrule">swipe</span><span class="token punctuation">:</span>
+  <span class="token key atrule">3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">left</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+alt+Right'</span>
+    <span class="token key atrule">right</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+alt+Left'</span>
+    <span class="token key atrule">up</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key super+a'</span>
+    <span class="token key atrule">down</span><span class="token punctuation">:</span> 
+      <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key super'</span>
+  <span class="token key atrule">4</span><span class="token punctuation">:</span>
+  <span class="token key atrule">left</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key alt+Left'</span>
+  <span class="token key atrule">right</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key alt+Right'</span>
+  <span class="token key atrule">up</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+alt+Down'</span>
+  <span class="token key atrule">down</span><span class="token punctuation">:</span> 
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+alt+Up'</span>
+<span class="token key atrule">pinch</span><span class="token punctuation">:</span>
+  <span class="token key atrule">in</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+plus'</span>
+  <span class="token key atrule">out</span><span class="token punctuation">:</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> <span class="token string">'xdotool key ctrl+minus'</span>
+
+<span class="token key atrule">threshold</span><span class="token punctuation">:</span>
+  <span class="token key atrule">swipe</span><span class="token punctuation">:</span> <span class="token number">0.4</span>
+  <span class="token key atrule">pinch</span><span class="token punctuation">:</span> <span class="token number">0.4</span>
+
+<span class="token key atrule">interval</span><span class="token punctuation">:</span>
+  <span class="token key atrule">swipe</span><span class="token punctuation">:</span> <span class="token number">0.8</span>
+  <span class="token key atrule">pinch</span><span class="token punctuation">:</span> <span class="token number">0.1</span></code></pre></div>
+<p>Lưu ý: Fusuma (command) cần được khởi động cùng hệ thống, nếu không bạn phải chạy ở 1 terminal nào đó thì nó mới có tác dụng.</p>
 <p>Mình chia sẻ thêm cho các bạn một số extension hữu ích nữa mà mình đang sử dụng:</p>
 <ul>
 <li><a href="https://extensions.gnome.org/extension/4105/notification-banner-position/">Notification banner position</a>: Đưa pop up thông báo của Ubuntu từ chính giữa màn hình (middle top) qua bên góc phải màn hình (right - top).</li>
