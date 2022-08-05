@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 04 Aug 2022 10:35:36 GMT</lastBuildDate><item><title><![CDATA[Quên Mac hay Windows đi, chân ái là đây - Hướng dẫn thiết lập Ubuntu cho developer]]></title><description><![CDATA[Lorem ipsum...]]></description><link>https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</link><guid isPermaLink="false">https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</guid><pubDate>Thu, 04 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Cái tiêu đề nghe nổ quá phải không? Nhưng không đâu, bạn hãy đọc hết bài viết này đi.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Aug 2022 04:19:34 GMT</lastBuildDate><item><title><![CDATA[Quên Mac hay Windows đi, chân ái là đây - Hướng dẫn thiết lập Ubuntu cho developer]]></title><description><![CDATA[Vừa miễn phí lại dễ dàng cài đặt, có nhiều tính năng hay ho, hỗ trợ tốt công việc lập trình, đó là lý do mà tại sao Linux nói chung và Ubuntu nói riêng được nhiều developer chọn thay vì Windows và Mac. Hãy cùng mình xem lý do tại sao nhé.]]></description><link>https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</link><guid isPermaLink="false">https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</guid><pubDate>Thu, 04 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Cái tiêu đề nghe nổ quá phải không? Nhưng không đâu, bạn hãy đọc hết bài viết này đi.&lt;/p&gt;
+&lt;h2 id=&quot;về-công-việc-mới&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#v%E1%BB%81-c%C3%B4ng-vi%E1%BB%87c-m%E1%BB%9Bi&quot; aria-label=&quot;về công việc mới permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Về công việc mới&lt;/h2&gt;
 &lt;p&gt;Chuyện là gần đây mình vừa mới lựa chọn bỏ vị trí &lt;strong&gt;.NET developer&lt;/strong&gt; để làm một &lt;strong&gt;Backend developer.&lt;/strong&gt; Sự khác biệt về ngôn ngữ là chắc chắn vì dự án ở công ty mới sử dụng Golang - 1 con chuột chũi mới nổi thay vì C# và Visual studio quen thuộc. Bên cạnh đó, thiết bị làm việc cũng không phải là Mac mà là máy tính chạy Ubuntu - 1 distro Linux phổ biến, lý do chính là bởi vì cao tầng muốn phổ biến văn hóa devops cho nên Ubuntu được chạy từ server của hệ thống cho tới máy của developer.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -30,9 +31,10 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Chiếc laptop thinkpad chạy windows gắn bó với mình đã mấy năm&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Chiếc laptop thinkpad chạy windows gắn bó với mình đã mấy năm&lt;/p&gt;
+&lt;h2 id=&quot;điểm-mình-thích-ở-ubuntulinux&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%C4%91i%E1%BB%83m-m%C3%ACnh-th%C3%ADch-%E1%BB%9F-ubuntulinux&quot; aria-label=&quot;điểm mình thích ở ubuntulinux permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Điểm mình thích ở Ubuntu/Linux&lt;/h2&gt;
 &lt;p&gt;Có vài điều mà mình thích ở Mac và Ubuntu/Linux so với Windows chính là:&lt;/p&gt;
-&lt;p&gt;Thứ nhất, terminal của các hệ điều hành nhân Linux và Unix hoạt động rất tốt, dùng rất nhanh trong công việc, chẳng hạn tạo file, tạo folder hay chạy những lệnh hệ thống.  Điều này còn tuyệt vời hơn khi bạn có thể cài các custom shell/terminal khác vào và sẽ có những chức năng hay ho và hữu ích hơn nữa. Còn ở windows thì hầu như mọi người chẳng bao giờ dùng tới command ngoài việc chạy những lệnh như &lt;code class=&quot;language-text&quot;&gt;yarn&lt;/code&gt; hoặc &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; 😂 😂, ở phần dưới mình sẽ hướng dẫn cài zsh cho ubuntu.&lt;/p&gt;
+&lt;p&gt;Thứ nhất, terminal của các hệ điều hành nhân Linux và Unix hoạt động rất tốt, dùng rất nhanh trong công việc, chẳng hạn tạo file, tạo folder hay chạy những lệnh hệ thống. Điều này còn tuyệt vời hơn khi bạn có thể cài các custom shell/terminal khác vào và sẽ có những chức năng hay ho và hữu ích hơn nữa. Còn ở windows thì hầu như mọi người chẳng bao giờ dùng tới command ngoài việc chạy những lệnh như &lt;code class=&quot;language-text&quot;&gt;yarn&lt;/code&gt; hoặc &lt;code class=&quot;language-text&quot;&gt;npm install&lt;/code&gt; 😂 😂, ở phần dưới mình sẽ hướng dẫn cài zsh cho ubuntu.&lt;/p&gt;
 &lt;p&gt;Thứ 2 chính là cơ chế quản lý file, ở Mac và Linux, việc xóa file hoặc folder diễn ra rất nhanh, trong vòng vài nốt nhạc bạn đã có thể xóa node_modules bằng 1 lệnh đơn giản &lt;code class=&quot;language-text&quot;&gt;rm -rf node_modules&lt;/code&gt; (cẩn thận với lệnh này nhé 😛). Còn ở Windows ư, thôi đi, xóa thư mục này sẽ tốn của bạn hàng phút cho tới chục phút thời gian, trước kia khi phải xóa nó, mình hầu hết đều di chuyển thư mục cũ đi chỗ khác hoặc là đổi tên, lúc nào rảnh thì cho máy xóa. Chưa kể việc xóa file này cũng khiến máy chạy chậm/lag hơn do bị ngốn nhiều tài nguyên.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -65,9 +67,454 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Chiếc macbook pro đầu tiên mình sử dụng (công ty cấp 😂)&lt;/p&gt;
 &lt;p&gt;Thứ bar, Workspace manager và touchpad gestures. Kể từ khi việc work from home trở nên phổ biến, mình hầu như chỉ sử dụng laptop mà không sử dụng máy bàn nữa. Mà laptop hay đặc biệt Macbook vẫn nổi tiếng bởi tính năng kiếm ra tiền: chiếc &lt;strong&gt;touchpad đỉnh của chóp.&lt;/strong&gt; Sau khi sử dụng macbook được 1 thời gian, quen với gesture trên mac thì khi quay trở lại chiếc thinkpad chạy windows mình không còn muốn sử dụng em nó nữa, ít nhất là khi không có chuột rời thì mình không sử dụng nữa, vứt xó 🤣. Việc di chuyển bằng touchpad giữa các workspace, các cửa sổ trên Windows rất chuối, vuốt bằng 3 ngón lên xuống trái phải thì animation chuyển cảnh còn bị khựng nữa. Ngược lại, việc này Mac làm tốt nhất, Ubuntu thì có trình GNOME và Wayland làm tốt, nếu dùng X11 thay vì Wayland thì cũng có cách để mod lại (phía dưới sẽ có hướng dẫn).&lt;/p&gt;
 &lt;p&gt;Demo touchpad gestures &amp;#x26; workspace manager trên ubuntu (X11):
-&lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/WRhvF_aaaPY&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Ngôn ngữ lập trình nào tốt nhất, có thực sự ngôn ngữ không quan trọng?]]></title><description><![CDATA[Bắt gặp câu hỏi này đã rất lâu, từ ngay khi mình còn đi học (đâu đó năm 2016, 2017), lúc mới chập chững học xong C, vừa học tới C#, Java, OOP ... Thời điểm đó với mình C# là ngôn ngữ lập trình tuyệt vời nhất, còn lại PHP, Java, Python chỉ là đồ gân gà.]]></description><link>https://devgiangho.github.io/ngon-ngu-lap-trinh-nao-tot-nhat-co-thuc-su-ngon-ngu-khong-qu</link><guid isPermaLink="false">https://devgiangho.github.io/ngon-ngu-lap-trinh-nao-tot-nhat-co-thuc-su-ngon-ngu-khong-qu</guid><pubDate>Tue, 29 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;ngôn-ngữ-lập-trình-nào-xịn-nhất-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ng%C3%B4n-ng%E1%BB%AF-l%E1%BA%ADp-tr%C3%ACnh-n%C3%A0o-x%E1%BB%8Bn-nh%E1%BA%A5t-&quot; aria-label=&quot;ngôn ngữ lập trình nào xịn nhất  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ngôn ngữ lập trình nào xịn nhất ?&lt;/h2&gt;
+&lt;div&gt;&lt;iframe src=&quot;https://www.youtube.com/embed/WRhvF_aaaPY&quot; width=&quot;800&quot; height=&quot;400&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Thứ tư, lại là command, nhưng là command để cài thêm application. Là developer, chúng ta thường xuyên phải cài nhiều phần mềm liên quan việc lập trình chẳng hạn như docker, các engine cho các ngôn ngữ như Go, rồi còn Nodejs… vân vân và mây mây.
+Ở Windows thì hầu như chúng ta sẽ tìm nơi download, tải gói cài đặt &lt;strong&gt;exe&lt;/strong&gt; hoặc &lt;strong&gt;msi&lt;/strong&gt; rồi cài theo file đó, rất rườm rà phải không nào?&lt;br&gt;
+Còn Linux hoặc Mac thì chúng ta chỉ cần cài &lt;code class=&quot;language-text&quot;&gt;brew&lt;/code&gt; , Linux thì có sẵn &lt;code class=&quot;language-text&quot;&gt;apt&lt;/code&gt; và có cả snap store, cài app qua command nhanh gọn lẹ. Tất nhiên Windows cũng có 1 alternative là Chocolatey, nhưng ở đây có bao nhiêu người nghe tới em nó nào? Sử dụng có ổn không? App có nhiều không ?
+Chưa kể cài app thông qua command sẽ có tốc độ download nhanh hơn vì không cần qua ông middleman là trình duyệt như Chrome/ Firefox, thậm chí lúc gỡ cũng chỉ cần vài dòng command, quá tuyệt !&lt;/p&gt;
+&lt;p&gt;Thứ numb, Linux là open-source, và miễn phí, ở đây chắc chưa có ai dùng Windows mà chưa crack bao giờ đâu nhỉ ? Mặc dù Opensource sẽ có nhiều thứ không được ổn định như mấy hệ điều hành trả phí, tuy nhiên đôi khi nó là một lựa chọn không tồi.&lt;/p&gt;
+&lt;h2 id=&quot;tại-sao-không-chọn-mac-hay-windows&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#t%E1%BA%A1i-sao-kh%C3%B4ng-ch%E1%BB%8Dn-mac-hay-windows&quot; aria-label=&quot;tại sao không chọn mac hay windows permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tại sao không chọn Mac hay Windows?&lt;/h2&gt;
+&lt;p&gt;Đọc qua 5 lý do trên, có thể bạn sẽ có 2 câu hỏi ?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tại sao không mua Mac khi nó cũng có những tính năng trên lại còn ổn định hơn?
+Đáp án là do Mac &lt;code class=&quot;language-text&quot;&gt;đắt&lt;/code&gt; , đắt thấy ông bà nội luôn, với giá của Macbook pro 32gb thì chúng ta có thể mua từ 2 tới 3 chiếc laptop khác cùng mức dung lượng RAM (chạy intel). Mặc dù macbook Air M1 rất rẻ và ngon, tuy nhiên RAM lại thấp và không có quạt tản nhiệt.&lt;/li&gt;
+&lt;li&gt;Thế Linux thì dùng office kiểu gì, nhà tôi 3 đời dùng Windows vẫn bình thường chỉ với bàn phím và chuột rời đấy thôi.
+Okay, với một developer như mình, tần suất sử dụng các phần mềm văn phòng không cao, Google docs có thể đáp ứng được, chưa kể Linux cũng có các phần mềm thay thế như LibreOffice đấy thôi (mình chỉ mới chuyển qua Mac và Linux được 4 tháng).
+Là dev, chúng ta tập trung chính vào trải nghiệm xoay quanh công việc lập trình, và mình thấy ở mặt này Linux vượt trội hơn nhiều so với Windows - trừ phi bạn làm .NET như mình trước kia hehe.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;hướng-dẫn-thiết-lập-ubuntu-từ-a---z&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-thi%E1%BA%BFt-l%E1%BA%ADp-ubuntu-t%E1%BB%AB-a---z&quot; aria-label=&quot;hướng dẫn thiết lập ubuntu từ a   z permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hướng dẫn thiết lập Ubuntu từ A - Z&lt;/h2&gt;
+&lt;p&gt;Sau bài diễn văn dài dằng dặc phía trên, chúng ta cùng nhau đến với phần hướng dẫn nào, dù gì với thiết lập mặc định của Ubuntu mặc định các bạn sẽ không có được đầy đủ trải nghiệm như mình nói ở trên đâu. Bên cạnh đó bạn cũng phải làm quen thêm vài dòng lệnh cơ bản nữa. Let&apos;s get started.&lt;/p&gt;
+&lt;p&gt;Xuyên suốt từ đầu bài viết tới giờ, mình đã nhắc tới Command rất nhiều, yeah, hầu hết thời gian chúng ta sẽ làm việc thông qua &lt;strong&gt;Terminal&lt;/strong&gt;, dưới đây là terminal mặc định của Ubuntu, bạn có thể mở nó từ thanh tìm kiếm bằng cách gõ Phím Super (hay còn gọi là phím Windows).&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 831px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/44ded1c2ecb49fc6558bffd77d511b16/5b4a1/default-terminal-ubuntu.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 71.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVQoz6WQX0sCQRTFLwTqrq5I0NKuC/6bmd2wzbkzKik765u9pWn7FQTDJEIScyjpk4fme7ldDofz8uPceyFJkraQnZ/pdtrdTq/fux+PJo/T0Xg0TabjyUOkItmWkVLDu6EaxGoQoxRaa7gVfVr1A9JktYB712gHV8UqtwO0A37h4yE0S/XAqjRL9fCcHpxUzuzV7AX6LrZMgkUfLSbyvjApGpTnGq1so3VwnqujQdCgaBCe2wdZ8H1wvpYalCvCTBVNwo3GXib5VcJiDFw9X0FUFjfZGubpX7AjXNjD29krxJ4MMyfCFqNwuVtuQXkyzJ4MM3C287eUzQwc/bROvbaze35P3/yx2KT69vHm9f+a47Tf/lxsQJVTwnq+/gYv6n3TdjUcKQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Ubuntu default Gnome Terminal&quot;
+        title=&quot;Ubuntu default Gnome Terminal&quot;
+        src=&quot;/static/44ded1c2ecb49fc6558bffd77d511b16/5b4a1/default-terminal-ubuntu.png&quot;
+        srcset=&quot;/static/44ded1c2ecb49fc6558bffd77d511b16/5a46d/default-terminal-ubuntu.png 300w,
+/static/44ded1c2ecb49fc6558bffd77d511b16/0a47e/default-terminal-ubuntu.png 600w,
+/static/44ded1c2ecb49fc6558bffd77d511b16/5b4a1/default-terminal-ubuntu.png 831w&quot;
+        sizes=&quot;(max-width: 831px) 100vw, 831px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Ubuntu default Gnome Terminal&lt;/p&gt;
+&lt;h3 id=&quot;những-câu-lệnh-và-khái-niệm-cơ-bản-trong-terminal-của-linux&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#nh%E1%BB%AFng-c%C3%A2u-l%E1%BB%87nh-v%C3%A0-kh%C3%A1i-ni%E1%BB%87m-c%C6%A1-b%E1%BA%A3n-trong-terminal-c%E1%BB%A7a-linux&quot; aria-label=&quot;những câu lệnh và khái niệm cơ bản trong terminal của linux permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Những câu lệnh và khái niệm cơ bản trong terminal của Linux&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tiền tố &lt;strong&gt;sudo&lt;/strong&gt; trước mỗi câu lệnh có nghĩa rằng câu lệnh phía sau sẽ được thực thi với quyền root user. (Sudo có nghĩa là SuperUser DO và nó được sử dụng cho các file và tác vụ bị hạn chế)
+Sử dụng command &lt;strong&gt;sudo&lt;/strong&gt; thì terminal sẽ hỏi bạn mật khẩu, và khi bạn gõ mật khẩu lên terminal, nó sẽ không hiển thị bất kì kí tự nào biểu hiện rằng bạn đang nhập. Nếu bạn vẫn muốn hiển thị dấu (*) khi nhập mật khẩu, phía dưới mình có phần hướng dẫn config cho vụ này.&lt;/li&gt;
+&lt;li&gt;Command để cài 1 phần mềm từ file .deb (đuôi này dành cho distro hệ Debian/Ubuntu):&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; dpkg -i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;filename&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;.deb&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Trước khi cài đặt hoặc update app nào trong hệ thống Linux, thì việc update apt/apt-get là một điều hết sức nên làm:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; update&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;cài-đặt-các-component-cần-thiết-nhất-cho-linux&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A0i-%C4%91%E1%BA%B7t-c%C3%A1c-component-c%E1%BA%A7n-thi%E1%BA%BFt-nh%E1%BA%A5t-cho-linux&quot; aria-label=&quot;cài đặt các component cần thiết nhất cho linux permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cài đặt các component cần thiết nhất cho Linux:&lt;/h3&gt;
+&lt;p&gt;Đầu tiên chúng ta cần cài vài thành phần quan trọng, dĩ nhiên, bạn nên chạy &lt;code class=&quot;language-text&quot;&gt;apt update&lt;/code&gt; trước nha.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;wget&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; -y&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;-y&lt;/strong&gt; có nghĩa là “yes&quot;, tự động đồng ý cho các prompt sẽ bật ra khi chúng ta cài đặt các component trên&lt;/li&gt;
+&lt;li&gt;Chúng ta cài 3 app cần thiết nhất:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;curl&lt;/strong&gt;: Viết tắt của client URL, là một command line tool sử dụng để truyền/ lấy dữ liệu thông qua nhiều giao thức khác nhau (như HTTP, HTTPS, FTP, FTPS, SCP, SFTP, FILE, …)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wget&lt;/strong&gt;: Là tool sử dụng cho việc tải file trên giao thức HTTP hoặc FTP, (tải nhanh hơn Chrome đó nha 😛)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;git&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;custom-shell&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#custom-shell&quot; aria-label=&quot;custom shell permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Custom Shell&lt;/h3&gt;
+&lt;p&gt;Thứ đầu tiên mình nghĩ mà chúng ta nên cài và cá nhân hóa chính là shell, mặc định thì Linux sẽ chạy Bash, nhưng bash chỉ support những tính năng cơ bản. Ở đây mình cài đặt 1 custom shell là &lt;a href=&quot;https://www.zsh.org/&quot;&gt;ZSH&lt;/a&gt;, và 1 framework để quản lý plugin cho ZSH chính là &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh My Zsh&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Dưới đây là một số lý do chính trong số rất nhiều tính năng mà ZSH sở hữu, chính những thứ này khiến mình luôn cài ZSH để thay thế shell mặc định trong Ubuntu hay MacOS.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Automatic cd:&lt;/strong&gt; Bạn chỉ cần gõ cd và nhấn tab (hoặc gõ thêm 1 vài chữ cái đầu), danh sách những thư mục và file tương tứng trong thư mục sẽ hiển thị phía dưới dòng command, giúp bạn dễ dàng di chuyển giữa các thư mục hơn.
+Tin mình đi, từ khi quen dùng cd và auto cd này, hầu như mình không dùng tới UI file manager nữa.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Recursive path expansion:&lt;/strong&gt; Ví dụ, bạn gõ “/u/lo/b” thì sẽ tự động được chuyển thành “/usr/local/bin”&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Spelling correction and approximate completion:&lt;/strong&gt; Khi chúng ta gõ nhầm tên file hoặc thư mục, ZSH sẽ tự động sửa sai cho mình.&lt;/li&gt;
+&lt;li&gt;ZSH sở hữu kho plugin phong phú cũng như framework đi kèm (như mình đề cập Oh My Zsh ở trên).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mình để ở đây ví dụ cho vụ automatic cd cho các bạn dễ hình dung:&lt;/p&gt;
+&lt;p&gt;
+      &lt;div class=&quot;interactive-gif &quot;&gt;
+        &lt;div class=&quot;embedded&quot; style=&quot;padding-top: 70.8433734939759%&quot;&gt;
+          &lt;div id=&quot;loading-cd_example_tab.gif&quot;
+              class=&quot;loading&quot; style=&quot;background-size: cover; background-image: url(&apos;/static/gifs/still-cd_example_tab.gif&apos;);&quot;&gt;
+              &lt;img class=&quot;indicator&quot; src=&quot;/static/gifs/loading.gif&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div id=&quot;cd_example_tab.gif&quot;
+              class=&quot;gif-container&quot;
+              style=&quot;display: none;&quot;
+              onclick=&quot;document.getElementById(&apos;cd_example_tab.gif&apos;).style.display = &apos;none&apos;;
+                        document.getElementById(&apos;still-cd_example_tab.gif&apos;).style.display = &apos;block&apos;;&quot;&gt;
+            &lt;img id=&quot;image-cd_example_tab.gif&quot;
+                class=&quot;gif&quot;
+                data-original=&quot;/static/gifs/cd_example_tab.gif&quot; /&gt;
+          &lt;/div&gt;
+
+          &lt;div id=&quot;still-cd_example_tab.gif&quot;
+              class=&quot;still-container&quot;
+              onclick=&quot;var gif = document.getElementById(&apos;image-cd_example_tab.gif&apos;);
+                        gif.src = gif.dataset.original + &apos;?t=&apos; + new Date().getTime();
+                        document.getElementById(&apos;still-cd_example_tab.gif&apos;).style.display = &apos;none&apos;;
+                        document.getElementById(&apos;cd_example_tab.gif&apos;).style.display = &apos;block&apos;;&quot;&gt;
+            &lt;img id=&quot;image-still-cd_example_tab.gif&quot;
+                class=&quot;still&quot;
+                src=&quot;/static/gifs/still-cd_example_tab.gif&quot; /&gt;
+            &lt;img class=&quot;play&quot;
+                src=&quot;/static/gifs/play.gif&quot; /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;caption&quot;&gt;Demo automatic cd&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cài ZSH và Oh My Zsh&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Việc cài ZSH và Oh My Zsh rất đơn giản, bạn chỉ cần copy đoạn script dưới đây, sau đó paste vào terminal bằng cách nhấn &lt;strong&gt;Ctrl + Shift + P&lt;/strong&gt;, rồi enter là xong.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zsh&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sh&lt;/span&gt; -c &lt;span class=&quot;token string&quot;&gt;&quot;&lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau đó chúng ta sẽ cần cài zsh làm shell mặc định cho Terminal:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; chsh -s &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;which&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;zsh&lt;/span&gt;&lt;span class=&quot;token variable&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nếu ZSH vẫn không được set mặc định khi bạn đóng Terminal và mở lại, thì chỉ việc đăng xuất và đăng nhập lại vào Ubuntu là xong nhé.&lt;/p&gt;
+&lt;p&gt;Lưu ý: Khi sử dụng Bash, thì mặc định những câu lệnh trong &lt;code class=&quot;language-text&quot;&gt;~/.bashrc&lt;/code&gt; sẽ chạy bất cứ khi nào shell được mở, tương tự với zsh, file này là &lt;code class=&quot;language-text&quot;&gt;~/.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;cài-app-terminal-thay-thế-cho-gnome-terminal&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A0i-app-terminal-thay-th%E1%BA%BF-cho-gnome-terminal&quot; aria-label=&quot;cài app terminal thay thế cho gnome terminal permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cài app Terminal thay thế cho GNOME Terminal&lt;/h3&gt;
+&lt;p&gt;We have two good alternatives to the Gnome terminal, &lt;strong&gt;Konsole&lt;/strong&gt; and &lt;strong&gt;Terminator,&lt;/strong&gt; I recommend Konsole. Install Konsole by the commands below and choose it as the default terminal app.
+GNOME Terminal là app mặc định để chúng ta có thể làm việc được với shell, nhưng app này có 1 số hạn chế nhất định. Có 2 ứng cử viên sáng giá có thể thay thế cho vị trí này chính là &lt;strong&gt;Konsole&lt;/strong&gt; và &lt;strong&gt;Terminator&lt;/strong&gt;, ở đây mình chọn Konsole vì một số lý do như quản lý profile, color scheme, scroll back… hơn cả là giao diện em nó nhìn thuận mắt.
+Cài Konsole như sau:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; update -y
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -y konsole
+&lt;span class=&quot;token comment&quot;&gt;# update default terminal:&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; update-alternatives --config x-terminal-emulator&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau khi cài xong thì nó sẽ hiện ra danh sách để chọn terminal mặc định, chúng ta chọn konsole và nhấn enter là xong:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 831px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/bcc0c121c691ee7bd9d5e2dc2141b462/5b4a1/switch-konsole-default-terminal.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 71.00000000000001%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAIAAACgpqunAAAACXBIWXMAAAsTAAALEwEAmpwYAAACHUlEQVQoz52RSW/TQACFBySa0iQ0CyGLYyex40niZeIZZ7zE9nji4iRtHEFBAnHhUgmJqq0AVepCoCDxwxFwoSdEpXd43+E7PD2wWmWaYYw0XTdMEyFN182xtdw/yNbr/YMsW2cHq5XjeRjjiEXzxZzFjMWM2GSz2YBI970unml+BGmg2Fzz44HriogP/UC2+dCLB24g24401kuyXlJGj7p6WZbu1z4cnYK3yeuX1vIVzd74zw6txQu8PERpIjp7HY81CW87iegkkpv2plEdc2GSiM5MoH7F+PHpBqyMWdJxuTiZdRwuUjPXM3M9UoCkCHFBxQWVlkZe1aClkVs1vKpBipCWRsN77W9n12AOI9ayg/rYKeu8PaElza3odHeICyopQGun79dQ0nGnTxBr2Uywxw8VnIcqaGyOL8BiEKKcjLZlr2pmenKIF8+teaoEYcMKGzhqkmkNsRYxHnSfKtO1kaRKQIoQgubXkyuQKj7alq2dvlsxFmq4P2CrEecidcqaVzP9GnIrRlC30LacKsESRnM1nOwOVdD4fnYNMpxykSaSM62PZxKNBTts4LhtRy3CJeo9NsMmjtuTpOMyweaSw1q2U9YGoHX57hxEHWrlVWun/yc4r+K/0Mr3b/XfSApwCITzo48gEoi51b0l/CukCFXQvDm9BqFAUK73vzIEzc/vL+4u/7oqEmzzTvKX40sQixNzq3eXzSdXPwGfgpDQPddnKgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Chọn konsole làm terminal mặc định&quot;
+        title=&quot;Chọn konsole làm terminal mặc định&quot;
+        src=&quot;/static/bcc0c121c691ee7bd9d5e2dc2141b462/5b4a1/switch-konsole-default-terminal.png&quot;
+        srcset=&quot;/static/bcc0c121c691ee7bd9d5e2dc2141b462/5a46d/switch-konsole-default-terminal.png 300w,
+/static/bcc0c121c691ee7bd9d5e2dc2141b462/0a47e/switch-konsole-default-terminal.png 600w,
+/static/bcc0c121c691ee7bd9d5e2dc2141b462/5b4a1/switch-konsole-default-terminal.png 831w&quot;
+        sizes=&quot;(max-width: 831px) 100vw, 831px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Đây là giao diện em Konsole khi sử dụng ZSH:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1091px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e012bdae2fd11fcdfacee7d0fed7a892/01645/konsole-ui.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABQklEQVQoz83Q20oCQRwG8HmIIEHL9bRqHlbt3cI83FRGQRAU6q6WUXdRNxahhIdW12OP0q7atoJdfbFjatBBooIufnzDzPDNnyH9/gCK0sODLEPp9aZkRcFAVfGoqpBlhe5pw+GMNls/aRpGo2fcFIogVVFEoXiL/NU1SuUKalIDYl2CWKtDajTR6d5PtTtdtDpdms1WG6VyFaXKWPVOxPnFJYjL44HJzMDEWLCks0zSSpOefcK4bIbRzNB7C4sGrIXDIFYHC7vTRdlY5zuTs684XG76QCQWB/mo5Lv0Un3a9WhsXKhP+S8LI/H4Lxf+yR8yNjt+ymJ3wGA0IRyJgvi4ALx+Dt436XvlD4bgDwTn4kKrYN0r2NxKgGQPkxCEDHZ295DaP8DJ6RmyRzlkj3NIpnmkeAHJ9Dw80kIGG4ltvAAkh87YVp4VZgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Giao diện Konsole terminal&quot;
+        title=&quot;Giao diện Konsole terminal&quot;
+        src=&quot;/static/e012bdae2fd11fcdfacee7d0fed7a892/01645/konsole-ui.png&quot;
+        srcset=&quot;/static/e012bdae2fd11fcdfacee7d0fed7a892/5a46d/konsole-ui.png 300w,
+/static/e012bdae2fd11fcdfacee7d0fed7a892/0a47e/konsole-ui.png 600w,
+/static/e012bdae2fd11fcdfacee7d0fed7a892/01645/konsole-ui.png 1091w&quot;
+        sizes=&quot;(max-width: 1091px) 100vw, 1091px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&quot;cài-bộ-gõ-tiếng-việt&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A0i-b%E1%BB%99-g%C3%B5-ti%E1%BA%BFng-vi%E1%BB%87t&quot; aria-label=&quot;cài bộ gõ tiếng việt permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cài bộ gõ Tiếng Việt&lt;/h3&gt;
+&lt;p&gt;Bộ gõ phổ biến nhất trên Linux tương tự như Unikey ở Windows chính là IBus-Bamboo. Việc cài đặt cũng đơn giản thôi, chỉ việc copy các dòng lệnh dưới đây (mình copy từ trang github của Bamboo nhé) và chạy trong terminal là xong:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:bamboo-engine/ibus-bamboo
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; update -y
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; ibus ibus-bamboo --install-recommends
+ibus restart
+&lt;span class=&quot;token comment&quot;&gt;# Đặt ibus-bamboo làm bộ gõ mặc định&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;token assign-left variable&quot;&gt;DCONF_PROFILE&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;ibus dconf &lt;span class=&quot;token function&quot;&gt;write&lt;/span&gt; /desktop/ibus/general/preload-engines &lt;span class=&quot;token string&quot;&gt;&quot;[&apos;BambooUs&apos;, &apos;Bamboo&apos;]&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; gsettings &lt;span class=&quot;token builtin class-name&quot;&gt;set&lt;/span&gt; org.gnome.desktop.input-sources sources &lt;span class=&quot;token string&quot;&gt;&quot;[(&apos;xkb&apos;, &apos;us&apos;), (&apos;ibus&apos;, &apos;Bamboo&apos;)]&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Chúng ta có thể đổi chế độ gõ từ English qua Tiếng Việt bằng cách nhấn tổ hợp &lt;strong&gt;Super&lt;/strong&gt; + &lt;strong&gt;Space&lt;/strong&gt;. Có thể nhấn tổ hợp &lt;strong&gt;Shift&lt;/strong&gt; + &lt;strong&gt;~&lt;/strong&gt; để hiện các option gõ khác nhau và sửa các lỗi như gạch chân. Nếu cài xong mà Ibus không chạy thì bạn chỉ việc đăng xuất rồi đăng nhập lại là xong nhé.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 936px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b08e81ba04c4c427901d6500b8440f65/6d2da/ibus-bamboo-go-tieng-viet.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 104.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAE7UlEQVQ4yzWPeUxTBxzHX/anwuRQrp62pVDozdkWCpSeSmnfa5FyTKFUxIGt6BgZzlqlHLGizsxjkxidcxnLnJvTMOOyOLdMEc1mPFp4tFCKvNKWV3QQBNG3FLJfPv9+Pvn+ABYlnRCXRIhPIsQl4WISUmIT8HGJ+NhEfFwiYZXUjQQmIVXAzy3KE6llKlBVVi5TQYoyIZ0FKOM4iniOPI4tjWUWbWDkr6Pmr6eIomiF0alF0XTxBro2itNvOoyGw24X7Bv3Bqf9YRR9cueejSEHwIQcTUK2elPW1o08VTxXGssSRaUK1lMKo2ni6NTimDTRe8RzjbYVDJvx+1EUDQaDC8tL3ifOXrYSqEgS6JPydUm5YOJaha+M54jfTxdGfGpJTHoWkGyr2YNhWCgUCofD6Cz6DsOmno44OEqgOqWwKqXAkCKqTBZUJEcq2oTssk08SUyGMIoijqFnAYkdhqYV7B0yPb2wsLC4uPgWw3xPnKd4SmAHvng7rugDnLgWJ67BFRpSRNuSBWsJRRyrcAM9C0ho1zdM+CaHhu6Pjo6OwfC4b/LxnT/PZW8BTIRSE0HSQJAYCSX1+OId+EioGreaSMxVJ/JzgOQ2nXF2LjzicsEwPOIaGfdNjtwf7s9VAU0keRNJtoskayTJdhKlO4mlDUSJkVC8HS+uwYlq8ELVOrrV0IS+moNh2OPx+LyTobk5eOjhJYESaCEr12gmK5pJig9XW41EaSNJaiKWNJJLqmO4x7a3IsGA8/lzr9frm5wMoLPw0MMrIiWwl7p1L3WLZRUzRWWmqFrIyn10tYW2pYUstdBkTQm554ztSCgAj4xOeL3usbHpwIz7wcOBQgXQgle3kjStmzVmctl+qnYfTd3O0O2nai1kZRtN9WlmeVtK4eXGA8hs0DsxgSCIH0ECYdQ9NPy9WA7YOPV7ieAeXHkrAbKm1XZxTW3UCgu+vIMO2TJAOxO04osGdluRUMDldHo8noiMop4Hwz8WywAbq/4wu27/Zr0t03SYVf8xpaKNCB1k6K2pukM0dRej3E4qudp86EVwZsTl8vv9yP/yDUkpYMZBLcnqDnr1QUa9lVtnZdb28ht62HUHyequtHIHS3OcVjpoOfIiFPC43YFAwI8gwXB4fHj4l1IJcFbRZucau3mmPmHzqSJzX96ubnb1ETrYw9D2MbWneeDZNPnt1s7p2eDa7DEYHvN6x+7d+1UuAazptY4cc5/Q0pFW9RFBe4im72JADjb0GQc6ywMv5EAXMuV/tHfPLy9NT03Nz8+/evny9crKzLOnvymKAVtmjSNrTy9vZy/PZE2r7aRXHWPqT3J0Z7hQfxZ4OR+6zJL99Un3wsqbGcQfilxwGcNQl/N3pRiwpxl7mMaj3Lpeds1RdpWDVXGCrT/N1fXzoUs54LdCaIAjG+roXnz3NvJtMDAbCi2urASdz+6qCoDOzKrOjMqujMqejAoHU38yYurP86GLOdA3+dqrBeAPfOmjA/b5N8vTU1Nz4fDy4iKGYVOP/74tzQXsGYauDENvZqWDte0ke9vnXP2XfN3FbOhKnvY7geanIvB6tuQfq30Zw8Kv/l14vbSwtPQGw/zO59dEbKA7YhqOsipPRMyKL/i6C9nQ13nggEBzraD8ZrFmUCgd3m2eunvXfeO689aga/Bn962bj86f+YpL+Q/Z3k3p5Jc5+gAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Giao diện của IBus Bamboo&quot;
+        title=&quot;Giao diện của IBus Bamboo&quot;
+        src=&quot;/static/b08e81ba04c4c427901d6500b8440f65/6d2da/ibus-bamboo-go-tieng-viet.png&quot;
+        srcset=&quot;/static/b08e81ba04c4c427901d6500b8440f65/5a46d/ibus-bamboo-go-tieng-viet.png 300w,
+/static/b08e81ba04c4c427901d6500b8440f65/0a47e/ibus-bamboo-go-tieng-viet.png 600w,
+/static/b08e81ba04c4c427901d6500b8440f65/6d2da/ibus-bamboo-go-tieng-viet.png 936w&quot;
+        sizes=&quot;(max-width: 936px) 100vw, 936px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Giao diện của IBus Bamboo&lt;/p&gt;
+&lt;h3 id=&quot;gnome-extensions--touchpad-gesture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#gnome-extensions--touchpad-gesture&quot; aria-label=&quot;gnome extensions  touchpad gesture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Gnome extensions &amp;#x26; Touchpad Gesture&lt;/h3&gt;
+&lt;h4 id=&quot;vấn-đề-touchpad-gesture&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#v%E1%BA%A5n-%C4%91%E1%BB%81-touchpad-gesture&quot; aria-label=&quot;vấn đề touchpad gesture permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Vấn đề touchpad gesture&lt;/h4&gt;
+&lt;p&gt;Trên Linux thì chúng ta có 2 desktop environment chính là GNOME và KDE Plasma, cái trước thì khá là giống macOS, còn cái sau thì mang lại trải nghiệm giống Windows, Ubuntu mặc định được cài sẵn GNOME.&lt;/p&gt;
+&lt;p&gt;Như đã đề cập bên trên, GNOME trên Ubuntu có trình quản lý workspace xài đã hơn Windows rất nhiều, tuy nhiên trên GNOME có 2 loại session manager là Xorg (x11) và Wayland. Vấn đề là Wayland có hỗ trợ touchpad gesture rất tốt nhưng lại không hỗ trợ việc share màn hình. Bên cạnh đó tính năng fractional scaling trên Wayland rất chán, khiến trải nghiệm sử dụng màn hình độ phân giải cao như 2K, 4K trở nên tồi tệ.&lt;/p&gt;
+&lt;p&gt;Để kiểm tra xem máy bạn đang sử dụng Wayland hay Xorg thì bạn gõ dòng lệnh này:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token environment constant&quot;&gt;$XDG_SESSION_TYPE&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dòng lệnh trên sẽ in ra session manager tương ứng mà máy bạn đang sử dụng.&lt;/p&gt;
+&lt;p&gt;Với trường hợp dùng wayland, bạn nên tắt nó đi và quay về x11 chân ái.
+Để chuyển từ Wayland về x11 vĩnh viễn thì việc ta cần làm là sửa config của nó bằng cách gõ lệnh này:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;nano&lt;/span&gt; /etc/gdm3/custom.conf&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau đó bạn sửa dòng &lt;code class=&quot;language-text&quot;&gt;#WaylandEnable=false&lt;/code&gt; thành &lt;code class=&quot;language-text&quot;&gt;WaylandEnable=false&lt;/code&gt; , rồi nhấn Ctrl + O để lưu và Ctrl + X để thoát, done!&lt;/p&gt;
+&lt;p&gt;Trong trường hợp bạn vẫn muốn dùng Wayland mà có thể share được màn hình trên Chrome thì có thể fix nhanh bằng cách vào thanh địa chỉ của Chrome, dán đường dẫn này vào: &lt;code class=&quot;language-text&quot;&gt;chrome://flags/#enable-webrtc-pipewire-capturer&lt;/code&gt; , tiếp theo đó bật tính năng này lên. Tuy nhiên nếu bạn sử dụng Slack hay các app khác cần share màn hình như Zoom thì vẫn nên chuyển qua X11 nhé.&lt;/p&gt;
+&lt;p&gt;Nếu bạn đang dùng X11 hoặc đã chuyển từ Wayland qua X11, thì chúng ta có thể cài thêm Gesture vào bằng 2 cách, 1 là sử dụng extension như &lt;a href=&quot;https://extensions.gnome.org/extension/4033/x11-gestures/&quot;&gt;X11 gesture&lt;/a&gt; và Touchegg, 2 là dùng tool như &lt;a href=&quot;https://github.com/iberianpig/fusuma&quot;&gt;Fusuma&lt;/a&gt;.
+Ở đây mình hướng dẫn dùng extension nhé.&lt;/p&gt;
+&lt;h4 id=&quot;hướng-dẫn-cài-đặt-extension-cho-gnome&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn-c%C3%A0i-%C4%91%E1%BA%B7t-extension-cho-gnome&quot; aria-label=&quot;hướng dẫn cài đặt extension cho gnome permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hướng dẫn cài đặt extension cho GNOME&lt;/h4&gt;
+&lt;p&gt;Đầu tiên chúng ta cần cài đặt connection cho trình duyệt (ở đây mình dùng Chrome) để có thể cài extension từ Chrome vào GNOME Shell.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; update
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; upgrade
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt-get&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; chrome-gnome-shell&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau đó chúng ta cài thêm Touchegg, 1 phần mềm bổ sung để chạy extension phía trên&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; add-apt-repository ppa:touchegg/stable -y
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; touchegg -y
+systemctl status touchegg.service&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau đó bạn vào link của extension này &lt;a href=&quot;https://extensions.gnome.org/extension/4033/x11-gestures/&quot;&gt;X11 gestures&lt;/a&gt; để cài và bật nó lên:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d0b93e11aaca3de8526cb52414c032ae/b1c31/cai-dat-extension-gnome.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 69%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAOCAYAAAAvxDzwAAAACXBIWXMAAAsTAAALEwEAmpwYAAAENUlEQVQ4yz2PSU8bZwCGRz21UtNEJkCShoTSU06RoqJSl814wftgYzA2NmPjGY89M7YxXsaY4C2QtD+guVVqo/6EEiCKnZjvm80be/5A1NKYKElTVUoq1KnIoYdHj/QeHulFlCPanSG1qTmosTRGdGhdpbfVdFanZLTPiuZJr2h2zAmWKUwwOzDB5JgTTJNe0WDziOOoS9JanJLa6KiNjk80hrWW5rcqQwvpHzU3BnX2+oDWISn1M+KQ2SOMWDFeNeHn1XacU08SnMYRhGOTBByzE5zKFuBGJua5YSvGD5o8gtLgEr/WTkn9Y7barRFLA3G7PTW32y/6MFLAAxRPBmMcQyfhYjwLU8kcZNMFkGGLYIktggxbAOlUHiQTt+FCjIUMleDIYJQP4rQw7wuJs25MQtxun+hyEQI2R3M4Hoc0nQHJ5Oo2Ra88oelcJRotVhYW7pTPiMVKlUikUAmHb1doZqVKUcsgGExDp4vmzBYP7/EQIkLguDBuMPM6kxVa7dPAapvZRlFb9cGDn3a3tjYPNjc39h892vqfjY2H++vrvx7cv/+DUCjkqsVCHvhJBqITNo5haAEJkYTQd1PFzfgouLCYAkN6fxX56Hz199+ev5dlWX779q3cbrfldvuF/Pr1K/n9u3dns7y+/vBZIpkq317JgeVsFrDpNKRphkfCIVK41HuTU4+j0IdhAJ2wVVVjmurJyck/p6en8ps3b+STkxP5j/ZLuf3ylfznX3/Lp//K8vrDzWfZ7HI5ny+CTGYJJBIJyDAMj5ChkKDWaLiBb5RQOTgM7BPW7SRDVTmOe763t/ei1WodHx4dHdf3nh2LrcNjIDaPxdZR+8eff2kV8rkn+XwesCwL4/E4R1EUj+CBeTHGUDzLprlcLgdLpRK4s7q6XSgUKqVSqby2tla+d+/e4+/vrj7+brVYvru2Vi4VC+Visfj0LLa0tASSiQQXjUZ4kiQFZMY5Lbmc06J/PsATZJiLx+MwnUqB5eVlkEolz66AbDa7nc+tbC+xqQ+BNJsGi4uLIBqNwHA4zAVwnMcwTMAwTEKmpqbqLpe75vV6xcB8QAiHwzzDMFwsFuOSiSRMp9Mwk8nAWGwBBvAgJAgCBoMEDATmOZ8P470ej+ByucTp6SnJ6ZyuI5OOyZZzZqbh9szWMZ+vhuOERIZCIk1TAsMwQiQS4aPR6AciEYanGUagaEogQ6SI47jo8/ulWa+ndtawOxxNZGhAuTeqHN4ZH9W0DGpdU6/TNox6fd1oNNUsFkvNYkEl1GqVUPTMqISazTWj0VgzGYx1g15f12u0DYta0zSoVDu6oaFdpOfji0e9n3Qe3DjXs3/js6u7vYqOnasXu3e6O662+i5fa17put683nWl2dN1ufnlpc+bfQpFs/PTC62ejs7Wta7unS/Ond/tV1zc+0qh2L+luHD4HxB/O3L8zBcpAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Cài extension trên GNOME&quot;
+        title=&quot;Cài extension trên GNOME&quot;
+        src=&quot;/static/d0b93e11aaca3de8526cb52414c032ae/c1b63/cai-dat-extension-gnome.png&quot;
+        srcset=&quot;/static/d0b93e11aaca3de8526cb52414c032ae/5a46d/cai-dat-extension-gnome.png 300w,
+/static/d0b93e11aaca3de8526cb52414c032ae/0a47e/cai-dat-extension-gnome.png 600w,
+/static/d0b93e11aaca3de8526cb52414c032ae/c1b63/cai-dat-extension-gnome.png 1200w,
+/static/d0b93e11aaca3de8526cb52414c032ae/b1c31/cai-dat-extension-gnome.png 1413w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Mình chia sẻ thêm cho các bạn một số extension hữu ích nữa mà mình đang sử dụng:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://extensions.gnome.org/extension/4105/notification-banner-position/&quot;&gt;Notification banner position&lt;/a&gt;: Đưa pop up thông báo của Ubuntu từ chính giữa màn hình (middle top) qua bên góc phải màn hình (right - top).&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://extensions.gnome.org/extension/779/clipboard-indicator/&quot;&gt;Clipboard indicator&lt;/a&gt;: Tiện ích này giúp bạn có thể quản lý được nhiều clipboard hơn, giống như &lt;strong&gt;Windows + V&lt;/strong&gt; trên hệ điều hành nhà Microsoft hoặc trình quản lý clipboard mặc định trên KDE Plasma.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://extensions.gnome.org/extension/1634/resource-monitor/&quot;&gt;Resource monitor&lt;/a&gt; : Hiển thị thông số của máy như RAM, CPU, Network… trên thanh top bar.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://extensions.gnome.org/extension/1287/unite/&quot;&gt;Unite&lt;/a&gt; : Tiết kiệm được thêm không gian trên thanh top bar nhờ lược bỏ được thanh title của từng app, đưa tiêu đề của app lên trên thanh topbar của hệ thống.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Đây là kết quả sau khi mình cài hết những extension trên:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/3cc62ea602d1de5445047046eb4f67a4/29114/ket-qua-sau-khi-cai-extension.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAACQElEQVQoz22SW08TYRCG+1v8AcZbf4wX3hpvTIy0lFY0XhBjjJIAhRqEAF5waLe7tbEUuqRoDAQ5NhxaUzFBoYV2aWv31O0+ZhfaVOIks5l5s/PkzcznSSRk5hckRDGOJMaJSxKxmMT8XISFhSjRqOimowmCeN3HiEQEpJiEGEkgSglEQWQlLePp8Qbo8QXw9z3Dqb29QbfuCzwn2P/CrX3+p/T6+//Nvn56fEG8vQG8viCPn/gZePkaD12ha1qnzufzFAoFSqUSl9VLarUailKhXL6get3/LzyapqHrOvV6nWKxSLVapdFooFQqVMplDMNwf7Qsi2bTAtu+mrSvPk3LotFQcTiqquJxBkzTdAVFUVygbVn8rtVJ5grM7uf5cnyC1boCnVTqfMr9IJk/5qTyx9U0TXcZjrEOsAPWdbBbZH4Vuf9phYdCHP/2keumrprMrG8yK0wzJ0wzs7FFtaFjGoY77wK7YR1gq8VescRdeYPb8iaP1ndd4OF5jel0kvPoBGVhgg9LCfbPFLBM9DbwpkPVOUyzybezEndSa9xKrfNgbRdsi9NLleFMhkxsitXoJKHPq65mmTccttMRnSU7Ydo2gd0c97ZyZM5KnSue1nRi2QOi2QN+tneod+2wG+Zc8qJUZG97m53sAfHUInFZZjGd4mN6hamlNO+X00wkZOaSy8jZfbRmE8PQMW4CncaJ70eHhIeGCU9OER4bJTz+jpGht4wMDvJmdJSBUIhXoXFCYyG+7uzRun6/bYd/AWGvAEbp2/buAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Kết quả sau khi cài extension&quot;
+        title=&quot;Kết quả sau khi cài extension&quot;
+        src=&quot;/static/3cc62ea602d1de5445047046eb4f67a4/c1b63/ket-qua-sau-khi-cai-extension.png&quot;
+        srcset=&quot;/static/3cc62ea602d1de5445047046eb4f67a4/5a46d/ket-qua-sau-khi-cai-extension.png 300w,
+/static/3cc62ea602d1de5445047046eb4f67a4/0a47e/ket-qua-sau-khi-cai-extension.png 600w,
+/static/3cc62ea602d1de5445047046eb4f67a4/c1b63/ket-qua-sau-khi-cai-extension.png 1200w,
+/static/3cc62ea602d1de5445047046eb4f67a4/d61c2/ket-qua-sau-khi-cai-extension.png 1800w,
+/static/3cc62ea602d1de5445047046eb4f67a4/29114/ket-qua-sau-khi-cai-extension.png 1920w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Cài quá nhiều extension khiến bạn không biết quản lý như thế nào ư? Đã có extension manager giúp bạn làm việc đó, hãy cài thêm em nó vào:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;apt&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; gnome-shell-extension-manager&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 963px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e652c56a58d9651dd5a222bad3444b29/e4a12/extension-manager.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 86%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAACWElEQVQ4y62U327TMBTGw3sg7on2blzyMGjaHUhcDAkBQkIsqyhtE9pVu92WVrSojd0ldpLGif8edEJbWrTBLrD0xbFi/3y+c+x4AOAFQfA4iqKjMAyf9vt9v9fr+dh3Oh3/7OzMD4LAj6LIHw6H/iCM/MtR6L94G/pvPkf+xbeBPwjDo/Pz8yfI8vAxnU5PKaVACClXq5VAZVkmrq+vRbfbFaPRSMRxLMbjsZjN56LIqHgdJmJ8QwRd/ihn8zlcXV198rAhME3Tj0opEEJYxhhkWdaKcw51XUPTNAfCuWAlKNmOnZQSGGNfPc971AIZY++11rhYE0Lccrl0i8XCcc4dADhjzE7WGpcXpbuhtWukdkopjWvzPP+yD/yAuyqlzO3tLaB9VJqmUBQFGGPAOdcKwAEvSujGAtaNAa2kwbWc8+4BEHeRUhq0ibaxR9v4bq09AFoAGM4kVBKB6u9AhGyjrKpqB9oHMl7AaFaDUPbfEaJFTPImBXcAAVKWQ38qQEj7MMsIxepi7v6UNQZ4XsDlXEDV6A1Q3w2sqsokSQKLxQJWq1Ub6V3CuWDRQTs2OL43QswfwjCXWGUhRGtzP4dpxqE3EVA91PK2MFjh1uZ+ld2vogymaPkBVWaMOUqpw369Xju8CXigtw2Jxbpy0ffaCWndfRG+2wBlnud4dExZlgY3wGat3QmvirbODGeNWdfaaCXlBtjZATnnAQLxA/ZoE9/3j8+BpASjf483V+9iB4zj+Bml9FWSJMdJkpxsRQi5V8uEnCSE4LxjSunLyWTyfPe3+Z/6CQALmm7UiCMnAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Extension manager&quot;
+        title=&quot;Extension manager&quot;
+        src=&quot;/static/e652c56a58d9651dd5a222bad3444b29/e4a12/extension-manager.png&quot;
+        srcset=&quot;/static/e652c56a58d9651dd5a222bad3444b29/5a46d/extension-manager.png 300w,
+/static/e652c56a58d9651dd5a222bad3444b29/0a47e/extension-manager.png 600w,
+/static/e652c56a58d9651dd5a222bad3444b29/e4a12/extension-manager.png 963w&quot;
+        sizes=&quot;(max-width: 963px) 100vw, 963px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Đẹp hẳn rồi đấy, giờ thì chúng ta có thể qua phần tiếp theo để cài những phần mềm cần thiết cho việc code nào.&lt;/p&gt;
+&lt;h3 id=&quot;cài-đặt-các-phần-mềm&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A0i-%C4%91%E1%BA%B7t-c%C3%A1c-ph%E1%BA%A7n-m%E1%BB%81m&quot; aria-label=&quot;cài đặt các phần mềm permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cài đặt các phần mềm&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://snapcraft.io/store&quot;&gt;Snap store&lt;/a&gt; là một cửa hàng ứng dụng mà có rất nhiều app hỗ trợ cho nhiều distro khác nhau của Linux, Ubuntu cũng không ngoại lệ. Mặc định từ Ubuntu 16.04 LTS, snap đã được cài sẵn.
+Chúng ta có thể cài đặt các app thông qua trang chủ bằng cách download file &lt;code class=&quot;language-text&quot;&gt;.deb&lt;/code&gt; rồi chạy lệnh dpkg mà mình hướng dẫn bên trên, hoặc có thể cài nhanh bằng snap store.
+Ở đây mình viết sẵn command để cài 3 app cần thiết là VsCode, Slack và Dbeaver (làm database management tool).&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; snap &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; code --classic
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; snap &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; dbeaver-ce
+&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; snap &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; slack&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;thiết-lập-nhiều-tài-khoản-github-khác-nhau&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#thi%E1%BA%BFt-l%E1%BA%ADp-nhi%E1%BB%81u-t%C3%A0i-kho%E1%BA%A3n-github-kh%C3%A1c-nhau&quot; aria-label=&quot;thiết lập nhiều tài khoản github khác nhau permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thiết lập nhiều tài khoản GITHUB khác nhau&lt;/h3&gt;
+&lt;p&gt;Hiện tại thì Github đã không còn cho phép chúng ta push code bằng giao thức HTTPS nữa, mà phải push thông qua SSH, cho nên việc đăng nhập bằng tài khoản và mật khẩu giờ đây đã không còn có thể sử dụng. Công ty mình sử dụng Github, mà mình cũng dùng Github để làm vài dự án cá nhân, contribute cho opensource các thứ, nên việc thiết lập song song 2 tài khoản là điều vô cùng cần thiết.
+Thiết lập này mình tham khảo từ &lt;a href=&quot;https://gist.github.com/oanhnn/80a89405ab9023894df7&quot;&gt;Gist này&lt;/a&gt;, mình fork về 1 bản ở đây: &lt;a href=&quot;https://gist.github.com/devgiangho/963f8f749963e4e800ccc84ebf6b45e7&quot;&gt;https://gist.github.com/devgiangho/963f8f749963e4e800ccc84ebf6b45e7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Sau khi làm theo hướng dẫn bên trên thì các bạn có thể tham khảo config của mình&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;# personal github account: kienmatu&lt;/span&gt;
+Host github.com-kienmatu
+   HostName github.com
+   IdentityFile ~/.ssh/id_ed25519
+   IdentitiesOnly &lt;span class=&quot;token function&quot;&gt;yes&lt;/span&gt;
+
+&lt;span class=&quot;token comment&quot;&gt;# work github account: manabie&lt;/span&gt;
+Host github.com
+   HostName github.com
+   IdentityFile ~/.ssh/manabie_private_key
+   IdentitiesOnly &lt;span class=&quot;token function&quot;&gt;yes&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Vì sử dụng github cho công việc nhiều hơn nên mình để account công việc là mặc định, vẫn clone bằng SSH như thường, tuy nhiên với account cá nhân thì chúng ta clone như sau:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; clone git@github.com-kienmatu:kienmatu/togo.git&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;hiển-thị-dấu--khi-nhập-mật-khẩu-trên-linux&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#hi%E1%BB%83n-th%E1%BB%8B-d%E1%BA%A5u--khi-nh%E1%BA%ADp-m%E1%BA%ADt-kh%E1%BA%A9u-tr%C3%AAn-linux&quot; aria-label=&quot;hiển thị dấu  khi nhập mật khẩu trên linux permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Hiển thị dấu * khi nhập mật khẩu trên Linux&lt;/h3&gt;
+&lt;p&gt;Ở đầu phần này mình đã nhắc tới vụ này rồi, ở đây mình sẽ hướng dẫn cách để terminal show ra kí tự * biểu thị cho việc chúng ta đang nhập mật khẩu.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Mở terminal và gõ dòng lệnh sau:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;sudo&lt;/span&gt; visudo&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Dùng phím lên xuống, hoặc cuộn chuột tới dòng chữ này:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Defaults env_reset&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sửa dòng này thành giống bên dưới, thêm vào &lt;code class=&quot;language-text&quot;&gt;pwfeedback&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;Defaults env_reset,pwfeedback&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Lưu file lại và thoát ra thôi&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kết quả:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+      &lt;div class=&quot;interactive-gif &quot;&gt;
+        &lt;div class=&quot;embedded&quot; style=&quot;padding-top: 35.57582668187001%&quot;&gt;
+          &lt;div id=&quot;loading-asterisk_password.gif&quot;
+              class=&quot;loading&quot; style=&quot;background-size: cover; background-image: url(&apos;/static/gifs/still-asterisk_password.gif&apos;);&quot;&gt;
+              &lt;img class=&quot;indicator&quot; src=&quot;/static/gifs/loading.gif&quot; /&gt;
+          &lt;/div&gt;
+          &lt;div id=&quot;asterisk_password.gif&quot;
+              class=&quot;gif-container&quot;
+              style=&quot;display: none;&quot;
+              onclick=&quot;document.getElementById(&apos;asterisk_password.gif&apos;).style.display = &apos;none&apos;;
+                        document.getElementById(&apos;still-asterisk_password.gif&apos;).style.display = &apos;block&apos;;&quot;&gt;
+            &lt;img id=&quot;image-asterisk_password.gif&quot;
+                class=&quot;gif&quot;
+                data-original=&quot;/static/gifs/asterisk_password.gif&quot; /&gt;
+          &lt;/div&gt;
+
+          &lt;div id=&quot;still-asterisk_password.gif&quot;
+              class=&quot;still-container&quot;
+              onclick=&quot;var gif = document.getElementById(&apos;image-asterisk_password.gif&apos;);
+                        gif.src = gif.dataset.original + &apos;?t=&apos; + new Date().getTime();
+                        document.getElementById(&apos;still-asterisk_password.gif&apos;).style.display = &apos;none&apos;;
+                        document.getElementById(&apos;asterisk_password.gif&apos;).style.display = &apos;block&apos;;&quot;&gt;
+            &lt;img id=&quot;image-still-asterisk_password.gif&quot;
+                class=&quot;still&quot;
+                src=&quot;/static/gifs/still-asterisk_password.gif&quot; /&gt;
+            &lt;img class=&quot;play&quot;
+                src=&quot;/static/gifs/play.gif&quot; /&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;caption&quot;&gt;Dấu * khi nhập mật khẩu&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/p&gt;
+&lt;h2 id=&quot;kết-bài&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-b%C3%A0i&quot; aria-label=&quot;kết bài permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết bài&lt;/h2&gt;
+&lt;p&gt;Mặc dù Linux nói chung và Ubuntu nói riêng vẫn còn nhiều điều hạn chế vì là những hệ điều hành Opensource, tuy nhiên tính dễ tùy biến, hỗ trợ nhiều tính năng cho developer đã đưa Linux vào sự lựa chọn ưu tiên của mình khi cài OS để làm việc.
+Hi vọng sau bài viết này các bạn sẽ có cái nhìn mới về Linux, cũng như biết cách thiết lập Ubuntu sao cho đáp ứng công việc thật là hiệu quả.
+Happy coding !&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Ngôn ngữ lập trình nào tốt nhất, có thực sự ngôn ngữ không quan trọng?]]></title><description><![CDATA[Bắt gặp câu hỏi này đã rất lâu, từ ngay khi mình còn đi học (đâu đó năm 2016, 2017), lúc mới chập chững học xong C, vừa học tới C#, Java, OOP ... Thời điểm đó với mình C# là ngôn ngữ lập trình tuyệt vời nhất, còn lại PHP, Java, Python chỉ là đồ gân gà.]]></description><link>https://devgiangho.github.io/ngon-ngu-lap-trinh-nao-tot-nhat-co-thuc-su-ngon-ngu-khong-qu</link><guid isPermaLink="false">https://devgiangho.github.io/ngon-ngu-lap-trinh-nao-tot-nhat-co-thuc-su-ngon-ngu-khong-qu</guid><pubDate>Tue, 29 Mar 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;ngôn-ngữ-lập-trình-nào-xịn-nhất-&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ng%C3%B4n-ng%E1%BB%AF-l%E1%BA%ADp-tr%C3%ACnh-n%C3%A0o-x%E1%BB%8Bn-nh%E1%BA%A5t-&quot; aria-label=&quot;ngôn ngữ lập trình nào xịn nhất  permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ngôn ngữ lập trình nào xịn nhất ?&lt;/h2&gt;
 &lt;p&gt;Bắt gặp câu hỏi này đã rất lâu, từ ngay khi mình còn đi học (đâu đó năm 2016, 2017), lúc mới chập chững học xong C, vừa học tới C#, Java, OOP ... Thời điểm đó với mình C# là ngôn ngữ lập trình tuyệt vời nhất, còn lại PHP, Java, Python chỉ là đồ gân gà.&lt;/p&gt;
 &lt;p&gt;Học C thì phải học cách quản lý bộ nhớ bằng calloc, malloc... Quả thực rất khó với 1 người lười học lí thuyết mà lại siêng code như mình - cái kẻ vừa mới khám phá thế giới máy tính, &lt;code class=&quot;language-text&quot;&gt;chỉ muốn nhìn được output dưới console để vỗ đùi cười haha chứ chưa quan tâm cái code nó đang làm gì&lt;/code&gt;, chưa kể IDE nó cũng rất SIDA, lỗi này lỗi khác. Cho tới khi mình qua học C#, 1 chân trời mới xuất hiện: IDE visual studio xịn xò, muốn gì có nấy, cú pháp nếu không nhớ thì đã có Intellisense gợi ý cho, dotnet framework support mọi thứ cho windows form để mình có thể làm giao diện. Yeah, chắc cũng nhờ nó mà mới chỉ học qua C và C# trong vài tháng mà mình đã có thể viết được 1 app windows form, đưa đi thi khoa học kĩ thuật của tỉnh hẳn hoi 😂😂.&lt;/p&gt;
 &lt;p&gt;Yay, sau khi đi làm được mấy năm, và thậm chí mình còn vừa bỏ đi việc làm với ngôn ngữ/framework mà mình thích (dotnet C#) để tìm 1 vị trí mới với ngôn ngữ khác (Go/Nodejs) thì mình không còn suy nghĩ &lt;code class=&quot;language-text&quot;&gt;thượng tôn ngôn ngữ&lt;/code&gt; nữa :D. Khi đi làm thì chỉ có &lt;strong&gt;ngôn ngữ phù hợp nhất&lt;/strong&gt;, chứ tuyệt nhiên không có &lt;strong&gt;ngôn ngữ tốt nhất&lt;/strong&gt;.&lt;/p&gt;
