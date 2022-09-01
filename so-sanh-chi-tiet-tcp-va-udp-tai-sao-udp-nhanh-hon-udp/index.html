@@ -278,7 +278,36 @@ data-styled.g56[id="post__ToggleTocButton-sc-14ootra-14"]{content:"Bwnup,"}/*!sc
 <p>Nhưng làm thế nào để 2 máy tính xa cách nhau hàng trăm thậm chí hàng ngàn, hàng chục ngàn cây số có thể truyền tải được thông tin cho nhau?</p>
 <p>Rõ ràng thông tin sẽ được truyền qua đường mạng internet, cụ thể là từ mạng không dây wifi hoặc cáp mạng RJ45 tới router, sau đó được truyền đi bằng cáp quang hoặc cáp ADSL (mà giờ chắc không còn ai dùng nữa).</p>
 <p>Thời gian mà dữ liệu đi qua đường truyền internet để giao tiếp giữa 2 máy tính được gọi là Network Latency, hay còn gọi là độ trễ mạng, ta cùng xem hình sau:</p>
-<p><img src="./isp_iinternet.svg" alt="isp iinternet.svg"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 951px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dbdc3d72e8ff58d076facec75bb38c49/9b379/isp_internet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 54.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAIAAADwazoUAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAByklEQVQoz21R2W7TUBD1d/CDfET6HYgKwQOUAioVoKqgKCppwTFpszTFseWFxE4cO463JK7NtX2XQY6T0iJG8zDLOTOaMxy7Z7CzKk6SxLKsKi2KAuAvoDLuIesB2XVdURTpJm71JV6eknIEVHjGGAcA6Heiaarn+1lR0N0sabo44kV5KKIsB4BGV/k4sHGO7kaXm9MMf26Jg+vBbGqtomgZRkAZENzTnbctTZOGURitA/+ir37qmivfX0URxcS27Xq9zrle+Ojx6bO6Epsjvd0zXx//fPLCeH7w7eXJqw/ftfblQh3Nh/JZQ3h/ejnqdPVOP3LcwzeHtVqNm5jjsyuFvxkv7VlgWlaTd86F4EIQ6j/eNa71Xt8zp66un/OD46Y4U9WJrMRB+HR/f2+vxmFM0iQGgHW89kI/Qai6p2P4B4KuKXJ8m+Qobd7oJ+I8zxDZaG7btmEaXHU9A2CU4qIo1aBlxVpEX7uyNBSzjWBf2uLRlfGvYP951K4d+AtZkqqCrI9/OQGj9A5QvqrCYcLSnBDGCC0d03J9ivIgXFK2TQGgbG2Q7P5mTFiMcE5ohreeEzaZOboxmXtBQSErKCpIhinC9Dbbkv8AF7ReUOQ8l0UAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="isp iinternet.svg"
+        title="isp iinternet.svg"
+        src="/static/dbdc3d72e8ff58d076facec75bb38c49/9b379/isp_internet.png"
+        srcset="/static/dbdc3d72e8ff58d076facec75bb38c49/5a46d/isp_internet.png 300w,
+/static/dbdc3d72e8ff58d076facec75bb38c49/0a47e/isp_internet.png 600w,
+/static/dbdc3d72e8ff58d076facec75bb38c49/9b379/isp_internet.png 951w"
+        sizes="(max-width: 951px) 100vw, 951px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <p>Hệ thống mạng máy tính bao gồm nhiều thành phần khác nhau như phần cứng, phần mềm, chip, mạch điện… Để triển khai phần mềm cho việc giao tiếp giữa các máy tính thông qua hệ thống này thì sẽ rất phức tạp.</p>
 <p>Để đơn giản hóa việc này, computer network model hay còn gọi là <strong>mô hình mạng máy tính</strong> ra đời. Có hai mô hình mạng máy tính là <strong>Mô hình OSI và Mô hình TCP/IP.</strong> Mô hình OSI có 7 layer trong khi mô hình TCP/IP có thể chia làm 4 hoặc 5.</p>
 <p><span
@@ -319,7 +348,36 @@ data-styled.g56[id="post__ToggleTocButton-sc-14ootra-14"]{content:"Bwnup,"}/*!sc
 <p>Khi bạn làm việc với TCP, bạn sẽ được đảm bảo rằng tất cả các byte được gửi sẽ giống hệt với các byte được nhận và chúng sẽ đến đầu bên kia theo cùng một thứ tự. TCP sẽ thực hiện việc chuyển lại những data bị mất, chống tắc nghẽn …</p>
 <p>Để làm được những điều trên thì TCP có 1 quá trình gọi là <strong>Three-way handshake</strong> - có thể dịch là bắt tay 3 chiều, chức năng là để thiết lập kết nối.</p>
 <h3 id="three-way-handshake" style="position:relative;"><a href="#three-way-handshake" aria-label="three way handshake permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Three-way handshake</h3>
-<p><img src="./three-way-handshake.svg" alt="three-way-handshake.svg"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 935px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/cb1fc77d0e934a0cf5ded10020311209/eb390/three-way-hand-shake.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 49.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABpklEQVQoz2WS32/TMBDH83fyxB/QvwOJJwSatifUFxAqgq0PCAbTlgLlZaiK0i5DI1ObpI2dpI6dH7YTNz9uWrNVbHx0sk9nne/ua2twRwsAlNLQ9wCgaZr2HgCoqsqyLITQoyOt2+qmAYAFTp6+GjtBcnvZNq1boyjaP9jXdX0X6dB2XlPXc8d98uLnqeEAQN20XR0AmEwmvV5vOBzexut615Fmo/hqGV35MY7TmEQx9upqczdI27bb5KXn9fv9ru0HlV+Pr5+9/Xpw9ke/cCXPlyGLuVongmZSlkqWistiU1VBGCql0lwEhAbreM0yIQvtYr4ybde0PUxYGASU0rKs0lyyvMBMIMp9ym2cGvZKZOnh78XLL8bzwenet6luXmtHBnozsj4a6PwvTii5dBBmmU8SP04ClpFExImQokQ+ZozOnHB86f6yFiPTniOivT8+effp8+D45Nyc5VnmROFa5rTI/jVSpDZ2N0rBQ7TpaDD78cH6PiDOFAcRI6StG1WqSm3KsswLwQvJC+GhVadWc2/bd97+j05DKSXn/JGkHYwy+I8bE80o4EJCvpEAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="three-way-handshake.svg"
+        title="three-way-handshake.svg"
+        src="/static/cb1fc77d0e934a0cf5ded10020311209/eb390/three-way-hand-shake.png"
+        srcset="/static/cb1fc77d0e934a0cf5ded10020311209/5a46d/three-way-hand-shake.png 300w,
+/static/cb1fc77d0e934a0cf5ded10020311209/0a47e/three-way-hand-shake.png 600w,
+/static/cb1fc77d0e934a0cf5ded10020311209/eb390/three-way-hand-shake.png 935w"
+        sizes="(max-width: 935px) 100vw, 935px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <p>Quá trình bắt tay này là quá trình trao đổi số thứ tự gói tin (Package sequence number) để client và server có thể thiết lập được 1 kết nối ổn định cho cả 2 phía. Những con số sequence number này sẽ được tạo ngẫu nhiên vì lý do bảo mật.</p>
 <p>Threeway-handshake bao gồm 3 bước như cái tên của nó:</p>
 <ul>
@@ -448,12 +506,70 @@ Mình dùng tiếp curl để test thời gian phản hồi, trung bình đâu �
 <h2 id="udp---user-datagram-protocol" style="position:relative;"><a href="#udp---user-datagram-protocol" aria-label="udp   user datagram protocol permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UDP - User Datagram Protocol</h2>
 <p>Để hiểu được rõ ràng cách hoạt động của UDP - User Datagram Protocol thì chúng ta cần tìm hiểu về <strong>IP</strong> - viết tắt của Internet Protocol. Giao thức này nằm ở layer network, bên dưới cả 2 nhân vật chính của bài viết này là TCP và UDP.</p>
 <p>IP layer có nhiệm vụ chính là phân phối các datagram từ 1 máy tính tới 1 máy tính khác thông qua địa chỉ của chúng (chính là IP address). Có thể hiểu việc truyền dữ liệu qua IP giống như việc bạn gửi bưu phẩm qua đường bưu điện vậy. IP đóng gói những thông tin như địa chỉ người gửi, địa chỉ người nhận và các tham số khác rồi gửi đi, còn nội dung chính của gói tin thì được nằm trong bưu kiện, chính là payload.</p>
-<p><img src="./IP-packet.svg" alt="Một IP packet"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 949px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/03a75ac34ef423dd634f378c82af7a8d/14060/ip-packet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 37.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAA9hAAAPYQGoP6dpAAABcElEQVQY012PXWujQBhG/f//oQQCSTYIIRSMDulCEMputDWBJc7g2JiJOtMZ56t1FXK3aCiUPRyem/fcvM5sNgMArNfrxWIRBMFyufR9/8cIAMB1Xc/zptPpfD4PgmC1WnmeN5lMXNfdbDZOHMeEkLIsEUKn06lpGillXddKqSzLGGO32+3vCCEEY2yM6fu+67q+750wDCmlQoi6rpMkgRASQqy1xpiyLM/n8+Vy0Vp3XccYQwjlec45b9vWWusAACilaZoihDDGURRhjCGECCGlFIQwTVNKKSHkcDiEYbjf74ui4JwzxpzdbqeUqqrqer1qrYUQxpiqqggheZ4fj8eiKKy1nPP7d5RSa60ecbbbrdJaG6ONkUoppaVU1n68vZ3j+OU1SaIopowNgTbjDoFUg47vb5pGCM4HxbCcv0vZYJztf/86HpLXl5jSuhFfzT0bdZ5/Pn6g4DN7+sy2323x0zVeRf5D88dr8f/Xu/8AM3uYx2gqWw8AAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Một IP packet"
+        title="Một IP packet"
+        src="/static/03a75ac34ef423dd634f378c82af7a8d/14060/ip-packet.png"
+        srcset="/static/03a75ac34ef423dd634f378c82af7a8d/5a46d/ip-packet.png 300w,
+/static/03a75ac34ef423dd634f378c82af7a8d/0a47e/ip-packet.png 600w,
+/static/03a75ac34ef423dd634f378c82af7a8d/14060/ip-packet.png 949w"
+        sizes="(max-width: 949px) 100vw, 949px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <p>Một IP packet</p>
 <p>IP không thông báo khi tin nhắn được gửi tới đích thành công, cũng không có phản hồi nào trong trường hợp gặp lỗi. Rõ ràng, IP không hề đáng tin cậy với các layer bên trên nó.</p>
 <p>Do đó, việc kiểm tra lỗi và truyền tải lại những thông tin bị mất được quản lý bởi các layer cao hơn trong mô hình mạng. Giao thức TCP với cơ chế three-way handshake là 1 gương mặt đảm bảo được những điều này, đó là lý do tại sao TCP lại là giao thức đáng tin cậy.</p>
 <p>Quay lại với UDP, UDP đóng gói lại gói tin theo cách của riêng nó, thêm vào 4 field mới là source port, destination port, kích thước của package và checksum. Trong 4 field trên, thì checksum và source port là những field tùy chọn, thực tế thì layer IP đã cung cấp sẵn checksum rồi.</p>
-<p><img src="./UDP%20packet.svg" alt="e0661f06a9fae1f5346d0efb57178146.svg"></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 948px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/c5c90a7b96c7d5b61daa075045258e12/ecf19/udp-packet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 18%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAECAIAAAABPYjBAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAzklEQVQI1y2JS07DMBQAc/8LsOAAiAY5i6DIC+q4Fh8rcalsiCtUYvKznz/tHRApo1mMNBlCiFJaVVVRFJTSsizrusYY53lOCMErUkrGmFLqc0VrzRiTUmaEEPBhsc45GIbxjXOlPhzAPC8hxN6Y3hhr3TCMWh93O/b88tp1ehynaZozsn1KAaJ3KUAAKxr+dewuKURvz9Gb79NPf7oknyJEb0XL9y0HO52jT8Fl2/IOxMbtH64u7caK/Nr+gJrHmwO+9e/Iif87N/d/vfoLUj3DZ0pNg5MAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="e0661f06a9fae1f5346d0efb57178146.svg"
+        title="e0661f06a9fae1f5346d0efb57178146.svg"
+        src="/static/c5c90a7b96c7d5b61daa075045258e12/ecf19/udp-packet.png"
+        srcset="/static/c5c90a7b96c7d5b61daa075045258e12/5a46d/udp-packet.png 300w,
+/static/c5c90a7b96c7d5b61daa075045258e12/0a47e/udp-packet.png 600w,
+/static/c5c90a7b96c7d5b61daa075045258e12/ecf19/udp-packet.png 948w"
+        sizes="(max-width: 948px) 100vw, 948px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
 <h3 id="ưu-và-nhược-điểm-của-udp" style="position:relative;"><a href="#%C6%B0u-v%C3%A0-nh%C6%B0%E1%BB%A3c-%C4%91i%E1%BB%83m-c%E1%BB%A7a-udp" aria-label="ưu và nhược điểm của udp permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ưu và nhược điểm của UDP</h3>
 <p>Ưu điểm:</p>
 <ul>
