@@ -1,4 +1,253 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 05 Aug 2022 06:49:46 GMT</lastBuildDate><item><title><![CDATA[Quên Mac hay Windows đi, chân ái là đây - Hướng dẫn thiết lập Ubuntu cho developer]]></title><description><![CDATA[Vừa miễn phí lại dễ dàng cài đặt, có nhiều tính năng hay ho, hỗ trợ tốt công việc lập trình, đó là lý do mà tại sao Linux nói chung và Ubuntu nói riêng được nhiều developer chọn thay vì Windows và Mac. Hãy cùng mình xem lý do tại sao nhé.]]></description><link>https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</link><guid isPermaLink="false">https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</guid><pubDate>Thu, 04 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Cái tiêu đề nghe nổ quá phải không? Nhưng không đâu, bạn hãy đọc hết bài viết này đi.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Sep 2022 10:56:51 GMT</lastBuildDate><item><title><![CDATA[So sánh chi tiết TCP và UDP | Tại sao UDP nhanh hơn TCP ?]]></title><description><![CDATA[TCP và UDP là 2 giao thức rất phổ biến trong thế giới lập trình. Vậy bạn đã biết cơ chế hoạt động của chúng, và tại sao UDP lại nhanh hơn TCP chưa ?]]></description><link>https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</link><guid isPermaLink="false">https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</guid><pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dẫn-nhập&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BA%ABn-nh%E1%BA%ADp&quot; aria-label=&quot;dẫn nhập permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dẫn nhập&lt;/h2&gt;
+&lt;p&gt;Chào các bạn, mình là Kiên. Cũng đã lâu rồi mình chưa làm video nào cả, nay xin được phép comeback với series &lt;strong&gt;Backend Engineering - Intermediate level&lt;/strong&gt; (level middle). Trong series này, mình muốn truyền đạt lại những kiến thức cơ bản và có 1 chút nâng cao về backend engineering.&lt;/p&gt;
+&lt;p&gt;Đây là những kiến thức background rất cần thiết đối với một software engineer nói chung, đặc biệt là những bạn làm backend nói riêng.&lt;/p&gt;
+&lt;p&gt;Hi vọng series này sẽ giúp các bạn có được kiến thức nền tảng vững hơn, và thăng tiến hơn trong career path của mình.&lt;/p&gt;
+&lt;p&gt;Video đầu tiên sẽ là về TCP và UDP, 2 khái niệm rất quen thuộc phải không nào? Nhưng bạn có biết nó là gì và ảnh hưởng ra sao tới hệ thống backend và công việc của tụi mình không? Cùng mình tìm hiểu trong video này nhé.&lt;/p&gt;
+&lt;h2 id=&quot;tổng-quan-về-mạng-máy-tính&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#t%E1%BB%95ng-quan-v%E1%BB%81-m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh&quot; aria-label=&quot;tổng quan về mạng máy tính permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổng quan về mạng máy tính&lt;/h2&gt;
+&lt;p&gt;Nhắc tới TCP và UDP, chúng ta trước hết phải nói tới internet và cách thức mà các máy tính giao tiếp với nhau.  Khi bạn dùng điện thoại hoặc máy tính duyệt web, thiết bị của bạn sẽ cần phải gửi thông tin yêu cầu tới máy chủ, sau đó máy chủ sẽ gửi tài nguyên tương ứng về cho bạn.&lt;/p&gt;
+&lt;p&gt;Nhưng làm thế nào để 2 máy tính xa cách nhau hàng trăm thậm chí hàng ngàn, hàng chục ngàn cây số có thể truyền tải được thông tin cho nhau?&lt;/p&gt;
+&lt;p&gt;Rõ ràng thông tin sẽ được truyền qua đường mạng internet, cụ thể là từ mạng không dây wifi hoặc cáp mạng RJ45 tới router, sau đó được truyền đi bằng cáp quang hoặc cáp ADSL (mà giờ chắc không còn ai dùng nữa).&lt;/p&gt;
+&lt;p&gt;Thời gian mà dữ liệu đi qua đường truyền internet để giao tiếp giữa 2 máy tính được gọi là Network Latency, hay còn gọi là độ trễ mạng, ta cùng xem hình sau:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./isp_iinternet.svg&quot; alt=&quot;isp iinternet.svg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Hệ thống mạng máy tính bao gồm nhiều thành phần khác nhau như phần cứng, phần mềm, chip, mạch điện… Để triển khai phần mềm cho việc giao tiếp giữa các máy tính thông qua hệ thống này thì sẽ rất phức tạp.&lt;/p&gt;
+&lt;p&gt;Để đơn giản hóa việc này, computer network model hay còn gọi là &lt;strong&gt;mô hình mạng máy tính&lt;/strong&gt; ra đời. Có hai mô hình mạng máy tính là &lt;strong&gt;Mô hình OSI và Mô hình TCP/IP.&lt;/strong&gt; Mô hình OSI có 7 layer trong khi mô hình TCP/IP có thể chia làm 4 hoặc 5.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 736px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6dab00980b6dd1e0314e021cc46cd843/f941f/2-computer-network-models.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 38.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAIAAAB2/0i6AAAACXBIWXMAAAsTAAALEwEAmpwYAAABv0lEQVQY0yXR22vTYBiA8f7LczoJKoIoXilMQcEOhhPbyg7g6GmTlSFbN9q0SWtrtqRp15zTJF++nNOkySvB2wd+V08JANI09T1PluURTWOMwyAEgCAIVEXp9Xo8z/uel+d5HMcIIZqixqMxxjhJkhIAmIYhiyJNDYckybGssVplWYZMM1mv8ywDyJFlrddr27bDIIA8BwDXcXzfK7Cu64KijaYMNZ4ws7lumNlm4weBujK4B0G3bOw4CCGMHeS4s6UoqBpy3CiKCqypqjEZMJ0mWT9Wer+1GRPnYHB/vXva5ycRPzEZOogTS5EcZliU+RRNSd9GBVYkqffxXf35kxrx+NeLnT+N0xBgUDloEVuVna1T4tHt5w8a9pjrq87Lp0fE9hGx3Xn1zFw+FFiWpcbV5d5hrVw9+N782R1RSQYXfbJy1v56clhtt5rdW81A9B1TbdfLtW/7x7UfZw3dWBVYVWT97oQ8371p7S76ZW3ejTOw2NqGfa0P3qTsW5f9YmFfEyeL/t51/f348tOC3HdttfT/imG6S1Fj7ueSYiLbAQBLodHy3Fp2sHBhCjdpmjqup+o2NxNYTlA0FIbRP/EWmUJx9XIxAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;computer network model&quot;
+        title=&quot;computer network model&quot;
+        src=&quot;/static/6dab00980b6dd1e0314e021cc46cd843/f941f/2-computer-network-models.png&quot;
+        srcset=&quot;/static/6dab00980b6dd1e0314e021cc46cd843/5a46d/2-computer-network-models.png 300w,
+/static/6dab00980b6dd1e0314e021cc46cd843/0a47e/2-computer-network-models.png 600w,
+/static/6dab00980b6dd1e0314e021cc46cd843/f941f/2-computer-network-models.png 736w&quot;
+        sizes=&quot;(max-width: 736px) 100vw, 736px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Trong cả 2 mô hình trên, thì TCP và UDP là 2 giao thức được sử dụng trong layer Transport.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./tcp%20and%20udp%20in%20transport%20layer.png&quot; alt=&quot;tcp and udp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Mình sẽ viết thêm 1 bài viết chi tiết hơn về chủ đề này sau. Giờ ta sẽ đi tới nhân vật chính của bài viết này.&lt;/p&gt;
+&lt;h2 id=&quot;tcpip---transmission-control-protocol&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tcpip---transmission-control-protocol&quot; aria-label=&quot;tcpip   transmission control protocol permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TCP/IP - Transmission Control Protocol&lt;/h2&gt;
+&lt;p&gt;Đầu tiên chúng ta nói tới TCP  (&lt;strong&gt;T&lt;/strong&gt;ransmission &lt;strong&gt;C&lt;/strong&gt;ontrol &lt;strong&gt;P&lt;/strong&gt;rotocol) - có nghĩa là giao thức điều khiển truyền nhận.&lt;/p&gt;
+&lt;p&gt;Khi bạn làm việc với TCP, bạn sẽ được đảm bảo rằng tất cả các byte được gửi sẽ giống hệt với các byte được nhận và chúng sẽ đến đầu bên kia theo cùng một thứ tự. TCP sẽ thực hiện việc chuyển lại những data bị mất, chống tắc nghẽn …&lt;/p&gt;
+&lt;p&gt;Để làm được những điều trên thì TCP có 1 quá trình gọi là &lt;strong&gt;Three-way handshake&lt;/strong&gt; - có thể dịch là bắt tay 3 chiều, chức năng là để thiết lập kết nối.&lt;/p&gt;
+&lt;h3 id=&quot;three-way-handshake&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#three-way-handshake&quot; aria-label=&quot;three way handshake permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Three-way handshake&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;./three-way-handshake.svg&quot; alt=&quot;three-way-handshake.svg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Quá trình bắt tay này là quá trình trao đổi số thứ tự gói tin (Package sequence number) để client và server có thể thiết lập được 1 kết nối ổn định cho cả 2 phía. Những con số sequence number này sẽ được tạo ngẫu nhiên vì lý do bảo mật.&lt;/p&gt;
+&lt;p&gt;Threeway-handshake bao gồm 3 bước như cái tên của nó:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SYN&lt;/strong&gt;*:* Client chọn 1 con số ngẫu nhiên &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; và gửi 1 packet SYN (Synchronize Sequence Number), packet này có thể bao gồm thêm 1 vài flag hoặc option cho kết nối TCP tới server.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SYN ACK&lt;/strong&gt;*:* Server nhận SYN từ client và tăng &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; lên 1 đơn vị, sau đó chọn 1 số ngẫu nhiên &lt;code class=&quot;language-text&quot;&gt;y&lt;/code&gt; khác, gán thêm các tùy chọn cho TCP và gửi lại phản hồi cho client.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ACK&lt;/strong&gt;*:* Client sẽ tiếp tục tăng &lt;code class=&quot;language-text&quot;&gt;x&lt;/code&gt; và &lt;code class=&quot;language-text&quot;&gt;y&lt;/code&gt; lên 1 đơn vị, sau đó hoàn tất việc bắt tay bằng cách gửi đi tiếp gói ACK (Acknowledgement Sequence Number) cho server.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mỗi chu kỳ từ khi client bắt đầu gửi request tới lúc nhận gói dữ liệu đầu tiên trả về (không bao gồm thời gian nhận đầy đủ dữ liệu) được gọi là 1 &lt;strong&gt;Round-trip time&lt;/strong&gt; (&lt;strong&gt;RTT&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Trong hình ví dụ phía trên, từ lúc bắt đầu tới lúc kết thúc roundtrip đầu tiên mất 28ms, round trip thứ 2 mất 84ms. Các round trip tiếp theo tùy số lượng dữ liệu mà kết nối vận chuyển sẽ được tăng thêm tương ứng.&lt;/p&gt;
+&lt;p&gt;Tương tự với quá trình three-way handshake, sau khi kết nối đã được thiết lập, 2 bên sẽ giao tiếp với nhau theo từng message để gửi dữ liệu cũng như xác nhận dữ liệu đã được vận chuyển thành công. Dữ liệu càng nhiều thì số lượng RTT càng cao.&lt;/p&gt;
+&lt;p&gt;Ví dụ, mình có dùng phần mềm wireshark để thử capture lại những message của TCP thì có kết quả như sau:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./wireshark%20test.png&quot; alt=&quot;wireshark test tcp&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;kiểm-soát-tắc-nghẽn---congestion-control&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ki%E1%BB%83m-so%C3%A1t-t%E1%BA%AFc-ngh%E1%BA%BDn---congestion-control&quot; aria-label=&quot;kiểm soát tắc nghẽn   congestion control permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kiểm soát tắc nghẽn - Congestion control&lt;/h3&gt;
+&lt;p&gt;Việc dữ liệu đi qua các layer mạng mà không được kiểm soát có thể dẫn đến sự &lt;em&gt;tắc nghẽn&lt;/em&gt;. Điều này cũng giống như đường sá nếu không có phân làn, không có hệ thống biển báo và đèn báo ở giao lộ thì &lt;em&gt;tắc đường&lt;/em&gt; kẹt xe là chuyện gần như không thể tránh khỏi.&lt;/p&gt;
+&lt;p&gt;Tương tự, TCP cũng sẽ kiểm soát sự tắc nghẽn cho kết nối mà nó đã thành lập bằng three-way handshake. Cơ chế kiểm soát tắc nghẽn bao gồm nhân tố chính là congestion window - viết tắt là &lt;em&gt;CWND&lt;/em&gt; (tạm hiểu: cửa sổ truyền nhận dữ liệu) và 3 giai đoạn trong khái niệm congestion policy.&lt;/p&gt;
+&lt;p&gt;Kích thước của CWND tỷ lệ thuận với kích thước dữ liệu được gửi đi trong 1 RTT, do đó 3 giai đoạn kiểm soát tắc nghẽn này chủ yếu xoay quanh việc điều chỉnh giá trị của CWND:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Slow Start Phase&lt;/strong&gt; - Giai đoạn bắt đầu chậm: Từ lúc bắt đầu thì CWND sẽ được tăng theo cấp số mũ. ($cwnd^2, cwnd^3, cwnd^4....)$&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Congestion Avoidance Phase&lt;/strong&gt; -  Giai đoạn chống tắc nghẽn: Sau khi CWND đạt ngưỡng nhất định, nó sẽ tăng lên theo cấp số cộng: (+1, +2, +3…)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Congestion Detection Phase&lt;/strong&gt; - Giai đoạn phát hiện tắc nghẽn: Nếu gặp tắc nghẽn, chẳng hạn như timeout thì tùy trường hợp sẽ điều chỉnh lại biến số cwnd và bắt đầu lại giai đoạn 1 hoặc 2.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;./tcp%20slow%20start.png&quot; alt=&quot;tcp slow start&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Chúng ta có thể coi kết nối TCP như kế hoạch cho 1 đoàn người đi qua  con đường có rất nhiều làn. Để an toàn nhất, lúc đầu người ta chỉ cho mở 1 làn chạy để dành đường chạy cho các phương tiện đi tuyến khác.&lt;/p&gt;
+&lt;p&gt;Dần dà, nếu thấy đường không bị tắc nghẽn người ta sẽ cho mở dần thêm làn, và đến 1 giới hạn nào đó thì việc mở thêm làn sẽ chậm dần. Đây chính là 2 giai đoạn slow start và congestion avoidance.&lt;/p&gt;
+&lt;p&gt;Nếu mở quá nhiều làn dẫn đến việc tắc nghẽn, người ta sẽ phải hạn chế lại số làn chạy, như TCP sẽ giảm số làn còn 1 nửa, còn tốc độ mở thêm làn đường thì sẽ được quyết định tùy trường hợp. Đây chính là giai đoạn phát hiện tắc nghẽn - congestion detection phase.&lt;/p&gt;
+&lt;h3 id=&quot;cơ-chế-kiểm-soát-lỗi&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C6%A1-ch%E1%BA%BF-ki%E1%BB%83m-so%C3%A1t-l%E1%BB%97i&quot; aria-label=&quot;cơ chế kiểm soát lỗi permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cơ chế kiểm soát lỗi&lt;/h3&gt;
+&lt;p&gt;TCP thực thi việc kiểm soát lỗi dựa trên những thứ sau đây:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Checksum&lt;/strong&gt;: Các segment của TCP đều chứa thông tin về checksum. Do đó, nếu nơi nhận thông tin kiểm tra dữ liệu không khớp với checksum, đầu nhận dữ liệu sẽ đánh dấu là segment này bị hỏng.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Acknowledgement&lt;/strong&gt;: Như việc phản hồi tin nhắn ACK ở three-way handshake, mỗi lần client gửi 1 segment đi thì server sẽ phản hồi bằng 1 lần ACK để xác định rằng segment đó đã đến nơi.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Re-transmission&lt;/strong&gt;: Cơ chế truyền tải lại. Việc gửi lại segment sẽ diễn ra trong 2 trường hợp:
+&lt;ul&gt;
+&lt;li&gt;Trường hợp time-out: Khi quá 1 khoảng thời gian quy định (được tính toán dựa trên RTT) mà không nhận được gói ACK từ server, thì client sẽ gửi lại segment đã bị timeout đó.&lt;/li&gt;
+&lt;li&gt;Sau khi nhận được tin ACK giống nhau liên tục: Khi 1 packet đã gửi đi nhưng client liên tục nhận được 3 message ACK thì gói này sẽ được gửi lại.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 753px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/80f21ccf9f2c5651ff87e86d2e9a1741/17a7a/TCP_re_transmission_(1).png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 102.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAVCAIAAADJt1n/AAAACXBIWXMAAAsTAAALEwEAmpwYAAACdElEQVQ4y4WUa3eiMBCG/f+f61+pqHt01W61XW/rYhQKyLVEUJKAXMRA9mhcj0c97ftxMg+ZvDNDhT1SedJN5D6tcnMcRVEQBPefIIQURfENvF6vu93ueDxWVfWaRwh9BfMzx3FeX18nk8loNDJN0/P9NEkYYxhjnnBd/+3Nruu2221RFI9X0QJtA9VcLT9kVVEev7ksS0pplmWMMc/zBoPB+/u7tJQympupP8eGu/Vsy+JPOJxEKT3DeZ5PxmNZlhljEMK3tzcAwGg4Wiry348FjiJuGCdnsz+iKIZheIYJIa3WT0EQiqIwDKPZbA6Hw9lsRjAOMfEAUIbDhSTxXnQ6XaFexxifYcPQf7R7nW7PMAzf93u93mAwmE4mEMJ0ufR//zYA0E2TMWZZVqfX7/3qAwCOcBRF9bpQrVZrtZosSUmSxHH8+fm5lGUNAEdV10Ggm6aiKLvdrtVqPT1Vn59roigeYd/3X15eGo2GpmmMsc1mgzBmZUlNM5nPoSTZjiNLkqZpCKF+vy8IAh+Bc9lZliWnZjLGgiDAGKdJktj2XlWp6+4pjePYcRxubRzHl75WyrLEGDsnbbdbhNBut2OMUdvObTvDuDjlYYx5e65ntlIUha7r8/l8sVhYlqXrOgBgOp1ajpP/z+YVPZgwSqnruhBC27Y9zyOEYIx1XR/0+81GA0LImct4frUYYRju93se2Wd7skUrY7XSVxeTvoH5nB7tKakZ+5ONYkDb1I37lX6wz1mWHQ6HNE3RjsBwk50KIYRww77Z5yAI8jw/HA7Xcd/3v4K5FEVBCN3/dzRN4y18vM9caZpeDLtWkiR5nt/c/A+p7qKm1lLnmgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;TCP re transmission (1).png&quot;
+        title=&quot;TCP re transmission (1).png&quot;
+        src=&quot;/static/80f21ccf9f2c5651ff87e86d2e9a1741/17a7a/TCP_re_transmission_(1).png&quot;
+        srcset=&quot;/static/80f21ccf9f2c5651ff87e86d2e9a1741/5a46d/TCP_re_transmission_(1).png 300w,
+/static/80f21ccf9f2c5651ff87e86d2e9a1741/0a47e/TCP_re_transmission_(1).png 600w,
+/static/80f21ccf9f2c5651ff87e86d2e9a1741/17a7a/TCP_re_transmission_(1).png 753w&quot;
+        sizes=&quot;(max-width: 753px) 100vw, 753px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;ưu-và-nhược-điểm&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%C6%B0u-v%C3%A0-nh%C6%B0%E1%BB%A3c-%C4%91i%E1%BB%83m&quot; aria-label=&quot;ưu và nhược điểm permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ưu và nhược điểm&lt;/h3&gt;
+&lt;p&gt;Tới đây thì chúng ta đã có thể rút ra được ưu và nhược điểm chính của TCP rồi đúng không?
+Ưu điểm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Reliability - Tính đáng tin cậy, TCP đảm bảo rằng dữ liệu bạn gửi đi sẽ đến đích 1 cách thành công. Bên cạnh đó cũng đảm bảo thứ tự gói tin được vận chuyển.&lt;/li&gt;
+&lt;li&gt;Cơ chế kiểm soát tắc nghẽn và kiểm soát lỗi: Kiểm soát dữ liệu trong quá trình vận chuyển, cũng như vận chuyển lại những gói tin bị lỗi.&lt;/li&gt;
+&lt;li&gt;Có thể quản lý được connection. Bản chất TCP là 1 dạng giao thức stateful. Kết nối có thể được quản lý nhờ quá trình thành lập kết nối - three-way handshake, sau khi quá trình vận chuyển hoàn tất thì sẽ phát tín hiệu hoàn thành và đóng kết nối.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nhược điểm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tốn băng thông hơn bởi vì gói tin nặng hơn.&lt;/li&gt;
+&lt;li&gt;Chậm hơn, đây là cái giá phải trả cho mấy ưu điểm phía trên:
+&lt;ul&gt;
+&lt;li&gt;Với TCP, đã phải mất ít nhất 2 round trip từ cái bắt tay, sau đó lại còn mất thêm 1 vài round trip nữa để gửi và nhận dữ liệu thì nó sẽ tốn thời gian hơn đúng không nào?&lt;/li&gt;
+&lt;/ul&gt;
+Bên cạnh đó chúng ta phải tính thêm thời gian cho server để xử lý thông tin trước khi trả về nữa. Việc phản hồi chậm dĩ nhiên là điều không thể tránh khỏi.
+&lt;ul&gt;
+&lt;li&gt;Mình đã làm 1 thử nghiệm nhỏ, dùng lệnh ping để test thử latency tới 1 website là Viblo.asia, độ trễ là đâu đó hơn 45ms.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;./ping%20test.png&quot; alt=&quot;ping test RTT&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Well, các bạn có thể thấy 1 roundtrip này mất tới xấp xỉ ~&lt;strong&gt;45ms.&lt;/strong&gt; Khi mất hơn 2 lần RTT cho threeway-handshake, và nhiều lần nữa cho việc gửi và nhận dữ liệu thì thời gian phản hồi cho 1 request sẽ tăng đáng kể.
+Mình dùng tiếp curl để test thời gian phản hồi, trung bình đâu đó &lt;strong&gt;0.4s = 400ms =  ~9 lần RTT&lt;/strong&gt;. Rõ ràng thời gian phản hồi đã tăng lên rất nhiều.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./curl%20test.png&quot; alt=&quot;curl -X GET -w &amp;#x22;total time: %{time_total}\n&amp;#x22; https://viblo.asia&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Câu lệnh mà mình dùng để test:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;curl&lt;/span&gt; -X GET -w &lt;span class=&quot;token string&quot;&gt;&quot;total time: %{time_total}&lt;span class=&quot;token entity&quot; title=&quot;\n&quot;&gt;\n&lt;/span&gt;&quot;&lt;/span&gt; https://viblo.asia&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Một cách trực quan hơn là bạn nhìn vào response time trên phần network của chrome inspector.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1135px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9ced4e92c736882bef8c9427233cbe37/8802b/viblo_responsetime_in_browser.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 77.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAYAAAAWGF8bAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD6klEQVQ4y41TTW8bVRQdxC4rVESkAlIpEmXHhj/Az2CDxIIaqVIXIBASEExIIYQIUaVFqF3UG9LCqiUNdhyniZMUtZQmBUEyduzY8/Hm+3vG8+k3c5CnArHkSUfnnqt7j3R172NM0+CIKBzwwwErEcKKx32W7xywwhHLCl2WFSd8dMhyk1yPZeXuISt2jthel2VJ77Cs4Tt/HRz/sTdkHz2cYwI3hWHY6HSH6PePQQQRgkCgKioUmYCIEmRJweB4CFlR4UkqBFZHT9ERuhp0w4GmqnAkEaZhLjPpiALAGEAOFHnJafqY/4O8yPIC9F9tBeP87r6Sg8Z5RpOxY8pQFOka8+n8TcwvXqdffH4D89UfcaFaQ3V2CZ/MXsZs9QoWP7uBheoyZj+6ipmZS6jOLeHCwrd4/+PLePPtq/hm4QcsXbxJZ+e+x2r9Xo2ZPnMeU098QE8/uYBTU3N49qlFvDD9JZ4/8RVenL6Il09+hzPTV/DS9CWcfmYBT0/N4OSJ98Aw7+DUc6/j6zfews6t3+krr87j3Q+Xa0xraw+NtR7d3TxE+/4R2ns6du4ZaN3VsfPQwPa+hfa+jd19E7/sWdi5b+O3BxYaKzo21zvo/9mBJuq00XyErd39GhO6DqI0pnEWwTB1mKYCURLB8QII4aBpBJalwDBkWLYKzzfgBBa8yITtmTBcD04Q0CSLwIt8jTFsB5KsUstyYFoOREmF6wXQDBOqbiGMEtiOj2AUwR9FsL0AjmFBGfBwgxBhGMH1fDoKY4hEqjFAgSzJ6DiMJttGkef4P8968CswHj/uKYryVCzLrjG66cIfxdQPIvhhXMILIii6BdsNSjZsr2TXD2FYLkwvgNwbgJdlSLqFYBTTSc+AE2qMKCoQZY1ORhUkdWKOKMlgOR5GYQJJ0WHaHizHRxhnUFSjNB4lGQaKBtsLkaRjGsUZ2E63xihEhiASOuR4iIQgiiJkaQrf9xHHMTRdh+u6pU6SBJqqlfkkiaEbNoIgwnic0SxLQQipMTKRwYuEcrxQGIZZ5JM/kWWF53lFFMeFpumF47qljuOk0FStiKKoiOO4UHWr8P1wUk/T9B9DUcKA47MhJ+REknPHcXPP80ukSZqrmpZ7npv7vp9nWZorqpbHSZInSZIrmpkHQZRTOs6yLJsYXmMG/SG6/WN0j/oYDHkIogRJVqDrBmzHAccRiIIGiRiwTB9kyMGzJqMGkFUDjhcgjKLyfIYcd51pNNfP1dfWz67WG5W1ZquycWer0mxtlHGjuV6p11uVlVutyu2fWpXV2xuVjXqjsrHWrNzZalc229uVzXZ7Ep/dbG+fW1n9+bW/AZICU/4UysMgAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;viblo responsetime in browser.png&quot;
+        title=&quot;viblo responsetime in browser.png&quot;
+        src=&quot;/static/9ced4e92c736882bef8c9427233cbe37/8802b/viblo_responsetime_in_browser.png&quot;
+        srcset=&quot;/static/9ced4e92c736882bef8c9427233cbe37/5a46d/viblo_responsetime_in_browser.png 300w,
+/static/9ced4e92c736882bef8c9427233cbe37/0a47e/viblo_responsetime_in_browser.png 600w,
+/static/9ced4e92c736882bef8c9427233cbe37/8802b/viblo_responsetime_in_browser.png 1135w&quot;
+        sizes=&quot;(max-width: 1135px) 100vw, 1135px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Trên thực tế sẽ có biện pháp để giảm thiểu RTT cho TCP, là cách mà các ông lớn trong làng công nghệ sử dụng, nhưng nó sẽ không được đề cập ở đây.&lt;/p&gt;
+&lt;h2 id=&quot;udp---user-datagram-protocol&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#udp---user-datagram-protocol&quot; aria-label=&quot;udp   user datagram protocol permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UDP - User Datagram Protocol&lt;/h2&gt;
+&lt;p&gt;Để hiểu được rõ ràng cách hoạt động của UDP - User Datagram Protocol thì chúng ta cần tìm hiểu về &lt;strong&gt;IP&lt;/strong&gt; - viết tắt của Internet Protocol. Giao thức này nằm ở layer network, bên dưới cả 2 nhân vật chính của bài viết này là TCP và UDP.&lt;/p&gt;
+&lt;p&gt;IP layer có nhiệm vụ chính là phân phối các datagram từ 1 máy tính tới 1 máy tính khác thông qua địa chỉ của chúng (chính là IP address). Có thể hiểu việc truyền dữ liệu qua IP giống như việc bạn gửi bưu phẩm qua đường bưu điện vậy. IP đóng gói những thông tin như địa chỉ người gửi, địa chỉ người nhận và các tham số khác rồi gửi đi, còn nội dung chính của gói tin thì được nằm trong bưu kiện, chính là payload.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./IP-packet.svg&quot; alt=&quot;Một IP packet&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Một IP packet&lt;/p&gt;
+&lt;p&gt;IP không thông báo khi tin nhắn được gửi tới đích thành công, cũng không có phản hồi nào trong trường hợp gặp lỗi. Rõ ràng, IP không hề đáng tin cậy với các layer bên trên nó.&lt;/p&gt;
+&lt;p&gt;Do đó, việc kiểm tra lỗi và truyền tải lại những thông tin bị mất được quản lý bởi các layer cao hơn trong mô hình mạng. Giao thức TCP với cơ chế three-way handshake là 1 gương mặt đảm bảo được những điều này, đó là lý do tại sao TCP lại là giao thức đáng tin cậy.&lt;/p&gt;
+&lt;p&gt;Quay lại với UDP, UDP đóng gói lại gói tin theo cách của riêng nó, thêm vào 4 field mới là source port, destination port, kích thước của package và checksum. Trong 4 field trên, thì checksum và source port là những field tùy chọn, thực tế thì layer IP đã cung cấp sẵn checksum rồi.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./UDP%20packet.svg&quot; alt=&quot;e0661f06a9fae1f5346d0efb57178146.svg&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;ưu-và-nhược-điểm-của-udp&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%C6%B0u-v%C3%A0-nh%C6%B0%E1%BB%A3c-%C4%91i%E1%BB%83m-c%E1%BB%A7a-udp&quot; aria-label=&quot;ưu và nhược điểm của udp permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ưu và nhược điểm của UDP&lt;/h3&gt;
+&lt;p&gt;Ưu điểm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Nhanh và nhẹ: Vì không cần kiểm soát lỗi và mất nhiều round trip như TCP, nên UDP rất nhanh và nhẹ.&lt;/li&gt;
+&lt;li&gt;Hỗ trợ broadcasting: Hỗ trợ gửi dữ liệu từ 1 máy chủ tới nhiều máy khác trong mạng&lt;/li&gt;
+&lt;li&gt;Tốn ít resource hơn TCP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Nhược điểm:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Không đáng tin cậy: Không đảm bảo dữ liệu sẽ được gửi tới đích.&lt;/li&gt;
+&lt;li&gt;Không có cơ chế truyền tải lại, kiểm soát lỗi, chống tắc nghẽn, etc…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;udp-và-tcp-được-ứng-dụng-như-thế-nào&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#udp-v%C3%A0-tcp-%C4%91%C6%B0%E1%BB%A3c-%E1%BB%A9ng-d%E1%BB%A5ng-nh%C6%B0-th%E1%BA%BF-n%C3%A0o&quot; aria-label=&quot;udp và tcp được ứng dụng như thế nào permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;UDP và TCP được ứng dụng như thế nào?&lt;/h2&gt;
+&lt;h3 id=&quot;ứng-dụng-của-tcp&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-tcp&quot; aria-label=&quot;ứng dụng của tcp permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ứng dụng của TCP&lt;/h3&gt;
+&lt;p&gt;Áp dụng cho những công việc không cần tốc độ quá nhanh, nhưng cần đảm bảo truyền nhận dữ liệu:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Các giao thức truyền tải file: FTP&lt;/li&gt;
+&lt;li&gt;Duyệt web: HTTP&lt;/li&gt;
+&lt;li&gt;Giao thức trong việc nhận email: IMAP&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;ứng-dụng-của-udp&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-udp&quot; aria-label=&quot;ứng dụng của udp permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Ứng dụng của UDP&lt;/h3&gt;
+&lt;p&gt;Với ưu điểm là nhanh, nhẹ và hỗ trợ broadcast, UDP có thể được áp dụng cho những lĩnh vực như:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Media streaming: Ví dụ như việc stream video, có lost vài khung hình cũng sẽ chấp nhận được, tuy nhiên đổi lại tốc độ load nhanh.&lt;/li&gt;
+&lt;li&gt;Gaming: Tưởng tượng bạn chơi Liên Minh Huyền Thoại và cần upload liên tục những hành động như click chuột, bấm phím để di chuyển và tung chiêu, thì tần suất để gửi dữ liệu rất nhiều. Do đó UDP sẽ rất thích hợp.&lt;/li&gt;
+&lt;li&gt;DNS Lookup&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;tổng-kết&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#t%E1%BB%95ng-k%E1%BA%BFt&quot; aria-label=&quot;tổng kết permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổng kết&lt;/h2&gt;
+&lt;p&gt;Với bài viết này, mình hi vọng các bạn có được một cái nhìn rõ hơn về 2 giao thức kinh điển là TCP và UDP cũng như là ưu nhược điểm của 2 giao thức này.&lt;/p&gt;
+&lt;p&gt;Những thông tin mình nhắc tới trong bài viết này được mình tham khảo từ một số nguồn, đặc biệt là từ cuốn sách High Performance Browser Networking. Cuốn sách đã được publish free &lt;a href=&quot;https://hpbn.co/&quot;&gt;tại đây&lt;/a&gt;, các bạn có thể tìm đọc nhé.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 757px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4831c831fb1bb43273b45411a4329318/1fbe8/hpbn.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 130.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAEYUlEQVRIx6VVa0ybVRj+fixGjYZtGg3GS4xG4/xhgn9mooaYLPvhvM3ESyJq4g+NfyTopgs4MhAkbroFmAKOoRR63dfbaKG0o7SUEhXKpdAWxHEp0Ia2thDar/TyPeacXvjqEH74Ju/3vuc973nO857vXBik05jb3ITK64V6cRGdTickHg+ks7PodrmoFbvdmZjHQ2OkrZifp75qYQFKrxeuSAREmGQyiQLhOGz6/YisrSGy5kM0EMDfK6uI+HzYCgQQ8nqx4fNRRSxWMDSdToNJpVJI8zyS6TRSPI80gCTPZ7C3t6nm+lKCPGJJbt7nefA8DyaZStHBfDZAZiGyvLwMmUQKhVyOcDiczxFKbkwunme4Wyd77Rp+uvwjxh0O2iZ5whxh7p6AOYaGPgN+udqBsdHRAkakXwi0L8Mc4Pj4OJQsCyWrxLDNhkj2Lwp/gHCiXQGFiSteLy43NUP0ayd+bm2jbOUyGaamppDbGUK2e65hDlQhk6O1pQVtLa2QSaXo6hSh8dIlyKUyrK6u3sJ2V4YFZTsc0Ot0VBvq6vH9+Qv4tq4e56qr0dTYiBG7vaAyum12A8z5gUAAcpmcliru6qZADfX1qPisHB+8V4bTX5yiVayvr+9dspAlx3EY/WMUErEYpyo+pyzPnP4SH5a9j08//oQCk7hjbCx79LKAuwn/r/bV9na0X2nHhe/Oo7amFlWVVdBqNDD298PhcCCRSIBJpdNIxOOIbWwgGYshEY1ie2uL2hTHUU1zXH4JvEtLWPhzHtFwGDWVlbjS1oZAMJjf/AxxlgIBsHY7+qenYZ2dhcnpxKDbDdP0NExTTgz/dRMr0SjMFgvMNht0Vit8AG7MzKCyqgpNFy9icXk5UzL5/DA3hxJjP0rNZhxSq3BIpcJhtRoHVSoUKZW4W61GsUiEY3V1ePFcDUoaGnAby6JIq8FTHR2oKC9Hw9lquNzuDOBZpxPPGY14127HSdsQnjeZqJaNjOAFkwlHjf14a3gYJXo93rBYUCwWg+nuzqhcjnuam1ErEiHk92cA610uFKvVeKavD88aDHj0+nU8otXi6V49juj1eFCjQenADTym68GR3l4wMhkYiYTqAakUjEiEMx7PTskE8PGeHjygUeOATIY7FAoUsWxmkFhMY8Teq1TiSZ0OdykUOKxU4naFnCrT1YXKiYkdwG9mZvCErgfv2O14fWgIb9uHUTowQJeAlHrUaMQJq4W2Sc5LAwM4PjiIkzYbzS8xGPC1c6oQkNA+yLKUwf1qFe7MsrhPlfFJ2WRZHtZqaTUPaTU075jZTJflq8nJHUDW68VxsxmvWq142WLBa0NDdOYTgvYrVivtzymJEfvR77/hTZsNkqWl/3ik/ofQs0w+MY6Db30dwVAI4UgEXDxOH52U4HHKq+CRSiSTIEeXaO6JYMh5DYVCGJ+YpNf9ws0FxOPxfdmQS8Pv9yMYDMLn8+VvdCa+vX3LdU5mI0uxn6ayzHI+sf8ArRMBp+9+X+gAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;high performance browser networking&quot;
+        title=&quot;high performance browser networking&quot;
+        src=&quot;/static/4831c831fb1bb43273b45411a4329318/1fbe8/hpbn.png&quot;
+        srcset=&quot;/static/4831c831fb1bb43273b45411a4329318/5a46d/hpbn.png 300w,
+/static/4831c831fb1bb43273b45411a4329318/0a47e/hpbn.png 600w,
+/static/4831c831fb1bb43273b45411a4329318/1fbe8/hpbn.png 757w&quot;
+        sizes=&quot;(max-width: 757px) 100vw, 757px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Tham khảo:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.geeksforgeeks.org/transport-layer-responsibilities/?ref=lbp&quot;&gt;https://www.geeksforgeeks.org/transport-layer-responsibilities/&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Quên Mac hay Windows đi, chân ái là đây - Hướng dẫn thiết lập Ubuntu cho developer]]></title><description><![CDATA[Vừa miễn phí lại dễ dàng cài đặt, có nhiều tính năng hay ho, hỗ trợ tốt công việc lập trình, đó là lý do mà tại sao Linux nói chung và Ubuntu nói riêng được nhiều developer chọn thay vì Windows và Mac. Hãy cùng mình xem lý do tại sao nhé.]]></description><link>https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</link><guid isPermaLink="false">https://devgiangho.github.io/quen-mac-hay-windows-di-chan-ai-la-day-huong-dan-thiet-lap-ubuntu-cho-dev</guid><pubDate>Thu, 04 Aug 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Cái tiêu đề nghe nổ quá phải không? Nhưng không đâu, bạn hãy đọc hết bài viết này đi.&lt;/p&gt;
 &lt;h2 id=&quot;về-công-việc-mới&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#v%E1%BB%81-c%C3%B4ng-vi%E1%BB%87c-m%E1%BB%9Bi&quot; aria-label=&quot;về công việc mới permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Về công việc mới&lt;/h2&gt;
 &lt;p&gt;Chuyện là gần đây mình vừa mới lựa chọn bỏ vị trí &lt;strong&gt;.NET developer&lt;/strong&gt; để làm một &lt;strong&gt;Backend developer.&lt;/strong&gt; Sự khác biệt về ngôn ngữ là chắc chắn, vì dự án ở công ty mới sử dụng Golang - con chuột chũi mới nổi thay vì C# và Visual studio quen thuộc.
 Bên cạnh đó, thiết bị làm việc cũng không phải là Mac, mà là máy tính chạy Ubuntu - 1 distro Linux phổ biến. Lý do chính là bởi vì cao tầng muốn phổ biến văn hóa devops, cho nên Ubuntu được chạy từ server của hệ thống cho tới máy của developer.&lt;/p&gt;
