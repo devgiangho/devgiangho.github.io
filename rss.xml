@@ -1,4 +1,432 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 01 Sep 2022 11:06:23 GMT</lastBuildDate><item><title><![CDATA[So sánh chi tiết TCP và UDP | Tại sao UDP nhanh hơn TCP ?]]></title><description><![CDATA[TCP và UDP là 2 giao thức rất phổ biến trong thế giới lập trình. Vậy bạn đã biết cơ chế hoạt động của chúng, và tại sao UDP lại nhanh hơn TCP chưa ?]]></description><link>https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</link><guid isPermaLink="false">https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</guid><pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dẫn-nhập&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BA%ABn-nh%E1%BA%ADp&quot; aria-label=&quot;dẫn nhập permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dẫn nhập&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 27 Sep 2022 03:54:50 GMT</lastBuildDate><item><title><![CDATA[Cách viết CV đơn giản và gọn gàng cho developer (có template)]]></title><description><![CDATA[Có phải mỗi lần bạn muốn tìm cho mình 1 công việc mới, bạn lại phải loay hoay tìm cách chỉnh lại CV sao cho đẹp và phù hợp ? Các template có sẵn thì quá màu mè hoặc quá nhiều space, dẫn đến việc mất thẩm mĩ khi in ra giấy đen trắng ?]]></description><link>https://devgiangho.github.io/cach-viet-cv-don-gian-va-gon-gang-cho-developer-co-template</link><guid isPermaLink="false">https://devgiangho.github.io/cach-viet-cv-don-gian-va-gon-gang-cho-developer-co-template</guid><pubDate>Tue, 27 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Có phải mỗi lần bạn muốn tìm cho mình 1 công việc mới, bạn lại phải loay hoay tìm cách chỉnh lại CV sao cho đẹp và phù hợp ? Các template có sẵn thì quá màu mè hoặc quá nhiều space, dẫn đến việc mất thẩm mĩ khi in ra giấy đen trắng ?&lt;/p&gt;
+&lt;p&gt;Hôm nay sau khi đọc được 1 trang hướng dẫn bằng tài liệu hẳn hoi của bộ nội vụ Singapore, thì mình nảy ra ý định viết bài này.&lt;/p&gt;
+&lt;p&gt;Trên mạng chắc cũng có khá là nhiều bài viết hướng dẫn viết CV rồi, nhưng theo cá nhân mình thấy thì đa số chỉ hướng dẫn làm màu, để điều hướng các bạn sử dụng công cụ tạo CV của họ thôi.&lt;/p&gt;
+&lt;p&gt;Ví dụ:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1159px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/1cd9c98df712d764547d5e69fae0e722/1d553/Untitled.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 172.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAiCAIAAADQyG7qAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEjElEQVRIx41Vy45UVRS9H6BTo0iiCf6BX2CMA52oQ/UvGIsTaaI4daaBEDHayEMREpqOURPsbrpp6EcVTb+qu6ru+3nueezzPodUFUpjjNTKys3JTXbu3mutfW7gvedaMa20d8Jo65yfGsE+Le+Gu1vb3ZnTny6uP7iZbM1GG5fjzStx55/n1bhzlNfizqVoY7WJggv91Z+2V/Kd7qmP3vn+4rmP1y+/v3Dhw8WL7y2c/2Rl9u0733yw9N2J+bMv3fr82NzMK2Mev33mxZufndy8GVwYrP7YXWriaH9j8f766rt/nXvrzrdv/vn1a7e/eGP+q9fnvzwxf/b43JljczMv3zo94atzMy/cOHVy80bQA/RH9+5hdyGt843e7qXDB+cPVn7orV6NOtfi7rW4+3PycHa4PjtY+zV9dD3Z+iXZup5sXYk2HzRx4L0HySm0VAAoKa1pW6xq7Izx3ruxfpVguMUepGPcc/VUMP+susbZlrGibUqEKGMtIUwKJHneohI1OaqzuiIcQCtpdJBwstmkHZSuN8laE6/W8T6tvfcRx9uk3CaldnbUwhEa54xz1rmg5RDWZdxUYVOGddEvs7SpnHMRRfezYaeIB6iqUUMJ0Ur922fOIAnDNIryJM3iJI+TNIxA8Aa3vV6v3+8PhsODXi9LEqNHETrKQHDOCJVcAANMCKEjcCUbCZVgpaAFp42CnNNGgnFWWiPNiNraAIxKOC0kYK2s99p7472y9oA2y3W0XEWLZbiG0qVy2MeVd86MXXjSds3Zvby/VoRhW3ltlVJaKetc2jabvd3t4WHnYG9tbyeuCgFACAEAY4xSylobtJxVuPXKKOCE0QmFUQRoNBjGwzAehkkYxmGU5TmlFGOMxtBaB9SoRNBMskQy7b0dU1jTAi3KsmqarCrTIs+KEQBACCGlVGPlgxzIRhFt5NG9rM+FUFIZbZz3CW4epsPtLNopkpC1CWsZY5Oen86MOMsxslJpITjnACCltN7XLert7w/6/SiKAGBsAmWMYYwnZ2NMQDnEeVbXdd00ZVUhhAjGyhosBeWcCkGFmHgjjRHGPGMVkRwB88ZYY5w2QkmplbZmAG2HFAtF/1FbTDJv3VM8aRtrsdlmPdbs0aqDMjDaeaedTXCz0t/bQ0UIbZ+iiJOaMykEAFhrnxQTyXfLZNAUGZCUEzNeA+s9IrjfOyjzvMzzPMuAAR9DjKVhjI1mlka3nGEOTEtuNNNKWsO0opwTjFHb1nVNCJkEYxShMZRSzrkg42SpGDxE2b1yuFwMdscTamuVNc+/PTlAliRA2cglxoAxa61xbqpiAMjStBlbdfQ+UX+r8n/F0uhaslaA0EoZY6y1znKjpvpyKehSfthFmR9tokGKYy3MlDMrKVuEpJTe+5ST3/P92+kOGu/9FG0L0SJklPbexxz/lu1djTo7pHBT/LQCYXQpodFiFFpruNXCatDTzVwJtlHFy2mfK+Ws1VrbUehHuZ/CKgZZktZVhVucF0WSJHmWj3Zjmpm11oyxya7UdV2WZVVVFGCq4v98O3b7+YI9BvmUaor+37FbAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Untitled&quot;
+        title=&quot;Untitled&quot;
+        src=&quot;/static/1cd9c98df712d764547d5e69fae0e722/1d553/Untitled.png&quot;
+        srcset=&quot;/static/1cd9c98df712d764547d5e69fae0e722/5a46d/Untitled.png 300w,
+/static/1cd9c98df712d764547d5e69fae0e722/0a47e/Untitled.png 600w,
+/static/1cd9c98df712d764547d5e69fae0e722/1d553/Untitled.png 1159w&quot;
+        sizes=&quot;(max-width: 1159px) 100vw, 1159px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Những template như trên theo mình thấy chỉ phù hợp với những bạn mới ra trường hoặc có ít kinh nghiệm, vì template nó sẽ làm bớt đi các khoảng trống, khiến cho CV nhìn không bị quá trống trải và chỉ cần gói gọn trong 1 trang giấy. Trong trường hợp kinh nghiệm và số dự án nhiều, thông tin sẽ bị đẩy qua trang số 2, lúc đó chỉ có 1 cột bên phải và cột bên trái trống trơn, không tận dụng được không gian.&lt;/p&gt;
+&lt;p&gt;Chưa kể, làm theo template trên các web CV builder có một số điểm điểm bất hợp lý. Có thể kể đến như việc đánh điểm kĩ năng theo từng “ngôi sao” hoặc thang 5, thang 10. Ủa, làm sao các bạn có thể chấm được skill của mình là 4 trên 5, hay 7 trên 10, bạn tham chiếu vào đâu để làm điều đó?&lt;/p&gt;
+&lt;p&gt;Nếu bạn đã đi làm được một vài năm đổ lên, có kinh nghiệm hơn và chiến qua nhiều dự án rồi, thì thôi nào đừng lười nữa, từ hôm nay hãy bắt đầu tự viết CV cho mình đi. Điều này vừa thể hiện sự chỉn chu của bản thân với nhà tuyển dụng, vừa khiến CV của bạn trông chuyên nghiệp hơn.&lt;/p&gt;
+&lt;p&gt;Mình đồng ý là có nhiều nhà tuyển dụng họ không quan tâm tới CV của bạn trình bày bằng tool hay là tự viết, nhưng thiết nghĩ đó chỉ là những công ty nhỏ. Đối với những công ty có yêu cầu đầu vào khắt khe hơn, họ sẽ cần một CV dễ dàng sàng lọc, thậm chí có thể để cho AI đi scan và lọc trước khi tới bộ phận nhân sự.&lt;/p&gt;
+&lt;p&gt;Nói nhiều quá rồi, vào việc chính thôi!&lt;/p&gt;
+&lt;h2 id=&quot;cách-soạn-một-cv-chuẩn&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A1ch-so%E1%BA%A1n-m%E1%BB%99t-cv-chu%E1%BA%A9n&quot; aria-label=&quot;cách soạn một cv chuẩn permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cách soạn một CV chuẩn&lt;/h2&gt;
+&lt;p&gt;Đầu tiên phải nói tới mục đích tồn tại của 1 chiếc CV (curriculum vitae) là gì?&lt;/p&gt;
+&lt;p&gt;CV là một tài liệu mà ở đó show ra kinh nghiệm làm việc, kĩ năng cũng như kiến thức chuyên môn của bạn để đưa cho nhà tuyển dụng. Những điều này còn phản ánh trực tiếp mức độ phù hợp của bạn với công việc mà bạn đang ứng tuyển nữa.&lt;/p&gt;
+&lt;p&gt;Có thể nói vòng CV là cái đánh giá đầu tiên của một nhà tuyển dụng với một ứng viên. CV đẹp thì công việc ứng tuyển sẽ dễ dàng hơn và ngược lại.&lt;/p&gt;
+&lt;p&gt;Lưu ý: Nên tạo riêng cho mình 1 bản base CV, và sửa lại để apply cho từng job cụ thể.&lt;/p&gt;
+&lt;p&gt;Trong CV hướng dẫn này mình sẽ dùng tiếng anh toàn bộ, dù gì thì hầu như ngày nay tiếng anh là yêu cầu bắt buộc đối với dev rồi.&lt;/p&gt;
+&lt;h3 id=&quot;các-thành-phần-chính-trong-cv&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A1c-th%C3%A0nh-ph%E1%BA%A7n-ch%C3%ADnh-trong-cv&quot; aria-label=&quot;các thành phần chính trong cv permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Các thành phần chính trong CV&lt;/h3&gt;
+&lt;p&gt;Một CV tiêu chuẩn của 1 lập trình viên sẽ bao gồm những phần sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Personal Profile: Thông tin cá nhân.&lt;/li&gt;
+&lt;li&gt;Career Objectives: Mục tiêu nghề nghiệp, giới thiệu sơ lược về bản thân.&lt;/li&gt;
+&lt;li&gt;Core technical skills: Kĩ năng chính về kĩ thuật, thường sẽ là ngôn ngữ và framework.&lt;/li&gt;
+&lt;li&gt;Employment history &amp;#x26; Projects: Lịch sử công việc và dự án đã từng làm: Phần này chúng ta có thể gộp lại, hoặc cũng có thể tách ra cho dễ đọc.&lt;/li&gt;
+&lt;li&gt;Education &amp;#x26; Awards &amp;#x26; Certifications: Học vấn và các bằng cấp, chứng chỉ cũng như giải thưởng của bản thân.&lt;/li&gt;
+&lt;li&gt;Other skills: Kĩ năng khác, mục này có thể có hoặc không.&lt;/li&gt;
+&lt;li&gt;References: Tham khảo, mục này cũng  là optional, thêm nguồn tham khảo từ đồng nghiệp các công việc cũ. (Đề phòng việc bạn nói láo trong CV kkk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;cách-viết-chi-tiết-từng-thành-phần-trong-cv&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#c%C3%A1ch-vi%E1%BA%BFt-chi-ti%E1%BA%BFt-t%E1%BB%ABng-th%C3%A0nh-ph%E1%BA%A7n-trong-cv&quot; aria-label=&quot;cách viết chi tiết từng thành phần trong cv permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cách viết chi tiết từng thành phần trong CV&lt;/h3&gt;
+&lt;p&gt;Mình sẽ lấy trực tiếp CV của mình, chỉnh sửa vài chỗ để làm ví dụ cho các bạn dễ hình dung nhé. Dựa vào outline trong này, các bạn có thể chỉnh sửa theo kinh nghiệm và thông tin của riêng các bạn.&lt;/p&gt;
+&lt;h4 id=&quot;thông-tin-cá-nhân&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#th%C3%B4ng-tin-c%C3%A1-nh%C3%A2n&quot; aria-label=&quot;thông tin cá nhân permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Thông tin cá nhân&lt;/h4&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1034px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d248b401b01c54c545c1ef6ad4bcf842/709cb/cv_-_personal_profile.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 46.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgUlEQVQoz3WR3W7TQBCF8zJ9Ad6ltxUIqY/APRLct0jcVOJNKnGFBIGEtipqkzqxC0njOOu/2Ou/7PpDXjttUMNKZ+fMzu5oztkeQF3XBlrrR77Nd+u7fB+a1duSfStZr+l/6zP4MWA4+Gm47/v/vd/06jVks9ngui7z2dxEKSV5npvo2A6O4zCxLKZTmyRJyLLMIO9ig8cJm60sSyzL4tf1NePRmCiKEELgeR5BEBDHMWmakqQJYRiaMz8IWAqBCHxztldyFEasvJXxLpMZ7oPLYv5AVVX/SgNWYsXZu7cMv37Z6m0lbxtqpRjfjpjcTVBKsVwssScOMpVtXdcGzUNVa5w/93w/fc/0sk+uNk8e7v5eM40vWtPTJGY2uyeKm1x3aO8qrTn58InXh0ecnH4kr8rnDRuZjm1TFG1RLFJGFy63wwXWlcfvmzUyatUVWcabo5ccHLzg+NUxUib7JyyKojO3psohX0MWt1GGUGad31oR2SPOzz8zvrowed01/AsQfasB7/JyxwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - personal profile.png&quot;
+        title=&quot;cv - personal profile.png&quot;
+        src=&quot;/static/d248b401b01c54c545c1ef6ad4bcf842/709cb/cv_-_personal_profile.png&quot;
+        srcset=&quot;/static/d248b401b01c54c545c1ef6ad4bcf842/5a46d/cv_-_personal_profile.png 300w,
+/static/d248b401b01c54c545c1ef6ad4bcf842/0a47e/cv_-_personal_profile.png 600w,
+/static/d248b401b01c54c545c1ef6ad4bcf842/709cb/cv_-_personal_profile.png 1034w&quot;
+        sizes=&quot;(max-width: 1034px) 100vw, 1034px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Đầu tiên chúng ta sẽ có tên và vị trí chúng ta apply, trong hình là mình để vị trí chung chung Software Engineeer, các bạn có thể đổi thành Backend hoặc Frontend…&lt;/p&gt;
+&lt;p&gt;Thêm vào đó phần này cũng chứa những thông tin cơ bản như: ngày tháng năm sinh, giới tính, quốc tịch, thông tin liên lạc như số điện thoại và email, link mạng xã hội linkedin, có thể ghi thêm blog để làm nổi bật profile…&lt;/p&gt;
+&lt;p&gt;Lưu ý: Ở VN nếu các bạn muốn ghi thêm địa chỉ, thì chỉ cần ghi là ở quận gì, thành phố nào là đủ, chẳng ai quan tâm đến số nhà của bạn đâu. Địa chỉ nhà chỉ nên cung cấp khi kí hợp đồng thôi.&lt;/p&gt;
+&lt;p&gt;Bên cạnh, chúng ta cũng nên để hình cá nhân vào để nhà tuyển dụng nhận dạng. Ảnh cá nhân nên có những điều sau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Là ảnh chân dung&lt;/li&gt;
+&lt;li&gt;Mặt nên mỉm cười&lt;/li&gt;
+&lt;li&gt;Trang phục nên là loại trang phục lịch sự (sơ mi, vest…)&lt;/li&gt;
+&lt;li&gt;Ảnh chụp gần đây thôi (lâu quá người ta lại không nhận ra)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;mục-tiêu-nghề-nghiệp---career-objectives&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#m%E1%BB%A5c-ti%C3%AAu-ngh%E1%BB%81-nghi%E1%BB%87p---career-objectives&quot; aria-label=&quot;mục tiêu nghề nghiệp   career objectives permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Mục tiêu nghề nghiệp - Career objectives&lt;/h4&gt;
+&lt;p&gt;Phần này cũng có thể gọi đúng hơn là tóm gọn lại &lt;strong&gt;tiểu sử nghề nghiệp&lt;/strong&gt; của bạn (career summary). Thông thường sẽ chỉ cần 4 đến 7 dòng cho nội dung này, nhưng phải thể hiển được 3 yếu tố: Khả năng/ học vấn, kiến thức chuyên môn và kinh nghiệm làm việc.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Về học vấn, các bạn có thể ghi điểm mạnh của mình như tôi tốt nghiệp loại giỏi trường RMIT, tôi có bằng thạc sĩ tin học, hoặc tôi có chứng chỉ MVP của microsoft, vân vân và mây mây.&lt;/li&gt;
+&lt;li&gt;Kiến thức chuyên môn thì rõ ràng rồi, bạn làm mạnh về gì thì bạn cần ghi cái đó, chẳng hạn ReactJs, dotNET, Java…&lt;/li&gt;
+&lt;li&gt;Về kinh nghiệm, nếu từ tham gia dự án hoặc đóng vai trò nổi bật các bạn có thể thêm vào&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bên cạnh đó, nếu bạn đang đưa CV của mình lên các mạng xã hội như linkedin mà không phải apply vào một công ty cụ thể, bạn có thể nêu lên mong muốn của mình, chẳng hạn tôi muốn làm blockchain, tôi muốn làm backend trong 3 năm tới…&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1034px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/dacaae2b1c2d1203f3583d1efff2071d/709cb/cv_-_career_objective.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 30.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAA2UlEQVQY032Q3Y6EIAyF5/2fzjujKKwFagFF1klm/BuZYBwne7NfTpq0zWna3uL/7HuK0xTv9+h9tDau69W8xRjneeacM8bKAyGE9/73QwhhrKrQ9yGEMAwpHcf9GJrM27Z1XVcURcVYnud1VRlryRgpJSJaY5wQXd8jIhFZ57TWy7Kc5mO73RgDSklETQScqywTQvwIAQAcoG1bqVTTNEopAJim6Y/ZERFjuiyxKLq6JoCWyDlniDDLSOsWkRAlwDAM35tPXq/4fCY9HuefLtY1Fb1P2rbrYW8oIVJlHsBcqQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - career objective.png&quot;
+        title=&quot;cv - career objective.png&quot;
+        src=&quot;/static/dacaae2b1c2d1203f3583d1efff2071d/709cb/cv_-_career_objective.png&quot;
+        srcset=&quot;/static/dacaae2b1c2d1203f3583d1efff2071d/5a46d/cv_-_career_objective.png 300w,
+/static/dacaae2b1c2d1203f3583d1efff2071d/0a47e/cv_-_career_objective.png 600w,
+/static/dacaae2b1c2d1203f3583d1efff2071d/709cb/cv_-_career_objective.png 1034w&quot;
+        sizes=&quot;(max-width: 1034px) 100vw, 1034px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Trong hình trên mình không nêu học vấn, bằng cấp hay chứng chỉ, vì mấy thứ đó là điều mình không có, ahuhu.&lt;/p&gt;
+&lt;h4 id=&quot;technical-skills---kĩ-năng-chuyên-môn&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#technical-skills---k%C4%A9-n%C4%83ng-chuy%C3%AAn-m%C3%B4n&quot; aria-label=&quot;technical skills   kĩ năng chuyên môn permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Technical skills - Kĩ năng chuyên môn&lt;/h4&gt;
+&lt;p&gt;Đúng như tên gọi, phần này là những kĩ năng cốt lõi mà một developer dùng cho việc kiếm tiền về cho doanh nghiệp cũng như được nhà tuyển dụng trả tiền để &lt;em&gt;đưa tiền về cho vợ&lt;/em&gt;, à nhầm, cho cá nhân bạn. Chưa hết, người ta cũng dựa trên những thứ này để xem bạn có phù hợp với vị trí đang tuyển hay không.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1037px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d5f40b16c18cf6bfc34782497cf7ec56/20751/cv_-_technical_skills.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 24.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAIAAADKYVtkAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAx0lEQVQY02XO0W6DIBSA4b7/s61dUi1gLzSlHI6YKAiKipqzpWm7Lfvvv+Q/ENE8z4UQjLFrceWcV2XlvXeuf2f/te87ER2IaNtWY4zgvBBFVZaICEqhRlCgAUBB27a/Zdd1KaUnJqJ1XbNzdskv/tH9JpumQUQNIG/SOjtNU3w1DEOM8QenlPJzJhhHxBrrz+Mpz/LTx1EwLpioysrUBrXWoB9f8Adv29b3/TiOwQfnnJISFNylsp2NcQqvvPchhN77ZVm+8Re2JhVZLQRbhgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - technical skills.png&quot;
+        title=&quot;cv - technical skills.png&quot;
+        src=&quot;/static/d5f40b16c18cf6bfc34782497cf7ec56/20751/cv_-_technical_skills.png&quot;
+        srcset=&quot;/static/d5f40b16c18cf6bfc34782497cf7ec56/5a46d/cv_-_technical_skills.png 300w,
+/static/d5f40b16c18cf6bfc34782497cf7ec56/0a47e/cv_-_technical_skills.png 600w,
+/static/d5f40b16c18cf6bfc34782497cf7ec56/20751/cv_-_technical_skills.png 1037w&quot;
+        sizes=&quot;(max-width: 1037px) 100vw, 1037px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Mình chia những kĩ năng trên thành 3 nhóm chính: Ngôn ngữ lập trình, cơ sở dữ liệu và framework &amp;#x26; tool.&lt;/p&gt;
+&lt;p&gt;Cá nhân mình từng làm cả backend và frontend khi tham gia nhiều dự án .NET, do đó mình liệt kê ra hầu hết là những công nghệ mà 1 .NET developer thường dùng, đó cũng là thế mạnh của mình.&lt;/p&gt;
+&lt;p&gt;Có 2 lưu ý cho mục này:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Khi bạn chỉnh sửa bản base CV sang 1 bản chi tiết để apply cho một vị trí nào đó, bạn nên chỉnh sửa lại những kĩ năng trên cho phù hợp.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ví dụ nếu apply vị trí fullstack Nodejs và Reactjs, thì nên đưa Typescript/Javascript lên đầu thay thế cho C#, song song với đó thì nên lược bớt những công nghệ chả liên quan tới như là PHP Laravel 😂.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Không nên liệt kê những công nghệ mà bạn “biết”, chỉ nên liệt kê những công nghệ mà bạn thành thạo. Bạn viết công nghệ gì, lúc phỏng vấn người ta sẽ hỏi cái đó, tới lúc đấy mà không trả lời được là toang.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;employment-history--projects---lịch-sử-tuyển-dụng-và-danh-sách-dự-án&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#employment-history--projects---l%E1%BB%8Bch-s%E1%BB%AD-tuy%E1%BB%83n-d%E1%BB%A5ng-v%C3%A0-danh-s%C3%A1ch-d%E1%BB%B1-%C3%A1n&quot; aria-label=&quot;employment history  projects   lịch sử tuyển dụng và danh sách dự án permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Employment history &amp;#x26; Projects - Lịch sử tuyển dụng và danh sách dự án&lt;/h4&gt;
+&lt;p&gt;(Phần này trong template mình fake nhé, chứ nếu ghi đúng hết theo profile mình thì dài quá)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1035px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e1d9ce30d655a5c838d9a292c7effaf8/e3189/cv_-_employment_history.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 31%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAGCAIAAABM9SnKAAAACXBIWXMAAA9hAAAPYQGoP6dpAAAAxElEQVQY03XN2W7CMBQE0Pz/p9Gy9YVKxU4gJqkSB9vXC27qeKpQIdSF83AfrmY0BYAYPzbrzXq1Wj4vX7bbp8Vit3tVSp1v5E/DMEzTBKAAkHOOMcpe9l3fdZ0xlFKSUnLGSl42TfP5B64K3IzjOL/nkwA4697bmTqr70DO+OVedmSNNmTIkgWgleJ7xt729bEWQtSHY9u0KaV/y9k5Z8mSITIEwGhdlSVnXNQCD9yXL+ESQvDeB++vy7riFWf8JE6Pyl+mmlcEeefHRAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - employment history.png&quot;
+        title=&quot;cv - employment history.png&quot;
+        src=&quot;/static/e1d9ce30d655a5c838d9a292c7effaf8/e3189/cv_-_employment_history.png&quot;
+        srcset=&quot;/static/e1d9ce30d655a5c838d9a292c7effaf8/5a46d/cv_-_employment_history.png 300w,
+/static/e1d9ce30d655a5c838d9a292c7effaf8/0a47e/cv_-_employment_history.png 600w,
+/static/e1d9ce30d655a5c838d9a292c7effaf8/e3189/cv_-_employment_history.png 1035w&quot;
+        sizes=&quot;(max-width: 1035px) 100vw, 1035px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Lịch sử làm việc, cái này mình thấy có thể gộp lại với phần danh sách dự án, tuy nhiên mình thấy tách ra sẽ dễ đọc hơn và dễ trình bày hơn nữa. Phần này chỉ đơn giản là liệt kê các công ty mà bạn đã từng làm thôi, không có gì đặc biệt. Công ty nào làm gần đây thì nên được ở phía trên. (order by start_working_date DESC 😝)&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1034px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/9a9a28c87a16eda008f764e12a841e6c/709cb/cv_-_project_list.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 80%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABvUlEQVQoz32S27KiMBBFz///mE9YaokY5GYgJgYDgQ4QbmGqSI2OjnXWc1a6e3f/LMsyDEMURXEcB0HgeR6lFADqugYA+R9lWQLAsvKzLMs0TZzzJEkIIYyxsiyFEPcVpZTWunun7/uXbMnzXAixLMs8z4/Hg3POGAMA+1pr3bat1lopNQzDm2yM6fu+aZp5BWMchiHGOAiCKIqCIKCUEkKyLCOEcM4/5bZtAcD+qpTKVvKV+/0upWzbdnnn1XbXdXVdW3maJsdxNpsNQuh4PBZFAQBVVc3z/F3+l2maPM/b7Xbb7fZwOMRxLISw/neZcy6ltCPY8DnnSinr9H3/UfZN9n0fIWQDQwi5rlsUhVKqXpFS2vUaYz5lY0yWZXEcK6WMMYSQMAw55+M4fgjfK4/jqLW2gXVdd71eEUI28zRNsywDgKZpAOD516tyVVWMMaWUnf+04roupVQIYXcmhHheyG9p7/d7x3HCMEQI2REopYyxoii01p+y+Yu9UN/3Pc+zd3a73dI0vd1uUso8z5umsc++VzbGXC6X0+kURVGSJBjjJEmklP2KTfG3ts8rGON05Xw+p2lqN/ds+w/Imo5jooCw4AAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - project list.png&quot;
+        title=&quot;cv - project list.png&quot;
+        src=&quot;/static/9a9a28c87a16eda008f764e12a841e6c/709cb/cv_-_project_list.png&quot;
+        srcset=&quot;/static/9a9a28c87a16eda008f764e12a841e6c/5a46d/cv_-_project_list.png 300w,
+/static/9a9a28c87a16eda008f764e12a841e6c/0a47e/cv_-_project_list.png 600w,
+/static/9a9a28c87a16eda008f764e12a841e6c/709cb/cv_-_project_list.png 1034w&quot;
+        sizes=&quot;(max-width: 1034px) 100vw, 1034px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Giống như mục danh sách công ty cũ, mục dự án cũng nên được order theo thứ tự thời gian, dự án nào mới thì ở trên.&lt;/p&gt;
+&lt;p&gt;Một dự án nên có những thông tin như: Tên dự án (nếu bạn được phép chia sẻ), mô tả ngắn về domain dự án, vai trò (role) và nhiệm vụ của bạn trong dự án này, cuối cùng là những công nghệ được sử dụng. Nếu trong dự án nào bạn có thành tựu nổi bật thì cũng nên ghi vào.
+Chẳng hạn ở dự án A, tôi đã cải thiện performance của toàn bộ API bằng cách áp dụng kĩ thuật caching, rồi áp dụng kĩ thuật SEO (và kĩ thuật chém gió nói phét 🤣) giúp giảm 20% tỷ lệ bounce rate…&lt;/p&gt;
+&lt;p&gt;Để có thể làm nổi bật hơn những kĩ năng đã áp dụng trong các dự án này, bạn có thể bôi đậm những công nghệ mà bạn muốn.&lt;/p&gt;
+&lt;h4 id=&quot;education--awards&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#education--awards&quot; aria-label=&quot;education  awards permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Education &amp;#x26; Awards&lt;/h4&gt;
+&lt;p&gt;Phần học vấn và giải thưởng mình chỉ có một lưu ý là chỉ nên liệt kê những thứ liên quan tới vị trí cần apply và làm nổi bật profile của bạn.&lt;/p&gt;
+&lt;h4 id=&quot;reference---người-tham-khảo&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reference---ng%C6%B0%E1%BB%9Di-tham-kh%E1%BA%A3o&quot; aria-label=&quot;reference   người tham khảo permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reference - người tham khảo&lt;/h4&gt;
+&lt;p&gt;Mục này giúp bạn chứng minh với nhà tuyển dụng rằng bạn không nói láo về những thứ bạn đề trong CV. Tất nhiên rồi, trước khi điền thông tin liên hệ của ai đó vào CV, bạn nên xin phép người ta trước. Người được reference nên là người có thể cung cấp được những thông tin (tốt nhất là tích cực) cho nhà tuyển dụng mới về bạn.&lt;/p&gt;
+&lt;h4 id=&quot;những-phần-khác&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#nh%E1%BB%AFng-ph%E1%BA%A7n-kh%C3%A1c&quot; aria-label=&quot;những phần khác permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Những phần khác&lt;/h4&gt;
+&lt;p&gt;Ngoài những thành phần chính kể trên, bạn có thể liệt kê thêm những phần như ngôn ngữ, nếu bạn có ngoại ngữ tốt, IELTS 9 chấm, hoặc tiếng Nhật N0, thì sẽ là một điểm cộng cực kì lớn.&lt;/p&gt;
+&lt;p&gt;Chưa hết, bạn có thể liệt kê ra một vài kĩ năng mềm, làm việc nhóm aka teamwork trong ngành CNTT thực sự rất quan trọng đấy.&lt;/p&gt;
+&lt;h2 id=&quot;bố-cục-và-định-dạng-của-cv&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#b%E1%BB%91-c%E1%BB%A5c-v%C3%A0-%C4%91%E1%BB%8Bnh-d%E1%BA%A1ng-c%E1%BB%A7a-cv&quot; aria-label=&quot;bố cục và định dạng của cv permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Bố cục và định dạng của CV&lt;/h2&gt;
+&lt;p&gt;Khi đã biết những giá trị nội tại của CV rồi, chúng ta nên học thêm cách trình bày aka học ngoại công, học cách trang điểm cho CV đẹp hơn. Định dạng CV tốt bên cạnh giúp cho nhân sự sàng lọc dễ hơn thì còn khiến cho việc duyệt CV bằng tool của các công ty dễ dàng hơn.&lt;/p&gt;
+&lt;p&gt;Mình có để link template mình ở &lt;a href=&quot;https://www.mediafire.com/file/58d2qdmeh5s1pak/CV-Template-for-Software-Engineer.docx/file&quot;&gt;mediafire đây&lt;/a&gt; hoặc &lt;a href=&quot;https://docs.google.com/document/d/11F2yoDeLFUsP6fezKoHbttFaV6PUxiWM7GyPoyHTqk4/edit?usp=sharing&quot;&gt;link drive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chúng ta có những điều sau cần lưu ý:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Font: Nên sử dụng font phổ biến, dễ đọc, tốt nhất là nên chọn Times New Roman, Cambria hoặc Arial. Chọn sai font sẽ khiến người đọc nhức mắt, làm mất ngay cái thiện cảm mà cực kì không đáng.&lt;/li&gt;
+&lt;li&gt;Margin: Cứ để mặc định cho dễ in ra ở khổ A4 là tốt nhất.&lt;/li&gt;
+&lt;li&gt;Kích thước font
+&lt;ul&gt;
+&lt;li&gt;Body: 10-12pt&lt;/li&gt;
+&lt;li&gt;Heading (các thẻ h1-h6): 12-16pt&lt;/li&gt;
+&lt;li&gt;Tiêu đề (tên bạn): 18-24pt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Khi làm xong, nên submit dưới dạng file pdf hoặc docx&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Well, không cần màu mè phức tạp, ở CV mà mình trình bày từ đầu bài viết tới giờ mình có chia các thông tin thành hàng và cột rất ngay ngắn và đơn giản. Cách làm của mình như sau:&lt;/p&gt;
+&lt;p&gt;Mình sẽ đưa tất cả thông tin vào table, table rất dễ dàng chỉnh sửa, thêm cột thêm hàng phải gọi là easy game:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 825px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e1642bbbe5d83dc25ceed7bb9f99e011/d4c13/cv_-_table_format_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 45.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABeklEQVQoz23QPY/TMBjA8ftCSHwBPgaMTCzAhGBkvKXTDfAp2BAjMCCkXtWm3OkIok2qqNipU+elj9/ttE6MlHIqoPstliz/pefxWbiL1poMKKWEEKXUnc/Ojkd/y3sfQpBSTqfT+XweRdFsNgOAEIL3/nA4eO/7vj/FQojJZDIej6MoyvN8s9kURbHdbgkheZ4TQoqiyAd1UxdFgTHuuu5P3HWdEAIhhDEGAEIIQmi9XldVxTmHQdM0tCw/f/yUpgkwOMUhBGvtcrlM01QIgTHOsowQYoxxzrVt65wTSpEteff61c3lF7Nv+//ixWKRZRkAZIPdrtFaCyE55wyAcT6/iT+Mzq8uv0pjjmuf4jiOKaXWWoRQ/ON7miZlRQF21llrLQB7/uTF/XsPnj57yQT/57eNMavVSkqptPyVVMl18zOiy6sy+bYrc6WMYnX9/u3Fo4eP34xGrKn7v2PvvRloraXQkjnFW8mcACvF8Vr7w94Yu3fW3I79G9Vo7dgW7EwBAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - table format 1.png&quot;
+        title=&quot;cv - table format 1.png&quot;
+        src=&quot;/static/e1642bbbe5d83dc25ceed7bb9f99e011/d4c13/cv_-_table_format_1.png&quot;
+        srcset=&quot;/static/e1642bbbe5d83dc25ceed7bb9f99e011/5a46d/cv_-_table_format_1.png 300w,
+/static/e1642bbbe5d83dc25ceed7bb9f99e011/0a47e/cv_-_table_format_1.png 600w,
+/static/e1642bbbe5d83dc25ceed7bb9f99e011/d4c13/cv_-_table_format_1.png 825w&quot;
+        sizes=&quot;(max-width: 825px) 100vw, 825px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 830px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fe85befd3925ce62e69b4b979f8a123c/715a3/cv_-_table_format_2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 43.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAA9hAAAPYQGoP6dpAAABSklEQVQoz22Q3Y7CIBCF9/0fzAuNiVfaVeSnCLU0VcoiMKXAJsXEbLLfxckkkzMzZ75ijEIIKaUQglKqlHq9Xtbaqj//EWMsK18xRsZY0zTfK5zzvu/v97uUchiGx+MxrtSiqvf+bS6l5Jwxxl3XLcsCALfbjXNOCBnHEQDCinOuqvfeOZdzfpuXZXk+n1rrEELOmRCCEGrb9nK5YIxPpxOltG1bjDEhhFI6TdNnc0ppmqY6GwCEEJxzxpiUsus6QoiU0hhjrQ0heO+ttZ/NKSWlVN/3xph6+fV63e12CCGMsRDCGDMMwzzPNSMApJQ+mWujDprn+Xg8bjab/X6/3W4RQuM4GmO01gBQSvljTilprb338zyHELTWnHOEEGOMriilAMBa670HgD8PK6Wcz+emaZxzpRRK6eFwYIxNK88VpVRKKedctT7sFzi9+cxpSYOJAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - table format 2.png&quot;
+        title=&quot;cv - table format 2.png&quot;
+        src=&quot;/static/fe85befd3925ce62e69b4b979f8a123c/715a3/cv_-_table_format_2.png&quot;
+        srcset=&quot;/static/fe85befd3925ce62e69b4b979f8a123c/5a46d/cv_-_table_format_2.png 300w,
+/static/fe85befd3925ce62e69b4b979f8a123c/0a47e/cv_-_table_format_2.png 600w,
+/static/fe85befd3925ce62e69b4b979f8a123c/715a3/cv_-_table_format_2.png 830w&quot;
+        sizes=&quot;(max-width: 830px) 100vw, 830px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Khi sửa xong nội dung thông tin, đã đẹp hơn rồi thì mình chỉ việc xóa border của table đi bằng cách chỉnh độ dày border về 0:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1041px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/47ad5066271557101999213327c289d3/ee9b6/cv_-_remove_border_table_1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABm0lEQVQoz6WSya7iMBBF+f9vYcGGDQsQYkgLEEIgBiEGiWHVZMQu2wnO7a6iE/H09FZt6arKdurU4DSIDJTWSNIUWfZEmqbQmsDnxhpkGSFJHZyzsNbCOQeltPhkDIwhhBGBTAEijcZTabl4KoLWDkQEYyw0vYPJcGAufiW+F7DWSLMMjzDF7zBCFCdoWJfDe4+yLGtbyde+h/fvPdvyw75eHnlRQCsliQT48l5gbPmDl/8u/8MZw5ihGGj/Af9nVVAeFc+9Bt7vd+x2u1phGIoej0ftfyqKYgAljPUwtoDWHy3z4nksFgvM53Mcj0dsNhusVius12tcr1fcbjexl8tFxHuX53CkYYi+t8xADp7NZgIbDofo9Xpi+/2+aDwei4IgQPArgFYaKs+Q0RPOFTDWfQVyRZPJBMvlUsDdblc0GAwEPJ1O5W673UpyrqosISAWs2ogDzeOY5lPkiQ4n89ot9toNptotVoCZiCLYQx9A8saZqsKq/+OgcYYSXA4HNDpdKTV0WgkrXIH/GD7/R6n00le9gvwb4V/AFMSP+D1MvG6AAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - remove border table 1.png&quot;
+        title=&quot;cv - remove border table 1.png&quot;
+        src=&quot;/static/47ad5066271557101999213327c289d3/ee9b6/cv_-_remove_border_table_1.png&quot;
+        srcset=&quot;/static/47ad5066271557101999213327c289d3/5a46d/cv_-_remove_border_table_1.png 300w,
+/static/47ad5066271557101999213327c289d3/0a47e/cv_-_remove_border_table_1.png 600w,
+/static/47ad5066271557101999213327c289d3/ee9b6/cv_-_remove_border_table_1.png 1041w&quot;
+        sizes=&quot;(max-width: 1041px) 100vw, 1041px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Kết quả:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1041px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/197921e06ccad32e6483bd6a3ab0ce44/ee9b6/cv_-_remove_border_table_2.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABnUlEQVQoz5WSW4viQBCF/f+/RfDFR0VBFPEG4l1RUPE2s7NJOulr0jm7VZKMI/uyDYfq61enq7uilEYiJcIwghAxhBCQUoHmjdEQQiGMLKw1MMbAWoskkdxXWkNrha/fCtqkUEqiEieSF+JEIZEWSilobSDV87DSdNBxvxCtM1hKRCLGx68Aj88vBGGIirEO3nvkeV7GQr7se3j/HFPMX2KWZUizDFJKTs7AzHuGkV77xfh97lUuTWGdY6AugK+Nsv5PK6BUKqp7CbxcLthut6WCIPinwjDkGEURpYfSnh9EyuTbYeFquVxiOp3ifD5jv99jtVphs9ngdrvhfr9zvF6vrMfjwTU1dFX6KUkCbd6A5Gw8HjNkMBig3W6j1+uh0+mw+v1+qeFwCGcdYicgVAxrU2hjfwLX6zVvJKez2QytVovV7XYZPJlMsFgsyrJYY+BzMIhErB9ArTXXiOzTtev1OqrVKmq1GhqNBicbjUaYz+ecnD43nS1g5t0hgZx7PtLxeESz2WRnBYhqutvtcDgccDqdeC/9xxL41+EfB7pCqb/bsdQAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - remove border table 2.png&quot;
+        title=&quot;cv - remove border table 2.png&quot;
+        src=&quot;/static/197921e06ccad32e6483bd6a3ab0ce44/ee9b6/cv_-_remove_border_table_2.png&quot;
+        srcset=&quot;/static/197921e06ccad32e6483bd6a3ab0ce44/5a46d/cv_-_remove_border_table_2.png 300w,
+/static/197921e06ccad32e6483bd6a3ab0ce44/0a47e/cv_-_remove_border_table_2.png 600w,
+/static/197921e06ccad32e6483bd6a3ab0ce44/ee9b6/cv_-_remove_border_table_2.png 1041w&quot;
+        sizes=&quot;(max-width: 1041px) 100vw, 1041px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Phần header thì mình thêm chút background color cho nó nổi bật:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1041px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/afb3d7a3b669c5e16f88c95774276ab1/ee9b6/cv_-_header_background.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 56.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB70lEQVQoz1WTyY7TQBCG84q8ADckrrwCJ3gEOCJBDnNDHBAXTjkA0ZAoyTBx5MSJlySSY8dp9+alf6jyeMKUVOp2L1//tXhgjEEpJYQQuFwEj9oYaE2ukJ0NlLagc1VVQWsNpTQs36txPpdQSvK+kgqDUipchIGxFS9KSZsdQBsNUVpoY2Gt5fXuIYOLkCiEQlFqwAFwLWxtMWidY8hkMsFsNsN4PMZyuUQURdjtdoiiEGG443kYhuzb7RbGWpyzDHe3P3HM90iFgs1bDOq6ARlB6TApq+sa+/2eoXmeszpypVQXspQsKvV8+O/f4Ff+GTeLDN5QXIFt26IsS4Y55+D7PuI4ZmWkiODH45EfSuIYwhpUXgB8eodt/gUffiT4PvQxqJsO2DRNVxCt+ZuUrVYrBhwOB/4mhWzO8XC4nWH88hk+fn2FF2+/4fXz4RVIqqiKFBoZwUejEabTKebzOdI0RZZlnBr3AFRliWj5B3f3E/yee1jdB08VUv56O51O8DyPQyYnlaSenIEP0BZAVTu0TcN5/a8oipVQHunCYrHgInV9p1gZ7fVGZ8itsVDUgzRqcwWSuiAIOFd0cLPZcGGKouC9vmCPsG4GW9Xcp9y7tnqaw749yAi0Xq853CRJOGTKI633UZA9AunH+Af8C96PQqcX18bEAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;cv - header background.png&quot;
+        title=&quot;cv - header background.png&quot;
+        src=&quot;/static/afb3d7a3b669c5e16f88c95774276ab1/ee9b6/cv_-_header_background.png&quot;
+        srcset=&quot;/static/afb3d7a3b669c5e16f88c95774276ab1/5a46d/cv_-_header_background.png 300w,
+/static/afb3d7a3b669c5e16f88c95774276ab1/0a47e/cv_-_header_background.png 600w,
+/static/afb3d7a3b669c5e16f88c95774276ab1/ee9b6/cv_-_header_background.png 1041w&quot;
+        sizes=&quot;(max-width: 1041px) 100vw, 1041px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&quot;tổng-kết-lại&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#t%E1%BB%95ng-k%E1%BA%BFt-l%E1%BA%A1i&quot; aria-label=&quot;tổng kết lại permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tổng kết lại&lt;/h2&gt;
+&lt;p&gt;Tổng kết lại, trừ 1 điểm vì CV không có màu hồng, điểm 9 trên 10 anh em nhớ 😂.&lt;/p&gt;
+&lt;p&gt;Đùa chút thôi, thông qua bài viết này, mình hi vọng có thể giúp các bạn bớt được một chút thời gian mỗi khi phải tìm cách tạo lại CV mới. Tuy rằng có thể nó không được “đẹp” nhưng nó sẽ rất dễ đọc và sàng lọc, cũng như thể hiện sự chuyên nghiệp trong khi đi tìm việc.&lt;/p&gt;
+&lt;p&gt;Chúc các bạn tìm được công việc như ý!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[So sánh chi tiết TCP và UDP | Tại sao UDP nhanh hơn TCP ?]]></title><description><![CDATA[TCP và UDP là 2 giao thức rất phổ biến trong thế giới lập trình. Vậy bạn đã biết cơ chế hoạt động của chúng, và tại sao UDP lại nhanh hơn TCP chưa ?]]></description><link>https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</link><guid isPermaLink="false">https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp</guid><pubDate>Thu, 01 Sep 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dẫn-nhập&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BA%ABn-nh%E1%BA%ADp&quot; aria-label=&quot;dẫn nhập permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dẫn nhập&lt;/h2&gt;
 &lt;p&gt;Chào các bạn, mình là Kiên. Cũng đã lâu rồi mình chưa làm video nào cả, nay xin được phép comeback với series &lt;strong&gt;Backend Engineering - Intermediate level&lt;/strong&gt; (level middle). Trong series này, mình muốn truyền đạt lại những kiến thức cơ bản và có 1 chút nâng cao về backend engineering.&lt;/p&gt;
 &lt;p&gt;Đây là những kiến thức background rất cần thiết đối với một software engineer nói chung, đặc biệt là những bạn làm backend nói riêng.&lt;/p&gt;
 &lt;p&gt;Hi vọng series này sẽ giúp các bạn có được kiến thức nền tảng vững hơn, và thăng tiến hơn trong career path của mình.&lt;/p&gt;
@@ -71,7 +499,37 @@
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Trong cả 2 mô hình trên, thì TCP và UDP là 2 giao thức được sử dụng trong layer Transport.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./tcp%20and%20udp%20in%20transport%20layer.png&quot; alt=&quot;tcp and udp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/4a81b873de8c08f64e525c7736e5eb8c/cd78c/tcp-and-udp-transport-layer.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 58.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAACV0lEQVQoz22TaW/aUBBF/f9/SdWPqdq0TZs0UgKEsCQEMIaUxcaxwfbzvmHgVH60VdN2pKsZPdlP98y1FTjC8UhdvvCIo1DOHA+ndjy+0q86Hg8Iz8O2bLI0/f2sUpQVzy8Bo8WGnrricWoyMQSrTURVVfxd9UuO42IYa7TJVGq51LGsDUVRoqTFjuZkw9m3AWfXA95dD3h/q/Kw8KUDc73Gtm2c7RZzbRJFEYZh0rnvcXvToNm44/amyWg0Ic9zlKraY7shTphhiwTbi7FFjBsk7Pd7kiSRKoqCNEmlwyiM8P2AIAgRwicMI1zXlURKlpcM9YDmUOfyTuWqPaGt2UzMkLIs/0E+HA5Yls18vqTb6dPvPTAcjtENkyzLUdK85HEZ0BybXHVmXLRU7rQNIz0g/emuRq3RhRDsyhJjbbJY6vT7j/S6fZ6exqz0NVmWnZAdP8YLMzYilnLDDBGmfyTBq4SjKCYMQ4nt+z5xkshZIqf5jqa64WNT47wx4byh8qW7pPfdI45jijyXO4ujiCzN5C5XK4OH/oB2u8v9fZdOp4+qTsnqUMpqz2hu0R3N6Y4W9NWV1FTfylDq5F7ME3IcxdKhbW/QJhrjkSo/m9nsGU2bstvtUMpdxdqNsYOCpR1IWX6B5Z1S/l/VyQZ1sp6Ql9ez5wkZohKnBa2Z4ENrxpsPLd5+6nA5sOjNfYkaBAFhcNpVrXrxy5XOWNW4urzm4vNXiTydzUmSFGVX7aUbYxuydiJMJ5LdCTKJ4LkevvDxhcB1XHlWh+K6nvxjarf1XDuskX8AtDuAlfycZiUAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tcp and udp&quot;
+        title=&quot;tcp and udp&quot;
+        src=&quot;/static/4a81b873de8c08f64e525c7736e5eb8c/c1b63/tcp-and-udp-transport-layer.png&quot;
+        srcset=&quot;/static/4a81b873de8c08f64e525c7736e5eb8c/5a46d/tcp-and-udp-transport-layer.png 300w,
+/static/4a81b873de8c08f64e525c7736e5eb8c/0a47e/tcp-and-udp-transport-layer.png 600w,
+/static/4a81b873de8c08f64e525c7736e5eb8c/c1b63/tcp-and-udp-transport-layer.png 1200w,
+/static/4a81b873de8c08f64e525c7736e5eb8c/cd78c/tcp-and-udp-transport-layer.png 1236w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Mình sẽ viết thêm 1 bài viết chi tiết hơn về chủ đề này sau. Giờ ta sẽ đi tới nhân vật chính của bài viết này.&lt;/p&gt;
 &lt;h2 id=&quot;tcpip---transmission-control-protocol&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tcpip---transmission-control-protocol&quot; aria-label=&quot;tcpip   transmission control protocol permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;TCP/IP - Transmission Control Protocol&lt;/h2&gt;
 &lt;p&gt;Đầu tiên chúng ta nói tới TCP  (&lt;strong&gt;T&lt;/strong&gt;ransmission &lt;strong&gt;C&lt;/strong&gt;ontrol &lt;strong&gt;P&lt;/strong&gt;rotocol) - có nghĩa là giao thức điều khiển truyền nhận.&lt;/p&gt;
@@ -119,7 +577,36 @@
 &lt;p&gt;Trong hình ví dụ phía trên, từ lúc bắt đầu tới lúc kết thúc roundtrip đầu tiên mất 28ms, round trip thứ 2 mất 84ms. Các round trip tiếp theo tùy số lượng dữ liệu mà kết nối vận chuyển sẽ được tăng thêm tương ứng.&lt;/p&gt;
 &lt;p&gt;Tương tự với quá trình three-way handshake, sau khi kết nối đã được thiết lập, 2 bên sẽ giao tiếp với nhau theo từng message để gửi dữ liệu cũng như xác nhận dữ liệu đã được vận chuyển thành công. Dữ liệu càng nhiều thì số lượng RTT càng cao.&lt;/p&gt;
 &lt;p&gt;Ví dụ, mình có dùng phần mềm wireshark để thử capture lại những message của TCP thì có kết quả như sau:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;./wireshark%20test.png&quot; alt=&quot;wireshark test tcp&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 914px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/e81bb36960245e115f4e33d4146a3558/076ca/wireshark-test.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAA9hAAAPYQGoP6dpAAACe0lEQVQoz1WSSW/TUBSF88db0iSOx8ROoZWQYMeGTaOIglQqIZagjpCmtR3XzvMQD+/5DfFz2rQZkJsFcHV0dTafztHVrfFy/vS0WC6Wy8WqpMXyaLAG4Xz+NJ/N55OAh3Exmz8UD+vVZp2z9acvTyenDxjzRe45Vo2X85KX+BFnz1k487PjDygcwTWBqxx//Rj+PAGLNH+GaI0RA/DbEft+ylG+2Wxc163FSYITfEw+G9TQgd5l7wx0oIzlDugY6EAL9NfZ/gE5PMBvDmdv9ef3v5bu8+Nqs9k4jlMDvh+6YR/1FaI0zWZ73Gh7wqvbesNqiEBs2A0t1Qxi6Fg3ckNOhbP0B4NsuV5VsB8GvgP6qK8RTXREGciSJ+1e7e7d7KmhKnlSN+v2SK+He/t4X83Vc3SOU1zwYjwe1zIIGaQDPFCxKgNZiZRO2hE9UQkrI/tyF3YNYhjY6OGegpRrel3Skpfctu1anMRZmPVRXyVqe9yWJpI4EZtms2W3ZF8WxkIn7fyFc+Uiv6CQUkZfagc+GIMtLNiC5EuCI+xc7tR/17e+m3b/hc/QWR7nKEeWZdXiNIYRrGqTqrYWa+JErN/Um2ZTjVUlULrZf/AlvmSIsRmramcwY5ANyEChinAvtCdtKZAaVqPltKRIanttLdN0qutEN4ghY/mKXnFSPUd1sCRJsiS7R/cmM2/SmxEc3eV31UZ3lclGJjYtam1lUjMmMc4xoaRKjqIIABBMAgJJOSs55ZxyljMYQ5QglKACFwUuOOGc8AIX0yiOplNGaZUcvUwQBNE0ipN4q2k89QM/CIMgDFzPNS3Tm3iu53oAXAxvR6YNbHs4HP4BVY1wKNmgj+EAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;wireshark test tcp&quot;
+        title=&quot;wireshark test tcp&quot;
+        src=&quot;/static/e81bb36960245e115f4e33d4146a3558/076ca/wireshark-test.png&quot;
+        srcset=&quot;/static/e81bb36960245e115f4e33d4146a3558/5a46d/wireshark-test.png 300w,
+/static/e81bb36960245e115f4e33d4146a3558/0a47e/wireshark-test.png 600w,
+/static/e81bb36960245e115f4e33d4146a3558/076ca/wireshark-test.png 914w&quot;
+        sizes=&quot;(max-width: 914px) 100vw, 914px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;h3 id=&quot;kiểm-soát-tắc-nghẽn---congestion-control&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#ki%E1%BB%83m-so%C3%A1t-t%E1%BA%AFc-ngh%E1%BA%BDn---congestion-control&quot; aria-label=&quot;kiểm soát tắc nghẽn   congestion control permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kiểm soát tắc nghẽn - Congestion control&lt;/h3&gt;
 &lt;p&gt;Việc dữ liệu đi qua các layer mạng mà không được kiểm soát có thể dẫn đến sự &lt;em&gt;tắc nghẽn&lt;/em&gt;. Điều này cũng giống như đường sá nếu không có phân làn, không có hệ thống biển báo và đèn báo ở giao lộ thì &lt;em&gt;tắc đường&lt;/em&gt; kẹt xe là chuyện gần như không thể tránh khỏi.&lt;/p&gt;
 &lt;p&gt;Tương tự, TCP cũng sẽ kiểm soát sự tắc nghẽn cho kết nối mà nó đã thành lập bằng three-way handshake. Cơ chế kiểm soát tắc nghẽn bao gồm nhân tố chính là congestion window - viết tắt là &lt;em&gt;CWND&lt;/em&gt; (tạm hiểu: cửa sổ truyền nhận dữ liệu) và 3 giai đoạn trong khái niệm congestion policy.&lt;/p&gt;
@@ -129,7 +616,38 @@
 &lt;li&gt;&lt;strong&gt;Congestion Avoidance Phase&lt;/strong&gt; -  Giai đoạn chống tắc nghẽn: Sau khi CWND đạt ngưỡng nhất định, nó sẽ tăng lên theo cấp số cộng: (+1, +2, +3…)&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Congestion Detection Phase&lt;/strong&gt; - Giai đoạn phát hiện tắc nghẽn: Nếu gặp tắc nghẽn, chẳng hạn như timeout thì tùy trường hợp sẽ điều chỉnh lại biến số cwnd và bắt đầu lại giai đoạn 1 hoặc 2.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&quot;./tcp%20slow%20start.png&quot; alt=&quot;tcp slow start&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/b26d8b550cc29f2bfca1474e2ea2356a/a878e/tcp-slow-start.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAIAAAA7N+mxAAAACXBIWXMAAAsTAAALEwEAmpwYAAABZUlEQVQoz22RTY7TQBCFfaQcLXdIzpIzECmIRdZIo4hBCBAZKU13u+3qn/prbEOM4mHEDMNb1aJe1Vf1GnklZgYARGRmIhaRqsrMrzublzaRpQ8AYoyIaAPY0OecQwhExMyI+H9zVVamqlpK6fs+5WLaePGQUo4xEtE0TfM86xPIc7PeP/i7r6aN2Hrnve+6LgGUkokohDBN0+Fw2Gw2AFBrZebmaad0Cd99dHcP/ftv4edQcy5ElFLqus5ae7lcmHm73a5Wq/1+P88zIv4xq0os9PbevjmZzzZWYWstLCqliAgu2u126/X6eDxer1ci+outIr+Geh3rDxXnnDHGuRt8CAEA2rYlolrrOI6PzMvNqsjCoroUdBsiRFRKyfn2pxCC9/58PiOivsysSTJ8MOVkyiePJ5O/tDwMIxEZY9q29Yu+L/onalVtbsPktrMQIwkuDMzsnAOAlFIp5THe52ZVrbX+BlCSKxXHEb4vAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;tcp slow start&quot;
+        title=&quot;tcp slow start&quot;
+        src=&quot;/static/b26d8b550cc29f2bfca1474e2ea2356a/c1b63/tcp-slow-start.png&quot;
+        srcset=&quot;/static/b26d8b550cc29f2bfca1474e2ea2356a/5a46d/tcp-slow-start.png 300w,
+/static/b26d8b550cc29f2bfca1474e2ea2356a/0a47e/tcp-slow-start.png 600w,
+/static/b26d8b550cc29f2bfca1474e2ea2356a/c1b63/tcp-slow-start.png 1200w,
+/static/b26d8b550cc29f2bfca1474e2ea2356a/d61c2/tcp-slow-start.png 1800w,
+/static/b26d8b550cc29f2bfca1474e2ea2356a/a878e/tcp-slow-start.png 2048w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Chúng ta có thể coi kết nối TCP như kế hoạch cho 1 đoàn người đi qua  con đường có rất nhiều làn. Để an toàn nhất, lúc đầu người ta chỉ cho mở 1 làn chạy để dành đường chạy cho các phương tiện đi tuyến khác.&lt;/p&gt;
 &lt;p&gt;Dần dà, nếu thấy đường không bị tắc nghẽn người ta sẽ cho mở dần thêm làn, và đến 1 giới hạn nào đó thì việc mở thêm làn sẽ chậm dần. Đây chính là 2 giai đoạn slow start và congestion avoidance.&lt;/p&gt;
 &lt;p&gt;Nếu mở quá nhiều làn dẫn đến việc tắc nghẽn, người ta sẽ phải hạn chế lại số làn chạy, như TCP sẽ giảm số làn còn 1 nửa, còn tốc độ mở thêm làn đường thì sẽ được quyết định tùy trường hợp. Đây chính là giai đoạn phát hiện tắc nghẽn - congestion detection phase.&lt;/p&gt;
@@ -195,7 +713,36 @@ Bên cạnh đó chúng ta phải tính thêm thời gian cho server để xử 
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;./ping%20test.png&quot; alt=&quot;ping test RTT&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1190px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d85a87b5202f6a5ae508a2b36c1fd96f/393aa/ping-test.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABk0lEQVQoz2WO224SURiF503UIkOZwkCZAq3CDHPYzASSxkTTNGm80CuNz2NM9XmqtQfk5OHaSlVaZpjpA3xmb7E3XqysvdbO//2/lt3ckGYZaZqSZRkyx0nMj9mMZJlwvbjiYvad2eUFSRqTLGOWy1j1V9dz5vPf/Px1ySJe8ObdIdrxxxOO3n9A+tlgwOnZOeeDT0ymnxlPpozGE6XhSipPpup/OBozGI44Pjnly9dvvD58iybCiKjXp7+7iysEfjek4/k4rstD28YNAho7O9S3t5VvNZpslE2KpTKGaWKUTdY3SpTMCk+fPUeTQx3fR0QRzspbTgc/ELRsm0At8BTY9QMetNvkC+vcWctx736etbyuPKcXePHqJVq74ypg2OupIQm0Oy6+ELRtGxGGKsurJVAu04vGLSyn6womu/2DAzTH8/BEl6jfV0AJdlyPIAxp2Q5BGCmQL7rqWsfzMcwKd3P/Ax892UMrV6tsbtWxGk0qNUu9q9ZfNzdr1JtNrFVXk16zKBil2wv/KV80eLy3zx8y5zUaiz/K1wAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ping test RTT&quot;
+        title=&quot;ping test RTT&quot;
+        src=&quot;/static/d85a87b5202f6a5ae508a2b36c1fd96f/393aa/ping-test.png&quot;
+        srcset=&quot;/static/d85a87b5202f6a5ae508a2b36c1fd96f/5a46d/ping-test.png 300w,
+/static/d85a87b5202f6a5ae508a2b36c1fd96f/0a47e/ping-test.png 600w,
+/static/d85a87b5202f6a5ae508a2b36c1fd96f/393aa/ping-test.png 1190w&quot;
+        sizes=&quot;(max-width: 1190px) 100vw, 1190px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;Well, các bạn có thể thấy 1 roundtrip này mất tới xấp xỉ ~&lt;strong&gt;45ms.&lt;/strong&gt; Khi mất hơn 2 lần RTT cho threeway-handshake, và nhiều lần nữa cho việc gửi và nhận dữ liệu thì thời gian phản hồi cho 1 request sẽ tăng đáng kể.
 Mình dùng tiếp curl để test thời gian phản hồi, trung bình đâu đó &lt;strong&gt;0.4s = 400ms =  ~9 lần RTT&lt;/strong&gt;. Rõ ràng thời gian phản hồi đã tăng lên rất nhiều.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;./curl%20test.png&quot; alt=&quot;curl -X GET -w &amp;#x22;total time: %{time_total}\n&amp;#x22; https://viblo.asia&quot;&gt;&lt;/p&gt;
