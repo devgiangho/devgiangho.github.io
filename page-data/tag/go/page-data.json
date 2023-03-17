@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tag/go",
+    "result": {"data":{"tag":{"name":"Go","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"Go"}},
+    "staticQueryHashes": ["2275848304","3082461530","545095672"]}
