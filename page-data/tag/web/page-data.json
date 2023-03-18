@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-tag-tsx",
+    "path": "/tag/web",
+    "result": {"data":{"tag":{"name":"Web","color":"#007acc"},"posts":{"edges":[]}},"pageContext":{"tag":"Web"}},
+    "staticQueryHashes": ["2275848304","3082461530","545095672"]}
