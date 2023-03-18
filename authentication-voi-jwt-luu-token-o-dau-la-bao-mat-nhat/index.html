@@ -410,7 +410,7 @@ Accept<span class="token punctuation">:</span> application<span class="token ope
 <p><strong>Khoan!</strong></p>
 <p>Nếu bật HttpOnly thì cookie cũng sẽ bị dính chưởng lời nguyền CSRF (<strong>Cross-Site Request Forgery</strong>)</p>
 <p>CSRF tức là request được gửi đi sẽ không phải gửi từ domain đã đăng nhập, mà là 1 domain lạ nào đó.</p>
-<p>Ví dụ bạn trang facebook-aa.com sẽ inject 1 đoạn script gửi request tới <code class="language-text">facebook.com/change-password?newPassword=ABC</code>, request này sẽ auto được lấy cookie của facebook.com từ browser.</p>
+<p>Ví dụ trang <code class="language-text">facebook-aa.com</code> sẽ inject 1 đoạn script gửi request tới <code class="language-text">facebook.com/change-password?newPassword=ABC</code>, request này sẽ auto được lấy cookie của facebook.com từ browser.</p>
 <p>Để thoát khỏi CSRF, chúng ta cần thêm 2 flag nữa, chính là <code class="language-text">SameSite=Strict</code> , flag này chỉ cho phép gửi cookie đi trên cùng 1 domain đã set mà thôi.</p>
 <p>Mà để bật SameSite strict, thì chúng ta cũng phải bật luôn flag <strong><code class="language-text">Secure</code></strong>, flag này chỉ cho phép gửi cookie đi qua kết nối HTTPS. Xem thêm tại <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite">MDN - Samesite cookie flag</a></p>
 <p>Nhược điểm của việc đặt same-site chính là không bật được tính năng cross-site như social login các thứ cần kết nối tới 1 service 3rd party.</p>
