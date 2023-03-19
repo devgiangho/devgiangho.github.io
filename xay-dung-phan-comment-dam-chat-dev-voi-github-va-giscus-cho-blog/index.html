@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.302460ce1a093cdb4f96.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#f8f8f2;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;text-shadow:0 1px rgba(0,0,0,.3);white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{border-radius:.3em;margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#272822}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#f8f8f2}.namespace{opacity:.7}.token.constant,.token.deleted,.token.property,.token.symbol,.token.tag{color:#f92672}.token.boolean,.token.number{color:#ae81ff}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#a6e22e}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url,.token.variable{color:#f8f8f2}.token.atrule,.token.attr-value,.token.class-name,.token.function{color:#e6db74}.token.keyword{color:#66d9ef}.token.important,.token.regex{color:#fd971f}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}</style><meta name="generator" content="Gatsby 4.0.1"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><script>
+  
+  function gaOptout(){document.cookie=disableStr+'=true; expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/',window[disableStr]=!0}var gaProperty='UA-149502908-1',disableStr='ga-disable-'+gaProperty;document.cookie.indexOf(disableStr+'=true')>-1&&(window[disableStr]=!0);
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-149502908-1', 'auto', {});
+      ga('set', 'anonymizeIp', true);
+      
+      
+      
+      
+      }</script><title data-react-helmet="true">Xây dựng phần comment đậm chất dev với github và giscus cho blog - Dev Giang Hồ - Blog for Devs</title><meta data-react-helmet="true" name="description" content="Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi."/><meta data-react-helmet="true" name="og:title" content="Xây dựng phần comment đậm chất dev với github và giscus cho blog - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="og:type" content="website"/><meta data-react-helmet="true" name="og:description" content="Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi."/><meta data-react-helmet="true" name="og:url" content="https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog"/><meta data-react-helmet="true" name="twitter:label1" content="Written by"/><meta data-react-helmet="true" name="twitter:data1" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:card" content="summary"/><meta data-react-helmet="true" name="twitter:creator" content="Kiên Đinh"/><meta data-react-helmet="true" name="twitter:title" content="Xây dựng phần comment đậm chất dev với github và giscus cho blog - Dev Giang Hồ - Blog for Devs"/><meta data-react-helmet="true" name="twitter:description" content="Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi."/><meta data-react-helmet="true" name="keywords" content="JavaScript, .NET, Go, NodeJs, Vạn Vật, Web"/><meta data-react-helmet="true" name="article:published_time" content="2023-03-19T09:47:56.476Z"/><meta data-react-helmet="true" name="article:modified_time" content="2023-03-19T09:47:56.476Z"/><meta data-react-helmet="true" name="twitter:label2" content="Filed under"/><meta data-react-helmet="true" name="twitter:data2" content="Web"/><meta data-react-helmet="true" name="og:image" content="https://devgiangho.github.io//static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png"/><meta data-react-helmet="true" name="twitter:image" content="https://devgiangho.github.io//static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png"/><script data-react-helmet="true" type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "Article",
+          "author": {
+            "@type": "Person",
+            "name": "Kiên Đinh"
+          },
+          "keywords": "Web",
+          "headline": "Xây dựng phần comment đậm chất dev với github và giscus cho blog - Dev Giang Hồ - Blog for Devs",
+          "url": "https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog",
+          "datePublished": "2023-03-19T09:47:56.476Z",
+          "datePublished": "2023-03-19T09:47:56.476Z",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://devgiangho.github.io//static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png",
+            "width": "1000",
+            "height": "520"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Dev Giang Hồ - Blog for Devs"
+          },
+          "description": "Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi.",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://devgiangho.github.io"
+          }
+        }
+      </script><style data-styled="" data-styled-version="5.3.3">html{line-height:1.15;-webkit-text-size-adjust:100%;}/*!sc*/
+body{margin:0;}/*!sc*/
+main{display:block;}/*!sc*/
+h1{font-size:2em;margin:0.67em 0;}/*!sc*/
+hr{box-sizing:content-box;height:0;overflow:visible;}/*!sc*/
+pre{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+a{background-color:transparent;}/*!sc*/
+abbr[title]{border-bottom:none;-webkit-text-decoration:underline;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted;}/*!sc*/
+b,strong{font-weight:bolder;}/*!sc*/
+code,kbd,samp{font-family:monospace,monospace;font-size:1em;}/*!sc*/
+small{font-size:80%;}/*!sc*/
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}/*!sc*/
+sub{bottom:-0.25em;}/*!sc*/
+sup{top:-0.5em;}/*!sc*/
+img{border-style:none;}/*!sc*/
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}/*!sc*/
+button,input{overflow:visible;}/*!sc*/
+button,select{text-transform:none;}/*!sc*/
+button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button;}/*!sc*/
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0;}/*!sc*/
+button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText;}/*!sc*/
+fieldset{padding:0.35em 0.75em 0.625em;}/*!sc*/
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal;}/*!sc*/
+progress{vertical-align:baseline;}/*!sc*/
+textarea{overflow:auto;}/*!sc*/
+[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0;}/*!sc*/
+[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto;}/*!sc*/
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}/*!sc*/
+[type="search"]::-webkit-search-decoration{-webkit-appearance:none;}/*!sc*/
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit;}/*!sc*/
+details{display:block;}/*!sc*/
+summary{display:list-item;}/*!sc*/
+template{display:none;}/*!sc*/
+[hidden]{display:none;}/*!sc*/
+html{box-sizing:border-box;background-color:#fafafa;}/*!sc*/
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;line-height:1.9em;}/*!sc*/
+*{box-sizing:border-box;}/*!sc*/
+h1,h2,h3,h4,h5,h6{outline:none;}/*!sc*/
+a{color:#000;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.gatsby-highlight{max-width:100% !important;}/*!sc*/
+.gatsby-highlight-code-line{background-color:#353631;display:block;margin-right:-1em;margin-left:-1em;padding-right:1em;padding-left:0.75em;}/*!sc*/
+.interactive-gif .embedded{position:relative;width:100%;height:auto;}/*!sc*/
+.interactive-gif .loading,.interactive-gif .still-container,.interactive-gif .gif-container{position:absolute;top:0;width:100%;height:100%;}/*!sc*/
+.interactive-gif .still,.interactive-gif .gif{width:100%;height:100%;cursor:pointer;}/*!sc*/
+.interactive-gif .loading .indicator{position:absolute;bottom:0;left:0;width:80px;-webkit-filter:contrast(0.5);filter:contrast(0.5);}/*!sc*/
+.interactive-gif .still-container .play{cursor:pointer;-webkit-filter:grayscale(100%);filter:grayscale(100%);width:20%;position:absolute;opacity:0.9;left:50%;top:50%;-webkit-transform:translateX(-50%) translateY(-50%);-ms-transform:translateX(-50%) translateY(-50%);transform:translateX(-50%) translateY(-50%);}/*!sc*/
+.interactive-gif .caption{font-size:90%;font-style:italic;}/*!sc*/
+.interactive-gif .placeholder{-webkit-filter:grayscale(100%);filter:grayscale(100%);text-align:center;}/*!sc*/
+.interactive-gif .placeholder img{width:200px;display:none;}/*!sc*/
+article code:not(pre > code){border:0.1rem solid rgba(0,0,0,0.1);font-weight:300;border-radius:0.25rem;background-color:rgb(245 245 245) !important;text-shadow:none !important;padding-top:0.2rem !important;padding-bottom:0.1rem !important;padding-left:0.125rem !important;padding-right:0.125rem !important;color:rgb(11 11 11) !important;}/*!sc*/
+data-styled.g2[id="sc-global-jZDdyM1"]{content:"sc-global-jZDdyM1,"}/*!sc*/
+.hhzXsP{width:1260px;margin-left:auto;margin-right:auto;max-width:100%;}/*!sc*/
+@media (max-width:1300px){.hhzXsP{padding:0 20px;}}/*!sc*/
+data-styled.g3[id="common__Container-sc-yvdkhc-0"]{content:"hhzXsP,"}/*!sc*/
+.eBjOxQ{z-index:1000;background-color:#20232a;position:-webkit-sticky;position:sticky;top:0;box-shadow:0 0 3px rgba(0,0,0,.03),0 3px 46px rgba(0,0,0,.07);}/*!sc*/
+data-styled.g5[id="style__NavContainer-sc-jhe81k-0"]{content:"eBjOxQ,"}/*!sc*/
+.hRmTxB{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:relative;}/*!sc*/
+data-styled.g6[id="style__Nav-sc-jhe81k-1"]{content:"hRmTxB,"}/*!sc*/
+.kkNwJo{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:100%;height:70px;white-space:nowrap;}/*!sc*/
+@media (max-width:576px){.kkNwJo{width:90%;}}/*!sc*/
+data-styled.g7[id="style__NavWrapper-sc-jhe81k-2"]{content:"kkNwJo,"}/*!sc*/
+.cPsfUr{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;}/*!sc*/
+@media (max-width:576px){.cPsfUr{width:80%;overflow-x:auto;overflow-y:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);mask-image:linear-gradient(to right,transparent,#000 25px,#000 90%,transparent);}}/*!sc*/
+.jPyOnZ{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;list-style-type:none;margin:0;padding:0;}/*!sc*/
+data-styled.g8[id="style__NavMenu-sc-jhe81k-3"]{content:"cPsfUr,jPyOnZ,"}/*!sc*/
+.fPrbPq{cursor:pointer;display:inline-block;border:0;background:transparent;outline:none;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g9[id="style__NavMenuItem-sc-jhe81k-4"]{content:"fPrbPq,"}/*!sc*/
+.bdMJer{color:#fff;opacity:.8;padding:16px;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.bdMJer:hover{opacity:1;}/*!sc*/
+data-styled.g10[id="style__NavLink-sc-jhe81k-5"]{content:"bdMJer,"}/*!sc*/
+.dSpRmA{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;position:relative;}/*!sc*/
+data-styled.g11[id="style__SearchContainer-sc-jhe81k-6"]{content:"dSpRmA,"}/*!sc*/
+.cbBsOC{cursor:pointer;color:#fff;opacity:.8;background:none;outline:none;border:0;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.cbBsOC:hover{opacity:1;}/*!sc*/
+data-styled.g12[id="style__ToggleSearchButton-sc-jhe81k-7"]{content:"cbBsOC,"}/*!sc*/
+.jIujQe{max-height:30px;width:30px;margin-right:45px;}/*!sc*/
+@media (max-width:576px){.jIujQe{margin-right:15px;}}/*!sc*/
+data-styled.g20[id="logo__LogoImage-sc-1ta2zdq-0"]{content:"jIujQe,"}/*!sc*/
+.dYGSok{-webkit-align-self:center;-ms-flex-item-align:center;align-self:center;height:30px;}/*!sc*/
+data-styled.g21[id="logo__HomeLink-sc-1ta2zdq-1"]{content:"dYGSok,"}/*!sc*/
+.hNmZFn{max-width:100%;padding:10px 0;z-index:700;position:relative;font-size:.9em;margin-top:50px;}/*!sc*/
+data-styled.g27[id="style__StyledFooter-sc-1bbyksd-0"]{content:"hNmZFn,"}/*!sc*/
+.kRFmqs{text-align:right;line-height:1.1em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}/*!sc*/
+data-styled.g28[id="style__FooterContainer-sc-1bbyksd-1"]{content:"kRFmqs,"}/*!sc*/
+.eFaQjI{margin:0;}/*!sc*/
+data-styled.g29[id="style__Copyright-sc-1bbyksd-2"]{content:"eFaQjI,"}/*!sc*/
+.hFClol{margin:0;opacity:.8;font-size:.8em;}/*!sc*/
+.hFClol a{font-weight:bold;-webkit-text-decoration:none;text-decoration:none;color:#000;}/*!sc*/
+.hFClol a:hover{-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g30[id="style__DesignBy-sc-1bbyksd-3"]{content:"hFClol,"}/*!sc*/
+.hCiwIZ ul{list-style-type:none;margin:0;padding:0;}/*!sc*/
+.hCiwIZ li{display:inline-block;margin-right:25px;}/*!sc*/
+.hCiwIZ li:last-child{margin-right:0;}/*!sc*/
+data-styled.g31[id="style__StyledNav-sc-1bbyksd-4"]{content:"hCiwIZ,"}/*!sc*/
+.RdnGO{color:#000;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+data-styled.g33[id="style__FooterMenuLink-sc-1bbyksd-6"]{content:"RdnGO,"}/*!sc*/
+.fZaPhp .toc-list{list-style-type:none;margin:0;padding:0;}/*!sc*/
+.fZaPhp .toc-list .toc-list{padding-left:17px;padding-top:10px;}/*!sc*/
+.fZaPhp .toc-list-item{line-height:1.2em;padding-bottom:10px;}/*!sc*/
+.fZaPhp .toc-list-item:last-child{padding-bottom:0;}/*!sc*/
+.fZaPhp .toc-link{color:#808080;-webkit-text-decoration:none;text-decoration:none;}/*!sc*/
+.fZaPhp .is-active-link{color:#404040;font-weight:700;}/*!sc*/
+data-styled.g34[id="toc__StyledNav-sc-1rcn1mg-0"]{content:"fZaPhp,"}/*!sc*/
+.eQlUnY{position:-webkit-sticky;position:sticky;height:5px;top:70px;background-color:#007acc;z-index:500;}/*!sc*/
+data-styled.g35[id="reading-progress__ReadingProgressBar-sc-1h92jbi-0"]{content:"eQlUnY,"}/*!sc*/
+.eWZpEr{list-style-type:none;margin:0;padding:0;}/*!sc*/
+data-styled.g36[id="social-channel-list__StyledSocialChannels-sc-hb4cd6-0"]{content:"eWZpEr,"}/*!sc*/
+.dIYGZM{display:inline-block;margin:0 10px;font-size:1.6em;opacity:.7;-webkit-transition:opacity .5s;transition:opacity .5s;}/*!sc*/
+.dIYGZM:hover{opacity:1;}/*!sc*/
+data-styled.g37[id="social-channel-list__StyledSocialChannel-sc-hb4cd6-1"]{content:"dIYGZM,"}/*!sc*/
+.fYracG{max-width:55px;border-radius:100%;}/*!sc*/
+data-styled.g38[id="avatar__StyledAvatar-sc-1b55w7o-0"]{content:"fYracG,"}/*!sc*/
+.buiIfq{margin:auto;text-align:center;width:100%;}/*!sc*/
+data-styled.g39[id="bio__StyledBio-sc-cy4lz8-0"]{content:"buiIfq,"}/*!sc*/
+.iEPaOA{margin:10px 0 13px;}/*!sc*/
+.iEPaOA a{color:#000;-webkit-text-decoration:underline;text-decoration:underline;}/*!sc*/
+data-styled.g40[id="bio__AuthorDescription-sc-cy4lz8-1"]{content:"iEPaOA,"}/*!sc*/
+.HeSmV{margin:10px;}/*!sc*/
+data-styled.g41[id="bio__AuthorName-sc-cy4lz8-2"]{content:"HeSmV,"}/*!sc*/
+.gemKO{margin:2rem auto;max-width:800px;}/*!sc*/
+@media (max-width:768px){.gemKO{max-width:95%;}}/*!sc*/
+data-styled.g42[id="comments__PostComment-sc-188g6ow-0"]{content:"gemKO,"}/*!sc*/
+.fwNAhO{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:0 !important;}/*!sc*/
+data-styled.g43[id="postStyle__PostContainer-sc-1q9n7ky-0"]{content:"fwNAhO,"}/*!sc*/
+.hkHhPL{min-width:255px;max-width:225px;-webkit-transition:opacity 0.5s;transition:opacity 0.5s;}/*!sc*/
+@media (max-width:1300px){.hkHhPL{position:fixed;display:none;z-index:1000;background-color:#fff;width:100% !important;max-width:100%;padding:0 20px;margin-top:-5px;height:calc(100vh - 70px);}}/*!sc*/
+data-styled.g44[id="postStyle__LeftSidebar-sc-1q9n7ky-1"]{content:"hkHhPL,"}/*!sc*/
+.jCvNBY{margin-top:-5px;border-right:1px #e5eff5 solid;border-left:1px #e5eff5 solid;background-color:#fff;box-shadow:0 0 3px rgba(0,0,0,0.03),0 3px 46px rgba(0,0,0,0.1);z-index:10;width:1035px;max-width:100%;}/*!sc*/
+.jCvNBY li > a,.jCvNBY p > a{color:#0054aa;border-bottom:2px #0054aa solid;overflow-wrap:break-word;}/*!sc*/
+.jCvNBY pre{margin:30px 0;}/*!sc*/
+.jCvNBY blockquote{border-left:4px #a4cbb8 solid;background-color:#fafafa;margin:30px 0;padding:5px 20px;border-radius:0.3em;}/*!sc*/
+.jCvNBY h1,.jCvNBY h2,.jCvNBY h3,.jCvNBY h4,.jCvNBY h5,.jCvNBY h6{-webkit-scroll-margin-top:20px;-moz-scroll-margin-top:20px;-ms-scroll-margin-top:20px;scroll-margin-top:20px;}/*!sc*/
+.jCvNBY h3::before,.jCvNBY h4::before,.jCvNBY h5::before,.jCvNBY h6::before{display:block;content:" ";visibility:hidden;}/*!sc*/
+.jCvNBY h2{border-top:1px solid #ececec;margin-top:44px;padding-top:15px;line-height:1.2;}/*!sc*/
+.jCvNBY h2 .anchor.before{padding-top:10px;}/*!sc*/
+.jCvNBY code[class*="language-text"]{padding:5px;}/*!sc*/
+.jCvNBY p > img{max-width:100%;border-radius:0.3em;margin:30px 0;}/*!sc*/
+.jCvNBY hr{border-top:1px solid #ececec;border-bottom:0;margin-top:44px;margin-bottom:40px;}/*!sc*/
+.jCvNBY .gatsby-resp-image-link{margin:30px 0;max-width:100%;}/*!sc*/
+.jCvNBY .gatsby-resp-image-link .gatsby-resp-image-image{border-radius:0.3em;}/*!sc*/
+.jCvNBY table{margin:0 auto;}/*!sc*/
+.jCvNBY table{color:#333;background:white;border:1px solid grey;font-size:12pt;border-collapse:collapse;}/*!sc*/
+.jCvNBY table thead th,.jCvNBY table tfoot th{color:#474747;background:rgb(102 102 102 / 10%);}/*!sc*/
+.jCvNBY table caption{padding:.5em;}/*!sc*/
+.jCvNBY table th,.jCvNBY table td{padding:.5em;border:1px solid lightgrey;}/*!sc*/
+.jCvNBY [data-table-theme*=zebra] tbody tr:nth-of-type(odd){background:rgba(0,0,0,.05);}/*!sc*/
+.jCvNBY [data-table-theme*=zebra][data-table-theme*=dark] tbody tr:nth-of-type(odd){background:rgba(255,255,255,.05);}/*!sc*/
+.jCvNBY [data-table-theme*=dark]{color:#ddd;background:#333;font-size:12pt;border-collapse:collapse;}/*!sc*/
+.jCvNBY [data-table-theme*=dark] thead th,.jCvNBY [data-table-theme*=dark] tfoot th{color:#aaa;background:rgba(0255,255,255,.15);}/*!sc*/
+.jCvNBY [data-table-theme*=dark] caption{padding:.5em;}/*!sc*/
+.jCvNBY [data-table-theme*=dark] th,.jCvNBY [data-table-theme*=dark] td{padding:.5em;border:1px solid grey;}/*!sc*/
+data-styled.g45[id="postStyle__PostContent-sc-1q9n7ky-2"]{content:"jCvNBY,"}/*!sc*/
+.chUzhL{position:-webkit-sticky;position:sticky;top:70px;padding:40px 30px 40px 0;}/*!sc*/
+data-styled.g46[id="postStyle__TocWrapper-sc-1q9n7ky-3"]{content:"chUzhL,"}/*!sc*/
+.emniPl{padding:40px;}/*!sc*/
+@media (max-width:576px){.emniPl{padding:20px;}}/*!sc*/
+data-styled.g47[id="postStyle__PostHeader-sc-1q9n7ky-4"]{content:"emniPl,"}/*!sc*/
+.hPgZxr{border-radius:0;}/*!sc*/
+@media (max-width:1300px){.hPgZxr{margin-left:-1px;margin-right:-1px;}}/*!sc*/
+data-styled.g48[id="postStyle__FeaturedImage-sc-1q9n7ky-5"]{content:"hPgZxr,"}/*!sc*/
+.fuGkXD{padding:40px;}/*!sc*/
+@media (max-width:576px){.fuGkXD{padding:20px;}}/*!sc*/
+data-styled.g49[id="postStyle__StyledPost-sc-1q9n7ky-6"]{content:"fuGkXD,"}/*!sc*/
+.dvkpbj{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;opacity:0.8;font-size:0.9em;}/*!sc*/
+data-styled.g50[id="postStyle__PostMeta-sc-1q9n7ky-7"]{content:"dvkpbj,"}/*!sc*/
+.jXQCDR{margin:0;padding:0;line-height:1.2;}/*!sc*/
+data-styled.g51[id="postStyle__PostTitle-sc-1q9n7ky-8"]{content:"jXQCDR,"}/*!sc*/
+.kGeBkw{background-color:#fafafa;font-size:0.8em;color:#666;padding:40px;line-height:1em;}/*!sc*/
+.kGeBkw p{margin:5px 0;}/*!sc*/
+data-styled.g52[id="postStyle__PostFooter-sc-1q9n7ky-9"]{content:"kGeBkw,"}/*!sc*/
+.bsOVgh{color:#000 !important;-webkit-text-decoration:none;text-decoration:none;border-bottom:0 !important;}/*!sc*/
+data-styled.g53[id="postStyle__FooterTagLink-sc-1q9n7ky-10"]{content:"bsOVgh,"}/*!sc*/
+.hnKtRH{background-color:#fff;border-top:1px #e5eff5 solid;border-bottom:1px #e5eff5 solid;z-index:700;position:relative;padding:40px;}/*!sc*/
+data-styled.g54[id="postStyle__PostAddition-sc-1q9n7ky-11"]{content:"hnKtRH,"}/*!sc*/
+.bIQtHU{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}/*!sc*/
+data-styled.g55[id="postStyle__PostAdditionContent-sc-1q9n7ky-12"]{content:"bIQtHU,"}/*!sc*/
+.cXvylF{width:50%;margin:auto;}/*!sc*/
+@media (max-width:576px){.cXvylF{width:100%;}}/*!sc*/
+data-styled.g56[id="postStyle__BioWrapper-sc-1q9n7ky-13"]{content:"cXvylF,"}/*!sc*/
+.kxysTe{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;padding-top:1em;position:fixed;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;right:20px;bottom:20px;border-radius:100%;box-shadow:0 0 3px rgba(0,0,0,0.03),0 3px 46px rgba(0,0,0,0.1);border:0;z-index:5000;width:50px;height:50px;background-color:#20232a;color:#fff;outline:none;}/*!sc*/
+@media (min-width:1300px){.kxysTe{display:none;}}/*!sc*/
+data-styled.g57[id="postStyle__ToggleTocButton-sc-1q9n7ky-14"]{content:"kxysTe,"}/*!sc*/
+.dtvogi{margin-top:1rem;margin-bottom:1rem;padding-left:1rem;padding-right:1rem;overflow:auto;}/*!sc*/
+data-styled.g58[id="style__LinkedPostWrapper-sc-cu5n11-0"]{content:"dtvogi,"}/*!sc*/
+.ftEWCi{display:inline-block;background-color:#ffff;border:1px solid #ddd;border-radius:3px;padding:5px 10px;font-size:16px;-webkit-text-decoration:none;text-decoration:none;color:#333;}/*!sc*/
+.ftEWCi:hover{background-color:#ddd;}/*!sc*/
+data-styled.g59[id="style__LinkedPost-sc-cu5n11-1"]{content:"ftEWCi,"}/*!sc*/
+.izXkvh{float:left;}/*!sc*/
+.izXkvh .sublabel{text-align:left;}/*!sc*/
+data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"izXkvh,"}/*!sc*/
+</style><link rel="sitemap" type="application/xml" href="/sitemap/sitemap-index.xml"/><link rel="icon" href="/favicon-32x32.png?v=7e55704418c2d530fda33cc8a39a3395" type="image/png"/><link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#a4cbb8"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=7e55704418c2d530fda33cc8a39a3395"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=7e55704418c2d530fda33cc8a39a3395"/><style type="text/css">
+    .anchor.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor svg,
+    h2 .anchor svg,
+    h3 .anchor svg,
+    h4 .anchor svg,
+    h5 .anchor svg,
+    h6 .anchor svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor svg,
+    h2:hover .anchor svg,
+    h3:hover .anchor svg,
+    h4:hover .anchor svg,
+    h5:hover .anchor svg,
+    h6:hover .anchor svg,
+    h1 .anchor:focus svg,
+    h2 .anchor:focus svg,
+    h3 .anchor:focus svg,
+    h4 .anchor:focus svg,
+    h5 .anchor:focus svg,
+    h6 .anchor:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 100)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml"/><link as="script" rel="preload" href="/webpack-runtime-db730b862af8648a5897.js"/><link as="script" rel="preload" href="/framework-b5eed8d75fbbb74c9d3b.js"/><link as="script" rel="preload" href="/app-fb306ba013da5e64be47.js"/><link as="script" rel="preload" href="/1bfc9850-f1b2044ff811313c5a48.js"/><link as="script" rel="preload" href="/commons-9754e5915e5f58c0d66e.js"/><link as="script" rel="preload" href="/component---src-templates-post-tsx-462716a3d80ecf3b1b30.js"/><link as="fetch" rel="preload" href="/page-data/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/1116962356.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/2275848304.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3082461530.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/3089453468.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/sq/d/545095672.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="style__NavContainer-sc-jhe81k-0 eBjOxQ"><div class="common__Container-sc-yvdkhc-0 style__Nav-sc-jhe81k-1 hhzXsP hRmTxB"><a class="logo__HomeLink-sc-1ta2zdq-1 dYGSok" href="/"><div class="logo__LogoImage-sc-1ta2zdq-0 jIujQe gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:30px;height:30px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ANXT1Lq4ucG/wMzKzNHP0dPR0tTS09nX2N3b3N7c3eLg4OPh4vLw8HJxd0BDSVxfY6Glo5KYlpGVlJaamQDPzc6+vL3Fw8TS0NHZ19jb2dre3Nzi4ODl4uTn5ebg3t/NzM7m5eZhYGdBRElbXmKQl5SNlJKWm5qTl5YAyMbHurm5w8HCzcvMwcDCy8rLz87O1dTU2tjY09LTe32BS0tSYWBnMzI6MDI4YmZok5iXkJSUmJybkZaUAMG/wLKysr6+vsXDxKCiori3uLa1t7y7vby9vLa4t1JVWgsLFAsKEg4OFg0NFT0/RY6Tk5yfnqGiopygnwC0srOkpqStr666urq1trXAv7/AwMDCwsLEw8PKycmpqqtGSlATFBwSExkQEBYLDBJdYWSkqKago6KfoqEAyMfHqqurubi4vr2+vLy8t7i4u7u7urq6rKytx8XGpqmnc31+JSgvDAwSERIXBwgONzo9oKWjqampsrKxANPS0rq5ucbFxcbExcTCwsG/v8XDxMTCwqysrqytr32Cg1NdYC4xORAQGBESFwgIDi8yNpSZmKepp4SIiAC6urupqqqxsrG3t7a1tbO9vLzBvsDTz9CXm5ygoaNlamw9RUgmKTEREhoQERYDBAlDR0qVnJqVmplrbnEAZmxuXmVoV15hcXd6hIeJhIiKf4KDmpudh4yNlpqZeH+AQUhNIygwKCsyEhMYJCcrbnR1iI+MjZORlJiXAH2EhXmBgWdwcamurre4uJudnZaZmampqoSKi3aAgF1maENKUEtSV1ddYCQkLH+EhYqQj5OYlYSKinyDgwCCi4l4gYCKkJDT0dKqrKueoKGhoqO0trWHjY1SW15ES1E9REs4PkRFSU0zNT6gpaSbn56eoJ+PlJOEi4kAhYuLfoWFt7q50s/QrKyteX+AeH1+jpKTZ2tvXWVoQEdNNDpBNDlAZWltSUxSnKCfo6WkqaqppaemnqGgAKipqYOGh6uqrtHP0KWmpYOIiIaLioqPkF5jZkVMUURKUSAjLVBVV3d/gHyBgZ+ioaurq6urq62traGjowB/gIQGCROcnaDKycqMkJF8gIOTmJeDh4ZscXI6QUkwNj9ESE6cnZ2BhYd2fX6YnZu3trevr6+xsbG2trYAIiUtGhsju7q929jZnJ6eam5xhIeHpqimhouKXGFkYmZsf4KFh4qLfoaGXGRnbXF1m56dlJeXpKSmr6+vAAYHEklJT87Mzr+9vZ+ioGxydGFlaZKWloKGhoCEhJOXl3V8fXaAgHd/f1piZiMoMSUqMSswODU6Qjk+RQAGBhB2dXzi4OCsrKyCiopSXF9ka25xd3lscHVxd3hwdnZpcHFtd3deZmlNVFoxNT4sLzkrMDgsMDkrMToAEREYi4qN3Nraq6ysfYSER05UR0xTYGhrY2ttWmFkU1pdUVpcNjtCMDc9MTU8LTE7MTU+NDlCNjtEO0FJADY2PKKjpLW1trm6uX+FhTg+RSwxOz1ES0RLUEpSV0ZOUzQ5QD1ASIWHind5fVFUWjI3PzI3QEROUjtDSABlZWnR0NGNkJKxsbKvsLCNkZBna245PkQ1OUI3PEMjJi8dHSRxcnbT0tPb2drRz9DMy83Hxce7vLyTl5hH1mZLeDDpeAAAAABJRU5ErkJggg==" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/logo.png 2x" /><img loading="lazy" width="30" height="30" srcset="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/ad39b/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/183c2/logo.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/91664/logo.png" alt="Dev Giang Hồ - Blog for Devs" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div></a><div class="style__NavWrapper-sc-jhe81k-2 kkNwJo"><ul class="style__NavMenu-sc-jhe81k-3 cPsfUr"><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><a class="style__NavLink-sc-jhe81k-5 bdMJer" href="/">Home</a></li><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><a class="style__NavLink-sc-jhe81k-5 bdMJer" href="/about-me">About me</a></li></ul><div class="style__SearchContainer-sc-jhe81k-6 dSpRmA"><ul class="style__NavMenu-sc-jhe81k-3 jPyOnZ"><li class="style__NavMenuItem-sc-jhe81k-4 fPrbPq"><button role="button" aria-label="Toggle search" class="style__ToggleSearchButton-sc-jhe81k-7 cbBsOC"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></button></li></ul></div></div></div></div><main><div style="width:0%" color="#007acc" class="reading-progress__ReadingProgressBar-sc-1h92jbi-0 eQlUnY"></div><div class="common__Container-sc-yvdkhc-0 postStyle__PostContainer-sc-1q9n7ky-0 hhzXsP fwNAhO"><div class="postStyle__LeftSidebar-sc-1q9n7ky-1 hkHhPL"><div class="postStyle__TocWrapper-sc-1q9n7ky-3 chUzhL"><nav class="toc__StyledNav-sc-1rcn1mg-0 fZaPhp toc"></nav></div></div><button role="button" aria-label="Toggle table of contents" class="postStyle__ToggleTocButton-sc-1q9n7ky-14 kxysTe"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M432 416H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-128H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg></button><div class="postStyle__PostContent-sc-1q9n7ky-2 jCvNBY"><article class="post"><header class="postStyle__PostHeader-sc-1q9n7ky-4 emniPl"><section class="postStyle__PostMeta-sc-1q9n7ky-7 dvkpbj"><a href="/tag/web">Web</a><time dateTime="2023-03-19T09:47:56.476Z">19 March, 2023</time></section><h1 class="postStyle__PostTitle-sc-1q9n7ky-8 jXQCDR">Xây dựng phần comment đậm chất dev với github và giscus cho blog</h1></header><div class="postStyle__FeaturedImage-sc-1q9n7ky-5 hPgZxr gatsby-image-wrapper" style="position:relative;overflow:hidden"><div aria-hidden="true" style="width:100%;padding-bottom:52.5%"></div><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVQoz32S6W4TMRRG8wpQiWYmyWzePfYsaZMQkrZUrZB4/wc6yE5TKEj8OLr3szWf7zKLtTTU9xP1FKiE4tOXgs+3ZebmdvVHXr7nV32zTKxyzOfLFYtkYnxA2x7leqTrUT4RMCGi+4BO933I5ylXV+16hPFo19Noh/CRRVm3ubKd7PHHAfc44Y8jZh9wpxF/GnHHAb2PuPOIPQ4ZcxxQu0BlFGXVsKpbktdiVXfUUnNSkfP9xDxHurmnGR1FJyjajrUQrDtxiUKwkfJNy6yTx6q5sEjOG6l4UJEXP7M7jOwfZu52kaG39M7kl//H1Swb5palJghLVBZnNd5oequIvSF4k9spqub947Jpf/OX+WLTCpT1bDpBowyNNKyFQsWJjdCZNGNpfR5NrqQVH6r6UOGqk5RCU2jPxkUq09N0lskNSGUQxtIIlam6NK/LAv7hari2nnB6JL78RJ++0x6e8HdPRBHZKEcbJyo/cNtplglhWErLUlx0IQyFtJRpFLllKTm//uD8/Mr88IzYn9HzATftkeMd7bDNpm0YEcOWLs6ZJoz5vrIhP5ArTIZ5/WGi2J1Z33+jnr6izJZD63HWo7ynfmu5lZpG6hxrIXOs0sjSf5iX1fELx3U56DUEGR8AAAAASUVORK5CYII=" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/d1ab3650b6cce38bb66e0a9e7e04b751/dc47e/gatsby-cli-tao-bai-viet.png 200w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/9f2d5/gatsby-cli-tao-bai-viet.png 400w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png 800w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/4d7c3/gatsby-cli-tao-bai-viet.png 976w" sizes="(max-width: 800px) 100vw, 800px" /><img loading="lazy" sizes="(max-width: 800px) 100vw, 800px" srcset="/static/d1ab3650b6cce38bb66e0a9e7e04b751/dc47e/gatsby-cli-tao-bai-viet.png 200w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/9f2d5/gatsby-cli-tao-bai-viet.png 400w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png 800w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/4d7c3/gatsby-cli-tao-bai-viet.png 976w" src="/static/d1ab3650b6cce38bb66e0a9e7e04b751/90823/gatsby-cli-tao-bai-viet.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><section class="postStyle__StyledPost-sc-1q9n7ky-6 fuGkXD post"><p>Mấy nay mình quay lại viết blog, thế là phát hiện ra cái blog build bằng Gatsby của mình cũng đã được hơn 3 năm tuổi, có nhiều thứ cũ kĩ quá thì chúng ta cũng nên update, và blog cũng vậy.</p>
+<p>Gatsby là một static site generator (SSG) rất nổi tiếng từ hồi 3-4 năm trước, với hơn 50k stars trên github, điểm mạnh là nhanh gọn, và có thể host free trên github page hoặc netlify nên mình đã quyết định chọn em nó.</p>
+<h2 id="blog-của-minh" style="position:relative;"><a href="#blog-c%E1%BB%A7a-minh" aria-label="blog của minh permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blog của mình</h2>
+<p>Mình thấy việc học bằng cách dạy lại cho người khác, cũng như tổng hợp lại kiến thức của mình để chia sẻ rất hiệu quả, cho nên mình quyết định làm video và viết blog.</p>
+<h3 id="minh-da-xay-dựng-blog-nay-thế-nao" style="position:relative;"><a href="#minh-da-xay-d%E1%BB%B1ng-blog-nay-th%E1%BA%BF-nao" aria-label="minh da xay dựng blog nay thế nao permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mình đã xây dựng blog này thế nào?</h3>
+<p>Vào năm 2019, kiến thức về React của mình hầu như bằng 0, cho nên mình lấy luôn một starter theme và chỉnh sửa đôi chút, sau đó chỉ focus vào việc viết bài mà thôi.</p>
+<p>Nhưng rồi sau đó khi lượng bài viết càng nhiều, thì vấn đề nó lại tòi ra.</p>
+<p>Một vấn đề mình fix được chính là tối ưu hóa lại quá trình tạo bài mới bằng việc tạo 1 CLI tool.</p>
+<p>Để mỗi lần tạo bài viết cho gatsby thì không cần phải lặp lại quá trình này:</p>
+<ol>
+<li>Vào folder content tạo 1 folder mới với slash gạch ngang dạng “bai-viet-moi”</li>
+<li>Mở folder “bai-viet-moi” để tạo file index.md</li>
+<li>Mở file markdown vừa tạo, thêm phần frontmatter cho nó như tiêu đề, path, ngày tạo bla blo…</li>
+</ol>
+<p>Nói chung là lằng nhằng!</p>
+<p>Mình viết 1 command tool với nodejs, chỉ cần 2 dòng gõ tiêu đề và tag, CLI tự động tạo luôn các phần còn lại:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 976px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d1ab3650b6cce38bb66e0a9e7e04b751/798d4/gatsby-cli-tao-bai-viet.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 52.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAABx0lEQVQoz3WSaU4bQRBGfYUEKXjG9my9b7MAtuPYQBAoUu5/oBdN2ywRyY+nWlpd9VV1L+q7kXqMVELx5VvB1+syc3W9+uCXb/5rfLWcWWWb8xd/YXxE24ByAekCys9ETEzoENHzeYg5P/vqNXYBYTzaBRrtED7l3GJWtpUBf+hxDyP+MGB2EXcc8McBd+jRu4Q7DdhDnzGHHrWNVEZRVg2ruqW8sKil5qgSp7uRaUp0U6AZHEUnKNqOtRCsO3G2QrCR8hLLHK/qjlXzzmIjFfcq8ewntvuB3f3E7TbRB0tw5q3z//hYLBespCYKS1IWZzXeaIJVpGCI3uRxiqp5u1w27Tv/aLBQ1rPpBI0yNNKwFgqVRjZCZ+YdS+uZV5NVtOKTqr8UlkJTaM/GJSoTaDrL6HqkMghjaYTKVN28r/MDfOJjwXh8ID3/Rh9/0u4f8bePJJHYKEebRirfc91pljPCsJSWpTjHhTAU0lLOq3gd+fTyi9PTC9P9E2J3Qk973LhDDre0/U0u2sYB0d/QpSnTxCGfVzbmBlndReliHUeK7Yn13Q/q8TvK3LBvPc56lPfUl5FbqWmkzrYWMtuqk+d/mB/rXPQPq845snPbZuIAAAAASUVORK5CYII='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Gatsby CLI để tạo bài viết mới"
+        title="Gatsby CLI để tạo bài viết mới"
+        src="/static/d1ab3650b6cce38bb66e0a9e7e04b751/798d4/gatsby-cli-tao-bai-viet.png"
+        srcset="/static/d1ab3650b6cce38bb66e0a9e7e04b751/5a46d/gatsby-cli-tao-bai-viet.png 300w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/0a47e/gatsby-cli-tao-bai-viet.png 600w,
+/static/d1ab3650b6cce38bb66e0a9e7e04b751/798d4/gatsby-cli-tao-bai-viet.png 976w"
+        sizes="(max-width: 976px) 100vw, 976px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+<p>Gatsby CLI để tạo bài viết mới</p>
+<p>Package cli của mình ở đây: <a href="https://www.npmjs.com/package/gatsby-tool-cli">https://www.npmjs.com/package/gatsby-tool-cli</a></p>
+<p>Tham khảo: <a href="https://devgiangho.github.io/cach-tao-1-blog-bang-gatsbyjs-va-deploy-len-github">Cách tạo 1 blog bằng gatsbyjs và deploy lên github</a></p>
+<h3 id="thế-blog-của-minh-co-vấn-dề-gi" style="position:relative;"><a href="#th%E1%BA%BF-blog-c%E1%BB%A7a-minh-co-v%E1%BA%A5n-d%E1%BB%81-gi" aria-label="thế blog của minh co vấn dề gi permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thế blog của mình có vấn đề gì?</h3>
+<p>Well, hôm nay quay trở lại viết blog thì mình mới nhận ra là blog mình không có hệ thống comment. Trước đây mình lười nên bỏ ngỏ, hôm nay rảnh chút nên tập trung làm nốt.</p>
+<p>Thực ra nó còn thiếu cả phần navigation previous và next post, mình có thêm luôn, tuy nhiên bài này mình focus vào phần comment thôi ha.</p>
+<h2 id="nhung-comment-vao-blog" style="position:relative;"><a href="#nhung-comment-vao-blog" aria-label="nhung comment vao blog permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nhúng comment vào blog</h2>
+<p>Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ.</p>
+<p>FB thì mình không thích, hoặc có thể nhiều anh em không thích.</p>
+<p>Disqus thì load nặng, và cũng bị vấn đề gì mà đôi lúc mình không vào được, may be do VN mình chặn hoặc do nó chặn VN mình.</p>
+<p>Vậy ứng cử viên số 1 phải là Github discussion rồi.</p>
+<h3 id="github-discussion" style="position:relative;"><a href="#github-discussion" aria-label="github discussion permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Github discussion</h3>
+<p>Anh em đọc blog của mình chủ yếu là dev, mà dev thì ai mà chẳng có github.</p>
+<p>Thế là quá hợp lý!</p>
+<p>Để sử dụng Github discussion làm hệ thống comment thì chúng ta phải sử dụng app thứ 3.</p>
+<p>Chúng ta có 2 ứng cử viên cho vụ này là <a href="https://utteranc.es/">Utterances</a> và <a href="https://giscus.app/">Giscus</a></p>
+<p>Mình tham khảo và bỏ qua Utterances, bởi vì 2 nhược điểm:</p>
+<ul>
+<li>Không có post reaction như Giscus</li>
+<li>Không scope lại phần reply comment, mà các comment đều bị flatten</li>
+</ul>
+<p>Okay, bắt đầu vào làm thôi</p>
+<h3 id="implement-giscus-vao-gatsby" style="position:relative;"><a href="#implement-giscus-vao-gatsby" aria-label="implement giscus vao gatsby permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Implement Giscus vào Gatsby</h3>
+<p>Chúng ta phải có 3 thứ:</p>
+<ul>
+<li>Blog, dĩ nhiên rồi</li>
+<li>Github account</li>
+<li>1 public repo (ở đây mình dùng luôn repo public của blog trên github page)</li>
+</ul>
+<p>Đầu tiên, phải thêm app Giscus vào repo githubpage của các bạn trước:</p>
+<ol>
+<li>
+<p>Vào phần settings trên repo public mà bạn muốn dùng, bật tính năng discussion.</p>
+</li>
+<li>
+<p>Truy cập vào đây: <a href="https://github.com/apps/giscus/installations/new">https://github.com/apps/giscus/installations/new</a>, chọn repository bạn muốn, grant quyền cho em nó.</p>
+<p>Sau khi grant permission thì sẽ như sau:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 854px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/d20b205a2e31881cfa41cb2c2c1b6ae7/c3fd4/cap-quyen-cho-giscus.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABKklEQVQoz5WTaXKEIBCFvf8pcpJcIFfIr8zEbVgEFRDUN9VELZeJU1L1itZqmq8XEikrpGmGPC/AGEea5bDOgdY4jri6EmMs6rqBMQbW/tnehxjsioZpTyhq13VQSkPreqGKTgNp2Og06DAiIYOofm53/KYZuJAQssKDcWgitxaURUsZTKV4tWbKhG5tmhZVpVApBcY52tYsRLPzmTYByRBS4nZPIyGREiHR9H1/bA4F2ZFtAtIHNeHBRFSWl+BSxX8zIVaH9he8IASc66B0jUrVMNYdDuxT+29fUvYhQAgJxomSoSjLOJdUCnKP3Z783tZwLgjVi+S9j2NECiEcOvm2yyq0yJyACx4+9Lt0EZ2G1eAOJ4qD/aW/8VF8Im8kmtqip0ZcfCXr1J9XJa9na2kvWwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Grant permission cho giscus"
+        title="Grant permission cho giscus"
+        src="/static/d20b205a2e31881cfa41cb2c2c1b6ae7/c3fd4/cap-quyen-cho-giscus.png"
+        srcset="/static/d20b205a2e31881cfa41cb2c2c1b6ae7/5a46d/cap-quyen-cho-giscus.png 300w,
+/static/d20b205a2e31881cfa41cb2c2c1b6ae7/0a47e/cap-quyen-cho-giscus.png 600w,
+/static/d20b205a2e31881cfa41cb2c2c1b6ae7/c3fd4/cap-quyen-cho-giscus.png 854w"
+        sizes="(max-width: 854px) 100vw, 854px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Config widget của giscus:</p>
+<ol>
+<li>
+<p>Vào <a href="https://giscus.app/">https://giscus.app/</a></p>
+</li>
+<li>
+<p>Config các option như language, theme, position theo ý thích, có thể tạo thêm 1 category discussion là “Comments” cho dễ phân loại.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 815px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/91414f15a4888acaea3a405e397e764f/ef916/config-giscus-options.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 87.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAAAsTAAALEwEAmpwYAAACAUlEQVQ4y5VUi3LjIAzs/3/ftTeN21z9fgHGD8A2dvZGcuskl2vTMqMRBrHsIskPURTj6fczDocAz4cA4ziBxrquOJ1OPzI689B1HWohMRiD74/TeUZAl4BxnDCzoqwwjiOstWx0gXOObVtzMMbAugXGrrDOYRgGLMuygzNgPwwwxoJ827YMRIFt1zEA7dE37ZOawXgMw8p79O3fAXeGG5PxQsTPB4HtDLO8AMkWUt09dH7824TsgHlRoixLCCG2N7Ik2fCbkVQymn/F7AqQDhSlQBRnSLMKSdKhKEpUVY28KFDVFcqqhGoUdKvZCykxz/MV83NS+h5BkOHxKeRs/3oM8PJ6xPH4B1GUIook4lggjEq8hRXSrEZV15yk/wIKIVnuODpM04RpnthTuUyTxzgCRMZ78Hxd70gmaWmaQykNpRr2fW8ubl/hV4/1tOxFfcnqhqEee0ijIYZmN2U70Ho/2b2+rjNK/hOGxhr4xcM4C0ed4hxojepz9vPd2rsBfAsjlpqkKcIwQpJs/hC8QEpFXLi9PuyD7b+1eZasNZqm4cNkqmmg25YvkUrxnFqMYrZYfVUyNwwpKE5STkyW5UjSjC2KE0jVYJpmfop+MPuT0NqnDIkJAVELUteQJ0DV6O3vw3+bzbz3XFLkvwBU3MfiXS6xIjDddjuQsZaDv5OUv4NKd7RXQcdZAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Config giscus options"
+        title="Config giscus options"
+        src="/static/91414f15a4888acaea3a405e397e764f/ef916/config-giscus-options.png"
+        srcset="/static/91414f15a4888acaea3a405e397e764f/5a46d/config-giscus-options.png 300w,
+/static/91414f15a4888acaea3a405e397e764f/0a47e/config-giscus-options.png 600w,
+/static/91414f15a4888acaea3a405e397e764f/ef916/config-giscus-options.png 815w"
+        sizes="(max-width: 815px) 100vw, 815px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+</li>
+<li>
+<p>Ta nhận được 1 widget như sau:</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 795px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/26e983d4a12d7b665d45540813dd7b27/65c7b/giscus-widget.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 66%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAIAAAAmMtkJAAAACXBIWXMAAA86AAAPOgGXOdvCAAABmElEQVQoz4XSy4rUQBQG4H7/pxhQUHEjXjYDA7pwqcMIbjpMX5JUku501blU6l5JJExv7GnHn39Ri/PBoTgrpVRZVlUl2sMh5Txfy3Qt4zStELFpu7puumPfdceuaVoh6rISVV3u9kI0TdNKqYgIEAEQkJgZEPM4rqzzCglIA2pig2lUSyeeZ55mNo5Yh5hSHi+64JAymqFpdVnRphD7T3f1h1vx+U7eftXfvltknyfro3nWmPIqxORDrGu9LuixOFQ37+DmtX77nl+90R+/GB5sSNYH6+NFz9iFWAter2Gzk/Tw2/64dw+/3M9797ixMT9nl1i0w3ZHux1vW3tyyc+znWc7Tv+Sf+Nm2G5xX0JVybZTfc+srbu27QXOPibRDEUB2/3x2NNggzbeuJfkGfuYyBjR8qE3Ckx/Wr7IhfiyPOOYEplhcD7mHHNOeXza5X9dJlfW2uVilhAASKmQEEABsgJm1gpQLbcFUilAAsDTScm+DzEuGBCllICEy8Mw+YEBcCTKiEYqqRQSR0QmioijlMEbPU3zH7K04c9tJ11EAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <img
+        class="gatsby-resp-image-image"
+        alt="Giscus widget"
+        title="Giscus widget"
+        src="/static/26e983d4a12d7b665d45540813dd7b27/65c7b/giscus-widget.png"
+        srcset="/static/26e983d4a12d7b665d45540813dd7b27/5a46d/giscus-widget.png 300w,
+/static/26e983d4a12d7b665d45540813dd7b27/0a47e/giscus-widget.png 600w,
+/static/26e983d4a12d7b665d45540813dd7b27/65c7b/giscus-widget.png 795w"
+        sizes="(max-width: 795px) 100vw, 795px"
+        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        loading="lazy"
+        decoding="async"
+      />
+  </a>
+    </span></p>
+</li>
+</ol>
+</li>
+<li>
+<p>Đưa widget vào Gatsby</p>
+</li>
+</ol>
+<p>Cái widget mà trên giscus cung cấp chỉ có thể nhúng trên 1 trang html bình thường, nhưng Gatsby là SSG sử dụng React, do đó chúng ta phải cài thêm 1 thư viện:</p>
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash"><span class="token function">yarn</span> <span class="token function">add</span> @giscus/react</code></pre></div>
+<p>Thêm component comment, cũng thêm chút styling css:</p>
+<div class="gatsby-highlight" data-language="jsx"><pre class="language-jsx"><code class="language-jsx"><span class="token keyword">import</span> React<span class="token punctuation">,</span> <span class="token punctuation">{</span> FunctionComponent <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"react"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> styled <span class="token keyword">from</span> <span class="token string">"styled-components"</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Giscus <span class="token keyword">from</span> <span class="token string">"@giscus/react"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> PostComment <span class="token operator">=</span> styled<span class="token punctuation">.</span>div<span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+  margin: 2rem auto;
+  max-width: 800px;
+</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Comments<span class="token punctuation">:</span> <span class="token function-variable function">FunctionComponent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">PostComment</span></span><span class="token punctuation">></span></span><span class="token plain-text">
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Giscus</span></span>
+      <span class="token attr-name">repo</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>devgiangho/devgiangho.github.io<span class="token punctuation">"</span></span>
+      <span class="token attr-name">repoId</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>repoId<span class="token punctuation">"</span></span>
+      <span class="token attr-name">category</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Comments<span class="token punctuation">"</span></span>
+      <span class="token attr-name">categoryId</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>categoryId<span class="token punctuation">"</span></span>
+      <span class="token attr-name">mapping</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>url<span class="token punctuation">"</span></span>
+      <span class="token attr-name">strict</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+      <span class="token attr-name">reactionsEnabled</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span>
+      <span class="token attr-name">emitMetadata</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+      <span class="token attr-name">inputPosition</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>top<span class="token punctuation">"</span></span>
+      <span class="token attr-name">theme</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>preferred_color_scheme<span class="token punctuation">"</span></span>
+      <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span>
+      <span class="token attr-name">loading</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lazy<span class="token punctuation">"</span></span>
+      <span class="token attr-name">cross-origin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span>
+    <span class="token punctuation">/></span></span><span class="token plain-text">
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">PostComment</span></span><span class="token punctuation">></span></span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> Comments<span class="token punctuation">;</span></code></pre></div>
+<p>Kết quả các bạn có thể thử luôn ở phía bên dưới ⬇️⬇️</p></section><footer class="postStyle__PostFooter-sc-1q9n7ky-9 kGeBkw"><p>Published under <span><a class="postStyle__FooterTagLink-sc-1q9n7ky-10 bsOVgh" href="/tag/web">Web</a></span> on<!-- --> <time dateTime="2023-03-19T09:47:56.476Z">19 March, 2023</time>.</p></footer><div class="style__LinkedPostWrapper-sc-cu5n11-0 dtvogi"><div class="style__PrevPost-sc-cu5n11-2 izXkvh"><a class="style__LinkedPost-sc-cu5n11-1 ftEWCi" href="/authentication-voi-jwt-luu-token-o-dau-la-bao-mat-nhat"><div class="sublabel">Previous</div><div class="label">Authentication với JWT, lưu token ở đâu là bảo mật nhất?</div></a></div></div></article></div></div><section class="postStyle__PostAddition-sc-1q9n7ky-11 hnKtRH"><div class="common__Container-sc-yvdkhc-0 postStyle__PostAdditionContent-sc-1q9n7ky-12 hhzXsP bIQtHU"><div class="postStyle__BioWrapper-sc-1q9n7ky-13 cXvylF"><section class="bio__StyledBio-sc-cy4lz8-0 buiIfq"><div class="avatar__StyledAvatar-sc-1b55w7o-0 fYracG gatsby-image-wrapper" style="position:relative;overflow:hidden;display:inline-block;width:55px;height:55px"><img aria-hidden="true" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEz0lEQVQ4ywHEBDv7ANXT1Lq4ucG/wMzKzNHP0dPR0tTS09nX2N3b3N7c3eLg4OPh4vLw8HJxd0BDSVxfY6Glo5KYlpGVlJaamQDPzc6+vL3Fw8TS0NHZ19jb2dre3Nzi4ODl4uTn5ebg3t/NzM7m5eZhYGdBRElbXmKQl5SNlJKWm5qTl5YAyMbHurm5w8HCzcvMwcDCy8rLz87O1dTU2tjY09LTe32BS0tSYWBnMzI6MDI4YmZok5iXkJSUmJybkZaUAMG/wLKysr6+vsXDxKCiori3uLa1t7y7vby9vLa4t1JVWgsLFAsKEg4OFg0NFT0/RY6Tk5yfnqGiopygnwC0srOkpqStr666urq1trXAv7/AwMDCwsLEw8PKycmpqqtGSlATFBwSExkQEBYLDBJdYWSkqKago6KfoqEAyMfHqqurubi4vr2+vLy8t7i4u7u7urq6rKytx8XGpqmnc31+JSgvDAwSERIXBwgONzo9oKWjqampsrKxANPS0rq5ucbFxcbExcTCwsG/v8XDxMTCwqysrqytr32Cg1NdYC4xORAQGBESFwgIDi8yNpSZmKepp4SIiAC6urupqqqxsrG3t7a1tbO9vLzBvsDTz9CXm5ygoaNlamw9RUgmKTEREhoQERYDBAlDR0qVnJqVmplrbnEAZmxuXmVoV15hcXd6hIeJhIiKf4KDmpudh4yNlpqZeH+AQUhNIygwKCsyEhMYJCcrbnR1iI+MjZORlJiXAH2EhXmBgWdwcamurre4uJudnZaZmampqoSKi3aAgF1maENKUEtSV1ddYCQkLH+EhYqQj5OYlYSKinyDgwCCi4l4gYCKkJDT0dKqrKueoKGhoqO0trWHjY1SW15ES1E9REs4PkRFSU0zNT6gpaSbn56eoJ+PlJOEi4kAhYuLfoWFt7q50s/QrKyteX+AeH1+jpKTZ2tvXWVoQEdNNDpBNDlAZWltSUxSnKCfo6WkqaqppaemnqGgAKipqYOGh6uqrtHP0KWmpYOIiIaLioqPkF5jZkVMUURKUSAjLVBVV3d/gHyBgZ+ioaurq6urq62traGjowB/gIQGCROcnaDKycqMkJF8gIOTmJeDh4ZscXI6QUkwNj9ESE6cnZ2BhYd2fX6YnZu3trevr6+xsbG2trYAIiUtGhsju7q929jZnJ6eam5xhIeHpqimhouKXGFkYmZsf4KFh4qLfoaGXGRnbXF1m56dlJeXpKSmr6+vAAYHEklJT87Mzr+9vZ+ioGxydGFlaZKWloKGhoCEhJOXl3V8fXaAgHd/f1piZiMoMSUqMSswODU6Qjk+RQAGBhB2dXzi4OCsrKyCiopSXF9ka25xd3lscHVxd3hwdnZpcHFtd3deZmlNVFoxNT4sLzkrMDgsMDkrMToAEREYi4qN3Nraq6ysfYSER05UR0xTYGhrY2ttWmFkU1pdUVpcNjtCMDc9MTU8LTE7MTU+NDlCNjtEO0FJADY2PKKjpLW1trm6uX+FhTg+RSwxOz1ES0RLUEpSV0ZOUzQ5QD1ASIWHind5fVFUWjI3PzI3QEROUjtDSABlZWnR0NGNkJKxsbKvsLCNkZBna245PkQ1OUI3PEMjJi8dHSRxcnbT0tPb2drRz9DMy83Hxce7vLyTl5hH1mZLeDDpeAAAAABJRU5ErkJggg==" alt="Kiên Đinh" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition-delay:500ms"/><noscript><picture><source srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/logo.png 2x" /><img loading="lazy" width="55" height="55" srcset="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png 1x,
+/static/7e55704418c2d530fda33cc8a39a3395/4747d/logo.png 1.5x,
+/static/7e55704418c2d530fda33cc8a39a3395/3b7ca/logo.png 2x" src="/static/7e55704418c2d530fda33cc8a39a3395/eaa90/logo.png" alt="Kiên Đinh" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h3 class="bio__AuthorName-sc-cy4lz8-2 HeSmV">Kiên Đinh</h3><p class="bio__AuthorDescription-sc-cy4lz8-1 iEPaOA">Bần đạo là <strong>Kiên Đinh</strong>, một Developer. 
+        Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section><div class="comments__PostComment-sc-188g6ow-0 gemKO"></div></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2023</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-b7c3d2ab5981229e622a.js"],"app":["/app-fb306ba013da5e64be47.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-ba25389efecac5928a3f.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-53c36f17170152417041.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-aafcc5c975f102fca591.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-9d8640ca6643bd7d7af2.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-462716a3d80ecf3b1b30.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-0916fb4ebe89d60b4d9a.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-1627200430af68113eb3.js"]};/*]]>*/</script><script src="/polyfill-b7c3d2ab5981229e622a.js" nomodule=""></script><script src="/component---src-templates-post-tsx-462716a3d80ecf3b1b30.js" async=""></script><script src="/commons-9754e5915e5f58c0d66e.js" async=""></script><script src="/1bfc9850-f1b2044ff811313c5a48.js" async=""></script><script src="/app-fb306ba013da5e64be47.js" async=""></script><script src="/framework-b5eed8d75fbbb74c9d3b.js" async=""></script><script src="/webpack-runtime-db730b862af8648a5897.js" async=""></script></body></html>
