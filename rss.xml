@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 20 Mar 2023 15:00:59 GMT</lastBuildDate><item><title><![CDATA[Xây dựng phần comment đậm chất dev với github và giscus cho blog]]></title><description><![CDATA[Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi.]]></description><link>https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog</link><guid isPermaLink="false">https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog</guid><pubDate>Sun, 19 Mar 2023 09:47:56 GMT</pubDate><content:encoded>&lt;p&gt;Mấy nay mình quay lại viết blog, thế là phát hiện ra cái blog build bằng Gatsby của mình cũng đã được hơn 3 năm tuổi, có nhiều thứ cũ kĩ quá thì chúng ta cũng nên update, và blog cũng vậy.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 21 Mar 2023 03:51:09 GMT</lastBuildDate><item><title><![CDATA[Xây dựng phần comment đậm chất dev với github và giscus cho blog]]></title><description><![CDATA[Về phần comment thì chúng ta có nhiều lựa chọn, tuy nhiên 2 anh lớn nhất chính là Facebook và Discus đều được mình loại trừ. Vậy ứng cử viên số 1 phải là Github discussion rồi.]]></description><link>https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog</link><guid isPermaLink="false">https://devgiangho.github.io/xay-dung-phan-comment-dam-chat-dev-voi-github-va-giscus-cho-blog</guid><pubDate>Sun, 19 Mar 2023 09:47:56 GMT</pubDate><content:encoded>&lt;p&gt;Mấy nay mình quay lại viết blog, thế là phát hiện ra cái blog build bằng Gatsby của mình cũng đã được hơn 3 năm tuổi, có nhiều thứ cũ kĩ quá thì chúng ta cũng nên update, và blog cũng vậy.&lt;/p&gt;
 &lt;p&gt;Gatsby là một static site generator (SSG) rất nổi tiếng từ hồi 3-4 năm trước, với hơn 50k stars trên github, điểm mạnh là nhanh gọn, và có thể host free trên github page hoặc netlify nên mình đã quyết định chọn em nó.&lt;/p&gt;
 &lt;h2 id=&quot;blog-của-minh&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#blog-c%E1%BB%A7a-minh&quot; aria-label=&quot;blog của minh permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Blog của mình&lt;/h2&gt;
 &lt;p&gt;Mình thấy việc học bằng cách dạy lại cho người khác, cũng như tổng hợp lại kiến thức của mình để chia sẻ rất hiệu quả, cho nên mình quyết định làm video và viết blog.&lt;/p&gt;
@@ -67,7 +67,6 @@
 &lt;/ul&gt;
 &lt;p&gt;Okay, bắt đầu vào làm thôi&lt;/p&gt;
 &lt;h3 id=&quot;implement-giscus-vao-gatsby&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#implement-giscus-vao-gatsby&quot; aria-label=&quot;implement giscus vao gatsby permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Implement Giscus vào Gatsby&lt;/h3&gt;
-&lt;h4 id=&quot;tet&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#tet&quot; aria-label=&quot;tet permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Tét&lt;/h4&gt;
 &lt;p&gt;Chúng ta phải có 3 thứ:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Blog, dĩ nhiên rồi&lt;/li&gt;
@@ -75,11 +74,7 @@
 &lt;li&gt;1 public repo (ở đây mình dùng luôn repo public của blog trên github page)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Đầu tiên, phải thêm app Giscus vào repo githubpage của các bạn trước:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Vào phần settings trên repo public mà bạn muốn dùng, bật tính năng discussion.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
+&lt;p&gt;Vào phần settings trên repo public mà bạn muốn dùng, &lt;strong&gt;bật tính năng discussion&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Truy cập vào đây: &lt;a href=&quot;https://github.com/apps/giscus/installations/new&quot;&gt;https://github.com/apps/giscus/installations/new&lt;/a&gt;, chọn repository bạn muốn, grant quyền cho em nó.&lt;/p&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
@@ -111,15 +106,11 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;Config widget của giscus:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Vào &lt;a href=&quot;https://giscus.app/&quot;&gt;https://giscus.app/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Config các option như language, theme, position theo ý thích, có thể tạo thêm 1 category discussion là “Comments” cho dễ phân loại.&lt;/p&gt;
+&lt;li&gt;Vào &lt;a href=&quot;https://giscus.app/&quot;&gt;https://giscus.app/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Config các option như language, theme, position theo ý thích, có thể tạo thêm 1 category discussion là “Comments” cho dễ phân loại.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 815px; &quot;
@@ -150,9 +141,9 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ta nhận được 1 widget như sau:&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Ta nhận được 1 widget như sau:&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;span
       class=&quot;gatsby-resp-image-wrapper&quot;
       style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 795px; &quot;
@@ -183,14 +174,8 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Đưa widget vào Gatsby&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Cái widget mà trên giscus cung cấp chỉ có thể nhúng trên 1 trang html bình thường, nhưng Gatsby là SSG sử dụng React, do đó chúng ta phải cài thêm 1 thư viện:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Đưa widget vào Gatsby&lt;/strong&gt;
+Cái widget mà trên giscus cung cấp chỉ có thể nhúng trên 1 trang html bình thường, nhưng Gatsby là SSG sử dụng React, do đó chúng ta phải cài thêm 1 thư viện:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; @giscus/react&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Thêm component comment, cũng thêm chút styling css:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;jsx&quot;&gt;&lt;pre class=&quot;language-jsx&quot;&gt;&lt;code class=&quot;language-jsx&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; React&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; FunctionComponent &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;react&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
@@ -225,9 +210,7 @@
 &lt;p&gt;&lt;strong&gt;Giới hạn các domain được load comments:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Để ngăn chặn các trang khác lấy comment từ web bạn, tạo 1 file &lt;em&gt;giscus.json&lt;/em&gt; trong repo public mà chúng ta dùng để connect discussion, thêm origin hoặc regex cho nó:&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;token property&quot;&gt;&quot;origins&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
-    &lt;span class=&quot;token string&quot;&gt;&quot;https://devgiangho.github.io&quot;&lt;/span&gt;
-  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;token property&quot;&gt;&quot;origins&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://devgiangho.github.io&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Các trang không được phép show comment sẽ bị chặn:&lt;/p&gt;
 &lt;p&gt;&lt;span
@@ -260,8 +243,62 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Thông báo khi có comment mới:&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Kết quả các bạn có thể thử luôn ở phía bên dưới ⬇️⬇️&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Authentication với JWT, lưu token ở đâu là bảo mật nhất?]]></title><description><![CDATA[JWT luôn là một phương pháp phổ biến trong việc authenticate user cho các ứng dụng web. Nhưng câu hỏi đặt ra là, chúng ta nên lưu JWT token ở đâu? Ưu nhược điểm của từng nơi lưu như thế nào? Làm cách nào để chúng ta cải thiện nó?]]></description><link>https://devgiangho.github.io/authentication-voi-jwt-luu-token-o-dau-la-bao-mat-nhat</link><guid isPermaLink="false">https://devgiangho.github.io/authentication-voi-jwt-luu-token-o-dau-la-bao-mat-nhat</guid><pubDate>Sat, 18 Mar 2023 05:04:51 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dẫn-nhập&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BA%ABn-nh%E1%BA%ADp&quot; aria-label=&quot;dẫn nhập permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dẫn nhập&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Thông báo khi có comment mới:&lt;/strong&gt;
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1083px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/12c8e0856d752c465976428ca18cca6a/eb4a1/comment-notification-email.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 54%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB2UlEQVQoz42QS3ObQBCE+f//JjnknEMOsexYjoxsIyNgAUmFhXgKWJbHl9pV4tipHDxVUzs7293Ts5azEfjBjniXEO9fCOOEbbDH9fc8ezvsp4D1JuLhOcJ2BKtHj/snj7UTcGe73Nlb7h98g/36bYk1z/ByfCGKIoQQiDBEiJAwjAgCQRzHhOH7exRdeofDgfP5jFIDUnY8OVsswDx4nofjOEbUdV1DPB6PnE4nkxqTZRlpmr72lVKazqxdAZ4XYqXVTJYVJElC0zRIKWnblr7v+UgMw/CK9bYC68ZVpFlBmh7pus4I/jn1gLep13tb68FlWZJlueG4zz6Wn0wUZU1dVwZY17V51PUw/F3pberQ68quYxyHV5zwI6y1UJyy0qxcFAV5npv/yfKCqpFo/r+CujdNkxGtW0V5lowzhPoPtbLsJWVVmvMyvTfEYTT+/iM4/3YOUk20crw49ATWOE5UeUVxKqjziq7pafuJtlN0naLpBuPG5DgxvsuR2fQHI+hvg4vDeZzopaJtJWXdkZ0V+bknryVFo/hoHJMUa7FYcn+3ZmM/snc2VIFPHQvySFDuYg5ewCGI8J0tq6XN7Y8VP25WXN+sWFyvuFr85PvVLbdLm8+fvvALB2VElOtlWoIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Email khi có comment&quot;
+        title=&quot;Email khi có comment&quot;
+        src=&quot;/static/12c8e0856d752c465976428ca18cca6a/eb4a1/comment-notification-email.png&quot;
+        srcset=&quot;/static/12c8e0856d752c465976428ca18cca6a/5a46d/comment-notification-email.png 300w,
+/static/12c8e0856d752c465976428ca18cca6a/0a47e/comment-notification-email.png 600w,
+/static/12c8e0856d752c465976428ca18cca6a/eb4a1/comment-notification-email.png 1083w&quot;
+        sizes=&quot;(max-width: 1083px) 100vw, 1083px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bug:&lt;/strong&gt; Mình gặp 1 bug lúc deploy là không thể login vào giscus iframe.
+Lý do là bởi vì Gatsby đã tự động remove trailing slash, do đó nó auto remove các query param phía sau.&lt;/p&gt;
+&lt;p&gt;Ví dụ url của mình dạng &lt;code class=&quot;language-text&quot;&gt;devgiangho.github.io/abc/?giscus=xxxx&lt;/code&gt;, thì gatsby auto remove slash, chỉ còn &lt;code class=&quot;language-text&quot;&gt;devgiangho.github.io/abc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Do đó mình phải tắt chế độ này bằng cách thêm 1 option vào gatsby-config:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;trailingSlash&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;always&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Tối ưu để giscus được prefetch trước:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Để lúc user đang đọc bài, chưa kéo tới phần comment thì các script cũng đã được load sẵn, mình có follow cái blog này&lt;sup id=&quot;fnref-1&quot;&gt;&lt;a href=&quot;#fn-1&quot; class=&quot;footnote-ref&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;&lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;preconnect&quot;&lt;/span&gt; href&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://giscus.app&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;link rel&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;dns-prefetch&quot;&lt;/span&gt; href&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;https://giscus.app&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kết quả các bạn có thể thử luôn ở phía bên dưới ⬇️⬇️&lt;/p&gt;
+
+      &lt;div class=&quot;footnotes&quot;&gt;
+        &lt;hr/&gt;&lt;strong&gt;References:&lt;/strong&gt;
+        &lt;ol &gt;
+    
+    &lt;li class=&quot;footnote-list-item&quot; id=&quot;fn-1&quot; &gt;
+          
+        
+      &lt;a href=&quot;#fnref-1&quot; class=&quot;footnote-backref&quot; style=&quot;display:inline;text-decoration: none;&quot;&gt;
+        ^
+      &lt;/a&gt;
+    &lt;p class=&quot;footnote-paragraph&quot; style=&quot;display:inline; margin-left: 5px;&quot;&gt;&lt;a href=&quot;https://www.brycewray.com/posts/2022/07/more-tips-using-giscus/&quot;&gt;Bryce Wray&apos;s blog&lt;/a&gt;.&lt;/p&gt;
+      &lt;/li&gt;
+      
+    &lt;/ol&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[Authentication với JWT, lưu token ở đâu là bảo mật nhất?]]></title><description><![CDATA[JWT luôn là một phương pháp phổ biến trong việc authenticate user cho các ứng dụng web. Nhưng câu hỏi đặt ra là, chúng ta nên lưu JWT token ở đâu? Ưu nhược điểm của từng nơi lưu như thế nào? Làm cách nào để chúng ta cải thiện nó?]]></description><link>https://devgiangho.github.io/authentication-voi-jwt-luu-token-o-dau-la-bao-mat-nhat</link><guid isPermaLink="false">https://devgiangho.github.io/authentication-voi-jwt-luu-token-o-dau-la-bao-mat-nhat</guid><pubDate>Sat, 18 Mar 2023 05:04:51 GMT</pubDate><content:encoded>&lt;h2 id=&quot;dẫn-nhập&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BA%ABn-nh%E1%BA%ADp&quot; aria-label=&quot;dẫn nhập permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dẫn nhập&lt;/h2&gt;
 &lt;p&gt;Ngót nghét cũng đã theo nghề code dạo được hơn 4 năm, cũng làm qua nhiều dự án.&lt;/p&gt;
 &lt;p&gt;Nhưng hầu hết các dự án ở công ty lúc mình join thì đều được dựng sẵn base và platform, hoặc là bê dự án phase 1 ở 1 nơi nào đó về làm tiếp các giai đoạn tiếp theo, do đó mình không có cơ hội chọt vào phần quản lý authentication và token lắm.&lt;/p&gt;
 &lt;p&gt;Ơ nói thế thì không có nghĩa là mình không làm được, mình có nghiên cứu và áp dụng vào dự án riêng, dự án freelancer, và cả làm boilerplate cho các assignment phỏng vấn nữa 😝&lt;/p&gt;
