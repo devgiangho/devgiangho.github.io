@@ -1,4 +1,579 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 23 Mar 2023 04:40:04 GMT</lastBuildDate><item><title><![CDATA[Fake data trong lập trình và testing]]></title><description><![CDATA[Trong công việc của dev, lắm lúc bạn sẽ cần một vài dữ liệu để test. Chẳng hạn như muốn test thử data trên FE mà backend chưa đưa kịp API.]]></description><link>https://devgiangho.github.io/fake-data-trong-lap-trinh-va-testing</link><guid isPermaLink="false">https://devgiangho.github.io/fake-data-trong-lap-trinh-va-testing</guid><pubDate>Wed, 22 Mar 2023 13:35:54 GMT</pubDate><content:encoded>&lt;p&gt;Trong công việc của dev, lắm lúc bạn sẽ cần một vài dữ liệu để test. Chẳng hạn như muốn test thử data trên FE mà backend chưa đưa kịp API.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed]]></title><description><![CDATA[Kiên Đinh & %TOPICS%]]></description><link>https://devgiangho.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Wed, 29 Mar 2023 15:29:47 GMT</lastBuildDate><item><title><![CDATA[Connection pooling: Tổng quan và implement benchmark]]></title><description><![CDATA[Mình muốn tiếp tục bằng tối ưu hiệu năng database, phần đầu tiên sẽ là connection pooling. Vậy connection pooling là gì? Sử dụng connection pool như thế nào?]]></description><link>https://devgiangho.github.io/connection-pooling-tong-quan-va-implement-benchmark</link><guid isPermaLink="false">https://devgiangho.github.io/connection-pooling-tong-quan-va-implement-benchmark</guid><pubDate>Wed, 29 Mar 2023 15:06:30 GMT</pubDate><content:encoded>&lt;p&gt;Một nhà thông thái nào đó đã nói: “Muốn lên trình backend, thì database là một phần không thể bỏ qua”.&lt;/p&gt;
+&lt;p&gt;Vâng, trong series backend nâng cao này, mình muốn tiếp tục bằng tối ưu hiệu năng database, phần đầu tiên sẽ là connection pooling. Vậy connection pooling là gì? Sử dụng connection pool như thế nào? Hãy đọc bài này nhen.&lt;/p&gt;
+&lt;h2 id=&quot;first-thing-first&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#first-thing-first&quot; aria-label=&quot;first thing first permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;First thing first&lt;/h2&gt;
+&lt;p&gt;Again, mình là Kiên, một dev với tay nghề khá thập cẩm, series backend nâng cao này chính là một trong những nỗ lực của mình để đào sâu kĩ năng backend. Hi vọng sẽ có ích với các bạn, và cả mình nữa 🤗&lt;/p&gt;
+&lt;h2 id=&quot;connection-pool&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#connection-pool&quot; aria-label=&quot;connection pool permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Connection pool&lt;/h2&gt;
+&lt;p&gt;Nếu theo dõi series này từ đầu, bạn sẽ biết về &lt;a href=&quot;https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp/#three-way-handshake&quot;&gt;TCP handshake&lt;/a&gt;, mà chưa thì bạn có thể đọc lại để nắm về nó. Và hiển nhiên, các database dạng RDBMS như MSSQL, MySQL, Postgresql đều support protocol giao tiếp qua TCP/IP như một tiêu chuẩn, đặc biệt nếu bạn kết nối tới DB remote, và phải thêm SSL mode để bảo mật connection.&lt;/p&gt;
+&lt;p&gt;Do đó, nếu mỗi lần có request, thì nếu application tạo mới 1 connection tới DB, thì sẽ phải thực hiện handshake lại, lúc đó sẽ rất tốn resource và làm chậm app đi. Do đó connection pooling ra đời.&lt;/p&gt;
+&lt;h3 id=&quot;connection-pool-la-gi&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#connection-pool-la-gi&quot; aria-label=&quot;connection pool la gi permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Connection pool là gì?&lt;/h3&gt;
+&lt;p&gt;Thực chất, connection pool là một implementation của design pattern &lt;a href=&quot;https://sourcemaking.com/design_patterns/object_pool&quot;&gt;Object Pool&lt;/a&gt;. Khá giống với singleton, đây là một pattern được tạo ra với mục đích để có thể sử dụng lại được các object mà chúng ta mong muốn.&lt;/p&gt;
+&lt;p&gt;Dĩ nhiên với những thao tác đắt đỏ như thiết lập 1 connection mới tới DB thì pattern này lại quá ư là hợp lý.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 822px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 64%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVQ4y42Ty2rbQBSG/QR9jb5EH6Bv0U3JO4Rusyh0212XLYRQCBSyyCKrFlqaBJyb7dhOYxErqWPZ8U3WZS76ysxYiiVCqOBw5pz5+ec/F9UAsiwj/8w5t/W4dOeCMnaVr+Xg5s2A/mia0/LfD1XyNb06fG/8odW/R8iM+TJFaW3zWmcl4upD1XxB+KN5XRCGscDkU6kJY0UiVEFuHwBEKvh6HfD2+JZP3RFRIsoKf156tG+HSOUUSqVZRNLaPJI2jhLJwzy2+BNvzOsPB7z71uLVxwv2Ww8VwlaPtj9ECEOUopRmGqbUOwO8wcKqXcaCYBpZ/O+rgM3tQ+7HM9586bB7Ni4T5iUbhYtI2B6GsSQWWJWpUCxjyWjmFDb8CS82dtj4fMrL9+fsNcbVkp3COFFM5oklFNKVnffwcbrYHu8e3bC132O7PiFaYQrCX5cenbvAbowpTcrHKVd37vkpa3d5cNrh3LtDKTflp9cjWzOQpgqlkWurVSz2Ik6Z2elmGHHG5+UZr3SGULlh4+qfVCLsD0NOukPOrgKOGj7N3siSurKh6884bvrU2385vOjjDcLnCc2epUIipCJJhfXuyi2y6anJG4zxBv8U4T/Nc+kpDqzdhgAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;connection-pooling.png&quot;
+        title=&quot;connection-pooling.png&quot;
+        src=&quot;/static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png&quot;
+        srcset=&quot;/static/374171f1d48fb5fa39f64a74120885b2/5a46d/connection-pooling.png 300w,
+/static/374171f1d48fb5fa39f64a74120885b2/0a47e/connection-pooling.png 600w,
+/static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png 822w&quot;
+        sizes=&quot;(max-width: 822px) 100vw, 822px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Giống như việc gửi thư bằng máy bay giấy, mỗi lần muốn trao đổi 1 bức thư thì sẽ phải gấp 1 chú máy bay mới, thế thì trong trường hợp có nhiều người cần gửi thư, tại sao không sử dụng lại các máy bay đã gấp? Thời gian dừng chờ 1 máy bay cũ có khi còn nhanh hơn đợi gấp 1 máy bay mới.&lt;/p&gt;
+&lt;h3 id=&quot;nửa-phut-quảng-cao&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#n%E1%BB%ADa-phut-qu%E1%BA%A3ng-cao&quot; aria-label=&quot;nửa phut quảng cao permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Nửa phút quảng cáo&lt;/h3&gt;
+&lt;p&gt;Gần đây mình mới mua 1 cuốn sách mang tên “Làm chủ các mẫu thiết kế kinh điển trong lập trình” của anh &lt;a href=&quot;https://www.facebook.com/dung.tavan&quot;&gt;Tạ Văn Dũng&lt;/a&gt;, một người anh senior rất tâm huyết với nghề, cũng như rất nhiệt tình trong việc giúp đỡ và giải đáp thắc mắc cho junior đi sau (trong đó có mình).&lt;/p&gt;
+&lt;p&gt;Anh là founder của tổ chức mã nguồn mở &lt;a href=&quot;https://github.com/youngmonkeys&quot;&gt;YoungMonkeys&lt;/a&gt; - github, có khá là nhiều thư viện và framework đã được team implement sẵn, đặc biệt đối với các startup làm về game.&lt;/p&gt;
+&lt;p&gt;Các bạn có thể tìm thấy pattern Object Pool này ở trang số 86:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/34703e229ed72bc6defb78acaa572097/9568a/sach-lamchu-design-pattern.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 98.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQCAQP/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB3bJTG2hP7BwS/wD/xAAcEAABAwUAAAAAAAAAAAAAAAABABARAgMEIUH/2gAIAQEAAQUCxxADWtUS/F//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAXEAEAAwAAAAAAAAAAAAAAAAABECBR/9oACAEBAAY/Al2S3//EABoQAQACAwEAAAAAAAAAAAAAAAEAMRARIUH/2gAIAQEAAT8hEO1NiN3A1dvWC15CoccCp//aAAwDAQACAAMAAAAQXB9+/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8QY//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExUXFBgeH/2gAIAQEAAT8QDjWXqKx8d7j5CXsA9Wl+Qju3pJRDRk5mIGgqXeYRYT//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg&quot;
+        title=&quot;338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg&quot;
+        src=&quot;/static/34703e229ed72bc6defb78acaa572097/e5166/sach-lamchu-design-pattern.jpg&quot;
+        srcset=&quot;/static/34703e229ed72bc6defb78acaa572097/f93b5/sach-lamchu-design-pattern.jpg 300w,
+/static/34703e229ed72bc6defb78acaa572097/b4294/sach-lamchu-design-pattern.jpg 600w,
+/static/34703e229ed72bc6defb78acaa572097/e5166/sach-lamchu-design-pattern.jpg 1200w,
+/static/34703e229ed72bc6defb78acaa572097/d9c39/sach-lamchu-design-pattern.jpg 1800w,
+/static/34703e229ed72bc6defb78acaa572097/df51d/sach-lamchu-design-pattern.jpg 2400w,
+/static/34703e229ed72bc6defb78acaa572097/9568a/sach-lamchu-design-pattern.jpg 3024w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Các bạn có thể tham khảo mua sách &lt;a href=&quot;https://www.trithuctrebooks.com/products/lam-chu-cac-mau-thiet-ke-kinh-dien-trong-lap-trinh-mastering-design-patterns&quot;&gt;ở đây&lt;/a&gt;, mình không nhận đồng PR nào cả, mình chỉ muốn ủng hộ anh Dũng thôi, vì phần lớn lợi nhuận của sách này đều được tác giả gửi tặng chương trình cặp lá yêu thương, peace!&lt;/p&gt;
+&lt;h3 id=&quot;connection-pooling-trong-database&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#connection-pooling-trong-database&quot; aria-label=&quot;connection pooling trong database permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Connection pooling trong database&lt;/h3&gt;
+&lt;p&gt;Ahh hahh hemmm, chúng ta quay lại bài giảng.&lt;/p&gt;
+&lt;p&gt;Database - cơ sở dữ liệu cũng là một phần mềm, cũng dựa trên máy chủ vậy lý, mà đã thế thì nó cũng sẽ có giới hạn về số lượng kết nối trong cùng 1 thời điểm.&lt;/p&gt;
+&lt;p&gt;Con số &lt;strong&gt;mặc định&lt;/strong&gt; cho số lượng connection tối đa của MySQL là 151.&lt;/p&gt;
+&lt;p&gt;Với Postgresql thì sẽ là 100.&lt;/p&gt;
+&lt;p&gt;MSSQL thì kinh dị hơn với con số …. &lt;strong&gt;32.767.&lt;/strong&gt; Có khi do tốn nhiều tiền nên xịn :))).&lt;/p&gt;
+&lt;p&gt;Trong khuôn khổ bài này mình sẽ chỉ tập trung đào sâu với Postgresql.&lt;/p&gt;
+&lt;h3 id=&quot;cach-implement-connection-pooling&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cach-implement-connection-pooling&quot; aria-label=&quot;cach implement connection pooling permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Cách implement connection pooling&lt;/h3&gt;
+&lt;p&gt;Về cơ bản chúng ta có 2 cách để implement connection pooling.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cách đầu tiên là cài các phần mềm, extension thêm vào, chẳng hạn như &lt;strong&gt;pgbouncer.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Cách thứ 2, chính là implement connection pooling phía layer backend.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Chúng ta có thể implement 1 pooler cách đơn giản bằng cách sử dụng &lt;em&gt;1 Queue/ Stack&lt;/em&gt; và &lt;em&gt;1 mutex Lock&lt;/em&gt;., vì nó là design pattern mà, dĩ nhiên. Tham khảo tutorial của Microsoft &lt;a href=&quot;https://learn.microsoft.com/en-us/azure/mysql/single-server/sample-scripts-java-connection-pooling&quot;&gt;Java sample to illustrate connection pooling&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên, thường thì chúng ta chẳng đi &lt;strong&gt;re-invent the wheel&lt;/strong&gt; làm gì, các thư viện hiện tại đã support sẵn rồi, chỉ việc dùng thôi. Xem phần tiếp dưới đây:&lt;/p&gt;
+&lt;h2 id=&quot;benchmark-connection-pooling&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#benchmark-connection-pooling&quot; aria-label=&quot;benchmark connection pooling permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Benchmark connection pooling&lt;/h2&gt;
+&lt;p&gt;Tiết học lí thuyết đã xong, chúng ta chuyển qua tiết thực hành nhé.&lt;/p&gt;
+&lt;p&gt;Đầu tiên để minh chứng rằng &lt;strong&gt;connection pooling thực sự boost performance,&lt;/strong&gt; mình có ý tưởng như sau:&lt;/p&gt;
+&lt;p&gt;Tạo một API đơn giản với 3 endpoint, sử dụng 3 phương pháp sử dụng database connection khác nhau:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Khởi tạo 1 connection mới cho mọi request.&lt;/li&gt;
+&lt;li&gt;Khởi tạo 1 connection từ đầu và dùng nó cho mọi request. (Singleton)&lt;/li&gt;
+&lt;li&gt;Khởi tạo 1 connection pool với số lượng idle connection cao.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sau đó sẽ test 3 endpoint này bằng cả browser và tool benchmark tấn công dồn dập =)).&lt;/p&gt;
+&lt;p&gt;Đầu tiên là cấu hình máy mình:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;➜  ~ neofetch
+Máy Kiên Đẹp Trai
+&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;OS&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Ubuntu 22.10 x86_64
+&lt;span class=&quot;token key atrule&quot;&gt;Host&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Latitude 5420
+&lt;span class=&quot;token key atrule&quot;&gt;Kernel&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 5.19.0&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;38&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;generic
+&lt;span class=&quot;token key atrule&quot;&gt;CPU&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 11th Gen Intel i7&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;1185G7 (8) @ 4.800GHz
+&lt;span class=&quot;token key atrule&quot;&gt;GPU&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Intel TigerLake&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;LP GT2 &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Iris Xe Graphics&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token key atrule&quot;&gt;Memory&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; 8862MiB / 31491MiB&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;một-vai-khai-niệm&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#m%E1%BB%99t-vai-khai-ni%E1%BB%87m&quot; aria-label=&quot;một vai khai niệm permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Một vài khái niệm&lt;/h3&gt;
+&lt;p&gt;Chúng ta làm quen trước vài khái niệm của connection pooling:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Connection pool size: Kích thước của connection pool, dĩ nhiên không được vượt quá số lượng max connection của DB rồi.&lt;/li&gt;
+&lt;li&gt;Idle connection: Các connection “tạm nghỉ”, khi được sử dụng xong thì các idle connection không được release luôn, mà được ở lại trạng thái “tạm nghỉ”.&lt;/li&gt;
+&lt;li&gt;Connection lifetime: Đại loại là thời gian giữ cho các idle connection “nghỉ” mà không đóng.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;💡 Không có gì chắc chắn rằng các “idle connection” sẽ luôn luôn sống và không cần phải handshake lại với DB vì các lí do như timeout (thời gian đã set) hoặc do phía DB.
+Do đó có thể vài thư viện thực hiện cơ chế ping liên tục bằng các idle connection để giữ tụi nó luôn luôn không bị close.
+Dĩ nhiên thì làm vậy sẽ tốn resource hơn để quản lý.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;dựng-database-postgres-va-data&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BB%B1ng-database-postgres-va-data&quot; aria-label=&quot;dựng database postgres va data permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dựng database postgres và data&lt;/h3&gt;
+&lt;p&gt;Tí nữa mình sẽ để repo benchmark ở cuối bài viết cho nên code mẫu mình trình bày sẽ đại khái dưới dạng pseudo.&lt;/p&gt;
+&lt;p&gt;Bạn nào tò mò muốn thử có thể clone về thử, nhưng mình vẫn sẽ hướng dẫn từng bước mình làm cái benchmark này nhé.&lt;/p&gt;
+&lt;p&gt;Để chuẩn bị data cho bài test thì mình tạo 1 table &lt;strong&gt;products&lt;/strong&gt; như sau:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;sql&quot;&gt;&lt;pre class=&quot;language-sql&quot;&gt;&lt;code class=&quot;language-sql&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;TABLE&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;IF&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;EXISTS&lt;/span&gt; products &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    id &lt;span class=&quot;token keyword&quot;&gt;SERIAL&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;PRIMARY&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;KEY&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    name &lt;span class=&quot;token keyword&quot;&gt;VARCHAR&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;255&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    price &lt;span class=&quot;token keyword&quot;&gt;NUMERIC&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;NOT&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    description &lt;span class=&quot;token keyword&quot;&gt;TEXT&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Sau đó lên mockaroo để tạo 1000 dòng data:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/418d5a0de17d85ba489bb2357503d3e2/d4377/mockaroo-mock-data.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 37.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVQoz4WRyQ6EMAxD+f8fBQlKWbqwHDJ6kVzNMAcOVuI2cZy2u67LzvM04n3fLQpP/obuOA5b19VSSt5MzDl7Xmuxbdus1mrUMfgN3b7v3kQDiDHa0Pe2p+TnYJ5nW5blZwvhyTscTdPUXMwh2DiOxqBvaChRWwDxJphzcgesLYdw7EuslOIOqYGTu/MYXZS+JggJIdgwDF6EEG6fb6MN9Ik6k1B7Q4qYim25EZiunGKi6iT29ykIUgRBgBzQrE9BQPc605Cn4AccJm0dv5oUqQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Mock product mockaroo&quot;
+        title=&quot;Mock product mockaroo&quot;
+        src=&quot;/static/418d5a0de17d85ba489bb2357503d3e2/c1b63/mockaroo-mock-data.png&quot;
+        srcset=&quot;/static/418d5a0de17d85ba489bb2357503d3e2/5a46d/mockaroo-mock-data.png 300w,
+/static/418d5a0de17d85ba489bb2357503d3e2/0a47e/mockaroo-mock-data.png 600w,
+/static/418d5a0de17d85ba489bb2357503d3e2/c1b63/mockaroo-mock-data.png 1200w,
+/static/418d5a0de17d85ba489bb2357503d3e2/d4377/mockaroo-mock-data.png 1294w&quot;
+        sizes=&quot;(max-width: 1200px) 100vw, 1200px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Sau khi download về, mình có copy paste lại 1000 dòng thành hơn mấy chục nghìn dòng dữ liệu.&lt;/p&gt;
+&lt;p&gt;Để tạo 1 database postgres trên máy, cách nhanh nhất là mình dùng docker:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;3.9&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;postgres&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postgres&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;13.1&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;alpine
+    &lt;span class=&quot;token key atrule&quot;&gt;container_name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; postgres_container
+    &lt;span class=&quot;token key atrule&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./seed.sql&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/docker&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;entrypoint&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;initdb.d/seed.sql
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; ./data/postgres&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;/var/lib/postgresql/data
+    &lt;span class=&quot;token key atrule&quot;&gt;environment&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; POSTGRES_DB=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;POSTGRES_DB&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;postgres&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; POSTGRES_USER=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;POSTGRES_USER&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;postgres&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; POSTGRES_PASSWORD=$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;POSTGRES_PASSWORD&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;password1&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;5433:5432&quot;&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;restart&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; unless&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;stopped&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Theo kế hoạch thì những bài tiếp theo của series này, mình sẽ nói về docker, nếu bạn chưa hiểu docker là gì, thì đón đọc những bài tiếp theo nhé. Phần hiện tại bạn chỉ cần biết nó là công cụ để mình tạo 1 database postgres là được.&lt;/p&gt;
+&lt;p&gt;Okay, chạy dòng lệnh &lt;code class=&quot;language-text&quot;&gt;docker compose up -d&lt;/code&gt; để có 1 database có sẵn data. DB này có port 5433, username và password như file yaml. (Chọn port 5433 tại vì sợ nó conflict với DB có sẵn trên máy mình thôi)&lt;/p&gt;
+&lt;p&gt;Chuyển qua phần tiếp theo&lt;/p&gt;
+&lt;h3 id=&quot;dựng-api-bằng-go&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#d%E1%BB%B1ng-api-b%E1%BA%B1ng-go&quot; aria-label=&quot;dựng api bằng go permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Dựng API bằng Go&lt;/h3&gt;
+&lt;p&gt;Mình đang code Go, cho nên mình sẽ chọn Go để làm API cho ví dụ benchmark (sử dụng Gin framework, 1 framework nhẹ và mạnh mẽ).&lt;/p&gt;
+&lt;p&gt;Tương tự với DDL products bên trên, mình có model Product:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Product &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	ID          &lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;     &lt;span class=&quot;token string&quot;&gt;`json:&quot;id&quot;`&lt;/span&gt;
+	Name        &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;  &lt;span class=&quot;token string&quot;&gt;`json:&quot;name&quot;`&lt;/span&gt;
+	Price       &lt;span class=&quot;token builtin&quot;&gt;float64&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;`json:&quot;price&quot;`&lt;/span&gt;
+	Description &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;  &lt;span class=&quot;token string&quot;&gt;`json:&quot;description&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Tương tự tạo 1 model response của API, có chứa thêm 2 field để mình estimate thời gian của request:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;type&lt;/span&gt; Response &lt;span class=&quot;token keyword&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	Elapsed  &lt;span class=&quot;token builtin&quot;&gt;int64&lt;/span&gt;      &lt;span class=&quot;token string&quot;&gt;`json:&quot;elapsed&quot;`&lt;/span&gt;
+	Average  &lt;span class=&quot;token builtin&quot;&gt;float64&lt;/span&gt;    &lt;span class=&quot;token string&quot;&gt;`json:&quot;average&quot;`&lt;/span&gt;
+	Products &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;Product &lt;span class=&quot;token string&quot;&gt;`json:&quot;products&quot;`&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Kế tiếp, khai báo query để select 1000 product từ DB cũng như connection string cho DB.&lt;/p&gt;
+&lt;p&gt;Sau đó nữa, tạo 1 connection Pool, 1 singleton connection để dùng cho 3 endpoint như idea mình đã nêu phía trên:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; dsn &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;postgres://postgres:password1@localhost:5433/postgres?sslmode=disable&quot;&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;var&lt;/span&gt; query &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;SELECT id, name, price, description FROM products limit 1000&quot;&lt;/span&gt;
+
+&lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Postgres allows 100 connections in default&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Set the maximum number of idle connections in the pool&lt;/span&gt;
+	idleConn &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;50&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Set the maximum number of connections in the pool&lt;/span&gt;
+	maxConnections &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;90&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// Set the maximum amount of time a connection can be reused&lt;/span&gt;
+	maxConnLifetime &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Minute
+	poolConn&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; sqlx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;postgres&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dsn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to connect to database: %v\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;defer&lt;/span&gt; poolConn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Close&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	poolConn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SetMaxOpenConns&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;maxConnections&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	poolConn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SetMaxIdleConns&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;idleConn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	poolConn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SetConnMaxLifetime&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;maxConnLifetime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token comment&quot;&gt;// normal connection&lt;/span&gt;
+	conn&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; sqlx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;postgres&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dsn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to connect to database: %v\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// default will be 2 idle connections&lt;/span&gt;
+	&lt;span class=&quot;token comment&quot;&gt;// so set it to 1 to simulate&lt;/span&gt;
+	conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;SetMaxIdleConns&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token comment&quot;&gt;// Initialize the HTTP router&lt;/span&gt;
+	router &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Default&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;StaticFile&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;./index.html&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;token comment&quot;&gt;// Handlers...&lt;/span&gt;
+
+	&lt;span class=&quot;token comment&quot;&gt;// Start the HTTP server&lt;/span&gt;
+	&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;:8080&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to start HTTP server: %v\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Ở đây mình chọn thư viện sqlx, thư viện này nếu chúng ta tạo 1 connection singleton, thì mặc định nó đã bật chế độ connection pool rồi, do đó mình set số lượng về 1 để giả lập tình trạng không có pool ở các ngôn ngữ và thư viện khác.&lt;/p&gt;
+&lt;p&gt;Về phần pool, mình cài đặt pool size là 90, và số lượng idle connection là 50, một con số khá to, và lifetime là 2 phút.&lt;/p&gt;
+&lt;p&gt;Rồi, chúng ta thêm 3 endpoint với method &lt;code class=&quot;language-text&quot;&gt;GET&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;products/pooled&lt;/code&gt; : Sử dụng &lt;strong&gt;connection pool&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;products/normal&lt;/code&gt; : Sử dụng một &lt;strong&gt;singleton connection&lt;/strong&gt; cho toàn bộ request.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;products/new&lt;/code&gt;: Thành lập &lt;strong&gt;1 kết nối mới&lt;/strong&gt; cho mọi request.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bạn có thể thấy, behavior của 3 endpoint này giống nhau hoàn toàn trừ việc sử dụng connection tới database thôi.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;go&quot;&gt;&lt;pre class=&quot;language-go&quot;&gt;&lt;code class=&quot;language-go&quot;&gt;router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/products/normal&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		startTime &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+		&lt;span class=&quot;token comment&quot;&gt;// Query the database for all products&lt;/span&gt;
+		rows&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		products&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;scanProducts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rows&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		elapsed &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Since&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;startTime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Microseconds&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		allCount&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+		allTime &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; elapsed
+		c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusOK&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; model&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Response&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Elapsed&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Average&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;float64&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;allTime &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; allCount&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Products&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; products&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/products/pooled&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		startTime &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token comment&quot;&gt;// Query the database for all products&lt;/span&gt;
+		rows&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; poolConn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		products&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;scanProducts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rows&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		elapsed &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Since&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;startTime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Microseconds&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		poolCount&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+		poolTime &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; elapsed
+		c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusOK&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; model&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Response&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Elapsed&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Average&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;float64&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;poolTime &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; poolCount&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Products&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; products&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+router&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/products/new&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;func&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;c &lt;span class=&quot;token operator&quot;&gt;*&lt;/span&gt;gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Context&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		startTime &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Now&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		conn&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; sqlx&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Open&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;postgres&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dsn&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			log&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Fatalf&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Unable to connect to database: %v\n&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+		rows&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;query&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		products&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;scanProducts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;rows&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; err &lt;span class=&quot;token operator&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusInternalServerError&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; gin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;H&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;error&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; err&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+			&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+		elapsed &lt;span class=&quot;token operator&quot;&gt;:=&lt;/span&gt; time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Since&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;startTime&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;Microseconds&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+		newCount&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;
+		newTime &lt;span class=&quot;token operator&quot;&gt;+=&lt;/span&gt; elapsed
+		c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;http&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;StatusOK&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; model&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Response&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;Elapsed&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Average&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;float64&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;newTime &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt; newCount&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; Products&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; products&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Xong phía backend, qua code chút HTML để test phía browser nào:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;html&quot;&gt;&lt;pre class=&quot;language-html&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onclick&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;getProducts(&apos;normal&apos;)&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Get Products&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onclick&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;getProducts(&apos;new&apos;)&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;Get Products | New&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;button&lt;/span&gt; &lt;span class=&quot;token attr-name&quot;&gt;onclick&lt;/span&gt;&lt;span class=&quot;token attr-value&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;getProducts(&apos;pooled&apos;)&lt;span class=&quot;token punctuation&quot;&gt;&quot;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+    Get Products | Connection Pool
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;button&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token script&quot;&gt;&lt;span class=&quot;token language-javascript&quot;&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;getProducts&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;mode&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; lastResult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; promises &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;let&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; i&lt;span class=&quot;token operator&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+        promises&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+          &lt;span class=&quot;token function&quot;&gt;fetch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/products/&lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;mode&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; average&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; products &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+              lastResult &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; average &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+              console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; elapsed&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; average &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      Promise&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;promises&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;then&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+          console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;Last result for &lt;/span&gt;&lt;span class=&quot;token interpolation&quot;&gt;&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;${&lt;/span&gt;mode&lt;span class=&quot;token interpolation-punctuation punctuation&quot;&gt;}&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; lastResult&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token parameter&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; console&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;script&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token tag&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;&amp;lt;/&lt;/span&gt;body&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Code này rất đơn giản, với mỗi lần nhấn button, thì mình sẽ dùng promise chạy bất đồng bộ 200 request tới endpoint tương ứng.&lt;/p&gt;
+&lt;h3 id=&quot;kết-quả-test-benchmark&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-qu%E1%BA%A3-test-benchmark&quot; aria-label=&quot;kết quả test benchmark permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết quả test benchmark&lt;/h3&gt;
+&lt;p&gt;Bấm chạy chương trình, và chúng ta có 3 button với response của mỗi request có 1000 product, response nặng khoảng &lt;strong&gt;86.53&lt;/strong&gt; KB.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1066px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADz0lEQVQ4y5WT3WsdRRjG948QtGg1WAt6p6AognRvilB762VvvFL0xlv/A6lbogSLhhZEUNIkFdukmMSkTRObk5ycNjn9SDXfabPn7J7d2Z2d3ZnZmd15ZDfB1gsvHPjxzrzM+/DO8LzWuy+eGXjnpc/wVt/HeP3oR3iz71O88fIZvHLkFPqeef8/Of7saRx/7hReff4DvHbkQ7z9wud47+gnA9b01PzZZuMuGrdWRGNhRbdaa3p1ZV3faa3r5uKabi4+PGTtX3G5+VAvLtzVzcYD3VhYEUuLbUxOzJ+1uMgcHCwFwOD/L3NYCyEyx+r5PceUBlprhRKgguFie7Tmx/tXMLg6gsHVYfz0YAyDq5fq/YX2CM7f+Rlu4tdyVW2lUWlZhJCnO4SBQSAihDIGkRGIJAjrSP/JhyJGTxBoU+DpWkJCx3LdjiOlBOdcZVkGzgWUVMi5RMoByoFc6PqsZRVz6FzXd6SQUEpXqDzP4XmeY7Xb95xeGKHrB4pEFBURTUAIQZgIhEyBZRyMMfAsRRgGCIIA3a4H3++BsRSERCqOY2xsbDiWu7vh6CwCJFUwElAMmicIQoIwDBGREEnC6s6DtARheS1e5WJKkSsFmeeqKEp0ul3H+uKXSeeb6x30T/dU/2yCL6dCjLZCZJSAJQz1N2QZsjQFyxQyntdnzg/yWmsUWiutFLxKcGD6mjP9wMON+6Fa2Ba4+VeC1ibBlsfgUgqRF+CqBNclhC4gVIUBz8uaLC+QCq0ixrGz5zrW/Nq0w5IeVFo9WQM6w67P8PUcx1ezAb5vZLgwl+LCHMPFmwyDf2Ton4vx7a0M55+gvluUcCb2Heu3lQnH9TvwvJ4SUiGKE1BK4ScKa12FPwOBcDMFX6Ng9xKsuwm2Ix9SAVIbiApVqrwAXC9wrCutX519z61MqWSuENMELKEIUo3NQGGXCrBHHHqTQW6mCPZTuDQClRmMOfCtMab2YRCGjjV2+6qz7+3D9/xK0MQxNZTGxmfabATK7MTSxI+4ETupEVupCR8Ls02ICTgzeQGTF8bIwihlgE4vcKzJ9oTTIz1EJFZKFybNuOFZaigvzV6kjcuk4R1pyj1uWJebKGKG59qoUpvDOTZPJoU41uzt2XP7HRfdTreMY4qu54OEAbxYYMMT2AopensJ8vUI4Q7D444HQlMkIq38B6VU5cVS66KalHPW5aHLx65eGTs5NHTpxPj4NXtoaNgeuzpmT84u2CMTDXt46ro9MTZnN4ev27+Pzts/3Bi3byzM2Kuttt1sLtlLSzUnlpeXT87MzBz7G3CUo1GzzSFSAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;Trang chu api&quot;
+        title=&quot;Trang chu api&quot;
+        src=&quot;/static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png&quot;
+        srcset=&quot;/static/68d364d0b3c080e5d0f3aaa6b793bfd2/5a46d/browser-test-1.png 300w,
+/static/68d364d0b3c080e5d0f3aaa6b793bfd2/0a47e/browser-test-1.png 600w,
+/static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png 1066w&quot;
+        sizes=&quot;(max-width: 1066px) 100vw, 1066px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Để duy trì tính ổn định cho bài test, mỗi lần chạy benchmark 1 endpoint, mình sẽ restart app để app reset lại connection pool.&lt;/p&gt;
+&lt;p&gt;Đầu tiên chúng ta thử với endpoint &lt;code class=&quot;language-text&quot;&gt;/products/new&lt;/code&gt; , nơi mà connection sẽ được tạo mới lại 200 lần, sau khi bấm nút, thì sau chưa tới 100 request đã bị lỗi:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1066px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADaklEQVQ4y5XRTY/bRBgHcH8IJKigsKJUghtIIBAS6l4qpMKVYy+cQHDhc1TuqRKHAicEEoUL4kBB7VJU2N0m2Zdkk+zmZWPHsWPH8cTvM57xzB/FWUpW0AMj/TSPNPP8NS/a289fv/XWC5/ijY2P8OrFD/H6xid47cXreOnCNWw89e4TXX76fVx+5hpefvY9vHLhA7z53Gd45+LHt7R7vz68UdtpYefPA7qzfSAaja44POiL/UZf1Ha7orZ7fKZ7bq7XjsXudkvUdjpiZ/uAPtpt4pe7D29oOc10rAYHoPD/hzrrBaWZrvkzX1dSQQjBlQQimuCr5g+Vr9s/4ovDO5VvOj/h9uF3uH14B182v8fn+9/CiWdV3KpXYZmlEULWTwhAIqALBCz8Bw1BWASfEsyXazSsaiFLrPcGQaBrjjPVKWPI84yTVICkEgXlKHIGTvkKW1FCQjAOyUsIJlAUHCzNwPKcc87heZ6uHR219cUihO/7PIgYSFoiSlIQQhDHCaI4RpplcF0PljXByDAwsW0Yhomp6yLyA/jejAdkgZOTnq55rquTTMCLS+7FDCRfYJYo+NnySvLxy0spURRFRXCB5YlKIUCSAuY05k7A0Bu7ukaCue6nJexIcXNB4SQ+rIWEFXkoSgEoBbX0hC8OogJDO+FWwDGwg+Uvz/R5XMANBbdJDjf2YRMON5qBi7NAKc+RZVm9o+IlSEhhOjGfBgxDa6ZrtmHqljnF3A743AkQTiYIxh4C20M2J+AphaIF5BoehSgMgmJEELo+PHPGA4fAHJi6Njru6cOjLqKByZPRBEnvFFF3gKhvgDoeRJxBnpODTh1ku2OkfxhITBPx6YRnpgO7faJrg1ZHP6nvIen2edYfIen0EDW71cwmbhVShsljMkyRWSaSewPEP/eQng6RDQxOT8dwmm1dGxwtA/cRrwJV3O6pqNlVcaen2MRVMs5UGSZrUpVZY5XcH6j4bk8lw6FK+wbP/w4cdU70/n4TaX/E6chSy9D0eKCyvqGKqV8Fyihdkynq2Cr9faTS+6cqH48VNSacjR3Yra6uWeb4ZhonKHIqC8qwQlGwtfo/sCgDi/JqH6dMspziqN29qW09eHCp2WpdrTUaV2qN+uZKY/N8/W/15l6lVq9vPmrUrzT29q5u/bZ16S/Rqa0pN4iUDQAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;API NEW&quot;
+        title=&quot;API NEW&quot;
+        src=&quot;/static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png&quot;
+        srcset=&quot;/static/d2434b81f25fb3fde41924f4a481ed99/5a46d/browser-2-new.png 300w,
+/static/d2434b81f25fb3fde41924f4a481ed99/0a47e/browser-2-new.png 600w,
+/static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png 1066w&quot;
+        sizes=&quot;(max-width: 1066px) 100vw, 1066px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Đây chính là error message:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;error	&lt;span class=&quot;token string&quot;&gt;&quot;pq: sorry, too many clients already&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Đấy, chưa gì mới vậy thôi mà DB đã chửi rồi.&lt;/p&gt;
+&lt;p&gt;Thời gian trung bình của request ở endpoint này là khoảng: &lt;strong&gt;6380&lt;/strong&gt; micro seconds ~ 6.3ms&lt;/p&gt;
+&lt;p&gt;Tiếp tục với nút normal, nơi mà sử dụng singleton connection cho mọi request, &lt;code class=&quot;language-text&quot;&gt;/products/normal&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1066px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADAUlEQVQ4y52ST4scRRiH+0MENGh0MQb0pqAYBElfghBz9ZiLJyW5+DlC5xTwEPUkCkYv4kUlLITgzk7vzPTsJrvZBJNZd6b/bHdXT1dXd3VVddVPumfc7ErExBceuujq9+H3VrX1/iuXrp999QreXfkUb536BO+sXMbbr13C6ycvYOXEh//KmRcu4syLF/DGSx/hzZMf472XP8cHpz67bt367c5Vt7eF3u8e7615ajDYUWPvoRoNHip3fUe56/eX7Bx7brj31fralnJ726q35vH++iZ+/eXOVavipYNFSQAGz19m2QvOS8eKD2LHaAOllDQayHmBrzd/7Pjm3k/4cnyz49vtn3Fj/D1ujG/iq80f8MXoO/j0oNMteg1al0UIOZoQgEbKM6T1/Al8DlLniDlB0u7xebdWpvk7Ytebpqlj+X7g1HWNqiolYQqEaQguIaoakssF9QKjNFQtoWWDRiiIWkBK1SWUUiKKIse6e/eek2XzNq5Mco5WmlMGQggoLZBTClaWCMMI+/tTPJ5MMJ3NMNnbQxAEoEX7bSbTlGB394FjRWHokLJBRLWMaA3CM0SFQVxlaNpDXZbWGkKIDqUU2kRNo0BojYlPpU9qPPgzdCySJk5aNgiplrN5jYilmM0bhEUM2TSAMTBLnlYZFdgLmfQziUd+6lhJEh8K/bzGASMI8laYLIU4FP6TdpMcEf4xS44L24QhixHkGj5NIJR8NmHApE+WwjSJuzPshPliZD9vEP3fhEeFi5HTbmSfxhCN+k9h9jRhWmqE1MhZLkzIDkxItfFpbGSjFl3dzbSO49W+J1SYVhi0l7IQJg4pBMK5kH5WmpDGJqTGzPLcMMmN0o2plTaykUv5cVrhJGBySiR29xPHmk6n16qyBGNMs6IAKyswLlBUEkVVdeRljZKXEEJ2/99RyqoGLbjOGYe3vXvNWl1dPe2Nx+eHo9E5z/Ps0WhoewPX9oZ92xsMO8bDDXs0GNmu27dd1z2k33ft4WDDHnuDc1ve8Pzt1Vun/wIHDL1fwZ8mbwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;API normal&quot;
+        title=&quot;API normal&quot;
+        src=&quot;/static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png&quot;
+        srcset=&quot;/static/a912421d941e99588b708218ad22d071/5a46d/browser-3-normal.png 300w,
+/static/a912421d941e99588b708218ad22d071/0a47e/browser-3-normal.png 600w,
+/static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png 1066w&quot;
+        sizes=&quot;(max-width: 1066px) 100vw, 1066px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Okay, ngon nghẻ không bị lỗi request nào hết.&lt;/p&gt;
+&lt;p&gt;Thời gian request trung bình là: 5704 micro seconds ~ 5.7ms&lt;/p&gt;
+&lt;p&gt;Chúng ta tới với trùm cuối &lt;code class=&quot;language-text&quot;&gt;/products/pooled&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1066px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/0lEQVQ4y52S0YvcRBzH80cIWrR6WAv1TUFRBGleilB99bEvPin64t9R0qeCD1WfRMHqi/iiUg5K8fY23d3krr3rtah73m42u0kmyWQmk8xk5ivJrtdbrVT9wYcZZvh95svMWG88e+nq6899hFc33sdLp9/DKxsf4uXnL+GFUxex8cRb/8jZJ9/B2acu4tzTb+PFU+/itWc+xpunP7hq3fjp1mW3t4vez57obXlqMNhXvvdAjQYPlLu9r9zteyv218bb7j21vbWr3N6e6m15or+9gx9/uHXZKgV3sCwJwOC/l1n1QgjuWNEicow2UEpJo4FcFPh859uOL+5+h0/96x1f7n2Pa/7XuOZfx2c73+CT0VcI6KLTLXsNWpdFCDmZEIBGIlIkVfYQkYFUOSJBELd7IuvmyjR/Rux6kyRxrCCYOVVVoSy5JEyBMI1aSNRlBSnkkmqJURqqktCyQVMr1FUNKVWXUEqJ+XzuWHfu3HXSNGvjyjgXaKU5ZUgIAaUFckrBOEcYznF0NMFv4zEm0ynGh4eYzWagBQMhqUwSgoOD+441D0OH8AZzquWcVshEgZA2ICKFPvFEWmvUdd2hlEKbqGkUCK0wDqgMSIX7v4eORZLYSXiDkGo5yQQWLMckk4hYBNUYGPOQR1VKaxyGTAapxK9B4lhxHB0Lg7xCzDMEeYM5iyEbDZh16foBBuSE8Jdp/HdhxNOlsIggm+bfCWdMBmQlTOKou8NWOM0rLFh6nFD9n4Rrwkwg4jmmmUK0EprHCNNHCROuEVIjp3ltFjw1QdaYBYuM0nrZ1cVsHevVrhNam1Y4ax9lKYwdUtQIs1pOCTOLIjVBbsysyEwpayMbbSqljdRqJV+nFY5nTE6IxMFR7FiTyeRKyTkYY7poPzHjYKJGUUoUZYmiFKBcgAve/b2/wssKtBA6ZwLe3sEVa3Nz84zn+xeGo9F5z/ft0WhoewPX9oZ92xu284HtDwf2aDC0+27fdl33mH7ftYeD27bvDc7vesMLNzdvnPkDiHy9pCkmfWgAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;API Pooling&quot;
+        title=&quot;API Pooling&quot;
+        src=&quot;/static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png&quot;
+        srcset=&quot;/static/afb480db3839bd5243569e986a48e468/5a46d/browser-4-pooling.png 300w,
+/static/afb480db3839bd5243569e986a48e468/0a47e/browser-4-pooling.png 600w,
+/static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png 1066w&quot;
+        sizes=&quot;(max-width: 1066px) 100vw, 1066px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+        decoding=&quot;async&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Kinh chưa? Không fail lần nào.&lt;/p&gt;
+&lt;p&gt;Con số ấn tượng: 1034 microseconds ~ 1.03ms&lt;/p&gt;
+&lt;h3 id=&quot;benchmark-hardcore-hơn&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#benchmark-hardcore-h%C6%A1n&quot; aria-label=&quot;benchmark hardcore hơn permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Benchmark hardcore hơn&lt;/h3&gt;
+&lt;p&gt;Bạn có thể thấy con số khá ấn tượng của connection pool khi chúng ta chạy dồn dập 200 request bằng javascript. Tuy nhiên để giả lập tình huống thực tế lúc server nhận hàng ngàn concurrent request, mình sẽ sử dụng 1 công cụ khác để benchmark: go-wrk.&lt;/p&gt;
+&lt;p&gt;Công cụ này giúp benchmark mạnh mẽ hơn, hỗ trợ config thời gian chạy bench, số goroutine chạy đồng thời, con số này tỉ lệ thuận với số lượng request cùng gửi đi trong 1 thời điểm.&lt;/p&gt;
+&lt;p&gt;Cài đặt:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;go &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; github.com/tsliwowicz/go-wrk@latest&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Command benchmark có dạng: &lt;code class=&quot;language-text&quot;&gt;go-wrk -c &amp;lt;số goroutine&amp;gt; -d &amp;lt;số giây&amp;gt; &amp;lt;url&amp;gt;&lt;/code&gt; . Mặc định sẽ chạy 10 giây.&lt;/p&gt;
+&lt;p&gt;Config đầu tiên của mình: Chạy trong vòng &lt;strong&gt;10 giây&lt;/strong&gt;, với &lt;strong&gt;20 goroutine&lt;/strong&gt; (bạn có thể tạm hiểu goroutine là 1 thread).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/new&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;185&lt;/span&gt;.685138ms, &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.46MB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;538.55&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;45&lt;/span&gt;.56MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;37&lt;/span&gt;.137027ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;12&lt;/span&gt;.724131ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;58&lt;/span&gt;.512859ms
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;29433&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Theo kết quả bạn có thể thấy ngoài tốc độ phản hồi bị tăng đáng kể tới mức 37ms, và số lượng request bị fail do hết connection cũng tới gần 30k. Hầu như chỉ có thể xử lý được 100 request, ngang bằng số lượng connection tối đa mặc định của DB.&lt;/p&gt;
+&lt;p&gt;Okay, reset lại app và test endpoint tiếp theo.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/normal&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;Running 10s &lt;span class=&quot;token builtin class-name&quot;&gt;test&lt;/span&gt; @ http://localhost:8080/products/normal
+  &lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt; goroutine&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; running concurrently
+&lt;span class=&quot;token number&quot;&gt;9358&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;.00261655s, &lt;span class=&quot;token number&quot;&gt;791&lt;/span&gt;.59MB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;935.56&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;79&lt;/span&gt;.14MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;.37768ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.44047ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;102&lt;/span&gt;.748343ms
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Nếu chúng ta sử dụng phương pháp singleton connection, chỉ cho phép 1 idle connection thì không hề có 1 request nào bị lỗi, trong 10 giây thu được 9358 request, phản hồi với thời gian 21ms.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/pooled&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt; goroutine&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;s&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; running concurrently
+&lt;span class=&quot;token number&quot;&gt;17010&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;9&lt;/span&gt;.98895932s, &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.41GB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;1702.88&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;144&lt;/span&gt;.04MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;11&lt;/span&gt;.744808ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.576952ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;84&lt;/span&gt;.103652ms
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Đỉnh chứ, thời gian phản hồi nhanh gấp đôi phương pháp singleton, và cũng xử lý được tới 17k request trong vòng 10 giây.&lt;/p&gt;
+&lt;p&gt;Tuy nhiên mình vẫn muốn hà hiếp cái API này thêm chút nữa, hãy tăng độ khó cho game bằng việc tăng số lượng goroutine lúc bench lên 200!&lt;/p&gt;
+&lt;p&gt;Bạn có thể đoán được kết quả rồi đấy!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/new&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;100&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;51&lt;/span&gt;.987238ms, &lt;span class=&quot;token number&quot;&gt;8&lt;/span&gt;.46MB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;1923.55&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;162&lt;/span&gt;.71MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;103&lt;/span&gt;.974476ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;48&lt;/span&gt;.576556ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;126&lt;/span&gt;.737139ms
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;24624&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thời gian phản hồi tăng đáng kể!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/normal&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Em này có vẻ cũng không kham nổi số lượng request đồng thời đó!&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;8206&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;.75374229s, &lt;span class=&quot;token number&quot;&gt;694&lt;/span&gt;.15MB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;1058.33&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;89&lt;/span&gt;.53MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;188&lt;/span&gt;.977389ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.688429ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;965&lt;/span&gt;.145213ms
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;3171&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Test endpoint &lt;code class=&quot;language-text&quot;&gt;/products/pooled&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cuối cùng vẫn phải để chụy gánh, với connection pool, chỉ có 15 request bị fail&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token number&quot;&gt;16792&lt;/span&gt; requests &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;10&lt;/span&gt;.005117575s, &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.39GB &lt;span class=&quot;token builtin class-name&quot;&gt;read&lt;/span&gt;
+Requests/sec:           &lt;span class=&quot;token number&quot;&gt;1678.34&lt;/span&gt;
+Transfer/sec:           &lt;span class=&quot;token number&quot;&gt;141&lt;/span&gt;.97MB
+Avg Req Time:           &lt;span class=&quot;token number&quot;&gt;119&lt;/span&gt;.165287ms
+Fastest Request:        &lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;.598255ms
+Slowest Request:        &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;.004313542s
+Number of Errors:       &lt;span class=&quot;token number&quot;&gt;15&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Thống kê lại một chút cho các bạn dễ hình dung:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Concurent req&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;/products/new&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;/products/normal&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;/products/pooled&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;20 gouroutine&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;37ms&lt;br /&gt;100 req&lt;/td&gt;
+&lt;td&gt;21ms&lt;br /&gt;9k req&lt;/td&gt;
+&lt;td&gt;11ms&lt;br /&gt;17k req&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;200 goroutine&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;103ms&lt;br /&gt;100 req&lt;br /&gt;24k failed&lt;/td&gt;
+&lt;td&gt;188ms&lt;br /&gt;8k req&lt;br /&gt;3k failed&lt;/td&gt;
+&lt;td&gt;119ms&lt;br /&gt;16k req&lt;br /&gt;15 failed&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&quot;kết-luận&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#k%E1%BA%BFt-lu%E1%BA%ADn&quot; aria-label=&quot;kết luận permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Kết luận&lt;/h2&gt;
+&lt;p&gt;Túm cái váy lại thì connection pooling là một kỹ thuật giúp tăng hiệu suất, giảm tỉ lệ request bị lỗi.
+Kĩ thuật này rất hữu ích với các hệ thống backend có lượng request đồng thời lớn, do đó sẽ rất tốt nếu anh em hiểu rõ và nắm vứng nó&lt;/p&gt;
+&lt;p&gt;Happy coding!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Fake data trong lập trình và testing]]></title><description><![CDATA[Trong công việc của dev, lắm lúc bạn sẽ cần một vài dữ liệu để test. Chẳng hạn như muốn test thử data trên FE mà backend chưa đưa kịp API.]]></description><link>https://devgiangho.github.io/fake-data-trong-lap-trinh-va-testing</link><guid isPermaLink="false">https://devgiangho.github.io/fake-data-trong-lap-trinh-va-testing</guid><pubDate>Wed, 22 Mar 2023 13:35:54 GMT</pubDate><content:encoded>&lt;p&gt;Trong công việc của dev, lắm lúc bạn sẽ cần một vài dữ liệu để test. Chẳng hạn như muốn test thử data trên FE mà backend chưa đưa kịp API.&lt;/p&gt;
 &lt;p&gt;Hoặc bạn muốn unit test của bạn luôn luôn tạo những data test 1 cách ngẫu nhiên.&lt;/p&gt;
 &lt;p&gt;Hãy tìm đến các công cụ fake data.&lt;/p&gt;
 &lt;h2 id=&quot;-mockaroo---mock-data-theo-custom-schema&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#-mockaroo---mock-data-theo-custom-schema&quot; aria-label=&quot; mockaroo   mock data theo custom schema permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;🌀 Mockaroo - mock data theo custom schema&lt;/h2&gt;
