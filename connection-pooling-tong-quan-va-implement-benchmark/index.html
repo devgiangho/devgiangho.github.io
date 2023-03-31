@@ -308,7 +308,7 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
 <p>Again, mình là Kiên, một anh dev với tay nghề khá thập cẩm, series backend nâng cao này chính là một trong những nỗ lực của mình để đào sâu kĩ năng backend. Hi vọng sẽ có ích với các bạn, và cả mình nữa 🤗</p>
 <h2 id="database-connection" style="position:relative;"><a href="#database-connection" aria-label="database connection permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Database connection</h2>
 <p>Nếu theo dõi series này từ đầu, bạn sẽ biết về <a href="https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp/#three-way-handshake">TCP handshake</a>, mà chưa thì bạn có thể đọc lại để nắm về nó. Và hiển nhiên, các database dạng RDBMS như MSSQL, MySQL, Postgresql đều support protocol giao tiếp qua TCP/IP như một tiêu chuẩn, đặc biệt nếu bạn kết nối tới các database từ xa, và phải thêm SSL/TLS để bảo mật connection.</p>
-<p>Nhìn xem hình sau để biết lifecycle của một kết nối tới postgres DB:
+<p>Nhìn xem hình sau để biết lifecycle của một kết nối tới postgres DB <sup id="fnref-1"><a href="#fn-1" class="footnote-ref">1</a></sup>:
 <span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 850px; "
@@ -926,7 +926,7 @@ Kĩ thuật này rất hữu ích với các hệ thống backend có lượng r
       <a href="#fnref-1" class="footnote-backref" style="display:inline;text-decoration: none;">
         ↩
       </a>
-    <p class="footnote-paragraph" style="display:inline; margin-left: 5px;"><a href="https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_connection_phase.html">Mysql Connection phase</a></p>
+    <p class="footnote-paragraph" style="display:inline; margin-left: 5px;"><a href="https://www.postgresql.org/docs/current/protocol-flow.html">Wire protocol Postgresdb</a></p>
       </li>
       
     
