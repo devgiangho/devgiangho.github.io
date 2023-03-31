@@ -303,15 +303,15 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
 /static/5d70a032bfc7060682647360314a9e25/3891b/blog-database-connection-pooling.png 400w,
 /static/5d70a032bfc7060682647360314a9e25/bc8e0/blog-database-connection-pooling.png 800w,
 /static/5d70a032bfc7060682647360314a9e25/6e898/blog-database-connection-pooling.png 960w" src="/static/5d70a032bfc7060682647360314a9e25/bc8e0/blog-database-connection-pooling.png" alt="" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><section class="postStyle__StyledPost-sc-1q9n7ky-6 fuGkXD post"><p>Một nhà thông thái nào đó đã nói: “Muốn lên trình backend, thì database là một phần không thể bỏ qua”.</p>
-<p>Vâng, trong series backend nâng cao này, mình muốn tiếp tục bằng tối ưu hiệu năng database, phần đầu tiên sẽ là connection pooling. Vậy connection pooling là gì? Sử dụng connection pool như thế nào? Hãy đọc bài này nhen.</p>
+<p>Vâng, trong series backend nâng cao này, mình muốn tiếp tục bằng tối ưu hiệu năng database, phần đầu tiên sẽ là connection pooling. Vậy connection pooling là gì? Sử dụng connection pool như thế nào? Hãy tham khảo bài viết này nha.</p>
 <h2 id="first-thing-first" style="position:relative;"><a href="#first-thing-first" aria-label="first thing first permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>First thing first</h2>
-<p>Again, mình là Kiên, một dev với tay nghề khá thập cẩm, series backend nâng cao này chính là một trong những nỗ lực của mình để đào sâu kĩ năng backend. Hi vọng sẽ có ích với các bạn, và cả mình nữa 🤗</p>
+<p>Again, mình là Kiên, một anh dev với tay nghề khá thập cẩm, series backend nâng cao này chính là một trong những nỗ lực của mình để đào sâu kĩ năng backend. Hi vọng sẽ có ích với các bạn, và cả mình nữa 🤗</p>
 <h2 id="connection-pool" style="position:relative;"><a href="#connection-pool" aria-label="connection pool permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection pool</h2>
-<p>Nếu theo dõi series này từ đầu, bạn sẽ biết về <a href="https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp/#three-way-handshake">TCP handshake</a>, mà chưa thì bạn có thể đọc lại để nắm về nó. Và hiển nhiên, các database dạng RDBMS như MSSQL, MySQL, Postgresql đều support protocol giao tiếp qua TCP/IP như một tiêu chuẩn, đặc biệt nếu bạn kết nối tới DB remote, và phải thêm SSL mode để bảo mật connection.</p>
+<p>Nếu theo dõi series này từ đầu, bạn sẽ biết về <a href="https://devgiangho.github.io/so-sanh-chi-tiet-tcp-va-udp-tai-sao-udp-nhanh-hon-udp/#three-way-handshake">TCP handshake</a>, mà chưa thì bạn có thể đọc lại để nắm về nó. Và hiển nhiên, các database dạng RDBMS như MSSQL, MySQL, Postgresql đều support protocol giao tiếp qua TCP/IP như một tiêu chuẩn, đặc biệt nếu bạn kết nối tới các database từ xa, và phải thêm SSL/TLS để bảo mật connection.</p>
 <p>Do đó, nếu mỗi lần có request, thì nếu application tạo mới 1 connection tới DB, thì sẽ phải thực hiện handshake lại, lúc đó sẽ rất tốn resource và làm chậm app đi. Do đó connection pooling ra đời.</p>
 <h3 id="connection-pool-la-gi" style="position:relative;"><a href="#connection-pool-la-gi" aria-label="connection pool la gi permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection pool là gì?</h3>
 <p>Thực chất, connection pool là một implementation của design pattern <a href="https://sourcemaking.com/design_patterns/object_pool">Object Pool</a>. Khá giống với singleton, đây là một pattern được tạo ra với mục đích để có thể sử dụng lại được các object mà chúng ta mong muốn.</p>
-<p>Dĩ nhiên với những thao tác đắt đỏ như thiết lập 1 connection mới tới DB thì pattern này lại quá ư là hợp lý.</p>
+<p>Dĩ nhiên với những thao tác đắt đỏ như thiết lập 1 kết nối mới tới DB thì pattern này lại quá ư là hợp lý.</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 822px; "
@@ -342,7 +342,9 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
       />
   </a>
     </span></p>
-<p>Giống như việc gửi thư bằng máy bay giấy, mỗi lần muốn trao đổi 1 bức thư thì sẽ phải gấp 1 chú máy bay mới, thế thì trong trường hợp có nhiều người cần gửi thư, tại sao không sử dụng lại các máy bay đã gấp? Thời gian dừng chờ 1 máy bay cũ có khi còn nhanh hơn đợi gấp 1 máy bay mới.</p>
+<p>Giống như việc chở người qua sông ở bến đò, có rất nhiều thuyền, nhưng để thuyền quá lâu dưới nước sẽ làm mục gỗ nhanh hơn. Nên thuyền được cất vào kho.</p>
+<p>Mỗi lần chở người qua là phải bên 1 chiếc thuyền từ kho bên bờ sông xuống, chở người qua bên kia bờ, rồi chạy về, đưa thuyền đi cất => tốn thời gian.</p>
+<p>Trong khi đó chúng ta sẽ đặt tối đa khoảng 100 chiếc thuyền neo đậu bên cạnh sông khi không có khách, mỗi thuyền sẽ được dừng nghỉ 1 buổi, hết buổi không có khách ngồi thuyền đó thì mới đưa cất đi.</p>
 <h3 id="nửa-phut-quảng-cao" style="position:relative;"><a href="#n%E1%BB%ADa-phut-qu%E1%BA%A3ng-cao" aria-label="nửa phut quảng cao permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nửa phút quảng cáo</h3>
 <p>Gần đây mình mới mua 1 cuốn sách mang tên “Làm chủ các mẫu thiết kế kinh điển trong lập trình” của anh <a href="https://www.facebook.com/dung.tavan">Tạ Văn Dũng</a>, một người anh senior rất tâm huyết với nghề, cũng như rất nhiệt tình trong việc giúp đỡ và giải đáp thắc mắc cho junior đi sau (trong đó có mình).</p>
 <p>Anh là founder của tổ chức mã nguồn mở <a href="https://github.com/youngmonkeys">YoungMonkeys</a> - github, có khá là nhiều thư viện và framework đã được team implement sẵn, đặc biệt đối với các startup làm về game.</p>
@@ -382,11 +384,11 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
     </span></p>
 <p>Các bạn có thể tham khảo mua sách <a href="https://www.trithuctrebooks.com/products/lam-chu-cac-mau-thiet-ke-kinh-dien-trong-lap-trinh-mastering-design-patterns">ở đây</a>, mình không nhận đồng PR nào cả, mình chỉ muốn ủng hộ anh Dũng thôi, vì phần lớn lợi nhuận của sách này đều được tác giả gửi tặng chương trình cặp lá yêu thương, peace!</p>
 <h3 id="connection-pooling-trong-database" style="position:relative;"><a href="#connection-pooling-trong-database" aria-label="connection pooling trong database permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Connection pooling trong database</h3>
-<p>Ahh hahh hemmm, chúng ta quay lại bài giảng.</p>
-<p>Database - cơ sở dữ liệu cũng là một phần mềm, cũng dựa trên máy chủ vậy lý, mà đã thế thì nó cũng sẽ có giới hạn về số lượng kết nối trong cùng 1 thời điểm.</p>
+<p>Ahh hhh hmmm, chúng ta quay lại bài giảng.</p>
+<p>Database - cơ sở dữ liệu cũng là một phần mềm, cũng nằm trên máy chủ vật lý, mà đã thế thì nó cũng sẽ có giới hạn về số lượng kết nối trong cùng 1 thời điểm.</p>
 <p>Con số <strong>mặc định</strong> cho số lượng connection tối đa của MySQL là 151.</p>
 <p>Với Postgresql thì sẽ là 100.</p>
-<p>MSSQL thì kinh dị hơn với con số …. <strong>32.767.</strong> Có khi do tốn nhiều tiền nên xịn :))).</p>
+<p>MSSQL thì kinh dị hơn với con số …. <strong>32.767.</strong> (Chắc do tốn tiền nên vậy  😂)</p>
 <p>Trong khuôn khổ bài này mình sẽ chỉ tập trung đào sâu với Postgresql.</p>
 <h3 id="cach-implement-connection-pooling" style="position:relative;"><a href="#cach-implement-connection-pooling" aria-label="cach implement connection pooling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cách implement connection pooling</h3>
 <p>Về cơ bản chúng ta có 2 cách để implement connection pooling.</p>
@@ -395,33 +397,33 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
 <li>Cách thứ 2, chính là implement connection pooling phía layer backend.</li>
 </ul>
 <p>Chúng ta có thể implement 1 pooler cách đơn giản bằng cách sử dụng <em>1 Queue/ Stack</em> và <em>1 mutex Lock</em>, vì nó là design pattern mà, dĩ nhiên. Tham khảo tutorial của Microsoft <a href="https://learn.microsoft.com/en-us/azure/mysql/single-server/sample-scripts-java-connection-pooling">Java sample to illustrate connection pooling</a>.</p>
-<p>Tuy nhiên, thường thì chúng ta chẳng đi <strong>re-invent the wheel</strong> làm gì, các thư viện hiện tại đã support sẵn rồi, chỉ việc dùng thôi. Xem phần tiếp dưới đây:</p>
+<p>Trên thực tế thì chúng ta chẳng đi <strong>re-invent the wheel</strong> làm gì, các thư viện hiện tại đã hỗ trợ sẵn rồi, chỉ việc dùng thôi. Xem phần tiếp dưới đây:</p>
 <h2 id="benchmark-connection-pooling" style="position:relative;"><a href="#benchmark-connection-pooling" aria-label="benchmark connection pooling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Benchmark connection pooling</h2>
 <p>Tiết học lí thuyết đã xong, chúng ta chuyển qua tiết thực hành nhé.</p>
 <p>Đầu tiên để minh chứng rằng <strong>connection pooling thực sự boost performance,</strong> mình có ý tưởng như sau:</p>
-<p>Tạo một API đơn giản với 3 endpoint, sử dụng 3 phương pháp sử dụng database connection khác nhau:</p>
+<p>Tạo một API đơn giản với 3 endpoint, với 3 phương pháp sử dụng database connection khác nhau:</p>
 <ul>
 <li>Khởi tạo 1 connection mới cho mọi request.</li>
-<li>Khởi tạo 1 connection từ đầu và dùng nó cho mọi request. (Singleton)</li>
+<li>Khởi tạo 1 connection từ đầu và dùng nó cho mọi request (singleton).</li>
 <li>Khởi tạo 1 connection pool với số lượng idle connection cao.</li>
 </ul>
-<p>Sau đó sẽ test 3 endpoint này bằng cả browser và tool benchmark tấn công dồn dập =)).</p>
+<p>Sau đó sẽ test 3 endpoint này bằng cả browser và tool benchmark tấn công dồn dập 👻.</p>
 <p>Đầu tiên là cấu hình máy mình:</p>
-<div class="gatsby-highlight" data-language="yaml"><pre class="language-yaml"><code class="language-yaml">➜  ~ neofetch
+<div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">➜  ~ neofetch
 Máy Kiên Đẹp Trai
-<span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">---</span><span class="token punctuation">-</span><span class="token punctuation">-</span>
-<span class="token key atrule">OS</span><span class="token punctuation">:</span> Ubuntu 22.10 x86_64
-<span class="token key atrule">Host</span><span class="token punctuation">:</span> Latitude 5420
-<span class="token key atrule">Kernel</span><span class="token punctuation">:</span> 5.19.0<span class="token punctuation">-</span>38<span class="token punctuation">-</span>generic
-<span class="token key atrule">CPU</span><span class="token punctuation">:</span> 11th Gen Intel i7<span class="token punctuation">-</span>1185G7 (8) @ 4.800GHz
-<span class="token key atrule">GPU</span><span class="token punctuation">:</span> Intel TigerLake<span class="token punctuation">-</span>LP GT2 <span class="token punctuation">[</span>Iris Xe Graphics<span class="token punctuation">]</span>
-<span class="token key atrule">Memory</span><span class="token punctuation">:</span> 8862MiB / 31491MiB</code></pre></div>
+-----------------
+OS: Ubuntu <span class="token number">22.10</span> x86_64
+Host: Latitude <span class="token number">5420</span>
+Kernel: <span class="token number">5.19</span>.0-38-generic
+CPU: 11th Gen Intel i7-1185G7 <span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> @ <span class="token number">4</span>.800GHz
+GPU: Intel TigerLake-LP GT2 <span class="token punctuation">[</span>Iris Xe Graphics<span class="token punctuation">]</span>
+Memory: 8862MiB / 31491MiB</code></pre></div>
 <h3 id="một-vai-khai-niệm" style="position:relative;"><a href="#m%E1%BB%99t-vai-khai-ni%E1%BB%87m" aria-label="một vai khai niệm permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Một vài khái niệm</h3>
 <p>Chúng ta làm quen trước vài khái niệm của connection pooling:</p>
 <ul>
-<li>Connection pool size: Kích thước của connection pool, dĩ nhiên không được vượt quá số lượng max connection của DB rồi.</li>
-<li>Idle connection: Các connection “tạm nghỉ”, khi được sử dụng xong thì các idle connection không được release luôn, mà được ở lại trạng thái này.</li>
-<li>Connection lifetime: Đại loại là thời gian mà các connection "live", đạt ngưỡng này thì force close connection.</li>
+<li><strong>Pool size</strong>: Kích thước của connection pool, dĩ nhiên không được vượt quá số lượng kết nối tối đa của DB rồi.</li>
+<li><strong>Idle connection</strong>: Các connection “tạm nghỉ”, khi được sử dụng xong thì các idle connection không được release luôn, mà được ở lại trạng thái này.</li>
+<li><strong>Connection lifetime</strong>: Đại loại là thời gian mà các connection "live", đạt ngưỡng này thì force close connection.</li>
 </ul>
 <blockquote>
 <p>💡 Không có gì chắc chắn rằng các “idle connection” sẽ luôn luôn sống và không cần phải handshake lại với DB vì các lí do như timeout (thời gian đã set) hoặc do phía DB.
@@ -438,7 +440,7 @@ Dĩ nhiên thì làm vậy sẽ tốn resource hơn để quản lý.</p>
     price <span class="token keyword">NUMERIC</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span><span class="token punctuation">,</span>
     description <span class="token keyword">TEXT</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
-<p>Sau đó lên mockaroo để tạo 1000 dòng data:</p>
+<p>Sau đó lên <a href="https://mockaroo.com/">mockaroo</a> để tạo 1000 dòng data:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
       style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1200px; "
@@ -548,15 +550,15 @@ Dĩ nhiên thì làm vậy sẽ tốn resource hơn để quản lý.</p>
 		log<span class="token punctuation">.</span><span class="token function">Fatalf</span><span class="token punctuation">(</span><span class="token string">"Unable to start HTTP server: %v\n"</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span>
 	<span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre></div>
-<p>Ở đây mình chọn thư viện sqlx, thư viện này nếu chúng ta tạo 1 connection singleton, thì mặc định nó đã bật chế độ connection pool rồi, do đó mình set số lượng về 1 để giả lập tình trạng không có pool ở các ngôn ngữ và thư viện khác.</p>
-<p>Về phần pool, mình cài đặt pool size là 90, và số lượng idle connection là 50, một con số khá to, và lifetime là 2 phút.</p>
+<p>Ở đây mình chọn thư viện <code class="language-text">sqlx</code>, thư viện này nếu chúng ta tạo 1 connection singleton, thì mặc định nó đã bật chế độ connection pool rồi, do đó mình set số lượng về 1 để giả lập tình trạng không có pool ở các ngôn ngữ và thư viện khác.</p>
+<p>Về phần pool, mình cài đặt pool size là 90, và số lượng idle connection là 50, một con số khá lớn, và lifetime là 2 phút.</p>
 <p>Rồi, chúng ta thêm 3 endpoint với method <code class="language-text">GET</code>:</p>
 <ul>
 <li><code class="language-text">products/pooled</code> : Sử dụng <strong>connection pool</strong>.</li>
 <li><code class="language-text">products/normal</code> : Sử dụng một <strong>singleton connection</strong> cho toàn bộ request.</li>
 <li><code class="language-text">products/new</code>: Thành lập <strong>1 kết nối mới</strong> cho mọi request.</li>
 </ul>
-<p>Bạn có thể thấy, behavior của 3 endpoint này giống nhau hoàn toàn trừ việc sử dụng connection tới database thôi.</p>
+<p>Bạn có thể thấy, behavior của 3 endpoint này giống nhau hoàn toàn, trừ việc sử dụng connection tới database thôi.</p>
 <div class="gatsby-highlight" data-language="go"><pre class="language-go"><code class="language-go">router<span class="token punctuation">.</span><span class="token function">GET</span><span class="token punctuation">(</span><span class="token string">"/products/normal"</span><span class="token punctuation">,</span> <span class="token keyword">func</span><span class="token punctuation">(</span>c <span class="token operator">*</span>gin<span class="token punctuation">.</span>Context<span class="token punctuation">)</span> <span class="token punctuation">{</span>
 		startTime <span class="token operator">:=</span> time<span class="token punctuation">.</span><span class="token function">Now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 
@@ -715,7 +717,7 @@ router<span class="token punctuation">.</span><span class="token function">GET</
 <p>Đây chính là error message:</p>
 <div class="gatsby-highlight" data-language="json"><pre class="language-json"><code class="language-json">error	<span class="token string">"pq: sorry, too many clients already"</span></code></pre></div>
 <p>Đấy, chưa gì mới vậy thôi mà DB đã chửi rồi.</p>
-<p>Thời gian trung bình của request ở endpoint này là khoảng: <strong>6380</strong> micro seconds ~ 6.3ms</p>
+<p>Thời gian trung bình của request ở endpoint này là khoảng: <strong>6380</strong> micro seconds ~ <strong>6.3ms</strong></p>
 <p>Tiếp tục với nút normal, nơi mà sử dụng singleton connection cho mọi request, <code class="language-text">/products/normal</code>:</p>
 <p><span
       class="gatsby-resp-image-wrapper"
@@ -781,7 +783,7 @@ router<span class="token punctuation">.</span><span class="token function">GET</
   </a>
     </span></p>
 <p>Kinh chưa? Không fail lần nào.</p>
-<p>Con số ấn tượng: 1034 microseconds ~ 1.03ms</p>
+<p>Con số ấn tượng: 1034 microseconds ~ <strong>1.03ms</strong></p>
 <h3 id="benchmark-hardcore-hơn" style="position:relative;"><a href="#benchmark-hardcore-h%C6%A1n" aria-label="benchmark hardcore hơn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Benchmark hardcore hơn</h3>
 <p>Bạn có thể thấy con số khá ấn tượng của connection pool khi chúng ta chạy dồn dập 200 request bằng javascript. Tuy nhiên để giả lập tình huống thực tế lúc server nhận hàng ngàn concurrent request, mình sẽ sử dụng 1 công cụ khác để benchmark: go-wrk.</p>
 <p>Công cụ này giúp benchmark mạnh mẽ hơn, hỗ trợ config thời gian chạy bench, số goroutine chạy đồng thời, con số này tỉ lệ thuận với số lượng request cùng gửi đi trong 1 thời điểm.</p>
@@ -880,7 +882,7 @@ Number of Errors:       <span class="token number">15</span></code></pre></div>
 <p>Tuy nhiên đánh đổi điều đó là các request sẽ phải wait lâu hơn 1 chút xíu để đợi connection từ pool.</p>
 <h2 id="kết-luận" style="position:relative;"><a href="#k%E1%BA%BFt-lu%E1%BA%ADn" aria-label="kết luận permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Kết luận</h2>
 <p>Túm cái váy lại thì connection pooling là một kỹ thuật giúp tăng hiệu suất, giảm tỉ lệ request bị lỗi.
-Kĩ thuật này rất hữu ích với các hệ thống backend có lượng request đồng thời lớn, do đó sẽ rất tốt nếu anh em hiểu rõ và nắm vứng nó</p>
+Kĩ thuật này rất hữu ích với các hệ thống backend có lượng request đồng thời lớn, do đó sẽ rất tốt nếu anh em hiểu rõ và nắm vứng nó.</p>
 <p>Happy coding!</p>
 
       <div class="footnotes">
