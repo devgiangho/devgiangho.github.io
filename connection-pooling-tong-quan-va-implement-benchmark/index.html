@@ -342,8 +342,8 @@ data-styled.g60[id="style__PrevPost-sc-cu5n11-2"]{content:"jKVyMT,"}/*!sc*/
       />
   </a>
     </span></p>
-<p>Giống như việc chở người qua sông ở bến đò, có rất nhiều thuyền, nhưng để thuyền quá lâu dưới nước sẽ làm mục gỗ nhanh hơn. Nên thuyền được cất vào kho.</p>
-<p>Mỗi lần chở người qua là phải bên 1 chiếc thuyền từ kho bên bờ sông xuống, chở người qua bên kia bờ, rồi chạy về, đưa thuyền đi cất => tốn thời gian.</p>
+<p>Giống như việc chở khách qua sông ở bến đò, có rất nhiều thuyền, nhưng để mặc con thuyền quá lâu dưới nước sẽ làm mục gỗ nhanh hơn. Nên thuyền được cất vào kho.</p>
+<p>Mỗi lần chở người qua là phải: Bê 1 chiếc thuyền từ kho bên bờ sông xuống, chở người qua bên kia bờ, rồi chạy về, đưa thuyền đi cất => tốn thời gian.</p>
 <p>Trong khi đó chúng ta sẽ đặt tối đa khoảng 100 chiếc thuyền neo đậu bên cạnh sông khi không có khách, mỗi thuyền sẽ được dừng nghỉ 1 buổi, hết buổi không có khách ngồi thuyền đó thì mới đưa cất đi.</p>
 <h3 id="nửa-phut-quảng-cao" style="position:relative;"><a href="#n%E1%BB%ADa-phut-qu%E1%BA%A3ng-cao" aria-label="nửa phut quảng cao permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nửa phút quảng cáo</h3>
 <p>Gần đây mình mới mua 1 cuốn sách mang tên “Làm chủ các mẫu thiết kế kinh điển trong lập trình” của anh <a href="https://www.facebook.com/dung.tavan">Tạ Văn Dũng</a>, một người anh senior rất tâm huyết với nghề, cũng như rất nhiệt tình trong việc giúp đỡ và giải đáp thắc mắc cho junior đi sau (trong đó có mình).</p>
@@ -786,7 +786,7 @@ router<span class="token punctuation">.</span><span class="token function">GET</
 <p>Con số ấn tượng: 1034 microseconds ~ <strong>1.03ms</strong></p>
 <h3 id="benchmark-hardcore-hơn" style="position:relative;"><a href="#benchmark-hardcore-h%C6%A1n" aria-label="benchmark hardcore hơn permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Benchmark hardcore hơn</h3>
 <p>Bạn có thể thấy con số khá ấn tượng của connection pool khi chúng ta chạy dồn dập 200 request bằng javascript. Tuy nhiên để giả lập tình huống thực tế lúc server nhận hàng ngàn concurrent request, mình sẽ sử dụng 1 công cụ khác để benchmark: go-wrk.</p>
-<p>Công cụ này giúp benchmark mạnh mẽ hơn, hỗ trợ config thời gian chạy bench, số goroutine chạy đồng thời, con số này tỉ lệ thuận với số lượng request cùng gửi đi trong 1 thời điểm.</p>
+<p>Công cụ này giúp benchmark / stress test mạnh mẽ hơn, hỗ trợ config thời gian chạy bench, số goroutine chạy đồng thời, con số này tỉ lệ thuận với số lượng request cùng gửi đi trong 1 thời điểm.</p>
 <p>Cài đặt:</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">go <span class="token function">install</span> github.com/tsliwowicz/go-wrk@latest</code></pre></div>
 <p>Command benchmark có dạng: <code class="language-text">go-wrk -c &lt;số goroutine&gt; -d &lt;số giây&gt; &lt;url&gt;</code> . Mặc định sẽ chạy 10 giây.</p>
