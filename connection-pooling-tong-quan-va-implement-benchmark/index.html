@@ -327,19 +327,31 @@ data-styled.g61[id="style__NextPost-sc-cu5n11-3"]{content:"bnRGLe,"}/*!sc*/
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 60%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAAAsTAAALEwEAmpwYAAABeUlEQVQoz41TS07DMBDtGbkDQkLiEtwB1nAKlqzYIMG2gFqQCmlTN07ifJz4l4dm2lRtSitGepnxZPz8xp8RyLoOHdam62aT6jOH1v+rKR7MH9EnhMCD8fQTZ+dXWMiUx+EP0j4XZzWuHyd4+Mh47EN3SPgy+8bFzS3ehUCfJzW7CJuJb1GGy/tX3D2LQ8K+BW0tJtEcrff4jz2NI4hif4v2CGl1mWukUmKVJJBpingpsEok4ngJmWZwPoDEUOvGON6/o4RUHKcaunWMurEotUHVWNStwzxOEC0E5ssEK5khUQbWh+OE3ncQWQPrApwLMNZzrIoKMs0ZS5Gw4qrWkIVhEccJw5qwMY5BCklppiokqcLsZ4Hp14w9kRIhiTi5h0RYastQlYGqWhS1QakdhCwgpILMS+S0iGq3p3tUoartul3nuWXnO4b1HR8GdUh1FFPtScL+rm0vcQhQKmcURcG+v7P0Rnbr9wiHT223SGvNaJqGfRgQDONfRHanBSLVb5gAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Postgres DB Connection phase"
-        title="Postgres DB Connection phase"
-        src="/static/904ee74a9af7cb8e733b0be50215ab97/8740f/connection-phase-db.png"
-        srcset="/static/904ee74a9af7cb8e733b0be50215ab97/5a46d/connection-phase-db.png 300w,
+  <picture>
+          <source
+              srcset="/static/904ee74a9af7cb8e733b0be50215ab97/c85cb/connection-phase-db.webp 300w,
+/static/904ee74a9af7cb8e733b0be50215ab97/e88ff/connection-phase-db.webp 600w,
+/static/904ee74a9af7cb8e733b0be50215ab97/3fe5f/connection-phase-db.webp 1106w"
+              sizes="(max-width: 1106px) 100vw, 1106px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/904ee74a9af7cb8e733b0be50215ab97/5a46d/connection-phase-db.png 300w,
 /static/904ee74a9af7cb8e733b0be50215ab97/0a47e/connection-phase-db.png 600w,
 /static/904ee74a9af7cb8e733b0be50215ab97/8740f/connection-phase-db.png 1106w"
-        sizes="(max-width: 1106px) 100vw, 1106px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1106px) 100vw, 1106px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/904ee74a9af7cb8e733b0be50215ab97/8740f/connection-phase-db.png"
+            alt="Postgres DB Connection phase"
+            title="Postgres DB Connection phase"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Do đó, nếu mỗi lần có request, thì nếu application tạo mới 1 connection tới DB, thì sẽ phải thực hiện handshake lại, lúc đó sẽ rất tốn resource và làm chậm app đi. Vì vậy connection pooling ra đời.</p>
@@ -361,19 +373,31 @@ data-styled.g61[id="style__NextPost-sc-cu5n11-3"]{content:"bnRGLe,"}/*!sc*/
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 64%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAANCAYAAACpUE5eAAAACXBIWXMAAAsTAAALEwEAmpwYAAABz0lEQVQ4y42Ty2rbQBSG/QR9jb5EH6Bv0U3JO4Rusyh0212XLYRQCBSyyCKrFlqaBJyb7dhOYxErqWPZ8U3WZS76ysxYiiVCqOBw5pz5+ec/F9UAsiwj/8w5t/W4dOeCMnaVr+Xg5s2A/mia0/LfD1XyNb06fG/8odW/R8iM+TJFaW3zWmcl4upD1XxB+KN5XRCGscDkU6kJY0UiVEFuHwBEKvh6HfD2+JZP3RFRIsoKf156tG+HSOUUSqVZRNLaPJI2jhLJwzy2+BNvzOsPB7z71uLVxwv2Ww8VwlaPtj9ECEOUopRmGqbUOwO8wcKqXcaCYBpZ/O+rgM3tQ+7HM9586bB7Ni4T5iUbhYtI2B6GsSQWWJWpUCxjyWjmFDb8CS82dtj4fMrL9+fsNcbVkp3COFFM5oklFNKVnffwcbrYHu8e3bC132O7PiFaYQrCX5cenbvAbowpTcrHKVd37vkpa3d5cNrh3LtDKTflp9cjWzOQpgqlkWurVSz2Ik6Z2elmGHHG5+UZr3SGULlh4+qfVCLsD0NOukPOrgKOGj7N3siSurKh6884bvrU2385vOjjDcLnCc2epUIipCJJhfXuyi2y6anJG4zxBv8U4T/Nc+kpDqzdhgAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="connection-pooling.png"
-        title="connection-pooling.png"
-        src="/static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png"
-        srcset="/static/374171f1d48fb5fa39f64a74120885b2/5a46d/connection-pooling.png 300w,
+  <picture>
+          <source
+              srcset="/static/374171f1d48fb5fa39f64a74120885b2/c85cb/connection-pooling.webp 300w,
+/static/374171f1d48fb5fa39f64a74120885b2/e88ff/connection-pooling.webp 600w,
+/static/374171f1d48fb5fa39f64a74120885b2/355f1/connection-pooling.webp 822w"
+              sizes="(max-width: 822px) 100vw, 822px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/374171f1d48fb5fa39f64a74120885b2/5a46d/connection-pooling.png 300w,
 /static/374171f1d48fb5fa39f64a74120885b2/0a47e/connection-pooling.png 600w,
 /static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png 822w"
-        sizes="(max-width: 822px) 100vw, 822px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 822px) 100vw, 822px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/374171f1d48fb5fa39f64a74120885b2/f73a1/connection-pooling.png"
+            alt="connection-pooling.png"
+            title="connection-pooling.png"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Giống như việc chở khách qua sông ở bến đò, có rất nhiều thuyền, nhưng để mặc con thuyền quá lâu dưới nước sẽ làm mục gỗ nhanh hơn. Nên thuyền được cất vào kho.</p>
@@ -398,22 +422,37 @@ data-styled.g61[id="style__NextPost-sc-cu5n11-3"]{content:"bnRGLe,"}/*!sc*/
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 98.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQCAQP/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB3bJTG2hP7BwS/wD/xAAcEAABAwUAAAAAAAAAAAAAAAABABARAgMEIUH/2gAIAQEAAQUCxxADWtUS/F//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AR//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AR//xAAXEAEAAwAAAAAAAAAAAAAAAAABECBR/9oACAEBAAY/Al2S3//EABoQAQACAwEAAAAAAAAAAAAAAAEAMRARIUH/2gAIAQEAAT8hEO1NiN3A1dvWC15CoccCp//aAAwDAQACAAMAAAAQXB9+/8QAFREBAQAAAAAAAAAAAAAAAAAAASD/2gAIAQMBAT8QY//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8QH//EAB0QAQACAgIDAAAAAAAAAAAAAAEAESExUXFBgeH/2gAIAQEAAT8QDjWXqKx8d7j5CXsA9Wl+Qju3pJRDRk5mIGgqXeYRYT//2Q=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg"
-        title="338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg"
-        src="/static/34703e229ed72bc6defb78acaa572097/e5166/sach-lamchu-design-pattern.jpg"
-        srcset="/static/34703e229ed72bc6defb78acaa572097/f93b5/sach-lamchu-design-pattern.jpg 300w,
+  <picture>
+          <source
+              srcset="/static/34703e229ed72bc6defb78acaa572097/c85cb/sach-lamchu-design-pattern.webp 300w,
+/static/34703e229ed72bc6defb78acaa572097/e88ff/sach-lamchu-design-pattern.webp 600w,
+/static/34703e229ed72bc6defb78acaa572097/92f8c/sach-lamchu-design-pattern.webp 1200w,
+/static/34703e229ed72bc6defb78acaa572097/62ed8/sach-lamchu-design-pattern.webp 1800w,
+/static/34703e229ed72bc6defb78acaa572097/46261/sach-lamchu-design-pattern.webp 2400w,
+/static/34703e229ed72bc6defb78acaa572097/e51ec/sach-lamchu-design-pattern.webp 3024w"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/34703e229ed72bc6defb78acaa572097/f93b5/sach-lamchu-design-pattern.jpg 300w,
 /static/34703e229ed72bc6defb78acaa572097/b4294/sach-lamchu-design-pattern.jpg 600w,
 /static/34703e229ed72bc6defb78acaa572097/e5166/sach-lamchu-design-pattern.jpg 1200w,
 /static/34703e229ed72bc6defb78acaa572097/d9c39/sach-lamchu-design-pattern.jpg 1800w,
 /static/34703e229ed72bc6defb78acaa572097/df51d/sach-lamchu-design-pattern.jpg 2400w,
 /static/34703e229ed72bc6defb78acaa572097/9568a/sach-lamchu-design-pattern.jpg 3024w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/jpeg"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/34703e229ed72bc6defb78acaa572097/e5166/sach-lamchu-design-pattern.jpg"
+            alt="338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg"
+            title="338E3B68-731B-43B2-A0D6-22163A59AE46.jpeg"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Các bạn có thể tham khảo mua sách <a href="https://www.trithuctrebooks.com/products/lam-chu-cac-mau-thiet-ke-kinh-dien-trong-lap-trinh-mastering-design-patterns">ở đây</a>, mình không nhận đồng PR nào cả, mình chỉ muốn ủng hộ anh Dũng thôi, vì phần lớn lợi nhuận của sách này đều được tác giả gửi tặng chương trình cặp lá yêu thương, peace!</p>
@@ -490,20 +529,33 @@ Dĩ nhiên thì làm vậy sẽ tốn resource hơn để quản lý.</p>
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 37.666666666666664%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAyklEQVQoz4WRyQ6EMAxD+f8fBQlKWbqwHDJ6kVzNMAcOVuI2cZy2u67LzvM04n3fLQpP/obuOA5b19VSSt5MzDl7Xmuxbdus1mrUMfgN3b7v3kQDiDHa0Pe2p+TnYJ5nW5blZwvhyTscTdPUXMwh2DiOxqBvaChRWwDxJphzcgesLYdw7EuslOIOqYGTu/MYXZS+JggJIdgwDF6EEG6fb6MN9Ik6k1B7Q4qYim25EZiunGKi6iT29ykIUgRBgBzQrE9BQPc605Cn4AccJm0dv5oUqQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Mock product mockaroo"
-        title="Mock product mockaroo"
-        src="/static/418d5a0de17d85ba489bb2357503d3e2/c1b63/mockaroo-mock-data.png"
-        srcset="/static/418d5a0de17d85ba489bb2357503d3e2/5a46d/mockaroo-mock-data.png 300w,
+  <picture>
+          <source
+              srcset="/static/418d5a0de17d85ba489bb2357503d3e2/c85cb/mockaroo-mock-data.webp 300w,
+/static/418d5a0de17d85ba489bb2357503d3e2/e88ff/mockaroo-mock-data.webp 600w,
+/static/418d5a0de17d85ba489bb2357503d3e2/92f8c/mockaroo-mock-data.webp 1200w,
+/static/418d5a0de17d85ba489bb2357503d3e2/9447f/mockaroo-mock-data.webp 1294w"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/418d5a0de17d85ba489bb2357503d3e2/5a46d/mockaroo-mock-data.png 300w,
 /static/418d5a0de17d85ba489bb2357503d3e2/0a47e/mockaroo-mock-data.png 600w,
 /static/418d5a0de17d85ba489bb2357503d3e2/c1b63/mockaroo-mock-data.png 1200w,
 /static/418d5a0de17d85ba489bb2357503d3e2/d4377/mockaroo-mock-data.png 1294w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/418d5a0de17d85ba489bb2357503d3e2/c1b63/mockaroo-mock-data.png"
+            alt="Mock product mockaroo"
+            title="Mock product mockaroo"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Sau khi download về, mình có copy paste lại 1000 dòng thành hơn mấy chục nghìn dòng dữ liệu.</p>
@@ -701,19 +753,31 @@ router<span class="token punctuation">.</span><span class="token function">GET</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADz0lEQVQ4y5WT3WsdRRjG948QtGg1WAt6p6AognRvilB762VvvFL0xlv/A6lbogSLhhZEUNIkFdukmMSkTRObk5ycNjn9SDXfabPn7J7d2Z2d3ZnZmd15ZDfB1gsvHPjxzrzM+/DO8LzWuy+eGXjnpc/wVt/HeP3oR3iz71O88fIZvHLkFPqeef8/Of7saRx/7hReff4DvHbkQ7z9wud47+gnA9b01PzZZuMuGrdWRGNhRbdaa3p1ZV3faa3r5uKabi4+PGTtX3G5+VAvLtzVzcYD3VhYEUuLbUxOzJ+1uMgcHCwFwOD/L3NYCyEyx+r5PceUBlprhRKgguFie7Tmx/tXMLg6gsHVYfz0YAyDq5fq/YX2CM7f+Rlu4tdyVW2lUWlZhJCnO4SBQSAihDIGkRGIJAjrSP/JhyJGTxBoU+DpWkJCx3LdjiOlBOdcZVkGzgWUVMi5RMoByoFc6PqsZRVz6FzXd6SQUEpXqDzP4XmeY7Xb95xeGKHrB4pEFBURTUAIQZgIhEyBZRyMMfAsRRgGCIIA3a4H3++BsRSERCqOY2xsbDiWu7vh6CwCJFUwElAMmicIQoIwDBGREEnC6s6DtARheS1e5WJKkSsFmeeqKEp0ul3H+uKXSeeb6x30T/dU/2yCL6dCjLZCZJSAJQz1N2QZsjQFyxQyntdnzg/yWmsUWiutFLxKcGD6mjP9wMON+6Fa2Ba4+VeC1ibBlsfgUgqRF+CqBNclhC4gVIUBz8uaLC+QCq0ixrGz5zrW/Nq0w5IeVFo9WQM6w67P8PUcx1ezAb5vZLgwl+LCHMPFmwyDf2Ton4vx7a0M55+gvluUcCb2Heu3lQnH9TvwvJ4SUiGKE1BK4ScKa12FPwOBcDMFX6Ng9xKsuwm2Ix9SAVIbiApVqrwAXC9wrCutX519z61MqWSuENMELKEIUo3NQGGXCrBHHHqTQW6mCPZTuDQClRmMOfCtMab2YRCGjjV2+6qz7+3D9/xK0MQxNZTGxmfabATK7MTSxI+4ETupEVupCR8Ls02ICTgzeQGTF8bIwihlgE4vcKzJ9oTTIz1EJFZKFybNuOFZaigvzV6kjcuk4R1pyj1uWJebKGKG59qoUpvDOTZPJoU41uzt2XP7HRfdTreMY4qu54OEAbxYYMMT2AopensJ8vUI4Q7D444HQlMkIq38B6VU5cVS66KalHPW5aHLx65eGTs5NHTpxPj4NXtoaNgeuzpmT84u2CMTDXt46ro9MTZnN4ev27+Pzts/3Bi3byzM2Kuttt1sLtlLSzUnlpeXT87MzBz7G3CUo1GzzSFSAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Trang chu api"
-        title="Trang chu api"
-        src="/static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png"
-        srcset="/static/68d364d0b3c080e5d0f3aaa6b793bfd2/5a46d/browser-test-1.png 300w,
+  <picture>
+          <source
+              srcset="/static/68d364d0b3c080e5d0f3aaa6b793bfd2/c85cb/browser-test-1.webp 300w,
+/static/68d364d0b3c080e5d0f3aaa6b793bfd2/e88ff/browser-test-1.webp 600w,
+/static/68d364d0b3c080e5d0f3aaa6b793bfd2/fbb05/browser-test-1.webp 1066w"
+              sizes="(max-width: 1066px) 100vw, 1066px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/68d364d0b3c080e5d0f3aaa6b793bfd2/5a46d/browser-test-1.png 300w,
 /static/68d364d0b3c080e5d0f3aaa6b793bfd2/0a47e/browser-test-1.png 600w,
 /static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png 1066w"
-        sizes="(max-width: 1066px) 100vw, 1066px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1066px) 100vw, 1066px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/68d364d0b3c080e5d0f3aaa6b793bfd2/2e367/browser-test-1.png"
+            alt="Trang chu api"
+            title="Trang chu api"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Để duy trì tính ổn định cho bài test, mỗi lần chạy benchmark 1 endpoint, mình sẽ restart app để app reset lại connection pool.</p>
@@ -733,19 +797,31 @@ router<span class="token punctuation">.</span><span class="token function">GET</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADaklEQVQ4y5XRTY/bRBgHcH8IJKigsKJUghtIIBAS6l4qpMKVYy+cQHDhc1TuqRKHAicEEoUL4kBB7VJU2N0m2Zdkk+zmZWPHsWPH8cTvM57xzB/FWUpW0AMj/TSPNPP8NS/a289fv/XWC5/ijY2P8OrFD/H6xid47cXreOnCNWw89e4TXX76fVx+5hpefvY9vHLhA7z53Gd45+LHt7R7vz68UdtpYefPA7qzfSAaja44POiL/UZf1Ha7orZ7fKZ7bq7XjsXudkvUdjpiZ/uAPtpt4pe7D29oOc10rAYHoPD/hzrrBaWZrvkzX1dSQQjBlQQimuCr5g+Vr9s/4ovDO5VvOj/h9uF3uH14B182v8fn+9/CiWdV3KpXYZmlEULWTwhAIqALBCz8Bw1BWASfEsyXazSsaiFLrPcGQaBrjjPVKWPI84yTVICkEgXlKHIGTvkKW1FCQjAOyUsIJlAUHCzNwPKcc87heZ6uHR219cUihO/7PIgYSFoiSlIQQhDHCaI4RpplcF0PljXByDAwsW0Yhomp6yLyA/jejAdkgZOTnq55rquTTMCLS+7FDCRfYJYo+NnySvLxy0spURRFRXCB5YlKIUCSAuY05k7A0Bu7ukaCue6nJexIcXNB4SQ+rIWEFXkoSgEoBbX0hC8OogJDO+FWwDGwg+Uvz/R5XMANBbdJDjf2YRMON5qBi7NAKc+RZVm9o+IlSEhhOjGfBgxDa6ZrtmHqljnF3A743AkQTiYIxh4C20M2J+AphaIF5BoehSgMgmJEELo+PHPGA4fAHJi6Njru6cOjLqKByZPRBEnvFFF3gKhvgDoeRJxBnpODTh1ku2OkfxhITBPx6YRnpgO7faJrg1ZHP6nvIen2edYfIen0EDW71cwmbhVShsljMkyRWSaSewPEP/eQng6RDQxOT8dwmm1dGxwtA/cRrwJV3O6pqNlVcaen2MRVMs5UGSZrUpVZY5XcH6j4bk8lw6FK+wbP/w4cdU70/n4TaX/E6chSy9D0eKCyvqGKqV8Fyihdkynq2Cr9faTS+6cqH48VNSacjR3Yra6uWeb4ZhonKHIqC8qwQlGwtfo/sCgDi/JqH6dMspziqN29qW09eHCp2WpdrTUaV2qN+uZKY/N8/W/15l6lVq9vPmrUrzT29q5u/bZ16S/Rqa0pN4iUDQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="API NEW"
-        title="API NEW"
-        src="/static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png"
-        srcset="/static/d2434b81f25fb3fde41924f4a481ed99/5a46d/browser-2-new.png 300w,
+  <picture>
+          <source
+              srcset="/static/d2434b81f25fb3fde41924f4a481ed99/c85cb/browser-2-new.webp 300w,
+/static/d2434b81f25fb3fde41924f4a481ed99/e88ff/browser-2-new.webp 600w,
+/static/d2434b81f25fb3fde41924f4a481ed99/fbb05/browser-2-new.webp 1066w"
+              sizes="(max-width: 1066px) 100vw, 1066px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/d2434b81f25fb3fde41924f4a481ed99/5a46d/browser-2-new.png 300w,
 /static/d2434b81f25fb3fde41924f4a481ed99/0a47e/browser-2-new.png 600w,
 /static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png 1066w"
-        sizes="(max-width: 1066px) 100vw, 1066px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1066px) 100vw, 1066px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/d2434b81f25fb3fde41924f4a481ed99/2e367/browser-2-new.png"
+            alt="API NEW"
+            title="API NEW"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Đây chính là error message:</p>
@@ -768,19 +844,31 @@ router<span class="token punctuation">.</span><span class="token function">GET</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAADAUlEQVQ4y52ST4scRRiH+0MENGh0MQb0pqAYBElfghBz9ZiLJyW5+DlC5xTwEPUkCkYv4kUlLITgzk7vzPTsJrvZBJNZd6b/bHdXT1dXd3VVddVPumfc7ErExBceuujq9+H3VrX1/iuXrp999QreXfkUb536BO+sXMbbr13C6ycvYOXEh//KmRcu4syLF/DGSx/hzZMf472XP8cHpz67bt367c5Vt7eF3u8e7615ajDYUWPvoRoNHip3fUe56/eX7Bx7brj31fralnJ726q35vH++iZ+/eXOVavipYNFSQAGz19m2QvOS8eKD2LHaAOllDQayHmBrzd/7Pjm3k/4cnyz49vtn3Fj/D1ujG/iq80f8MXoO/j0oNMteg1al0UIOZoQgEbKM6T1/Al8DlLniDlB0u7xebdWpvk7Ytebpqlj+X7g1HWNqiolYQqEaQguIaoakssF9QKjNFQtoWWDRiiIWkBK1SWUUiKKIse6e/eek2XzNq5Mco5WmlMGQggoLZBTClaWCMMI+/tTPJ5MMJ3NMNnbQxAEoEX7bSbTlGB394FjRWHokLJBRLWMaA3CM0SFQVxlaNpDXZbWGkKIDqUU2kRNo0BojYlPpU9qPPgzdCySJk5aNgiplrN5jYilmM0bhEUM2TSAMTBLnlYZFdgLmfQziUd+6lhJEh8K/bzGASMI8laYLIU4FP6TdpMcEf4xS44L24QhixHkGj5NIJR8NmHApE+WwjSJuzPshPliZD9vEP3fhEeFi5HTbmSfxhCN+k9h9jRhWmqE1MhZLkzIDkxItfFpbGSjFl3dzbSO49W+J1SYVhi0l7IQJg4pBMK5kH5WmpDGJqTGzPLcMMmN0o2plTaykUv5cVrhJGBySiR29xPHmk6n16qyBGNMs6IAKyswLlBUEkVVdeRljZKXEEJ2/99RyqoGLbjOGYe3vXvNWl1dPe2Nx+eHo9E5z/Ps0WhoewPX9oZ92xsMO8bDDXs0GNmu27dd1z2k33ft4WDDHnuDc1ve8Pzt1Vun/wIHDL1fwZ8mbwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="API normal"
-        title="API normal"
-        src="/static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png"
-        srcset="/static/a912421d941e99588b708218ad22d071/5a46d/browser-3-normal.png 300w,
+  <picture>
+          <source
+              srcset="/static/a912421d941e99588b708218ad22d071/c85cb/browser-3-normal.webp 300w,
+/static/a912421d941e99588b708218ad22d071/e88ff/browser-3-normal.webp 600w,
+/static/a912421d941e99588b708218ad22d071/fbb05/browser-3-normal.webp 1066w"
+              sizes="(max-width: 1066px) 100vw, 1066px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/a912421d941e99588b708218ad22d071/5a46d/browser-3-normal.png 300w,
 /static/a912421d941e99588b708218ad22d071/0a47e/browser-3-normal.png 600w,
 /static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png 1066w"
-        sizes="(max-width: 1066px) 100vw, 1066px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1066px) 100vw, 1066px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/a912421d941e99588b708218ad22d071/2e367/browser-3-normal.png"
+            alt="API normal"
+            title="API normal"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Okay, ngon nghẻ không bị lỗi request nào hết.</p>
@@ -801,19 +889,31 @@ router<span class="token punctuation">.</span><span class="token function">GET</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 87.33333333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAC/0lEQVQ4y52S0YvcRBzH80cIWrR6WAv1TUFRBGleilB99bEvPin64t9R0qeCD1WfRMHqi/iiUg5K8fY23d3krr3rtah73m42u0kmyWQmk8xk5ivJrtdbrVT9wYcZZvh95svMWG88e+nq6899hFc33sdLp9/DKxsf4uXnL+GFUxex8cRb/8jZJ9/B2acu4tzTb+PFU+/itWc+xpunP7hq3fjp1mW3t4vez57obXlqMNhXvvdAjQYPlLu9r9zteyv218bb7j21vbWr3N6e6m15or+9gx9/uHXZKgV3sCwJwOC/l1n1QgjuWNEicow2UEpJo4FcFPh859uOL+5+h0/96x1f7n2Pa/7XuOZfx2c73+CT0VcI6KLTLXsNWpdFCDmZEIBGIlIkVfYQkYFUOSJBELd7IuvmyjR/Rux6kyRxrCCYOVVVoSy5JEyBMI1aSNRlBSnkkmqJURqqktCyQVMr1FUNKVWXUEqJ+XzuWHfu3HXSNGvjyjgXaKU5ZUgIAaUFckrBOEcYznF0NMFv4zEm0ynGh4eYzWagBQMhqUwSgoOD+441D0OH8AZzquWcVshEgZA2ICKFPvFEWmvUdd2hlEKbqGkUCK0wDqgMSIX7v4eORZLYSXiDkGo5yQQWLMckk4hYBNUYGPOQR1VKaxyGTAapxK9B4lhxHB0Lg7xCzDMEeYM5iyEbDZh16foBBuSE8Jdp/HdhxNOlsIggm+bfCWdMBmQlTOKou8NWOM0rLFh6nFD9n4Rrwkwg4jmmmUK0EprHCNNHCROuEVIjp3ltFjw1QdaYBYuM0nrZ1cVsHevVrhNam1Y4ax9lKYwdUtQIs1pOCTOLIjVBbsysyEwpayMbbSqljdRqJV+nFY5nTE6IxMFR7FiTyeRKyTkYY7poPzHjYKJGUUoUZYmiFKBcgAve/b2/wssKtBA6ZwLe3sEVa3Nz84zn+xeGo9F5z/ft0WhoewPX9oZ92xu284HtDwf2aDC0+27fdl33mH7ftYeD27bvDc7vesMLNzdvnPkDiHy9pCkmfWgAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="API Pooling"
-        title="API Pooling"
-        src="/static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png"
-        srcset="/static/afb480db3839bd5243569e986a48e468/5a46d/browser-4-pooling.png 300w,
+  <picture>
+          <source
+              srcset="/static/afb480db3839bd5243569e986a48e468/c85cb/browser-4-pooling.webp 300w,
+/static/afb480db3839bd5243569e986a48e468/e88ff/browser-4-pooling.webp 600w,
+/static/afb480db3839bd5243569e986a48e468/fbb05/browser-4-pooling.webp 1066w"
+              sizes="(max-width: 1066px) 100vw, 1066px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/afb480db3839bd5243569e986a48e468/5a46d/browser-4-pooling.png 300w,
 /static/afb480db3839bd5243569e986a48e468/0a47e/browser-4-pooling.png 600w,
 /static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png 1066w"
-        sizes="(max-width: 1066px) 100vw, 1066px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1066px) 100vw, 1066px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/afb480db3839bd5243569e986a48e468/2e367/browser-4-pooling.png"
+            alt="API Pooling"
+            title="API Pooling"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Kinh chưa? Không fail lần nào.</p>
@@ -948,4 +1048,4 @@ Kĩ thuật này rất hữu ích với các hệ thống backend có lượng r
 /static/5e09b7dc046a8972547b7e2d01e32a28/1efc4/logo.png 2x" /><img loading="lazy" width="110" height="110" srcset="/static/5e09b7dc046a8972547b7e2d01e32a28/3b7ca/logo.png 1x,
 /static/5e09b7dc046a8972547b7e2d01e32a28/085e0/logo.png 1.5x,
 /static/5e09b7dc046a8972547b7e2d01e32a28/1efc4/logo.png 2x" src="/static/5e09b7dc046a8972547b7e2d01e32a28/3b7ca/logo.png" alt="Kiên Đinh" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h3 class="bio__AuthorName-sc-cy4lz8-2 HeSmV">Kiên Đinh</h3><p class="bio__AuthorDescription-sc-cy4lz8-1 iEPaOA">Bần đạo là <strong>Kiên Đinh</strong>, một Developer. 
-            Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me/">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2023</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/connection-pooling-tong-quan-va-implement-benchmark/";window.___webpackCompilationHash="94ceacc890f1dbf9acd5";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d5ab38783296e1c773b0.js"],"app":["/app-6abf10e9bb41acd9d364.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-dac1e2e8f46e2904c1f4.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-d17a542145ac54c73b71.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-3316aecd1d08b21d3d21.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-6bc8dea0877c1c99ae09.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-b47b6f43e25fcae4d9d2.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-81dfd5b0c5c248da496e.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-7523085417102b9ac221.js"]};/*]]>*/</script><script src="/polyfill-d5ab38783296e1c773b0.js" nomodule=""></script><script src="/app-6abf10e9bb41acd9d364.js" async=""></script><script src="/framework-bd9150bcf9e535dfa7fa.js" async=""></script><script src="/webpack-runtime-5668dffee01a9a2f8482.js" async=""></script></body></html>
+            Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me/">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2023</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/connection-pooling-tong-quan-va-implement-benchmark/";window.___webpackCompilationHash="eb4da54fecc0de53f98d";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d5ab38783296e1c773b0.js"],"app":["/app-3d56a7e927d0e18cd127.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-dac1e2e8f46e2904c1f4.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-d17a542145ac54c73b71.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-3316aecd1d08b21d3d21.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-6bc8dea0877c1c99ae09.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-b47b6f43e25fcae4d9d2.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-81dfd5b0c5c248da496e.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-7523085417102b9ac221.js"]};/*]]>*/</script><script src="/polyfill-d5ab38783296e1c773b0.js" nomodule=""></script><script src="/app-3d56a7e927d0e18cd127.js" async=""></script><script src="/framework-bd9150bcf9e535dfa7fa.js" async=""></script><script src="/webpack-runtime-5668dffee01a9a2f8482.js" async=""></script></body></html>

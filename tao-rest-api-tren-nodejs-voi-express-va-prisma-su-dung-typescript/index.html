@@ -483,19 +483,31 @@ Lệnh rimraf sẽ xoá hết các file của bản build cũ trong thư mục <
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 37.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAICAYAAAD5nd/tAAAACXBIWXMAABJ0AAASdAHeZh94AAAAtUlEQVQoz6WOWRKDIBBEOUcWoyKCrCJlkvtfrFNDqRXJR5Ly48HAdPcMG1yANBbSejRCQhmHqu2grIPUFnJ5p8cTcb7jfGs2LnWLa8N3MBtiNtsx5kAaoKzP+CnBjRO0D/AxYUxzrqlnQkTd9bsBBKMGBQmlweUA3iuIwWQxTaTt6F4N1bIJ/dOGJazXdgvMoTlQ48YFTlX9sUEJhbzXjA4ylqyCb5Q69o/4F1hp3Nft8cCjvAAKmN8bpBs09gAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Console output"
-        title="Console output"
-        src="/static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png"
-        srcset="/static/d4dccbbf4358d72b1b8e97526989e2e7/5a46d/hello-world.png 300w,
+  <picture>
+          <source
+              srcset="/static/d4dccbbf4358d72b1b8e97526989e2e7/c85cb/hello-world.webp 300w,
+/static/d4dccbbf4358d72b1b8e97526989e2e7/e88ff/hello-world.webp 600w,
+/static/d4dccbbf4358d72b1b8e97526989e2e7/69b3e/hello-world.webp 713w"
+              sizes="(max-width: 713px) 100vw, 713px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/d4dccbbf4358d72b1b8e97526989e2e7/5a46d/hello-world.png 300w,
 /static/d4dccbbf4358d72b1b8e97526989e2e7/0a47e/hello-world.png 600w,
 /static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png 713w"
-        sizes="(max-width: 713px) 100vw, 713px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 713px) 100vw, 713px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/d4dccbbf4358d72b1b8e97526989e2e7/01267/hello-world.png"
+            alt="Console output"
+            title="Console output"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <h3 id="cai-dặt-express" style="position:relative;"><a href="#cai-d%E1%BA%B7t-express" aria-label="cai dặt express permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cài đặt Express</h3>
@@ -542,19 +554,31 @@ app<span class="token punctuation">.</span><span class="token function">listen</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 49.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABdklEQVQoz5WSTY7TQBCFfQKOwdnmFixYchZWrGfBHWCFhkVkFMVxMu7/7uq2P1Q9xErYIFp6sqrc/d7TqxqqCNZajDH928+2sf3B/bnVzjnmecY5D1uFNeGXmSaFQUQwi+mEenFd1we01h6gvRAC1+uVGAOTFX5Oie+HhdkVBiU6Ho/EGHflcfzFOI5cLpfeU+c3aK0w1oF4nj5b3n9aePfhlY/PkaGU0hVTSh3BB1zwhBi7SEqx93POlJyJIVBr7W7ZGj/mxtcX4cu3xMtcGdR2CJHaWr9YciFLQWpF89VItK/kNjgWZ0hSSJJJ+k8aKQmvNgMrg/eexRhKkV25SqXVNwEl7Ll5j0+RmCMpp06YRVhCY7YFGytt3Rg0j8PhwPl87plZY5imqQ9Jg9e+RnI6nfpUg1mQFB+mX6XQWu0GBlXvq2AXLpcZZx3q+m0YBh883ru9TjHsK3W/WsqjsQw93P89nehxN2/ku8O/Vf+F+zf3hL8BstEHUckDmxoAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Index request of expressjs"
-        title="Index request of expressjs"
-        src="/static/88c9e75a7dedb9288be286c21308a46d/898f6/home-page.png"
-        srcset="/static/88c9e75a7dedb9288be286c21308a46d/5a46d/home-page.png 300w,
+  <picture>
+          <source
+              srcset="/static/88c9e75a7dedb9288be286c21308a46d/c85cb/home-page.webp 300w,
+/static/88c9e75a7dedb9288be286c21308a46d/e88ff/home-page.webp 600w,
+/static/88c9e75a7dedb9288be286c21308a46d/ce206/home-page.webp 798w"
+              sizes="(max-width: 798px) 100vw, 798px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/88c9e75a7dedb9288be286c21308a46d/5a46d/home-page.png 300w,
 /static/88c9e75a7dedb9288be286c21308a46d/0a47e/home-page.png 600w,
 /static/88c9e75a7dedb9288be286c21308a46d/898f6/home-page.png 798w"
-        sizes="(max-width: 798px) 100vw, 798px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 798px) 100vw, 798px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/88c9e75a7dedb9288be286c21308a46d/898f6/home-page.png"
+            alt="Index request of expressjs"
+            title="Index request of expressjs"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
     </span></p>
 <p>Đây là file dist/index.js, là output của file main.ts được compile theo chuẩn es5 như trong tsconfig.</p>
 <div class="gatsby-highlight" data-language="js"><pre class="language-js"><code class="language-js"><span class="token string">"use strict"</span><span class="token punctuation">;</span>
@@ -678,19 +702,31 @@ app<span class="token punctuation">.</span><span class="token function">listen</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 55.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAALCAYAAAB/Ca1DAAAACXBIWXMAABJ0AAASdAHeZh94AAABfElEQVQoz4VS7YrcMAzMu5b+6b++VikcFAp9krsn6HFJIF+WZcmyPUXOLrfdW1rDJLZsz1gaDcyMdV2RUkKMESEEbNuGfd8RjgPHBb72v5/xOxQZVRk/nxlfngI+fz/w/GYYfHOcJ1AkUAiYpgnTPGGcJrzNI+Z57vD4OI6d9BRntMz49ZLw9Qfh07cDL6NhUFXsdCBIAnGGr3MtUNqRJKDUilIKaq3IOaO1hut4n1VIyj0yuJqnxklB8n6kH2+tE1zRo3ex2hpYCxayLj64sppBVWAxgGPCEhJE7bxQ2weS9kHIxc9MBv+wCJIkiNcnMraQoJp7mr5/Rb2Z/4VeDoNZNyUiifSnPxq3NRMRBCZEZURJSJqwUsa4KrZ4ZjQQEV5ff/dW8Zbx9ri2iMd8f1kWcCQkOh4Kimp/XWsVg0/o0lum2l0WUWjO3VXr9c0oZqhmD41x6IX0YkqBWYasKyIxpo177H8luHXfyU7CUmDlXLRaO/7l7D3RPeEf4xpZV0W3fwQAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Test hero post request"
-        title="Test hero post request"
-        src="/static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png"
-        srcset="/static/67dd471623190849b6d080bffdf04250/5a46d/test-hero-request-post.png 300w,
+  <picture>
+          <source
+              srcset="/static/67dd471623190849b6d080bffdf04250/c85cb/test-hero-request-post.webp 300w,
+/static/67dd471623190849b6d080bffdf04250/e88ff/test-hero-request-post.webp 600w,
+/static/67dd471623190849b6d080bffdf04250/632b0/test-hero-request-post.webp 915w"
+              sizes="(max-width: 915px) 100vw, 915px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/67dd471623190849b6d080bffdf04250/5a46d/test-hero-request-post.png 300w,
 /static/67dd471623190849b6d080bffdf04250/0a47e/test-hero-request-post.png 600w,
 /static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png 915w"
-        sizes="(max-width: 915px) 100vw, 915px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 915px) 100vw, 915px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/67dd471623190849b6d080bffdf04250/4255a/test-hero-request-post.png"
+            alt="Test hero post request"
+            title="Test hero post request"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <h3 id="khởi-tạo-database-bằng-docker" style="position:relative;"><a href="#kh%E1%BB%9Fi-t%E1%BA%A1o-database-b%E1%BA%B1ng-docker" aria-label="khởi tạo database bằng docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Khởi tạo database bằng docker</h3>
@@ -730,19 +766,31 @@ app<span class="token punctuation">.</span><span class="token function">listen</
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 24%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAFCAYAAABFA8wzAAAACXBIWXMAABJ0AAASdAHeZh94AAAAx0lEQVQY01VQ266DMAzr/3/hzgsSD5x1CI0WeiGB4smRQFulNnVqO0ndsixQUWzbZrvWalFE7vv3/s6VUgxfXEY3DAP+Hg+s64qS8/1ohVSRc0bK2Qx43/fdInFrDapiWuaJXa0F8/uNozXQnFXneUbXdWb88h7/zyeWGOG9x3EcGMcRIUZwiWzo+970XC6lhBjjzzjsjsLzPBFCtMp8YxecIIRwj02uqJoHJ3I8SLrIxOyYBOYYaZ5TMjFNpmmCiFr++m/qiD8neYNXjzu+fQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="Docker Ps"
-        title="Docker Ps"
-        src="/static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png"
-        srcset="/static/498345d5fca52a238b859c84268d6693/5a46d/docker-ps.png 300w,
+  <picture>
+          <source
+              srcset="/static/498345d5fca52a238b859c84268d6693/c85cb/docker-ps.webp 300w,
+/static/498345d5fca52a238b859c84268d6693/e88ff/docker-ps.webp 600w,
+/static/498345d5fca52a238b859c84268d6693/69f9d/docker-ps.webp 1159w"
+              sizes="(max-width: 1159px) 100vw, 1159px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/498345d5fca52a238b859c84268d6693/5a46d/docker-ps.png 300w,
 /static/498345d5fca52a238b859c84268d6693/0a47e/docker-ps.png 600w,
 /static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png 1159w"
-        sizes="(max-width: 1159px) 100vw, 1159px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1159px) 100vw, 1159px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/498345d5fca52a238b859c84268d6693/1d553/docker-ps.png"
+            alt="Docker Ps"
+            title="Docker Ps"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Đã có DB, bây giờ chúng ta sẽ cài đặt prisma và prisma client để làm ORM.</p>
@@ -835,19 +883,31 @@ model Hero {
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 51%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABMElEQVQoz42SaXKDMAyFc42kFIyNLW/Zmsn9j/Y6T2AgmXbaHw8sIX9oO3TGQsoZIVdMMcOGCJ8KfMzquz2eGJxHbycw9i8dPoZRQU7Soqg2RTCh9I9eFGymoOIP3m2yFOgTsymYYkJIBaleEOtFoQTxXG9fqNe72rzza4Z8EECglLlsltvawCyZCeM+R7deJPRdCmSQ5LpcnstsLWjnl7ektSVh6TV/To6WbH1U4P3xRL3ckOoVJp3RjRO6fkQ37PSfoRx7g5O1MDnDlgwTI7ogODqHE2Xdev6pzKZTb7ah2JxhUoLLBb6eVWPKGEQwBIErBb0PWhb7uVebtvWi32egF9hJ4ELSnkyS1TdYD7ME87ytyiuUa8Ppr3tIw+2a3QbCJZ9924D2Q2p3aLc9/AY7whuMTH/XogAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="prisma-init-migration"
-        title="prisma-init-migration"
-        src="/static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png"
-        srcset="/static/38153b3aca1d67d287122dd304bc9699/5a46d/prisma-init-migration.png 300w,
+  <picture>
+          <source
+              srcset="/static/38153b3aca1d67d287122dd304bc9699/c85cb/prisma-init-migration.webp 300w,
+/static/38153b3aca1d67d287122dd304bc9699/e88ff/prisma-init-migration.webp 600w,
+/static/38153b3aca1d67d287122dd304bc9699/6ed01/prisma-init-migration.webp 1032w"
+              sizes="(max-width: 1032px) 100vw, 1032px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/38153b3aca1d67d287122dd304bc9699/5a46d/prisma-init-migration.png 300w,
 /static/38153b3aca1d67d287122dd304bc9699/0a47e/prisma-init-migration.png 600w,
 /static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png 1032w"
-        sizes="(max-width: 1032px) 100vw, 1032px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1032px) 100vw, 1032px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/38153b3aca1d67d287122dd304bc9699/12bff/prisma-init-migration.png"
+            alt="prisma-init-migration"
+            title="prisma-init-migration"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></li>
 </ul>
@@ -867,18 +927,29 @@ model Hero {
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 112.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAXCAYAAAALHW+jAAAACXBIWXMAABJ0AAASdAHeZh94AAACqElEQVQ4y51V2XabMBTk/z+rfWyah8ZtbGMWLYCQMPtizDI9kpemDrHT6hwdxEWaO5q7YGVliaZp0LUt+r7H8XhEXdfoug5t2+JwOOAy5nm+Pt+u3w6rKEvkeY6yLKGkRJbnKIoSWZahqirs93vkeWEcJEli9mqHel3XjTmnHU/ThGEYYPmxgooFIiEQCwEqU7zuXMRRAKUUpJSI49g4C8MQIhIGTIgIeZaDMQalEsRSQsYCFg0FwiAwG/WBRIPkFZ7dANvNGjwIDCvNOM8yvEZ7RHSLPbfBkhQ00k4icEbhximsUJy8p2lqvGpW+zQFi2Jja8/aai37wwF1d0DbaI1b1F1nbEnVIExzCP8nLJsr7GwbhBAQSuH7HjzPg+95CMPAMNSg4zgajcZxOK3H0TxHbdP6TYDcPcFSQsL1iNGiqmqj10W3/ng0ILeRfD9m6B1q/QWWz10EzgqUUmRpavQqisJE8q8j51T5cAJg22dYGBqQKMDLjoB4nrnGEshSzt3mJmUBLP1S9TNSugJjFEEkrqD3gJYSXKeddTLM6LoGREg4m19o2vYhwyWb0IBnKyYAY61AfBuEh8a2dLWPrqszQeexdca7AryWgMu4yU0dHJ2LlwDdMry8t02D9XoNxvkfhvrTVAkI7iAQ0iSurlMNqpvHPcBj35u9V4ZXwNSFcp7hUl3H0lSNLrnPXPtGw8kAjokN6XzHxvEN0DAcTcl9FJS3U3eb94Bqjb3zBMIj01HuRXTp2wLDDaT9DTs/AGcM84MoPwSc9jZi+xu2LoHrOJBSmU262/wTw2me0UcrhNSB7+6Q5YX5FWj99NT6fBrwUim99xWcM1DG0R/6u9F8yDAbAG4/Y/XyA75PTMf5n+ZwYtgoMPcFT6sNCPFRLyTx3U54A/gbaOD0EXaEb04AAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="postgres-db-dbeaver"
-        title="postgres-db-dbeaver"
-        src="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png"
-        srcset="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/5a46d/postgres-db-dbeaver.png 300w,
+  <picture>
+          <source
+              srcset="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/c85cb/postgres-db-dbeaver.webp 300w,
+/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a64e8/postgres-db-dbeaver.webp 572w"
+              sizes="(max-width: 572px) 100vw, 572px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/5a46d/postgres-db-dbeaver.png 300w,
 /static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png 572w"
-        sizes="(max-width: 572px) 100vw, 572px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 572px) 100vw, 572px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/90e23e8e3f81cbb07e20d885bc6fcfaf/a805e/postgres-db-dbeaver.png"
+            alt="postgres-db-dbeaver"
+            title="postgres-db-dbeaver"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <h3 id="crud-cung-prisma" style="position:relative;"><a href="#crud-cung-prisma" aria-label="crud cung prisma permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CRUD cùng Prisma</h3>
@@ -930,20 +1001,33 @@ Thêm hero:
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 49.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABRElEQVQoz5WRSW4cMQxFdeMscy4vcpIscgIDBpyUqjVwklTfIHtwuw3DiIAHURRFUp+p1opSClpr2LYN+76jE6H3/gF6OF9h6iiN8OOp4uevhkREoEhAkbS2it4KOjVQJzBzQCyYc37Bwp+Xgd/PhqRmkVBE4LaqQJkxhKCqMNXwsS58t4YZkme3MUBbxpYrKht0LIhN6AW3RQdIDKwjIHnf5eIbYyKN4cYAs4BY0UjA/lAGOhs66x2GSoLSOeKutnPqGrKkU96Qt+2mnw+I+SzBGvbpW8daUFPYNNgwDGdOlH7+QRJVtN4hrptraAb3iWgEH8fxwFcKHhGf5lpRgf6+Iu81Wq9kaGz43+UFk4/dNWw5418uyJVxaoJcJfY9UJSuUcx9p4vtvv3uHEPxKc81b19a64B3fSPuH3yP93PFO2/sDQ4cDOB+idl4AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="create-hero-api"
-        title="create-hero-api"
-        src="/static/9a4042c2f1d86464eeb649bf2925fdfa/c1b63/create-hero-api.png"
-        srcset="/static/9a4042c2f1d86464eeb649bf2925fdfa/5a46d/create-hero-api.png 300w,
+  <picture>
+          <source
+              srcset="/static/9a4042c2f1d86464eeb649bf2925fdfa/c85cb/create-hero-api.webp 300w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/e88ff/create-hero-api.webp 600w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/92f8c/create-hero-api.webp 1200w,
+/static/9a4042c2f1d86464eeb649bf2925fdfa/05352/create-hero-api.webp 1406w"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/9a4042c2f1d86464eeb649bf2925fdfa/5a46d/create-hero-api.png 300w,
 /static/9a4042c2f1d86464eeb649bf2925fdfa/0a47e/create-hero-api.png 600w,
 /static/9a4042c2f1d86464eeb649bf2925fdfa/c1b63/create-hero-api.png 1200w,
 /static/9a4042c2f1d86464eeb649bf2925fdfa/4a00e/create-hero-api.png 1406w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/9a4042c2f1d86464eeb649bf2925fdfa/c1b63/create-hero-api.png"
+            alt="create-hero-api"
+            title="create-hero-api"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span>
 Get tất cả:
@@ -962,20 +1046,33 @@ Get tất cả:
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 58.333333333333336%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAMCAYAAABiDJ37AAAACXBIWXMAABJ0AAASdAHeZh94AAABhElEQVQoz5VTW07EMAzsrbkIZ+EASNyAHw7AD2zTJs7DcZIOsrNddj/4wNLIqetMPNNmISJs2wbNtVZD7/2G1trD+h5aizEiBI/3z4LXjx0L+R0lZwQirOuKfd8RUzSkmJDSL0opNzAz8nXdpeL5LePpJWOJwYOCR+8DY0xIb2i9zea7ac84jgNNGh5jQHLEUpkhIlPSVRaO2aJ1PeAkUehzVkWRUEWsX1pDSBWbj1guX19wziGEAB+CSZ4SI1rlB7LbdOrfGHOAPr1M3JGKYJHW54StYfSOMQ5r1LpuUp6T0IC/4xhDCRvGcSC7FeQ2OGJQrvCpokrHf0IPXHQaJeQQsF42rCEjFjFPKIuR75FvNYWufZwHK86aKjLCPtSLYUXN0gaqWnHNLPP9PdSSx+cxCbkqs07owUSgImZuzGKb/i1ZCVVy2Rzct8PFF2QWm7bUZj5q5jNrrQ2wDMsKndAIASz6yc9fIWU2spMw8R3K9JMSw+2Ey0agmJFysRujV1Yvwg8O66sLO0bIUwAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="get-all-hero-api"
-        title="get-all-hero-api"
-        src="/static/dcfb03999e24bde1ab7813d8ad1a8090/c1b63/get-all-hero-api.png"
-        srcset="/static/dcfb03999e24bde1ab7813d8ad1a8090/5a46d/get-all-hero-api.png 300w,
+  <picture>
+          <source
+              srcset="/static/dcfb03999e24bde1ab7813d8ad1a8090/c85cb/get-all-hero-api.webp 300w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/e88ff/get-all-hero-api.webp 600w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/92f8c/get-all-hero-api.webp 1200w,
+/static/dcfb03999e24bde1ab7813d8ad1a8090/7f80f/get-all-hero-api.webp 1394w"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/dcfb03999e24bde1ab7813d8ad1a8090/5a46d/get-all-hero-api.png 300w,
 /static/dcfb03999e24bde1ab7813d8ad1a8090/0a47e/get-all-hero-api.png 600w,
 /static/dcfb03999e24bde1ab7813d8ad1a8090/c1b63/get-all-hero-api.png 1200w,
 /static/dcfb03999e24bde1ab7813d8ad1a8090/d4b10/get-all-hero-api.png 1394w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/dcfb03999e24bde1ab7813d8ad1a8090/c1b63/get-all-hero-api.png"
+            alt="get-all-hero-api"
+            title="get-all-hero-api"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <p>Bonus, express có support router param để follow đúng best practices của REST API, implement luôn nhé.
@@ -1014,20 +1111,33 @@ hero-controller.ts</p>
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 44.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAYAAAAywQxIAAAACXBIWXMAABJ0AAASdAHeZh94AAABKElEQVQoz5VRS05DMQzMhTkO5+ASnIENG7aU0veJ49j5DbJLqlepLBhpZDuKxh47qCooRuScccMYeIQxhnPmhhgjVASogqqMsK4b1nXFsiy4XC6eM7MzpXTLHzExI9OOjxPh6WXH8yshpH1DZoaIuEDiBNbstU1tDiy32HtHaw2jXydtrWOMDq0db58d7ydFyJlBRBgHWxOq5c7iJOfsja3BjUXAtCPs6+J7oJSuJPJpjLWUOyFjrRWcGSwZWhSlKnKp+N4ELBXBxShC8rQpPoHtqNfqkx8F/8Rvs9D6QCsF6fyFjQSRCygX7/ZfmPVQWkNVRTx/47wQtmSiipXEhbekHonV3y2fTWc9aUcKdrXrYgdqs4s1lNogpUHLNVqtMx55+GO1Wf4B/lG/25gLAwcAAAAASUVORK5CYII='); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="get-hero-by-id-api"
-        title="get-hero-by-id-api"
-        src="/static/238e60c94a80db3861961cc79c345f9f/c1b63/get-hero-by-id-api.png"
-        srcset="/static/238e60c94a80db3861961cc79c345f9f/5a46d/get-hero-by-id-api.png 300w,
+  <picture>
+          <source
+              srcset="/static/238e60c94a80db3861961cc79c345f9f/c85cb/get-hero-by-id-api.webp 300w,
+/static/238e60c94a80db3861961cc79c345f9f/e88ff/get-hero-by-id-api.webp 600w,
+/static/238e60c94a80db3861961cc79c345f9f/92f8c/get-hero-by-id-api.webp 1200w,
+/static/238e60c94a80db3861961cc79c345f9f/52977/get-hero-by-id-api.webp 1390w"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/238e60c94a80db3861961cc79c345f9f/5a46d/get-hero-by-id-api.png 300w,
 /static/238e60c94a80db3861961cc79c345f9f/0a47e/get-hero-by-id-api.png 600w,
 /static/238e60c94a80db3861961cc79c345f9f/c1b63/get-hero-by-id-api.png 1200w,
 /static/238e60c94a80db3861961cc79c345f9f/f1c64/get-hero-by-id-api.png 1390w"
-        sizes="(max-width: 1200px) 100vw, 1200px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/238e60c94a80db3861961cc79c345f9f/c1b63/get-hero-by-id-api.png"
+            alt="get-hero-by-id-api"
+            title="get-hero-by-id-api"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <h3 id="error-handling" style="position:relative;"><a href="#error-handling" aria-label="error handling permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Error Handling</h3>
@@ -1152,19 +1262,31 @@ hero-controller.ts</p>
     class="gatsby-resp-image-background-image"
     style="padding-bottom: 48.33333333333333%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAKCAYAAAC0VX7mAAAACXBIWXMAABJ0AAASdAHeZh94AAABZUlEQVQoz42RSZITMRBFdcG+BQfiBM0FWPQNWLNgyYZtDy4bl1yDpBw0fCJlF7ahiUARv6SScvh6cuu6Yp7nrpQS/ndY7Dh6ZBUAGZAT0BTOCi3Lgm22QEoEIoKI/FNrCAjLhDef8Pg14eOXE749M9zofU+2YofDoWvYD/DeI4QAu4EpxninEBOqEn7sCR8+Bzx8WvD0XeGCP4LNDQuICbkUJGWICnLOUNXesLX217Vvd0ppUCG4+XTq7v6MarX262+FfhdsAKXU3ddS+z4zIaWI3TDAiTCY+exQGJrPjkop3d1WyP4TJQSO8MuEaZ0RKCKQYvAJu58LVDPc8PrSH8Q4TdPUOxs/42TObZYUUWtFqaWrtoqGdtlrIMkQLb25my5JytwZGjtzZvzsNfta+F2GV0wN5cLbaSnIBn48IoaAhQSsBWSSs6557V3ZMLdmwtnH+GyH1VTv1ZPs/PZxbhpsjM3hL50LCwKbbUW8AAAAAElFTkSuQmCC'); background-size: cover; display: block;"
   ></span>
-  <img
-        class="gatsby-resp-image-image"
-        alt="hero-not-found"
-        title="hero-not-found"
-        src="/static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png"
-        srcset="/static/ea2b0ef8467e681fa4a43c163ca7fd30/5a46d/hero-not-found.png 300w,
+  <picture>
+          <source
+              srcset="/static/ea2b0ef8467e681fa4a43c163ca7fd30/c85cb/hero-not-found.webp 300w,
+/static/ea2b0ef8467e681fa4a43c163ca7fd30/e88ff/hero-not-found.webp 600w,
+/static/ea2b0ef8467e681fa4a43c163ca7fd30/3a6ad/hero-not-found.webp 1015w"
+              sizes="(max-width: 1015px) 100vw, 1015px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/ea2b0ef8467e681fa4a43c163ca7fd30/5a46d/hero-not-found.png 300w,
 /static/ea2b0ef8467e681fa4a43c163ca7fd30/0a47e/hero-not-found.png 600w,
 /static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png 1015w"
-        sizes="(max-width: 1015px) 100vw, 1015px"
-        style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
-        loading="lazy"
-        decoding="async"
-      />
+            sizes="(max-width: 1015px) 100vw, 1015px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/ea2b0ef8467e681fa4a43c163ca7fd30/e088a/hero-not-found.png"
+            alt="hero-not-found"
+            title="hero-not-found"
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
   </a>
     </span></p>
 <h3 id="deploy-app-với-docker" style="position:relative;"><a href="#deploy-app-v%E1%BB%9Bi-docker" aria-label="deploy app với docker permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deploy app với Docker</h3>
@@ -1231,4 +1353,4 @@ dist</code></pre></div>
 /static/5e09b7dc046a8972547b7e2d01e32a28/1efc4/logo.png 2x" /><img loading="lazy" width="110" height="110" srcset="/static/5e09b7dc046a8972547b7e2d01e32a28/3b7ca/logo.png 1x,
 /static/5e09b7dc046a8972547b7e2d01e32a28/085e0/logo.png 1.5x,
 /static/5e09b7dc046a8972547b7e2d01e32a28/1efc4/logo.png 2x" src="/static/5e09b7dc046a8972547b7e2d01e32a28/3b7ca/logo.png" alt="Kiên Đinh" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/></picture></noscript></div><h3 class="bio__AuthorName-sc-cy4lz8-2 HeSmV">Kiên Đinh</h3><p class="bio__AuthorDescription-sc-cy4lz8-1 iEPaOA">Bần đạo là <strong>Kiên Đinh</strong>, một Developer. 
-            Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me/">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2023</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript/";window.___webpackCompilationHash="94ceacc890f1dbf9acd5";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d5ab38783296e1c773b0.js"],"app":["/app-6abf10e9bb41acd9d364.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-dac1e2e8f46e2904c1f4.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-d17a542145ac54c73b71.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-3316aecd1d08b21d3d21.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-6bc8dea0877c1c99ae09.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-b47b6f43e25fcae4d9d2.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-81dfd5b0c5c248da496e.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-7523085417102b9ac221.js"]};/*]]>*/</script><script src="/polyfill-d5ab38783296e1c773b0.js" nomodule=""></script><script src="/app-6abf10e9bb41acd9d364.js" async=""></script><script src="/framework-bd9150bcf9e535dfa7fa.js" async=""></script><script src="/webpack-runtime-5668dffee01a9a2f8482.js" async=""></script></body></html>
+            Ta viết blog này với mục đích chia sẻ những kinh nghiệm của bản thân đối với <b>coding chi đạo</b>. </p><ul class="social-channel-list__StyledSocialChannels-sc-hb4cd6-0 eWZpEr"><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.facebook.com/kien.matu.7" target="_blank" rel="noopener" aria-label="facebook"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" color="#4267b2" style="color:#4267b2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.linkedin.com/in/kiendinh-dev/" target="_blank" rel="noopener" aria-label="linkedin"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="#0077b5" style="color:#0077b5" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://www.youtube.com/channel/UCnq0iZ1X0udszc7ODV9uK4g" target="_blank" rel="noopener" aria-label="youtube"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" color="#ff0000" style="color:#ff0000" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></a></li><li class="social-channel-list__StyledSocialChannel-sc-hb4cd6-1 dIYGZM"><a href="https://github.com/kienmatu" target="_blank" rel="noopener" aria-label="github"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></section></div></div></section></main><footer class="style__StyledFooter-sc-1bbyksd-0 hNmZFn"><div class="common__Container-sc-yvdkhc-0 style__FooterContainer-sc-1bbyksd-1 hhzXsP kRFmqs"><nav class="style__StyledNav-sc-1bbyksd-4 hCiwIZ"><ul><li><a class="style__FooterMenuLink-sc-1bbyksd-6 RdnGO" href="/about-me/">About me</a></li></ul></nav><div><p class="style__Copyright-sc-1bbyksd-2 eFaQjI"><strong>Dev Giang Hồ - Blog for Devs</strong> © <!-- -->2023</p><p class="style__DesignBy-sc-1bbyksd-3 hFClol"><a href="https://devgiangho.github.io" title="devgiangho">devgiangho</a><br/>Icons made by <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p></div></div></footer></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/tao-rest-api-tren-nodejs-voi-express-va-prisma-su-dung-typescript/";window.___webpackCompilationHash="eb4da54fecc0de53f98d";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-d5ab38783296e1c773b0.js"],"app":["/app-3d56a7e927d0e18cd127.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-dac1e2e8f46e2904c1f4.js"],"component---src-pages-archive-tsx":["/component---src-pages-archive-tsx-d17a542145ac54c73b71.js"],"component---src-pages-tags-tsx":["/component---src-pages-tags-tsx-3316aecd1d08b21d3d21.js"],"component---src-templates-page-tsx":["/component---src-templates-page-tsx-6bc8dea0877c1c99ae09.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-b47b6f43e25fcae4d9d2.js"],"component---src-templates-posts-tsx":["/component---src-templates-posts-tsx-81dfd5b0c5c248da496e.js"],"component---src-templates-tag-tsx":["/component---src-templates-tag-tsx-7523085417102b9ac221.js"]};/*]]>*/</script><script src="/polyfill-d5ab38783296e1c773b0.js" nomodule=""></script><script src="/app-3d56a7e927d0e18cd127.js" async=""></script><script src="/framework-bd9150bcf9e535dfa7fa.js" async=""></script><script src="/webpack-runtime-5668dffee01a9a2f8482.js" async=""></script></body></html>
